@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: #0b0b0c;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #0b0b0c;
+  color: #edeae3;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Lenis: native smooth-scroll deaktivieren, solange Lenis aktiv ist */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Eigener Cursor aktiv -> System-Cursor auf Desktop ausblenden */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: #edeae3;
+  color: #0b0b0c;
+}
+
+/* Feines Hintergrund-Raster, dezent (kein „Tech-Bro"-Glow) */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(237, 234, 227, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 234, 227, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Korn-Overlay für „filmische" Textur */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #3b5bff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
