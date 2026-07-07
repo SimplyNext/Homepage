@@ -12,11 +12,10 @@
     "columnApps": "Apps",
     "columnStudio": "Studio",
     "columnLegal": "Rechtliches",
-    "studioApproach": "Vorgehen",
+    "studioApproach": "Hauptseite",
     "studioContact": "Kontakt",
     "legalImpressum": "Impressum",
     "legalDatenschutz": "Datenschutz",
-    "legalAgb": "AGB",
     "copyright": "Alle Rechte vorbehalten.",
     "stack": "Flutter · Expo"
   },
@@ -26,7 +25,6 @@
     "headlineLine2": "die in Erinnerung bleiben.",
     "lead": "SimplyNext entwirft und entwickelt premium, plattformübergreifende Apps – kompromisslos in Performance, Detail und Gefühl.",
     "ctaWork": "Arbeiten ansehen",
-    "ctaContact": "Kontakt",
     "scrollHint": "Scrollen"
   },
   "journey": {
@@ -41,21 +39,19 @@
     "platformsTitle": "Plattformen",
     "android": "Android — verfügbar",
     "iosSoon": "iOS in Kürze",
-    "statsApps": "{count} Apps im Store",
+    "statsApps": "{count} Apps verfügbar",
     "statsLocales": "Deutsch · Englisch",
     "techTitle": "Stack",
-    "contactTitle": "Projekt im Kopf?",
-    "contactCta": "Schreib uns",
+    "roadmapTitle": "In Entwicklung",
     "viewApp": "Ansehen",
     "scrollHint": "Scrollen"
   },
   "statement": {
     "text": "Eine App ist erst fertig, wenn sie sich leicht anfühlt. Jede Bewegung, jede Millisekunde, jedes Detail dient diesem einen Ziel."
   },
-  "contact": {
-    "eyebrow": "Kontakt",
-    "heading": "Sag Hallo.",
-    "sub": "Wir antworten innerhalb von 48 Stunden."
+  "finale": {
+    "claim": "Premium-Apps für jede Plattform.",
+    "sub": "Android heute, iOS in Kürze — entwickelt in Deutschland."
   },
   "status": { "live": "Verfügbar", "beta": "Beta", "coming-soon": "Bald" },
   "appShowcase": {

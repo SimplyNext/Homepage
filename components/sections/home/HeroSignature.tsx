@@ -7,7 +7,6 @@ import SplitText from "@/components/ui/SplitText";
 import Magnetic from "@/components/ui/Magnetic";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { sceneState } from "@/lib/homeScene";
-import { site } from "@/lib/site";
 
 /**
  * Hero „Signature": volle Viewport-Höhe über der Aurora. Die Headline
@@ -103,20 +102,11 @@ export default function HeroSignature() {
               <Magnetic strength={0.4}>
                 <TransitionLink
                   href="/#apps"
-                  className="liquid-glass inline-flex min-h-[44px] items-center rounded-full bg-base-800/40 px-8 py-4 text-sm font-medium text-ink"
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-8 py-4 text-sm font-medium text-base-900"
                   data-cursor
                 >
                   {t("ctaWork")}
                 </TransitionLink>
-              </Magnetic>
-              <Magnetic strength={0.4}>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-8 py-4 text-sm font-medium text-base-900"
-                  data-cursor
-                >
-                  {t("ctaContact")}
-                </a>
               </Magnetic>
             </div>
           </div>

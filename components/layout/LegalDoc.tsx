@@ -38,7 +38,7 @@ export function InnerPageHeader({
   );
 }
 
-export async function LegalDoc({ sections, updated }: { sections: LegalSection[]; updated?: string }) {
+export async function LegalDoc({ sections, updated, hideEnNotice = false }: { sections: LegalSection[]; updated?: string; hideEnNotice?: boolean }) {
   const locale = await getLocale();
   const t = await getTranslations("legal");
 
@@ -46,7 +46,7 @@ export async function LegalDoc({ sections, updated }: { sections: LegalSection[]
     <article className="mx-auto max-w-3xl px-gutter py-20">
       {/* Rechtstexte bleiben bewusst Deutsch (rechtlich verbindliche Fassung
           für ein deutsches Unternehmen) – auf /en nur ein kurzer Hinweis. */}
-      {locale !== "de" && (
+      {!hideEnNotice && locale !== "de" && (
         <p className="mb-8 rounded-lg border border-line bg-base-800 px-4 py-3 text-sm text-ink-muted">
           {t("enNotice")}
         </p>
@@ -72,11 +72,13 @@ export async function LegalDoc({ sections, updated }: { sections: LegalSection[]
                 ))}
               </ul>
             )}
+            {s.afterList?.map((p, j) => (
+              <p key={j} className="mt-3 leading-relaxed text-ink-muted">
+                {p}
+              </p>
+            ))}
           </section>
         ))}
-      </div>
-      <div className="mt-16 rounded-xl border border-line bg-base-800 p-5 text-sm leading-relaxed text-ink-muted">
-        <strong className="text-ink">{t("note")}</strong> {t("noteText")}
       </div>
     </article>
   );

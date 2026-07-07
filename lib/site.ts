@@ -12,16 +12,18 @@ export const site = {
   url: "https://simplynext.de", // [PLATZHALTER]
   email: "info@simplynext.de", // [PLATZHALTER]
   legal: {
-    companyName: "SimplyNext", // [PLATZHALTER] z.B. "SimplyNext GmbH"
-    responsible: "[PLATZHALTER: Vor- und Nachname]",
-    street: "[PLATZHALTER: Straße und Hausnummer]",
-    zip: "[PLATZHALTER: PLZ]",
-    city: "[PLATZHALTER: Ort]",
+    companyName: "SimplyNext",
+    responsible: "Nuri Toker",
+    street: "Mechenseerstr. 12",
+    zip: "88316",
+    city: "Isny im Allgäu",
     country: "Deutschland",
-    phone: "[PLATZHALTER: Telefon]",
-    email: "[PLATZHALTER: kontakt@deine-domain.de]",
-    vatId: "[PLATZHALTER: USt-IdNr. – falls vorhanden]",
-    register: "[PLATZHALTER: Handelsregister & Nr. – falls vorhanden]",
+    phone: "01743389049",
+    email: "info@simplynext.de",
+    vatId: "",
+    register: "",
+    profession: "App Entwickler",
+    professionCountry: "Deutschland",
   },
 } as const;
 

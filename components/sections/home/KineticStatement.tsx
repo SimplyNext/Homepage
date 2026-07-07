@@ -49,16 +49,19 @@ export default function KineticStatement() {
       mm.add(
         "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
         () => {
+          // Einen evtl. vom Desktop-Branch (Breitenwechsel) hängengebliebenen
+          // Blur-Filter entfernen – Mobile nutzt nur Opacity, keinen Blur.
+          gsap.set(words, { filter: "none", clearProps: "filter" });
           gsap.fromTo(
             words,
-            { opacity: 0.25 },
+            { opacity: 0.4 },
             {
               opacity: 1,
               stagger: 0.06,
               scrollTrigger: {
                 trigger: ref.current,
-                start: "top 70%",
-                end: "bottom 60%",
+                start: "top 80%",
+                end: "center 60%",
                 scrub: true,
               },
             }

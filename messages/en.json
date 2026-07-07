@@ -12,11 +12,10 @@
     "columnApps": "Apps",
     "columnStudio": "Studio",
     "columnLegal": "Legal",
-    "studioApproach": "Approach",
+    "studioApproach": "Home",
     "studioContact": "Contact",
     "legalImpressum": "Legal notice",
     "legalDatenschutz": "Privacy",
-    "legalAgb": "Terms",
     "copyright": "All rights reserved.",
     "stack": "Flutter · Expo"
   },
@@ -26,7 +25,6 @@
     "headlineLine2": "that stay with you.",
     "lead": "SimplyNext designs and builds premium, cross-platform apps – uncompromising in performance, detail and feel.",
     "ctaWork": "See our work",
-    "ctaContact": "Contact",
     "scrollHint": "Scroll"
   },
   "journey": {
@@ -41,21 +39,19 @@
     "platformsTitle": "Platforms",
     "android": "Android — available",
     "iosSoon": "iOS coming soon",
-    "statsApps": "{count} apps shipped",
+    "statsApps": "{count} apps available",
     "statsLocales": "German · English",
     "techTitle": "Stack",
-    "contactTitle": "Have a project in mind?",
-    "contactCta": "Say hello",
+    "roadmapTitle": "In the works",
     "viewApp": "View",
     "scrollHint": "Scroll"
   },
   "statement": {
     "text": "An app isn't finished until it feels effortless. Every motion, every millisecond, every detail serves that one goal."
   },
-  "contact": {
-    "eyebrow": "Contact",
-    "heading": "Say hello.",
-    "sub": "We reply within 48 hours."
+  "finale": {
+    "claim": "Premium apps for every platform.",
+    "sub": "Android today, iOS soon — crafted in Germany."
   },
   "status": { "live": "Available", "beta": "Beta", "coming-soon": "Coming soon" },
   "appShowcase": {

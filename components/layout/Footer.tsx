@@ -27,13 +27,12 @@ export default async function Footer() {
             ))}
           </FooterCol>
           <FooterCol title={t("columnStudio")}>
-            <li><TransitionLink href="/#studio" className="text-sm text-ink-muted hover:text-ink">{t("studioApproach")}</TransitionLink></li>
-            <li><TransitionLink href="/#contact" className="text-sm text-ink-muted hover:text-ink">{t("studioContact")}</TransitionLink></li>
+            <li><TransitionLink href="/" className="text-sm text-ink-muted hover:text-ink">{t("studioApproach")}</TransitionLink></li>
+            <li><a href={`mailto:${site.email}`} className="text-sm text-ink-muted hover:text-ink">{t("studioContact")}</a></li>
           </FooterCol>
           <FooterCol title={t("columnLegal")}>
             <li><TransitionLink href="/impressum" className="text-sm text-ink-muted hover:text-ink">{t("legalImpressum")}</TransitionLink></li>
             <li><TransitionLink href="/datenschutz" className="text-sm text-ink-muted hover:text-ink">{t("legalDatenschutz")}</TransitionLink></li>
-            <li><TransitionLink href="/agb" className="text-sm text-ink-muted hover:text-ink">{t("legalAgb")}</TransitionLink></li>
           </FooterCol>
         </div>
         <div className="mt-16 flex flex-col gap-3 border-t border-line pt-6 text-sm text-ink-faint sm:flex-row sm:items-center sm:justify-between">

@@ -15,10 +15,10 @@ export default function Header() {
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
 
+  // Kontakt lebt bewusst nur im Footer – daher kein Kontakt-Punkt in der Navigation.
   const nav = [
     { href: "/#apps", label: t("apps") },
     { href: "/#studio", label: t("studio") },
-    { href: "/#contact", label: t("contact") },
   ];
 
   useGSAP(
@@ -46,9 +46,9 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className="fixed inset-x-0 top-0 z-[100] border-b border-line bg-base-900/75 backdrop-blur-md"
+      className="fixed inset-x-0 top-0 z-[100] border-b border-line bg-base-900/75 pt-[env(safe-area-inset-top)] backdrop-blur-md"
     >
-      <div className="mx-auto flex max-w-shell items-center justify-between px-gutter py-6">
+      <div className="mx-auto flex max-w-shell items-center justify-between px-gutter py-4 md:py-6">
         <Magnetic strength={0.5}>
           <TransitionLink
             href="/"

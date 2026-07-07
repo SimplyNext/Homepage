@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { datenschutzSections } from "@/lib/legal";
+import { datenschutzWebsiteSections } from "@/lib/legal";
 import { InnerPageHeader, LegalDoc } from "@/components/layout/LegalDoc";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,7 +25,7 @@ export default async function Page({
         intro={t("datenschutz.intro")}
         backLabel={t("backToHome")}
       />
-      <LegalDoc sections={datenschutzSections()} />
+      <LegalDoc sections={datenschutzWebsiteSections(locale)} hideEnNotice />
     </>
   );
 }

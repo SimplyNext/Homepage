@@ -94,7 +94,11 @@ export default async function LocaleLayout({
                   {t("skipLink")}
                 </a>
                 <Header />
-                <main id="main">{children}</main>
+                {/* overflow-x-clip fängt dekorative Bleed-Overlays (text-scrim
+                    mit negativen Insets) ab, ohne vertikales Scrollen oder
+                    GSAP-Pinning zu brechen (clip ≠ hidden). Verhindert, dass
+                    der fixe Header auf Mobile über die Viewport-Breite wächst. */}
+                <main id="main" className="overflow-x-clip">{children}</main>
                 <Footer />
               </TransitionProvider>
             </SmoothScrollProvider>

@@ -1,8 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ArrowUpRight, Check, Languages, Smartphone } from "lucide-react";
-import TransitionLink from "@/components/ui/TransitionLink";
+import { Check, Languages, Smartphone } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import BentoTile from "./BentoTile";
 import { apps } from "@/lib/apps";
@@ -28,7 +27,10 @@ const TECH_STACK = [
 
 export default function AppsBento() {
   const t = useTranslations("bento");
-  const tContact = useTranslations("contact");
+  const tStatus = useTranslations("status");
+  // Nur veröffentlichte Apps zählen (nicht die „Bald"-Apps)
+  const liveCount = apps.filter((a) => a.status === "live").length;
+  const comingSoon = apps.filter((a) => a.status === "coming-soon");
 
   return (
     <section className="relative z-10">
@@ -60,10 +62,10 @@ export default function AppsBento() {
                 <Languages size={20} className="text-ink-muted" aria-hidden />
                 <div>
                   <p className="font-display text-5xl font-medium text-ink">
-                    {apps.length}
+                    {liveCount}
                   </p>
                   <p className="mt-2 text-sm font-medium text-ink">
-                    {t("statsApps", { count: apps.length })}
+                    {t("statsApps", { count: liveCount })}
                   </p>
                   <p className="mt-1 text-sm text-ink-faint">{t("statsLocales")}</p>
                 </div>
@@ -88,25 +90,32 @@ export default function AppsBento() {
             </BentoTile>
           </Reveal>
 
-          {/* Kontakt-Teaser */}
+          {/* In Entwicklung – kommende Apps als Ausblick */}
           <Reveal variant="up" delay={0.18} className="sm:col-span-2 lg:col-span-4">
             <BentoTile className="h-full">
-              <TransitionLink
-                href="/#contact"
-                className="group flex h-full flex-col justify-between gap-6 p-7 sm:flex-row sm:items-center"
-                data-cursor
-              >
-                <div>
-                  <h3 className="font-display text-2xl font-medium text-ink md:text-3xl">
-                    {t("contactTitle")}
-                  </h3>
-                  <p className="mt-1 text-sm text-ink-faint">{tContact("sub")}</p>
-                </div>
-                <span className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-base-900 transition-transform duration-500 ease-premium group-hover:scale-105">
-                  {t("contactCta")}
-                  <ArrowUpRight size={16} aria-hidden />
-                </span>
-              </TransitionLink>
+              <div className="flex h-full flex-col justify-between gap-6 p-7 sm:flex-row sm:items-center">
+                <h3 className="shrink-0 font-display text-2xl font-medium text-ink md:text-3xl">
+                  {t("roadmapTitle")}
+                </h3>
+                <ul className="flex flex-wrap gap-2.5 sm:justify-end">
+                  {comingSoon.map((app) => (
+                    <li
+                      key={app.slug}
+                      className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-medium text-ink"
+                    >
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ background: app.accent }}
+                        aria-hidden
+                      />
+                      {app.name}
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+                        {tStatus("coming-soon")}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </BentoTile>
           </Reveal>
         </div>

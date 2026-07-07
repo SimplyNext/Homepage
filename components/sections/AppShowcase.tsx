@@ -269,7 +269,7 @@ export default function AppShowcase({ app }: { app: AppData }) {
 
           <div
             ref={shotsTrack}
-            className="app-shots-track flex flex-col gap-6 pb-section md:flex-row md:items-center md:gap-10 md:pb-0 md:pl-[90vw] md:pr-[62vw] md:will-change-transform"
+            className="app-shots-track flex flex-col items-center gap-6 pb-section md:flex-row md:items-center md:gap-10 md:pb-0 md:pl-[90vw] md:pr-[62vw] md:will-change-transform"
           >
             {app.shots.map((s, i) => (
               <PhoneFrame

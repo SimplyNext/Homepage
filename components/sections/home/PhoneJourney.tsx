@@ -242,7 +242,7 @@ function MobileAppCard({
   const shotAlt = (content.shotAlts?.[0] as string | undefined) ?? app.name;
 
   return (
-    <Reveal variant="up" className="flex flex-col items-start">
+    <Reveal variant="up" className="flex flex-col items-center text-center motion-reduce:md:items-start motion-reduce:md:text-left">
       <div className="relative mx-auto w-[min(240px,70vw)] overflow-hidden rounded-[2.2rem] border-8 border-base-700 bg-base-700 shadow-2xl">
         <div className="relative aspect-[1080/2640] overflow-hidden rounded-[1.7rem]">
           <Image
