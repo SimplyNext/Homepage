@@ -10,7 +10,7 @@ export type LegalSection = { heading: string; paragraphs?: string[]; list?: stri
 
 const address = [
   site.legal.companyName,
-  site.legal.responsible,
+  `Inhaber: ${site.legal.responsible}`,
   site.legal.street,
   `${site.legal.zip} ${site.legal.city}`,
   site.legal.country,
@@ -22,8 +22,8 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
       {
         heading: "Legal Notice",
         list: [
-          "Nuri Toker",
-          "App and Web Development",
+          "SimplyNext",
+          "Owner: Nuri Toker",
           "Mechenseerstr. 12",
           "88316 Isny im Allgäu",
         ],
@@ -59,8 +59,8 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
     {
       heading: "Impressum",
       list: [
-        "Nuri Toker",
-        "App und Web Entwicklung",
+        "SimplyNext",
+        "Inhaber: Nuri Toker",
         "Mechenseerstr. 12",
         "88316 Isny im Allgäu",
       ],
@@ -93,14 +93,23 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
 }
 
 export function impressumSections(appName?: string): LegalSection[] {
-  return [
+  const sections: LegalSection[] = [
     { heading: "Angaben gemäß § 5 DDG", list: address },
     { heading: "Kontakt", list: [`Telefon: ${site.legal.phone}`, `E-Mail: ${site.legal.email}`] },
-    {
+  ];
+
+  // Nur zeigen, wenn tatsächlich vorhanden (Kleinunternehmer i. d. R. ohne beides).
+  if (site.legal.vatId) {
+    sections.push({
       heading: "Umsatzsteuer-ID",
       paragraphs: [`Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: ${site.legal.vatId}`],
-    },
-    { heading: "Handelsregister", paragraphs: [site.legal.register] },
+    });
+  }
+  if (site.legal.register) {
+    sections.push({ heading: "Handelsregister", paragraphs: [site.legal.register] });
+  }
+
+  sections.push(
     {
       heading: "Verantwortlich nach § 18 Abs. 2 MStV",
       list: [site.legal.responsible, site.legal.street, `${site.legal.zip} ${site.legal.city}`],
@@ -118,7 +127,9 @@ export function impressumSections(appName?: string): LegalSection[] {
         `Die durch ${site.legal.companyName} erstellten Inhalte${appName ? ` der App ${appName}` : ""} unterliegen dem deutschen Urheberrecht. Vervielfältigung und Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung.`,
       ],
     },
-  ];
+  );
+
+  return sections;
 }
 
 export function datenschutzSections(app?: AppData): LegalSection[] {
@@ -253,7 +264,7 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
       {
         heading: "Notice on the Responsible Party",
         paragraphs: ["The responsible party for data processing on this website is:"],
-        list: ["SimplyNext", "Phone: +49 1743389049", "E-Mail: info@simplynext.de"],
+        list: ["SimplyNext", "Owner: Nuri Toker", "Mechenseerstr. 12", "88316 Isny im Allgäu", "Phone: +49 1743389049", "E-Mail: info@simplynext.de"],
         afterList: [
           "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, e-mail addresses, etc.).",
         ],
@@ -421,7 +432,7 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
     {
       heading: "Hinweis zur verantwortlichen Stelle",
       paragraphs: ["Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:"],
-      list: ["SimplyNext", "Telefon: +49 1743389049", "E-Mail: info@simplynext.de"],
+      list: ["SimplyNext", "Inhaber: Nuri Toker", "Mechenseerstr. 12", "88316 Isny im Allgäu", "Telefon: +49 1743389049", "E-Mail: info@simplynext.de"],
       afterList: [
         "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.",
       ],
