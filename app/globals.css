@@ -2,10 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Farb-System: semantische Tokens als CSS-Variablen (R G B, ohne rgb()-Wrapper),
+ * damit Tailwind sie über rgb(var(--x) / <alpha-value>) mit Opacity-Modifiern
+ * (z. B. bg-base-900/60) nutzen kann. :root = Dark (Standard/Fallback gemäß
+ * "System folgen, Dark als Fallback"), html.light überschreibt für Light-Mode.
+ * Alle Werte sind gegen ihren jeweiligen Hintergrund auf WCAG AA geprüft
+ * (Normaltext ≥4.5:1, große/graphische Elemente ≥3:1).
+ *
+ * "paper" / "paper-ink" sind bewusst NICHT reaktiv: "paper" ist ein fester,
+ * heller Farbfleck für invertierte Pill-Buttons und den Custom-Cursor
+ * (mix-blend-difference funktioniert unabhängig vom Theme), "paper-ink" ist
+ * das passende feste Dunkel dazu (Text auf den Paper-Buttons).
+ */
 :root {
   --font-display: "Space Grotesk Variable", Georgia, serif;
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --color-base-900: 11 11 12; /* Seiten-Hintergrund */
+  --color-base-800: 17 17 19; /* Card-/Panel-Hintergrund */
+  --color-paper: 237 234 227; /* statisch, immer hell */
+  --color-paper-ink: 15 14 12; /* statisch, immer dunkel */
+  --color-ink: 237 234 227; /* Primärtext */
+  --color-ink-muted: 140 138 133; /* ~5.7:1 auf base-900 */
+  --color-ink-faint: 134 132 126; /* ~5.3:1 auf base-900 (Audit-Fix, war #5A5955 ≈2.8:1) */
+  --color-line: rgba(237, 234, 227, 0.16);
+  --color-accent: 59 91 255; /* #3B5BFF */
+  --color-accent-soft: 111 134 255; /* #6F86FF */
+  --color-accent-alt: 34 164 99; /* #22A463 */
+  --color-focus-ring: 111 134 255;
+  --color-grid-line: rgba(237, 234, 227, 0.05);
+}
+
+html.light {
+  --color-base-900: 246 244 239; /* #F6F4EF */
+  --color-base-800: 237 234 227; /* #EDEAE3 */
+  --color-ink: 23 23 26; /* #17171A, ~17:1 auf base-900 */
+  --color-ink-muted: 74 72 68; /* #4A4844, ~8.3:1 auf base-900 */
+  --color-ink-faint: 102 96 89; /* #666059, ~5.7:1 auf base-900 */
+  --color-line: rgba(11, 11, 12, 0.14);
+  --color-accent: 42 63 204; /* #2A3FCC, ~7.1:1 auf base-900 */
+  --color-accent-soft: 74 92 214; /* #4A5CD6, ~5:1 auf base-900 */
+  --color-accent-alt: 21 122 69; /* #157A45, ~4.9:1 auf base-900 */
+  --color-focus-ring: 42 63 204;
+  --color-grid-line: rgba(11, 11, 12, 0.05);
 }
 
 * {
@@ -13,16 +54,27 @@
 }
 
 html {
-  background: #0b0b0c;
+  background: rgb(var(--color-base-900));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  -webkit-font-smoothing: auto;
 }
 
 body {
-  background: #0b0b0c;
-  color: #edeae3;
+  background: rgb(var(--color-base-900));
+  color: rgb(var(--color-ink));
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  /* "hidden" statt "clip" bricht position:fixed-Pinning von GSAP
+     ScrollTrigger in manchen Browsern (Containing-Block-Quirk). */
+  overflow-x: clip;
 }
 
 /* Lenis: native smooth-scroll deaktivieren, solange Lenis aktiv ist */
@@ -49,15 +101,15 @@ html.lenis body {
 }
 
 ::selection {
-  background: #edeae3;
-  color: #0b0b0c;
+  background: rgb(var(--color-ink));
+  color: rgb(var(--color-base-900));
 }
 
 /* Feines Hintergrund-Raster, dezent (kein „Tech-Bro"-Glow) */
 .grid-lines {
   background-image:
-    linear-gradient(to right, rgba(237, 234, 227, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(237, 234, 227, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
@@ -66,13 +118,147 @@ html.lenis body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* ============================================================
+   Runde 7 – „Cinematic Studio"-Utilities für die Homepage
+   ============================================================ */
+
+/* Statischer Fallback hinter/statt der WebGL-Aurora (Ladezustand,
+   kein WebGL, contextlost). Farblich an die Shader-Paletten angelehnt. */
+.aurora-fallback {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(29, 47, 143, 0.5), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 80% 70%, rgba(15, 81, 56, 0.4), transparent 65%),
+    rgb(var(--color-base-900));
+}
+html.light .aurora-fallback {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(201, 210, 244, 0.75), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 80% 70%, rgba(207, 228, 214, 0.65), transparent 65%),
+    rgb(var(--color-base-900));
+}
+
+/* Liquid-Glass: fast transparente Fläche + Blur + Gradient-Randlinie
+   (mask-composite-Trick). Light-Mode: dunkle Randlinie, da die weiße auf
+   Papier unsichtbar wäre. Unterlage bg-base-800/40 kommt im Markup dazu,
+   damit Text immer auf bekannter Basis sitzt (Kontrast-Garantie). */
+.liquid-glass {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+html.light .liquid-glass {
+  background: rgba(11, 11, 12, 0.02);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+html.light .liquid-glass::before {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 12, 0.28) 0%,
+    rgba(11, 11, 12, 0.1) 20%,
+    rgba(11, 11, 12, 0) 40%,
+    rgba(11, 11, 12, 0) 60%,
+    rgba(11, 11, 12, 0.1) 80%,
+    rgba(11, 11, 12, 0.28) 100%
+  );
+}
+/* Ohne backdrop-filter: opake, ruhige Fläche statt Glas */
+@supports not (backdrop-filter: blur(1px)) {
+  .liquid-glass {
+    background: rgb(var(--color-base-800) / 0.92);
+  }
+}
+
+/* Feines Noise auf Bento-Tiles (soft-light, dezent) */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Endlos-Marquee (Track wird im Markup dupliziert, Duplikat aria-hidden).
+   Läuft nicht bei Hover/Fokus; reduced-motion killt die Animation global. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Scroll-Hinweis: kleiner Strich wandert die Linie hinab */
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+.animate-scroll-hint {
+  animation: scroll-hint 1.8s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+}
+
+/* Weicher Kontrast-Scrim hinter Textblöcken auf der Aurora –
+   theme-reaktiv (dunkelt im Dark-Mode ab, hellt im Light-Mode auf). */
+.text-scrim {
+  background: radial-gradient(
+    ellipse 120% 120% at 50% 50%,
+    rgb(var(--color-base-900) / 0.6),
+    transparent 70%
+  );
+}
+
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
 
 :focus-visible {
-  outline: 2px solid #3b5bff;
+  outline: 2px solid rgb(var(--color-focus-ring));
   outline-offset: 3px;
 }
 

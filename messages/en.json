@@ -1,0 +1,222 @@
+{
+  "common": {
+    "skipLink": "Skip to content",
+    "themeToggle": { "toLight": "Switch to light mode", "toDark": "Switch to dark mode" },
+    "localeSwitch": { "toEnglish": "Switch to English", "toGerman": "Auf Deutsch wechseln" },
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "nav": { "apps": "Apps", "studio": "Studio", "contact": "Contact" },
+  "footer": {
+    "tagline": "SimplyNext is an app studio building premium, cross-platform applications with Flutter and Expo.",
+    "columnApps": "Apps",
+    "columnStudio": "Studio",
+    "columnLegal": "Legal",
+    "studioApproach": "Approach",
+    "studioContact": "Contact",
+    "legalImpressum": "Legal notice",
+    "legalDatenschutz": "Privacy",
+    "legalAgb": "Terms",
+    "copyright": "All rights reserved.",
+    "stack": "Flutter · Expo"
+  },
+  "hero": {
+    "eyebrow": "App studio · Flutter · Expo",
+    "headlineLine1": "We build apps",
+    "headlineLine2": "that stay with you.",
+    "lead": "SimplyNext designs and builds premium, cross-platform apps – uncompromising in performance, detail and feel.",
+    "ctaWork": "See our work",
+    "ctaContact": "Contact",
+    "scrollHint": "Scroll"
+  },
+  "journey": {
+    "eyebrow": "The apps",
+    "heading": "Five apps. One standard.",
+    "counter": "{current} / {total}",
+    "visitApp": "Explore the app"
+  },
+  "bento": {
+    "eyebrow": "Overview",
+    "heading": "What we build",
+    "platformsTitle": "Platforms",
+    "android": "Android — available",
+    "iosSoon": "iOS coming soon",
+    "statsApps": "{count} apps shipped",
+    "statsLocales": "German · English",
+    "techTitle": "Stack",
+    "contactTitle": "Have a project in mind?",
+    "contactCta": "Say hello",
+    "viewApp": "View",
+    "scrollHint": "Scroll"
+  },
+  "statement": {
+    "text": "An app isn't finished until it feels effortless. Every motion, every millisecond, every detail serves that one goal."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Say hello.",
+    "sub": "We reply within 48 hours."
+  },
+  "status": { "live": "Available", "beta": "Beta", "coming-soon": "Coming soon" },
+  "appShowcase": {
+    "backToApps": "All apps",
+    "iosSoon": "iOS soon",
+    "iosSoonNote": "iOS version coming soon.",
+    "featuresHeading": "Features",
+    "pricingHeading": "Pricing",
+    "free": "Free",
+    "premium": "Premium",
+    "insightsHeading": "A closer look",
+    "legalIntro": "Legal information for {name}:"
+  },
+  "legal": {
+    "back": "Back",
+    "backToHome": "Back to homepage",
+    "backToApp": "Back to {name}",
+    "updated": "Last updated: {date}",
+    "note": "Note:",
+    "noteText": "This text is a template and does not constitute legal advice. Please fill in all placeholders and have it reviewed by a professional before publishing.",
+    "enNotice": "Legally binding version in German below.",
+    "impressum": { "label": "legal notice", "title": "Legal notice", "titleWithApp": "Legal notice – {name}" },
+    "agb": {
+      "label": "terms",
+      "title": "Terms and conditions",
+      "titleWithApp": "Terms of use – {name}",
+      "intro": "Individual apps may have supplementary terms, linked on the respective app page.",
+      "introWithApp": "The terms for using the app “{name}”."
+    },
+    "datenschutz": {
+      "label": "privacy",
+      "title": "Privacy policy",
+      "titleWithApp": "Privacy – {name}",
+      "intro": "This policy applies to this website. Our apps have their own linked privacy policies.",
+      "introWithApp": "How we handle your data in the app “{name}”."
+    }
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "cta": "Back to homepage"
+  },
+  "apps": {
+    "eatsafely": {
+      "tagline": "Never guess again. Always eat safely.",
+      "summary": "A personal allergen traffic light, AI weekly meal plans and a food checker for life with intolerances.",
+      "category": "Health & Nutrition",
+      "description": [
+        "Gluten, lactose, fructose, histamine, sorbitol – or simply: your body reacts, and sometimes you don't even know exactly why. EatSafely makes every meal safe again, instead of a research project.",
+        "You set up your personal allergen traffic light, and the AI plans, checks and rewrites recipes using only what you can tolerate – seasonal, regional and reimagined every day.",
+        "For everyone who doesn't want to fight their intolerances, but simply live with them. Because food should bring joy – not anxiety."
+      ],
+      "features": [
+        { "title": "Allergen traffic light", "text": "Rate every problematic ingredient: 🔴 off-limits, 🟡 small amounts only, 🟢 fine – including personal notes the AI understands." },
+        { "title": "AI weekly plan", "text": "A complete plan for breakfast, lunch and dinner – built exclusively from what you can tolerate. Seasonal and regional." },
+        { "title": "Food checker", "text": "Scan a barcode, photograph an ingredient list, or type it in – an instant result against your personal exclusion list." },
+        { "title": "Leftover ideas", "text": "Type or speak what's still in your fridge – and get a creative, tolerable recipe in seconds." },
+        { "title": "Recipe transformer", "text": "Paste a URL or recipe text – EatSafely rewrites any recipe for your intolerances. Swapped ingredients are marked." },
+        { "title": "Shopping list & favorites", "text": "Ingredients move from the weekly plan to your list with one tap. Check off, export as PDF, save favorite recipes." }
+      ],
+      "pricing": {
+        "free": ["Allergen traffic light & personal blacklist", "Food checker via barcode & photo"],
+        "premium": ["AI weekly plan", "Recipe transformer & leftover ideas", "Export features (PDF, shopping list)"],
+        "note": "Start for free. Upgrade if you need more."
+      },
+      "shots": ["Weekly plan", "Food checker", "Allergen traffic light"]
+    },
+    "wefixit": {
+      "tagline": "Your smart mechanic, right in your pocket.",
+      "summary": "OBD2 diagnostics, an AI mechanic and repair guides – so you know exactly what's going on with your car.",
+      "category": "Auto & Mobility",
+      "description": [
+        "No more expensive workshop visits without a plan. WeFixIt connects your phone via Bluetooth to your OBD2 adapter and reads every stored fault code in seconds – free, with no waiting.",
+        "Then let the AI take over: Toni, your personal AI mechanic, answers questions, interprets fault codes and delivers step-by-step repair guides with a tool list and cost estimate.",
+        "For anyone who doesn't want to walk into a workshop blind – for tinkerers, budget-conscious drivers, and anyone who wants to understand their car better. Because you have the right to know what's going on with it."
+      ],
+      "features": [
+        { "title": "OBD2 diagnostics", "text": "Read and clear every stored fault code via Bluetooth – in seconds, no workshop, no waiting." },
+        { "title": "Ask Toni!", "text": "Your round-the-clock AI mechanic. Send a question, a photo, or a fault code – and get precise answers about your car." },
+        { "title": "AI diagnosis", "text": "From fault code to fix: a clear explanation, likely causes, costs, difficulty level and repair guide." },
+        { "title": "Live data", "text": "Engine temperature, RPM, lambda values and more in real time – straight from the ECU, refreshed every 500ms." },
+        { "title": "Maintenance planner", "text": "Reminders by date or mileage, store receipts and photos, export as PDF or CSV – recurring schedules set automatically." },
+        { "title": "Cost tracking", "text": "Fuel with consumption calculations, insurance, workshop visits and more – clear charts show what your car really costs." }
+      ],
+      "pricing": {
+        "free": ["OBD2 diagnostics (read & clear fault codes)", "6 AI requests per week – renews automatically"],
+        "premium": ["Pro subscription: unlimited AI diagnoses", "All cost categories & export features", "Lifetime unlock – pay once, use forever"],
+        "note": "Start for free. Upgrade if you need more."
+      },
+      "shots": ["Vehicle dashboard", "AI mechanic Toni", "Diagnostics menu", "Live data", "Vehicle costs"]
+    },
+    "nook": {
+      "tagline": "Your AI travel companion – no tourist traps.",
+      "summary": "AI trip planner, live crowd indicator and automatic audio guides – explore cities like a local, not like a tourist.",
+      "category": "Travel & Navigation",
+      "description": [
+        "Discover cities the way they're meant to feel – no crowds, no tourist traps, no rigid routes. NOOK is your intelligent, invisible travel companion: it plans, guides and accompanies you like a local friend.",
+        "Tell NOOK where you're going, how long you're staying and what you love – and the AI builds a personalized day plan with optimized routes in seconds. On location, the live crowd indicator shows at a glance which places are calm and which are packed, and your audio guide starts automatically the moment you approach a sight.",
+        "NOOK never books on its own and never decides without you – the AI suggests, you stay in control. All location data is anonymized, GDPR-compliant, and everything works offline."
+      ],
+      "features": [
+        { "title": "AI day planner", "text": "Tailor-made itineraries in seconds – with optimized routes, schedules and hotel recommendations right along your path. Plan together and vote on stops democratically." },
+        { "title": "Live crowd indicator", "text": "Real-time occupancy for every sight: green means relaxed exploring, red means NOOK knows a quieter alternative. Includes a crowd alert before you're stuck in the masses." },
+        { "title": "Automatic audio guide", "text": "Step within 50 meters of a sight and your personal audio guide starts by itself. Professional voices in 7 languages, fully available offline." },
+        { "title": "Smart scanner", "text": "Point your camera at a menu – NOOK instantly warns you about hidden fees, inflated prices and the infamous \"coperto\". Output in your language." },
+        { "title": "Transit assistant", "text": "The fastest local connections plus direct links to official tickets – no more guesswork in unfamiliar transit networks." },
+        { "title": "Explorer stamp book", "text": "Every sight you visit leaves a GPS-validated stamp. Unlock badges and build your digital travel journal." }
+      ],
+      "pricing": {
+        "free": ["AI itineraries & map with live crowd indicator", "Plan together, vote & split expenses", "Save everything offline – no roaming needed"],
+        "premium": ["Single guides from €1.99", "City passes (e.g. \"Venice complete\") from €9.99", "Worldwide subscription from €4.99/month or €39.99/year"],
+        "note": "Start for free. Go premium when you want to dive deeper."
+      },
+      "shots": ["AI trip planner", "Map with crowd indicator", "Audio guide"]
+    },
+    "cocos-world": {
+      "tagline": "Language learning for kids – playful, with CoCo.",
+      "summary": "A child-friendly language app with five learning worlds, AI pronunciation training and bonus mini-games – learning Turkish as an adventure.",
+      "category": "Education · Kids & Family",
+      "description": [
+        "Is your child growing up bilingual, or about to discover a new language? CoCo's World turns learning Turkish into a grand adventure: with CoCo, the lovable animated mascot, kids explore five colorful worlds – from CoCo's house to the Istanbul adventure.",
+        "The learning path leads step by step from vocabulary to real sentences to pronunciation: your child speaks, the AI gives instant feedback – and in free conversation mode, CoCo even chats with your child in Turkish. After every completed world, bonus mini-games await as a reward.",
+        "Made for parents: no ads, a time-limit feature, no account needed for basic access, and voice recordings are never stored permanently. Suitable from age 3 with a parent, independently up to around age 10."
+      ],
+      "features": [
+        { "title": "Five learning worlds", "text": "CoCo's house, the garden, the city, the zoo and the Istanbul adventure – each world brings new vocabulary, sentences and its own bonus mini-game on a growing world map." },
+        { "title": "Pronunciation AI", "text": "Your child repeats after CoCo, the app analyzes the pronunciation with AI and gives instant, encouraging feedback – with a natural Turkish voice." },
+        { "title": "Free conversation mode", "text": "CoCo holds real little conversations in Turkish – reacting, speaking and praising like a patient learning buddy." },
+        { "title": "SuffixPuzzle & games", "text": "Turkish endings (agglutination) explained as a child-friendly puzzle, plus ObjectSearch, SkateRunner, FruitCatch, FlappyCoCo and more." },
+        { "title": "Stars, coins & streaks", "text": "Stars for completed lessons, coins to unlock new worlds and a growing plant that shows overall progress." },
+        { "title": "Made for parents", "text": "No ads, a time-limit feature, the microphone is used only for pronunciation practice, and no account is needed for basic access. PEGI 3." }
+      ],
+      "pricing": {
+        "free": ["Basic access without an account", "First learning world with vocabulary, sentences & a mini-game"],
+        "premium": ["All five learning worlds & bonus mini-games", "AI pronunciation training & free conversation mode", "Full progress with stars, coins & streaks"],
+        "note": "Start for free – a pure learning experience without ads."
+      },
+      "shots": ["World map with learning worlds", "Lesson with CoCo", "Bonus mini-game"]
+    },
+    "werkflow": {
+      "tagline": "AI quotes in seconds – from photo to finished PDF.",
+      "summary": "The smart app for tradespeople: photograph the job site, describe the job by voice – the AI builds the professional PDF quote.",
+      "category": "Business & Trades",
+      "description": [
+        "No more hours of typing: take a photo of the job site, describe the job with a voice note – and the AI automatically turns it into a complete, professional quote as a PDF. In under 2 minutes, right on site.",
+        "Werkflow was built for tradespeople, installers and small businesses across all trades – electricians, painters, plumbers, carpenters or roofers. Customer management, an order dashboard, a materials catalog and digital signatures included: your entire office in your pocket.",
+        "More time on site, less time at the desk: create quotes on the spot and send them by email – no catching up in the evening. Your data is encrypted and stored securely in the cloud."
+      ],
+      "features": [
+        { "title": "AI photo analysis", "text": "Photograph the job site or damaged area – the AI recognizes the required materials and work steps and suggests matching quote line items." },
+        { "title": "Voice input", "text": "Briefly describe the job by voice – the AI turns your description into structured line items. Works even with dirty hands." },
+        { "title": "PDF quotes", "text": "A print-ready PDF in seconds, with your company logo, hourly rates, materials and digital signature – sent straight to the customer by email." },
+        { "title": "Customer management", "text": "All customers in one place: store contact details and create quotes with one click, straight from the customer list." },
+        { "title": "Order dashboard", "text": "Sent, accepted, declined? Your control center shows every quote and its status at a glance – with a filterable history." },
+        { "title": "Materials catalog", "text": "Store your standard materials with units and prices – the AI uses them automatically for consistent, correct calculations." }
+      ],
+      "pricing": {
+        "free": ["Try it for free", "First AI quotes included"],
+        "premium": ["Solo: 20 AI analyses/month, unlimited PDFs", "Business: 100 AI analyses/month, up to 5 team members", "Pro: unlimited AI analyses & full team access"],
+        "note": "Plans for every business – from solo trader to team."
+      },
+      "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"]
+    }
+  }
+}

@@ -1,5 +1,18 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Liest eine "R G B"-CSS-Variable (siehe globals.css) und erlaubt dabei
+ * Tailwinds Opacity-Modifier (z. B. bg-base-900/60) über <alpha-value>.
+ * Rückgabetyp `any`, weil Tailwinds eigene Config-Typen dieses (offiziell
+ * unterstützte) Function-Value-Pattern für Farben nicht abbilden.
+ */
+function rgbVar(variable: string): any {
+  return ({ opacityValue }: { opacityValue?: string }) =>
+    opacityValue !== undefined
+      ? `rgb(var(${variable}) / ${opacityValue})`
+      : `rgb(var(${variable}))`;
+}
+
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -8,29 +21,41 @@ const config: Config = {
   ],
   theme: {
     // Bewusst zurückhaltende, „cinematische" Palette – kein SaaS-Buntspektrum.
+    // base/paper/ink/line/accent sind über CSS-Variablen theme-reaktiv
+    // (siehe globals.css :root / html.light) – Dark/Light schaltet allein
+    // über die CSS-Klasse am <html>-Element, ohne dass Komponenten-Code
+    // Tailwinds dark:-Variante nutzen muss.
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      // Grundwerte: tiefes Off-Black bis warmes Off-White
       base: {
-        DEFAULT: "#0B0B0C", // Hintergrund
-        900: "#0B0B0C",
-        800: "#111113",
+        DEFAULT: rgbVar("--color-base-900"), // Seiten-Hintergrund (reaktiv)
+        900: rgbVar("--color-base-900"),
+        800: rgbVar("--color-base-800"), // Card-/Panel-Hintergrund (reaktiv)
+        // 700/600: feste, dunkle Neutraltöne für Deko-Chrome (z. B. Phone-Bezel) –
+        // bewusst NICHT reaktiv, da ein "Gerät"-Mockup unabhängig vom Seiten-
+        // Theme dunkel bleiben soll.
         700: "#17171A",
         600: "#1F1F23",
       },
-      paper: "#EDEAE3", // warmes Off-White für Text/Invertierungen
+      // Statisch heller Farbfleck (Invertierte Pill-Buttons, Custom-Cursor via
+      // mix-blend-difference) – bewusst NICHT theme-reaktiv.
+      paper: rgbVar("--color-paper"),
+      // Passendes statisches Dunkel für Text auf `paper`-Flächen.
+      paperInk: rgbVar("--color-paper-ink"),
+      // Primärer, reaktiver Textfarb-Stack.
       ink: {
-        DEFAULT: "#EDEAE3",
-        muted: "#8C8A85",
-        faint: "#5A5955",
+        DEFAULT: rgbVar("--color-ink"),
+        muted: rgbVar("--color-ink-muted"),
+        faint: rgbVar("--color-ink-faint"),
       },
-      line: "rgba(237,234,227,0.10)",
-      // EINE zurückhaltende Akzentfamilie, aus dem Logo abgeleitet
+      line: "var(--color-line)",
+      // EINE zurückhaltende Akzentfamilie, aus dem Logo abgeleitet – reaktiv,
+      // pro Theme auf AA-Textkontrast (≥4.5:1) gegen base-900 abgestimmt.
       accent: {
-        DEFAULT: "#3B5BFF", // Blau (sparsam einsetzen)
-        soft: "#6F86FF",
-        alt: "#22A463", // Grün als Sekundärsignal
+        DEFAULT: rgbVar("--color-accent"),
+        soft: rgbVar("--color-accent-soft"),
+        alt: rgbVar("--color-accent-alt"),
       },
     },
     extend: {

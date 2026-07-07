@@ -9,8 +9,8 @@ export const site = {
   tagline: "Premium-Apps. Plattformübergreifend gebaut.",
   description:
     "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
-  url: "https://simplynext.app", // [PLATZHALTER]
-  email: "hello@simplynext.app", // [PLATZHALTER]
+  url: "https://simplynext.de", // [PLATZHALTER]
+  email: "info@simplynext.de", // [PLATZHALTER]
   legal: {
     companyName: "SimplyNext", // [PLATZHALTER] z.B. "SimplyNext GmbH"
     responsible: "[PLATZHALTER: Vor- und Nachname]",

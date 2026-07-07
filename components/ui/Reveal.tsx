@@ -49,9 +49,18 @@ export default function Reveal({
     { scope: ref }
   );
 
+  // ElementType als Union aller Tags kollabiert die children-Props zu
+  // `never` – auf die tatsächlich genutzten Props eingrenzen (ref ist in
+  // React 19 eine normale Prop, auch für intrinsische Tags).
+  const Comp = Tag as unknown as React.FC<{
+    ref?: React.Ref<HTMLElement>;
+    className?: string;
+    children?: ReactNode;
+  }>;
+
   return (
-    <Tag ref={ref} className={className}>
+    <Comp ref={ref} className={className}>
       {children}
-    </Tag>
+    </Comp>
   );
 }

@@ -17,7 +17,11 @@ export default function CustomCursor() {
 
   useGSAP(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
-    if (!fine || !dot.current || !ring.current) return;
+    // Bei reduzierter Bewegung den System-Cursor behalten (Audit-Fix): der
+    // eigene Cursor blendet ihn sonst komplett aus, unabhängig von der
+    // Präferenz gegen Bewegungseffekte.
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduced || !dot.current || !ring.current) return;
 
     document.documentElement.classList.add("has-custom-cursor");
 
@@ -49,16 +53,23 @@ export default function CustomCursor() {
 
     // Hover-Reaktion über Delegation – greift auch für später gemountete Elemente
     const over = (e: Event) => {
-      const t = (e.target as HTMLElement).closest(
-        "a, button, [data-cursor]"
-      );
-      if (t) enter();
+      const el = e.target as HTMLElement;
+      if (el.closest("a, button, [data-cursor]")) enter();
+      // Über fix-dunklen Flächen (z. B. App-Hero im Light-Mode) den Cursor auf
+      // Weiß umschalten, damit er dort sichtbar bleibt.
+      if (el.closest("[data-cursor-dark]")) {
+        dot.current?.parentElement?.classList.add("cursor-on-dark");
+      }
     };
     const out = (e: Event) => {
-      const t = (e.target as HTMLElement).closest(
-        "a, button, [data-cursor]"
-      );
-      if (t) leave();
+      const el = e.target as HTMLElement;
+      if (el.closest("a, button, [data-cursor]")) leave();
+      if (el.closest("[data-cursor-dark]")) {
+        const to = (e as PointerEvent).relatedTarget as HTMLElement | null;
+        if (!to || !to.closest("[data-cursor-dark]")) {
+          dot.current?.parentElement?.classList.remove("cursor-on-dark");
+        }
+      }
     };
     document.addEventListener("pointerover", over);
     document.addEventListener("pointerout", out);
@@ -76,14 +87,21 @@ export default function CustomCursor() {
   });
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[130] hidden md:block" aria-hidden>
+    <div
+      className="pointer-events-none fixed inset-0 z-[130] hidden md:block [&.cursor-on-dark_.cursor-ring]:border-paper [&.cursor-on-dark_.cursor-dot]:bg-paper"
+      aria-hidden
+    >
+      {/* Ring + Punkt in ink (theme-adaptiv: dunkel im Light-, hell im
+          Dark-Mode) → auf normalem Grund immer knackig sichtbar. Über
+          fix-dunklen Flächen ([data-cursor-dark]) schaltet .cursor-on-dark
+          auf paper (weiß) um. Dezenter Schatten für Kantenschärfe. */}
       <div
         ref={ring}
-        className="fixed left-0 top-0 h-9 w-9 rounded-full border border-paper opacity-0 mix-blend-difference"
+        className="cursor-ring fixed left-0 top-0 h-9 w-9 rounded-full border border-ink opacity-0 drop-shadow-[0_0_1px_rgba(0,0,0,0.35)]"
       />
       <div
         ref={dot}
-        className="fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-paper opacity-0 mix-blend-difference"
+        className="cursor-dot fixed left-0 top-0 h-2 w-2 rounded-full bg-ink opacity-0 drop-shadow-[0_0_1px_rgba(0,0,0,0.35)]"
       />
     </div>
   );

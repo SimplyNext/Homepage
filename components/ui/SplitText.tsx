@@ -79,8 +79,18 @@ export default function SplitText({
 
   const words = children.split(" ");
 
+  // ElementType als Union aller Tags kollabiert die children-Props zu
+  // `never` – auf die tatsächlich genutzten Props eingrenzen (ref ist in
+  // React 19 eine normale Prop, auch für intrinsische Tags).
+  const Comp = Tag as unknown as React.FC<{
+    ref?: React.Ref<HTMLElement>;
+    className?: string;
+    children?: React.ReactNode;
+    "aria-label"?: string;
+  }>;
+
   return (
-    <Tag ref={ref} className={className} aria-label={children}>
+    <Comp ref={ref} className={className} aria-label={children}>
       {words.map((word, wi) => (
         <span
           key={wi}
@@ -101,6 +111,6 @@ export default function SplitText({
           {wi < words.length - 1 && <span className="inline-block">&nbsp;</span>}
         </span>
       ))}
-    </Tag>
+    </Comp>
   );
 }

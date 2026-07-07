@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { ComponentProps, MouseEvent } from "react";
 import { useTransition } from "@/components/providers/TransitionProvider";
 

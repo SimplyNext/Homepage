@@ -1,0 +1,9 @@
+3D-Modelle / 3D models
+=======================
+
+(derzeit keine)
+
+Die Homepage-Journey nutzt kein 3D-Modell mehr: Das frühere WebGL-iPhone
+wurde durch ein premium CSS-3D-Phone (DOM/CSS-Transforms mit echten App-
+Screenshots) ersetzt – siehe components/sections/home/JourneyPhone.tsx.
+Der Aurora-Hintergrund bleibt ein reiner Shader (components/webgl/AuroraPlane.tsx).

@@ -1,0 +1,127 @@
+"use client";
+
+import { useRef, type ReactNode } from "react";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
+
+/**
+ * template.tsx wird bei JEDER Navigation neu gemountet (anders als layout.tsx)
+ * und spielt die ENTER-Animation: Das persistente Transition-Overlay
+ * (.transition-panel in TransitionProvider) wird aufgedeckt und der neue
+ * Seiteninhalt eingeblendet.
+ *
+ * WICHTIG: Die Overlay-Panels leben im Layout und überdauern den Wechsel.
+ * Bleiben sie versehentlich abgedeckt (scaleY:1) – etwa weil React StrictMode
+ * den Mount doppelt ausführt und eine laufende Reveal-Animation abbricht –,
+ * sieht der Nutzer einen schwarzen Screen, bis er neu lädt. Deshalb wird der
+ * aufgedeckte Endzustand hier IMMER erzwungen (forceRevealed), unabhängig
+ * davon, ob die Animation sauber durchläuft.
+ */
+// StrictMode-Schutz: der Doppelmount des Templates würde den gemerkten
+// Anker beim ersten Lauf konsumieren und beim zweiten auf 0 scrollen.
+// Deshalb wird der konsumierte Anker kurz gecacht (Zeitfenster deckt den
+// Zweitmount derselben Navigation ab, nie eine spätere Navigation).
+let consumedPending: { value: string; at: number } | null = null;
+
+export default function Template({ children }: { children: ReactNode }) {
+  const root = useRef<HTMLDivElement>(null);
+  const { lenis, scrollTo } = useSmoothScroll();
+
+  useIsomorphicLayoutEffect(() => {
+    const el = root.current;
+    const panels = gsap.utils.toArray<HTMLElement>(".transition-panel");
+
+    // Garantierter, sicherer Endzustand: Panels offen, Overlay inaktiv,
+    // Inhalt sichtbar. Wird bei onComplete UND im Cleanup aufgerufen.
+    const forceRevealed = () => {
+      if (panels.length) {
+        gsap.killTweensOf(panels);
+        gsap.set(panels, { transformOrigin: "top", scaleY: 0 });
+      }
+      gsap.set(".transition-overlay", { pointerEvents: "none" });
+      if (el) gsap.set(el, { clearProps: "opacity,visibility,transform,willChange" });
+    };
+
+    // Pins der neuen Seite neu vermessen und an den richtigen Startpunkt
+    // scrollen: gemerkter Anker (Cross-Page) oder ganz nach oben.
+    ScrollTrigger.refresh();
+    let pending = sessionStorage.getItem("pendingScroll");
+    if (pending) {
+      sessionStorage.removeItem("pendingScroll");
+      consumedPending = { value: pending, at: Date.now() };
+    } else if (consumedPending && Date.now() - consumedPending.at < 1000) {
+      pending = consumedPending.value; // StrictMode-Zweitmount derselben Navigation
+    }
+    if (pending) {
+      const target = pending;
+      const jump = () => {
+        const elm = document.querySelector<HTMLElement>(target);
+        if (!elm) return;
+        const top = elm.getBoundingClientRect().top + window.scrollY;
+        // Nativ scrollen: Lenis ist während der Transition per stop() pausiert,
+        // sein scrollTo bewegt dann nichts. Lenis synchronisiert beim start()
+        // auf die native Position, springt also nicht zurück. Lenis zusätzlich
+        // informieren (immediate/force), falls es bereits wieder läuft.
+        window.scrollTo(0, top);
+        if (lenis) scrollTo(top, { immediate: true, force: true });
+      };
+      jump();
+      // Nachziehen: Pins/Fonts verändern die Seitenhöhe nach dem Mount noch –
+      // mehrfach neu vermessen und exakt landen, solange die Reveal-Panels den
+      // Screen (teilweise) abdecken.
+      [200, 500, 900].forEach((ms) =>
+        window.setTimeout(() => {
+          ScrollTrigger.refresh();
+          jump();
+        }, ms)
+      );
+    } else if (lenis) {
+      scrollTo(0, { immediate: true, force: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+    // Nur durchsweepen, wenn die Panels gerade abdecken (echter Seitenwechsel).
+    // Beim StrictMode-Zweitmount oder Direktaufruf sind sie bereits offen –
+    // dann kein erneutes Abdecken (verhindert Flackern), nur Inhalt einblenden.
+    const covered =
+      panels.length > 0 && Number(gsap.getProperty(panels[0], "scaleY")) > 0.5;
+
+    const tl = gsap.timeline({ onComplete: forceRevealed });
+
+    if (covered) {
+      tl.set(panels, { transformOrigin: "top", scaleY: 1 })
+        .to(panels, { scaleY: 0, duration: 0.5, ease: "power3.inOut", stagger: 0.05 })
+        .set(".transition-overlay", { pointerEvents: "none" }, ">-0.1");
+    } else {
+      forceRevealed();
+    }
+
+    // Inhalt einblenden – bewusst NUR Opacity, kein y/transform: jeder
+    // transform-Wert ≠ none macht dieses DIV zum Containing-Block für
+    // position:fixed und bricht damit kurzzeitig ALLE ScrollTriggern-Pins
+    // (Phone & Pinned-Text), solange die Animation läuft. Mit reinem
+    // autoAlpha entsteht dieses Fenster gar nicht erst.
+    tl.from(
+      el,
+      { autoAlpha: 0, duration: 0.5, ease: "power2.out" },
+      covered ? "<0.15" : 0
+    );
+    tl.set(el, { clearProps: "willChange" });
+
+    return () => {
+      tl.kill();
+      // Niemals abgedeckt zurücklassen – sonst schwarzer Screen bis Reload.
+      forceRevealed();
+    };
+    // Bewusst nur beim Mount – Scroll-/Reveal-Logik soll pro Seite einmal laufen.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <div ref={root} data-transition-root>
+      {children}
+    </div>
+  );
+}

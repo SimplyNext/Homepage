@@ -33,6 +33,12 @@ export default function SmoothScrollProvider({
   useIsomorphicLayoutEffect(() => {
     registerGSAP();
 
+    // Browser soll keine alte Scrollposition wiederherstellen – wir steuern den
+    // Startpunkt bei jeder Navigation selbst (siehe template.tsx).
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;

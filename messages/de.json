@@ -1,0 +1,222 @@
+{
+  "common": {
+    "skipLink": "Zum Inhalt springen",
+    "themeToggle": { "toLight": "Zu Light-Mode wechseln", "toDark": "Zu Dark-Mode wechseln" },
+    "localeSwitch": { "toEnglish": "Switch to English", "toGerman": "Zu Deutsch wechseln" },
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
+  },
+  "nav": { "apps": "Apps", "studio": "Studio", "contact": "Kontakt" },
+  "footer": {
+    "tagline": "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
+    "columnApps": "Apps",
+    "columnStudio": "Studio",
+    "columnLegal": "Rechtliches",
+    "studioApproach": "Vorgehen",
+    "studioContact": "Kontakt",
+    "legalImpressum": "Impressum",
+    "legalDatenschutz": "Datenschutz",
+    "legalAgb": "AGB",
+    "copyright": "Alle Rechte vorbehalten.",
+    "stack": "Flutter · Expo"
+  },
+  "hero": {
+    "eyebrow": "App-Studio · Flutter · Expo",
+    "headlineLine1": "Wir bauen Apps,",
+    "headlineLine2": "die in Erinnerung bleiben.",
+    "lead": "SimplyNext entwirft und entwickelt premium, plattformübergreifende Apps – kompromisslos in Performance, Detail und Gefühl.",
+    "ctaWork": "Arbeiten ansehen",
+    "ctaContact": "Kontakt",
+    "scrollHint": "Scrollen"
+  },
+  "journey": {
+    "eyebrow": "Die Apps",
+    "heading": "Fünf Apps. Ein Anspruch.",
+    "counter": "{current} / {total}",
+    "visitApp": "App entdecken"
+  },
+  "bento": {
+    "eyebrow": "Überblick",
+    "heading": "Was wir bauen",
+    "platformsTitle": "Plattformen",
+    "android": "Android — verfügbar",
+    "iosSoon": "iOS in Kürze",
+    "statsApps": "{count} Apps im Store",
+    "statsLocales": "Deutsch · Englisch",
+    "techTitle": "Stack",
+    "contactTitle": "Projekt im Kopf?",
+    "contactCta": "Schreib uns",
+    "viewApp": "Ansehen",
+    "scrollHint": "Scrollen"
+  },
+  "statement": {
+    "text": "Eine App ist erst fertig, wenn sie sich leicht anfühlt. Jede Bewegung, jede Millisekunde, jedes Detail dient diesem einen Ziel."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Sag Hallo.",
+    "sub": "Wir antworten innerhalb von 48 Stunden."
+  },
+  "status": { "live": "Verfügbar", "beta": "Beta", "coming-soon": "Bald" },
+  "appShowcase": {
+    "backToApps": "Alle Apps",
+    "iosSoon": "iOS bald",
+    "iosSoonNote": "iOS-Version in Kürze verfügbar.",
+    "featuresHeading": "Funktionen",
+    "pricingHeading": "Preise",
+    "free": "Kostenlos",
+    "premium": "Premium",
+    "insightsHeading": "Einblicke",
+    "legalIntro": "Rechtliche Informationen zu {name}:"
+  },
+  "legal": {
+    "back": "Zurück",
+    "backToHome": "Zurück zur Startseite",
+    "backToApp": "Zurück zu {name}",
+    "updated": "Stand: {date}",
+    "note": "Hinweis:",
+    "noteText": "Dieser Text ist eine Vorlage und ersetzt keine Rechtsberatung. Bitte alle Platzhalter ausfüllen und vor Veröffentlichung fachkundig prüfen lassen.",
+    "enNotice": "Legally binding version in German below.",
+    "impressum": { "label": "impressum", "title": "Impressum", "titleWithApp": "Impressum – {name}" },
+    "agb": {
+      "label": "agb",
+      "title": "Allgemeine Geschäftsbedingungen",
+      "titleWithApp": "Nutzungsbedingungen – {name}",
+      "intro": "Für einzelne Apps können ergänzende Bedingungen gelten, die auf der jeweiligen App-Seite verlinkt sind.",
+      "introWithApp": "Die Bedingungen für die Nutzung der App „{name}\"."
+    },
+    "datenschutz": {
+      "label": "datenschutz",
+      "title": "Datenschutzerklärung",
+      "titleWithApp": "Datenschutz – {name}",
+      "intro": "Diese Erklärung gilt für diese Website. Für unsere Apps gelten die jeweils dort verlinkten App-Datenschutzerklärungen.",
+      "introWithApp": "Wie wir in der App „{name}\" mit deinen Daten umgehen."
+    }
+  },
+  "notFound": {
+    "title": "Diese Seite gibt es nicht.",
+    "cta": "Zur Startseite"
+  },
+  "apps": {
+    "eatsafely": {
+      "tagline": "Nie wieder raten. Immer sicher essen.",
+      "summary": "Persönliche Allergen-Ampel, KI-Wochenplan und Lebensmittel-Check für ein Leben mit Unverträglichkeiten.",
+      "category": "Gesundheit & Ernährung",
+      "description": [
+        "Gluten, Laktose, Fructose, Histamin, Sorbit – oder einfach: dein Körper reagiert, und du weißt manchmal selbst nicht genau warum. EatSafely macht jede Mahlzeit wieder sicher, statt zur Recherche.",
+        "Du legst deine persönliche Allergen-Ampel an, und die KI plant, prüft und schreibt Rezepte ausschließlich mit dem um, was du verträgst – saisonal, regional und jeden Tag neu denkbar.",
+        "Für alle, die mit Unverträglichkeiten nicht kämpfen, sondern einfach leben wollen. Weil Essen Freude machen soll – nicht Angst."
+      ],
+      "features": [
+        { "title": "Allergen-Ampel", "text": "Jede problematische Zutat einstufen: 🔴 tabu, 🟡 nur kleine Mengen, 🟢 okay – inklusive persönlicher Kommentare, die die KI versteht." },
+        { "title": "KI-Wochenplan", "text": "Vollständiger Wochenplan für Frühstück, Mittag und Abend – ausschließlich mit dem, was du verträgst. Saisonal und regional." },
+        { "title": "Lebensmittel-Check", "text": "Barcode scannen, Zutatenliste fotografieren oder Text eingeben – sofortiges Ergebnis gegen deine persönliche Ausschlussliste." },
+        { "title": "Resteverwertung", "text": "Tippe oder sprich ein, was noch im Kühlschrank ist – und erhalte in Sekunden ein kreatives, verträgliches Rezept daraus." },
+        { "title": "Rezept-Transformer", "text": "URL oder Rezepttext einfügen – EatSafely schreibt jedes Rezept für deine Unverträglichkeiten um. Ersetzte Zutaten werden markiert." },
+        { "title": "Einkaufsliste & Favoriten", "text": "Zutaten landen mit einem Tippen aus dem Wochenplan auf der Liste. Abhaken, als PDF exportieren, Lieblingsrezepte speichern." }
+      ],
+      "pricing": {
+        "free": ["Allergen-Ampel & persönliche Blacklist", "Lebensmittel-Check per Barcode & Foto"],
+        "premium": ["KI-Wochenplan", "Rezept-Transformer & Resteverwertung", "Export-Funktionen (PDF, Einkaufsliste)"],
+        "note": "Kostenlos starten. Bei Bedarf mehr."
+      },
+      "shots": ["Wochenplan", "Lebensmittel-Check", "Allergen-Ampel"]
+    },
+    "wefixit": {
+      "tagline": "Dein smarter Automechaniker in der Hosentasche.",
+      "summary": "OBD2-Diagnose, KI-Mechatroniker und Reparaturanleitungen – damit du weißt, was mit deinem Auto los ist.",
+      "category": "Auto & Mobilität",
+      "description": [
+        "Schluss mit teuren Werkstattbesuchen ohne Plan. WeFixIt verbindet dein Smartphone via Bluetooth mit deinem OBD2-Adapter und liest in Sekunden alle gespeicherten Fehlercodes aus – kostenlos, ohne Wartezeit.",
+        "Und dann lässt du die KI ran: Toni, dein persönlicher KI-Mechatroniker, beantwortet Fragen, deutet Fehlercodes und liefert Schritt-für-Schritt-Reparaturanleitungen samt Werkzeugliste und Kostenschätzung.",
+        "Für alle, die nicht blind in die Werkstatt fahren wollen – für Schrauber, Sparfüchse und alle, die ihr Auto besser verstehen möchten. Weil du das Recht hast zu wissen, was mit deinem Auto los ist."
+      ],
+      "features": [
+        { "title": "OBD2-Diagnose", "text": "Per Bluetooth alle gespeicherten Fehlercodes auslesen und löschen – in Sekunden, ohne Werkstatt und ohne Wartezeit." },
+        { "title": "Ask Toni!", "text": "Dein rund um die Uhr verfügbarer KI-Mechatroniker. Schick eine Frage, ein Foto oder einen Fehlercode – und erhalte präzise Antworten zu deinem Fahrzeug." },
+        { "title": "KI-Diagnose", "text": "Vom Fehlercode zur Lösung: verständliche Erklärung, Ursachen nach Wahrscheinlichkeit, Kosten, Schwierigkeitsgrad und Reparaturanleitung." },
+        { "title": "Live-Daten", "text": "Motortemperatur, Drehzahl, Lambdawerte und mehr in Echtzeit – direkt vom Steuergerät, alle 500 ms aktualisiert." },
+        { "title": "Wartungsplaner", "text": "Erinnerungen nach Datum oder Kilometerstand, Belege und Fotos hinterlegen, als PDF oder CSV exportieren – wiederkehrend automatisch geplant." },
+        { "title": "Kostentracking", "text": "Treibstoff mit Verbrauchsberechnung, Versicherung, Werkstatt und mehr – übersichtliche Diagramme zeigen, was dein Auto wirklich kostet." }
+      ],
+      "pricing": {
+        "free": ["OBD2-Diagnose (Fehlercodes auslesen & löschen)", "6 KI-Anfragen pro Woche – erneuert sich automatisch"],
+        "premium": ["Pro-Abo: unbegrenzte KI-Diagnosen", "Alle Kostenkategorien & Export-Funktionen", "Lifetime Unlock – einmal zahlen, für immer nutzen"],
+        "note": "Kostenlos starten. Bei Bedarf mehr."
+      },
+      "shots": ["Fahrzeug-Dashboard", "KI-Mechatroniker Toni", "Diagnose-Menü", "Live-Daten", "Fahrzeugkosten"]
+    },
+    "nook": {
+      "tagline": "Dein KI-Reisebegleiter – ohne Touristenfallen.",
+      "summary": "KI-Reiseplaner, Live-Besucherampel und automatische Audio-Guides – entdecke Städte wie ein Einheimischer, nicht wie ein Tourist.",
+      "category": "Reisen & Navigation",
+      "description": [
+        "Entdecke Städte so, wie es sich wirklich anfühlt – ohne Gedränge, ohne Touristenfallen, ohne starre Routen. NOOK ist dein intelligenter, unsichtbarer Reisebegleiter: Er plant, führt und begleitet dich wie ein einheimischer Freund.",
+        "Sag NOOK, wo du hinwillst, wie lange du bleibst und wofür dein Herz schlägt – die KI erstellt daraus in Sekunden einen personalisierten Tagesplan mit optimierten Routen. Vor Ort zeigt die Live-Besucherampel auf einen Blick, welche Orte gerade ruhig und welche überfüllt sind, und der Audio-Guide startet automatisch, sobald du eine Sehenswürdigkeit betrittst.",
+        "NOOK bucht nie eigenständig und trifft keine Entscheidungen ohne dich – die KI macht Vorschläge, die Kontrolle bleibt bei dir. Alle Standortdaten werden anonymisiert, DSGVO-konform, und alles ist offline verfügbar."
+      ],
+      "features": [
+        { "title": "KI-Tagesplaner", "text": "Maßgeschneiderte Reiserouten in Sekunden – mit optimierten Wegen, Zeitplänen und Hotel-Empfehlungen direkt auf deiner Route. Gemeinsam planen und demokratisch über Stopps abstimmen." },
+        { "title": "Live-Besucherampel", "text": "Echtzeit-Auslastung für alle Sehenswürdigkeiten: Grün heißt entspannt entdecken, Rot heißt – NOOK kennt eine ruhigere Alternative. Inklusive Crowd-Alert, bevor du in der Menge steckst." },
+        { "title": "Automatischer Audio-Guide", "text": "Tritt in den 50-Meter-Radius einer Sehenswürdigkeit und dein persönlicher Audio-Guide startet von selbst. Professionelle Stimmen in 7 Sprachen, komplett offline verfügbar." },
+        { "title": "Smart Scanner", "text": "Kamera auf die Speisekarte halten – NOOK warnt sofort vor versteckten Gebühren, überteuerten Preisen und dem berüchtigten „Coperto\". Ausgabe in deiner Sprache." },
+        { "title": "ÖPNV-Assistent", "text": "Schnellste Verbindungen vor Ort samt Direktlinks zu offiziellen Tickets – kein Rätselraten in fremden Verkehrsnetzen." },
+        { "title": "Entdecker-Stempelbuch", "text": "Jede besuchte Sehenswürdigkeit hinterlässt einen GPS-validierten Stempel. Abzeichen freischalten und dein digitales Reisetagebuch aufbauen." }
+      ],
+      "pricing": {
+        "free": ["KI-Reiserouten & Karte mit Live-Besucherampel", "Gemeinsam planen, abstimmen & Ausgaben teilen", "Offline speichern – kein Roaming nötig"],
+        "premium": ["Einzel-Guides ab 1,99 €", "Stadtpässe (z. B. „Venedig komplett\") ab 9,99 €", "Weltweites Abo ab 4,99 €/Monat oder 39,99 €/Jahr"],
+        "note": "Kostenlos starten. Premium, wenn du tiefer eintauchen willst."
+      },
+      "shots": ["KI-Reiseplaner", "Karte mit Besucherampel", "Audio-Guide"]
+    },
+    "cocos-world": {
+      "tagline": "Sprachen lernen für Kinder – spielerisch mit CoCo.",
+      "summary": "Kindgerechte Sprachlern-App mit fünf Lernwelten, KI-Aussprachetraining und Bonus-Minispielen – Türkisch lernen als Abenteuer.",
+      "category": "Bildung · Kinder & Familie",
+      "description": [
+        "Dein Kind wächst zweisprachig auf oder soll eine neue Sprache entdecken? CoCo's World macht das Türkischlernen zum großen Abenteuer: Mit CoCo, dem liebevollen animierten Maskottchen, erkunden Kinder fünf bunte Welten – von CoCos Haus bis zum Istanbul-Abenteuer.",
+        "Der Lernpfad führt Schritt für Schritt von Vokabeln über echte Sätze bis zur Aussprache: Dein Kind spricht nach, die KI gibt sofort Feedback – und im freien Gesprächsmodus unterhält sich CoCo sogar auf Türkisch mit dem Kind. Nach jeder abgeschlossenen Welt warten Bonus-Minispiele als Belohnung.",
+        "Für Eltern gemacht: keine Werbung, Zeitlimit-Funktion, kein Account für den Basiszugang nötig und Sprachaufnahmen werden nicht dauerhaft gespeichert. Geeignet ab 3 Jahren mit Elternbegleitung, bis ca. 10 Jahren selbstständig."
+      ],
+      "features": [
+        { "title": "Fünf Lernwelten", "text": "CoCos Haus, Garten, Stadt, Zoo und das Istanbul-Abenteuer – jede Welt bringt neue Vokabeln, Sätze und ein eigenes Bonus-Minispiel auf der wachsenden Weltkarte." },
+        { "title": "Aussprache-KI", "text": "Dein Kind spricht nach, die App analysiert die Aussprache mit KI und gibt sofortiges, ermutigendes Feedback – mit natürlicher türkischer Stimme." },
+        { "title": "Freier Gesprächsmodus", "text": "CoCo führt echte kleine Gespräche auf Türkisch – reagiert, spricht und lobt wie ein geduldiger Lernfreund." },
+        { "title": "SuffixPuzzle & Spiele", "text": "Türkische Endungen (Agglutination) kindgerecht als Puzzle erklärt, dazu ObjectSearch, SkateRunner, FruitCatch, FlappyCoCo und mehr." },
+        { "title": "Sterne, Coins & Streaks", "text": "Sterne für bestandene Lektionen, Coins zum Freischalten neuer Welten und eine wachsende Pflanze, die den Gesamtfortschritt zeigt." },
+        { "title": "Für Eltern gemacht", "text": "Keine Werbung, Zeitlimit-Funktion, Mikrofon nur für Ausspracheübungen und kein Account für den Basiszugang nötig. PEGI 3." }
+      ],
+      "pricing": {
+        "free": ["Basiszugang ohne Account", "Erste Lernwelt mit Vokabeln, Sätzen & Minispiel"],
+        "premium": ["Alle fünf Lernwelten & Bonus-Minispiele", "KI-Aussprachetraining & freier Gesprächsmodus", "Voller Fortschritt mit Sternen, Coins & Streaks"],
+        "note": "Kostenlos starten – reines Lernerlebnis ohne Werbung."
+      },
+      "shots": ["Weltkarte mit Lernwelten", "Lektion mit CoCo", "Bonus-Minispiel"]
+    },
+    "werkflow": {
+      "tagline": "KI-Angebote in Sekunden – vom Foto zum fertigen PDF.",
+      "summary": "Die smarte Handwerker-App: Baustelle fotografieren, Auftrag einsprechen – die KI erstellt das professionelle PDF-Angebot.",
+      "category": "Business & Handwerk",
+      "description": [
+        "Schluss mit stundenlangem Tippen: Mach ein Foto von der Baustelle, beschreibe den Auftrag per Sprachaufnahme – und die KI erstellt daraus automatisch ein vollständiges, professionelles Angebot als PDF. In unter 2 Minuten, direkt vor Ort.",
+        "Werkflow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt – ob Elektriker, Maler, Installateur, Schreiner oder Dachdecker. Kundenverwaltung, Auftrags-Dashboard, Materialkatalog und digitale Unterschrift inklusive: dein ganzes Büro in der Hosentasche.",
+        "Mehr Zeit auf der Baustelle, weniger Zeit im Büro: Angebote sofort vor Ort erstellen und per E-Mail versenden – kein Nacharbeiten am Abend. Deine Daten sind verschlüsselt und sicher in der Cloud gespeichert."
+      ],
+      "features": [
+        { "title": "Foto-Analyse per KI", "text": "Baustelle oder Schadensbereich fotografieren – die KI erkennt benötigte Materialien und Arbeitsschritte und schlägt passende Angebotspositionen vor." },
+        { "title": "Spracheingabe", "text": "Auftrag kurz einsprechen – die KI wandelt deine Beschreibung in strukturierte Positionen um. Funktioniert auch mit schmutzigen Händen." },
+        { "title": "PDF-Angebote", "text": "In Sekunden ein druckfertiges PDF mit Firmenlogo, Stundensätzen, Materialien und digitaler Unterschrift – direkt per E-Mail an den Kunden." },
+        { "title": "Kundenverwaltung", "text": "Alle Kunden an einem Ort: Kontaktdaten speichern und Angebote mit einem Klick direkt aus der Kundenliste erstellen." },
+        { "title": "Auftrags-Dashboard", "text": "Gesendet, angenommen, abgelehnt? Dein Kontrollzentrum zeigt alle Angebote und ihren Status auf einen Blick – mit filterbarer Historie." },
+        { "title": "Materialkatalog", "text": "Standardmaterialien mit Einheiten und Preisen hinterlegen – die KI greift automatisch darauf zurück, für konsistente und korrekte Kalkulationen." }
+      ],
+      "pricing": {
+        "free": ["Kostenlos ausprobieren", "Erste KI-Angebote inklusive"],
+        "premium": ["Solo: 20 KI-Analysen/Monat, unbegrenzte PDFs", "Business: 100 KI-Analysen/Monat, bis zu 5 Team-Mitglieder", "Pro: unbegrenzte KI-Analysen & voller Teamzugang"],
+        "note": "Pläne für jeden Betrieb – vom Einzelunternehmer bis zum Team."
+      },
+      "shots": ["Auftrags-Dashboard", "Foto-Analyse", "Angebots-Editor", "Kundenverwaltung", "Materialkatalog", "Fertiges PDF-Angebot"]
+    }
+  }
+}
