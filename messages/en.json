@@ -94,12 +94,12 @@
     "cta": "Back to homepage"
   },
   "apps": {
-    "eatsafely": {
+    "eatsafety": {
       "tagline": "Never guess again. Always eat safely.",
       "summary": "A personal allergen traffic light, AI weekly meal plans and a food checker for life with intolerances.",
       "category": "Health & Nutrition",
       "description": [
-        "Gluten, lactose, fructose, histamine, sorbitol – or simply: your body reacts, and sometimes you don't even know exactly why. EatSafely makes every meal safe again, instead of a research project.",
+        "Gluten, lactose, fructose, histamine, sorbitol – or simply: your body reacts, and sometimes you don't even know exactly why. EatSafety makes every meal safe again, instead of a research project.",
         "You set up your personal allergen traffic light, and the AI plans, checks and rewrites recipes using only what you can tolerate – seasonal, regional and reimagined every day.",
         "For everyone who doesn't want to fight their intolerances, but simply live with them. Because food should bring joy – not anxiety."
       ],
@@ -108,7 +108,7 @@
         { "title": "AI weekly plan", "text": "A complete plan for breakfast, lunch and dinner – built exclusively from what you can tolerate. Seasonal and regional." },
         { "title": "Food checker", "text": "Scan a barcode, photograph an ingredient list, or type it in – an instant result against your personal exclusion list." },
         { "title": "Leftover ideas", "text": "Type or speak what's still in your fridge – and get a creative, tolerable recipe in seconds." },
-        { "title": "Recipe transformer", "text": "Paste a URL or recipe text – EatSafely rewrites any recipe for your intolerances. Swapped ingredients are marked." },
+        { "title": "Recipe transformer", "text": "Paste a URL or recipe text – EatSafety rewrites any recipe for your intolerances. Swapped ingredients are marked." },
         { "title": "Shopping list & favorites", "text": "Ingredients move from the weekly plan to your list with one tap. Check off, export as PDF, save favorite recipes." }
       ],
       "pricing": {

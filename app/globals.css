@@ -57,11 +57,14 @@ html {
   background: rgb(var(--color-base-900));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  color-scheme: dark;
-}
-
-html.light {
-  color-scheme: light;
+  /* Beide Schemata deklarieren, obwohl das eigentliche Theme klassenbasiert
+     (html.light + CSS-Variablen) gesteuert wird. Grund: Bei nur "light" bzw.
+     nur "dark" wenden mobile Browser (Samsung Internet, Chrome Android) ihr
+     Auto-/Force-Dark an, wenn das gewählte Theme nicht zum OS-Modus passt –
+     das invertiert den DOM-Text, nicht aber die WebGL-Aurora (Canvas) →
+     weißer Text auf hellem Grund. "light dark" signalisiert "wir können
+     beides selbst" und schaltet dieses Umfärben ab. */
+  color-scheme: light dark;
 }
 
 html.light body {

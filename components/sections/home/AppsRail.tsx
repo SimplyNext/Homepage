@@ -147,7 +147,7 @@ function AppCard({ app, className }: { app: AppData; className?: string }) {
           {/* Alle App-Heroes sind logohafte RGBA-Bilder → in der Rail
               einheitlich eingepasst (object-contain, gleiches Padding) auf
               akzentgetöntem Schein. So erscheinen alle fünf Icons gleich groß
-              (kein cover-Aufblähen der quadratischen EatSafely-/WeFixIt-Logos). */}
+              (kein cover-Aufblähen der quadratischen EatSafety-/WeFixIt-Logos). */}
           <div
             className="absolute inset-0 grid place-items-center"
             style={{

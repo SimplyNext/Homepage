@@ -94,12 +94,12 @@
     "cta": "Zur Startseite"
   },
   "apps": {
-    "eatsafely": {
+    "eatsafety": {
       "tagline": "Nie wieder raten. Immer sicher essen.",
       "summary": "Persönliche Allergen-Ampel, KI-Wochenplan und Lebensmittel-Check für ein Leben mit Unverträglichkeiten.",
       "category": "Gesundheit & Ernährung",
       "description": [
-        "Gluten, Laktose, Fructose, Histamin, Sorbit – oder einfach: dein Körper reagiert, und du weißt manchmal selbst nicht genau warum. EatSafely macht jede Mahlzeit wieder sicher, statt zur Recherche.",
+        "Gluten, Laktose, Fructose, Histamin, Sorbit – oder einfach: dein Körper reagiert, und du weißt manchmal selbst nicht genau warum. EatSafety macht jede Mahlzeit wieder sicher, statt zur Recherche.",
         "Du legst deine persönliche Allergen-Ampel an, und die KI plant, prüft und schreibt Rezepte ausschließlich mit dem um, was du verträgst – saisonal, regional und jeden Tag neu denkbar.",
         "Für alle, die mit Unverträglichkeiten nicht kämpfen, sondern einfach leben wollen. Weil Essen Freude machen soll – nicht Angst."
       ],
@@ -108,7 +108,7 @@
         { "title": "KI-Wochenplan", "text": "Vollständiger Wochenplan für Frühstück, Mittag und Abend – ausschließlich mit dem, was du verträgst. Saisonal und regional." },
         { "title": "Lebensmittel-Check", "text": "Barcode scannen, Zutatenliste fotografieren oder Text eingeben – sofortiges Ergebnis gegen deine persönliche Ausschlussliste." },
         { "title": "Resteverwertung", "text": "Tippe oder sprich ein, was noch im Kühlschrank ist – und erhalte in Sekunden ein kreatives, verträgliches Rezept daraus." },
-        { "title": "Rezept-Transformer", "text": "URL oder Rezepttext einfügen – EatSafely schreibt jedes Rezept für deine Unverträglichkeiten um. Ersetzte Zutaten werden markiert." },
+        { "title": "Rezept-Transformer", "text": "URL oder Rezepttext einfügen – EatSafety schreibt jedes Rezept für deine Unverträglichkeiten um. Ersetzte Zutaten werden markiert." },
         { "title": "Einkaufsliste & Favoriten", "text": "Zutaten landen mit einem Tippen aus dem Wochenplan auf der Liste. Abhaken, als PDF exportieren, Lieblingsrezepte speichern." }
       ],
       "pricing": {

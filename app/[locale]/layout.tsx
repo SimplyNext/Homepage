@@ -53,6 +53,9 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#F6F4EF" },
     { media: "(prefers-color-scheme: dark)", color: "#0B0B0C" },
   ],
+  // Signalisiert, dass die Seite beide Farbschemata selbst beherrscht, damit
+  // mobile Browser kein eigenes Auto-/Force-Dark über unser Theme legen.
+  colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
 };

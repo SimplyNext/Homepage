@@ -33,7 +33,7 @@ const NEUTRAL = "#EDEAE3";
 write("hero.svg", 1600, 1200, NEUTRAL);
 
 const apps = [
-  { slug: "eatsafely", accent: "#759578" },
+  { slug: "eatsafety", accent: "#759578" },
   { slug: "wefixit", accent: "#E8923C" },
 ];
 
