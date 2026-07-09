@@ -33,6 +33,11 @@
   --color-accent-alt: 34 164 99; /* #22A463 */
   --color-focus-ring: 111 134 255;
   --color-grid-line: rgba(237, 234, 227, 0.05);
+  /* "only dark" verbietet dem Browser laut CSS-Color-Adjust-Spec, ein eigenes
+     Force-/Auto-Dark über unser Theme zu legen. Klassenbasiert gesetzt, damit
+     mobile Browser (v. a. Samsung Internet) das am Element berechnete Scheme
+     respektieren – nicht nur das <meta> im <head> (das nur Chrome auswertet). */
+  color-scheme: only dark;
 }
 
 html.light {
@@ -47,6 +52,7 @@ html.light {
   --color-accent-alt: 21 122 69; /* #157A45, ~4.9:1 auf base-900 */
   --color-focus-ring: 42 63 204;
   --color-grid-line: rgba(11, 11, 12, 0.05);
+  color-scheme: only light;
 }
 
 * {
@@ -57,14 +63,9 @@ html {
   background: rgb(var(--color-base-900));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* Beide Schemata deklarieren, obwohl das eigentliche Theme klassenbasiert
-     (html.light + CSS-Variablen) gesteuert wird. Grund: Bei nur "light" bzw.
-     nur "dark" wenden mobile Browser (Samsung Internet, Chrome Android) ihr
-     Auto-/Force-Dark an, wenn das gewählte Theme nicht zum OS-Modus passt –
-     das invertiert den DOM-Text, nicht aber die WebGL-Aurora (Canvas) →
-     weißer Text auf hellem Grund. "light dark" signalisiert "wir können
-     beides selbst" und schaltet dieses Umfärben ab. */
-  color-scheme: light dark;
+  /* color-scheme wird themebezogen in :root ("only dark") und html.light
+     ("only light") gesetzt – das "only"-Keyword schaltet das eigenmächtige
+     Force-Dark mobiler Browser ab (s. Kommentare dort). */
 }
 
 html.light body {

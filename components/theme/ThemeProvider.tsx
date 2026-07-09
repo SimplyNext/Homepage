@@ -17,6 +17,12 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
+      // Kein Inline-`color-scheme` ans <html> schreiben lassen. Sonst
+      // überschreibt next-themes (Default true) unsere CSS-Regel und mobile
+      // Browser (Samsung Internet) sehen nur "light"/"dark" statt "only …"
+      // → sie erzwingen ihr eigenes Force-Dark. Wir setzen color-scheme
+      // stattdessen selbst klassenbasiert in globals.css.
+      enableColorScheme={false}
     >
       {children}
     </NextThemesProvider>
