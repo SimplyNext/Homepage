@@ -3,6 +3,7 @@
 import { useEffect, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import AuroraPlane, { AURORA_DARK, AURORA_LIGHT } from "./AuroraPlane";
+import ParticleField from "./ParticleField";
 import { sceneState } from "@/lib/homeScene";
 import { useMountedTheme } from "@/hooks/useMountedTheme";
 
@@ -59,6 +60,10 @@ export default function HomeScene({
       className="!absolute !inset-0"
     >
       <AuroraPlane palette={palette} reduced={reduced} />
+      <ParticleField
+        theme={resolvedTheme === "light" ? "light" : "dark"}
+        reduced={reduced}
+      />
     </Canvas>
   );
 }
