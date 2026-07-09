@@ -20,10 +20,27 @@
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
-  --color-base-900: 11 11 12; /* Seiten-Hintergrund */
-  --color-base-800: 17 17 19; /* Card-/Panel-Hintergrund */
+  /* Theme-unabhängig (immer gleich, egal ob Dark oder Light) */
   --color-paper: 237 234 227; /* statisch, immer hell */
   --color-paper-ink: 15 14 12; /* statisch, immer dunkel */
+}
+
+/* ============================================================
+   Theming – zwei Ebenen:
+   1) prefers-color-scheme-Regeln (weiter unten): geben Force-Dark-Browsern
+      (v. a. Samsung Internet) das NATIVE Signal "diese Seite beherrscht Dark
+      selbst" – sonst legen sie ihr eigenes Force-Dark über unser Theme und
+      invertieren den DOM-Text (nicht aber die WebGL-Aurora → weißer Text auf
+      hellem Grund). Sie greifen als Fallback ohne JS / vor der Hydration.
+   2) html.light / html.dark (höhere Spezifität): die von next-themes gesetzte
+      NUTZERWAHL – gewinnt immer, sobald die Klasse am <html> steht.
+   ============================================================ */
+
+/* Dark-Palette: Default/Fallback (:root) + explizite Nutzerwahl (html.dark) */
+:root,
+html.dark {
+  --color-base-900: 11 11 12; /* Seiten-Hintergrund */
+  --color-base-800: 17 17 19; /* Card-/Panel-Hintergrund */
   --color-ink: 237 234 227; /* Primärtext */
   --color-ink-muted: 140 138 133; /* ~5.7:1 auf base-900 */
   --color-ink-faint: 134 132 126; /* ~5.3:1 auf base-900 (Audit-Fix, war #5A5955 ≈2.8:1) */
@@ -33,13 +50,10 @@
   --color-accent-alt: 34 164 99; /* #22A463 */
   --color-focus-ring: 111 134 255;
   --color-grid-line: rgba(237, 234, 227, 0.05);
-  /* "only dark" verbietet dem Browser laut CSS-Color-Adjust-Spec, ein eigenes
-     Force-/Auto-Dark über unser Theme zu legen. Klassenbasiert gesetzt, damit
-     mobile Browser (v. a. Samsung Internet) das am Element berechnete Scheme
-     respektieren – nicht nur das <meta> im <head> (das nur Chrome auswertet). */
   color-scheme: only dark;
 }
 
+/* Light-Palette: explizite Nutzerwahl (html.light) */
 html.light {
   --color-base-900: 246 244 239; /* #F6F4EF */
   --color-base-800: 237 234 227; /* #EDEAE3 */
@@ -53,6 +67,40 @@ html.light {
   --color-focus-ring: 42 63 204;
   --color-grid-line: rgba(11, 11, 12, 0.05);
   color-scheme: only light;
+}
+
+/* prefers-color-scheme-Spiegel (Werte müssen die Klassen-Paletten oben
+   spiegeln). Zweck s. Kommentar-Ebene 1. Greifen nur, solange keine
+   next-themes-Klasse gesetzt ist – html.light / html.dark schlagen sie. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-base-900: 11 11 12;
+    --color-base-800: 17 17 19;
+    --color-ink: 237 234 227;
+    --color-ink-muted: 140 138 133;
+    --color-ink-faint: 134 132 126;
+    --color-line: rgba(237, 234, 227, 0.16);
+    --color-accent: 59 91 255;
+    --color-accent-soft: 111 134 255;
+    --color-accent-alt: 34 164 99;
+    --color-focus-ring: 111 134 255;
+    --color-grid-line: rgba(237, 234, 227, 0.05);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-base-900: 246 244 239;
+    --color-base-800: 237 234 227;
+    --color-ink: 23 23 26;
+    --color-ink-muted: 74 72 68;
+    --color-ink-faint: 102 96 89;
+    --color-line: rgba(11, 11, 12, 0.14);
+    --color-accent: 42 63 204;
+    --color-accent-soft: 74 92 214;
+    --color-accent-alt: 21 122 69;
+    --color-focus-ring: 42 63 204;
+    --color-grid-line: rgba(11, 11, 12, 0.05);
+  }
 }
 
 * {
