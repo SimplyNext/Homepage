@@ -125,23 +125,23 @@ export default function AppShowcase({ app }: { app: AppData }) {
         <div className="relative mx-auto w-full max-w-shell px-gutter pb-[10vh] pt-32">
           <TransitionLink
             href="/#apps"
-            className="app-hero-fade inline-flex items-center gap-2 font-mono text-xs uppercase tracking-label text-paper/65 hover:text-paper"
+            className="app-hero-fade inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-label text-paper/90 hover:text-paper"
             data-cursor
           >
             <ArrowLeft size={14} /> {t("backToApps")}
           </TransitionLink>
 
-          <div className="app-hero-fade mt-8 flex flex-wrap gap-3 font-mono text-[11px] uppercase tracking-wider text-paper/65">
+          <div className="app-hero-fade mt-8 flex flex-wrap gap-3 font-mono text-[11px] font-medium uppercase tracking-wider text-paper/80">
             {app.os.map((os) => (
-              <span key={os} className="rounded-full border border-line px-3 py-1" style={{ color: accentColor }}>
+              <span key={os} className="rounded-full border border-paper/30 px-3 py-1">
                 {os}
               </span>
             ))}
             {app.iosSoon && (
-              <span className="rounded-full border border-line px-3 py-1" style={{ color: accentColor }}>{t("iosSoon")}</span>
+              <span className="rounded-full border border-paper/30 px-3 py-1">{t("iosSoon")}</span>
             )}
-            <span className="rounded-full border border-line px-3 py-1">{tStatus(app.status)}</span>
-            <span className="rounded-full border border-line px-3 py-1">{content.category}</span>
+            <span className="rounded-full border border-paper/30 px-3 py-1">{tStatus(app.status)}</span>
+            <span className="rounded-full border border-paper/30 px-3 py-1">{content.category}</span>
           </div>
 
           <h1 className="mt-6 font-display text-display-lg font-medium text-paper">
@@ -149,7 +149,7 @@ export default function AppShowcase({ app }: { app: AppData }) {
               {app.name}
             </SplitText>
           </h1>
-          <p className="app-hero-fade mt-4 text-xl text-ink-muted" style={{ color: accentColor }}>
+          <p className="app-hero-fade mt-4 text-xl font-medium text-paper/80">
             {content.tagline}
           </p>
 
