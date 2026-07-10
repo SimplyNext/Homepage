@@ -6,16 +6,17 @@ import type { ReactNode } from "react";
 /**
  * Dark/Light-Mode: next-themes injiziert ein blockierendes Inline-Script vor
  * dem ersten Paint, das die Theme-Klasse am <html> setzt – dadurch kein FOUC.
- * defaultTheme="system" folgt der OS-Präferenz; wer keine hat (oder JS ohne
- * matchMedia-Support), bekommt "dark" – deckt sich mit dem CSS-Fallback in
- * globals.css (:root = Dark-Palette).
+ * defaultTheme="dark" + enableSystem=false: die Seite startet IMMER im
+ * Dark-Mode (folgt bewusst NICHT der OS-Präferenz) – deckt sich mit dem
+ * CSS-Fallback in globals.css (:root = Dark-Palette). Der ThemeToggle setzt
+ * danach explizit hell/dunkel; eine bewusste Nutzerwahl bleibt gespeichert.
  */
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange
       // Kein Inline-`color-scheme` ans <html> schreiben lassen. Sonst
       // überschreibt next-themes (Default true) unsere CSS-Regel und mobile
