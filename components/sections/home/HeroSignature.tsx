@@ -6,6 +6,7 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import SplitText from "@/components/ui/SplitText";
 import Magnetic from "@/components/ui/Magnetic";
 import TransitionLink from "@/components/ui/TransitionLink";
+import HeroStarfieldMount from "@/components/webgl/HeroStarfieldMount";
 import { sceneState } from "@/lib/homeScene";
 
 /**
@@ -70,9 +71,13 @@ export default function HeroSignature() {
     <section
       ref={root}
       id="studio"
-      className="relative z-10 flex min-h-[100svh] items-end"
+      className="relative z-10 flex min-h-[100svh] items-end overflow-hidden"
     >
-      <div className="relative mx-auto w-full max-w-shell px-gutter pb-[10vh] pt-40">
+      {/* Sternenhimmel als Hintergrund – NUR im Hero, opak, deckt die Aurora
+          hier ab; der Rest der Seite behält die Aurora. */}
+      <HeroStarfieldMount />
+
+      <div className="relative z-10 mx-auto w-full max-w-shell px-gutter pb-[10vh] pt-40">
         <div className="text-scrim pointer-events-none absolute inset-x-[-10%] bottom-0 top-1/4" aria-hidden />
 
         <div className="relative">
