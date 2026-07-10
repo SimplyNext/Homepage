@@ -194,15 +194,8 @@ export default function AppShowcase({ app }: { app: AppData }) {
       </section>
 
       {/* FEATURES */}
-      <section className="relative overflow-hidden border-t border-line py-section">
-        <div
-          className="section-aura"
-          aria-hidden
-          style={{
-            background: `radial-gradient(42% 60% at 22% 0%, ${app.accent}24, transparent 70%), radial-gradient(46% 55% at 80% 8%, ${app.accent}18, transparent 72%)`,
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-shell px-gutter">
+      <section className="border-t border-line py-section">
+        <div className="mx-auto max-w-shell px-gutter">
           <Reveal variant="clip">
             <h2 className="font-display text-display-md font-medium">{t("featuresHeading")}</h2>
           </Reveal>
@@ -221,15 +214,8 @@ export default function AppShowcase({ app }: { app: AppData }) {
       </section>
 
       {/* PREISE */}
-      <section className="relative overflow-hidden border-t border-line py-section">
-        <div
-          className="section-aura"
-          aria-hidden
-          style={{
-            background: `radial-gradient(44% 58% at 78% 0%, ${app.accent}24, transparent 70%), radial-gradient(46% 55% at 18% 10%, ${app.accent}16, transparent 72%)`,
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-shell px-gutter">
+      <section className="border-t border-line py-section">
+        <div className="mx-auto max-w-shell px-gutter">
           <Reveal variant="clip">
             <h2 className="font-display text-display-md font-medium">{t("pricingHeading")}</h2>
           </Reveal>

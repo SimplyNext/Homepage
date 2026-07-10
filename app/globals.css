@@ -299,37 +299,9 @@ html.light .liquid-glass::before {
 .text-scrim {
   background: radial-gradient(
     ellipse 120% 120% at 50% 50%,
-    rgb(var(--color-base-900) / 0.72),
-    rgb(var(--color-base-900) / 0.32) 55%,
-    transparent 78%
+    rgb(var(--color-base-900) / 0.6),
+    transparent 70%
   );
-}
-
-/* Sektions-Aura: dezenter, langsam driftender Farbschein als „Divider" am
-   oberen Rand einer Sektion (App-Seiten: Features/Preise). Die Farbe kommt
-   inline pro App (app.accent) → jede App-Seite bekommt ihren eigenen Ton.
-   Die Maske blendet nach unten aus, damit die Text-Kacheln darunter
-   ungestört bleiben. reduced-motion friert die Drift global ein. */
-.section-aura {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 20%, transparent 62%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 20%, transparent 62%);
-  animation: aura-drift 22s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes aura-drift {
-  from {
-    transform: translate3d(-2%, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(2%, 1.5%, 0) scale(1.07);
-  }
-}
-/* Im Light-Mode etwas zurücknehmen (heller Grund = Akzent wirkt kräftiger) */
-html.light .section-aura {
-  opacity: 0.7;
 }
 
 ::-webkit-scrollbar {
