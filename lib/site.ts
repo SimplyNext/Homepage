@@ -1,6 +1,5 @@
 /**
  * Zentrale Firmen- und Rechtsdaten.
- * Alle [PLATZHALTER ...] vor dem Livegang durch echte Angaben ersetzen.
  * Impressum (§5 DDG) und Datenschutz (DSGVO) sind in DE Pflicht – im Zweifel
  * anwaltlich prüfen lassen.
  */
@@ -9,8 +8,8 @@ export const site = {
   tagline: "Premium-Apps. Plattformübergreifend gebaut.",
   description:
     "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
-  url: "https://simplynext.de", // [PLATZHALTER]
-  email: "info@simplynext.de", // [PLATZHALTER]
+  url: "https://simplynext.de",
+  email: "info@simplynext.de",
   legal: {
     companyName: "SimplyNext",
     responsible: "Nuri Toker",
