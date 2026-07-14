@@ -68,10 +68,22 @@ export default function TransitionProvider({
       animating.current = true;
       stop();
 
+      // Äußeres Sicherheitsnetz: animating-Flag IMMER zurücksetzen, auch
+      // wenn die Cover-Animation nicht zu Ende läuft (rAF-Throttling,
+      // Hintergrund-Tab, Interrupt). Wird in onComplete per clearTimeout
+      // abgebrochen, wenn alles normal läuft.
+      const outerSafety = window.setTimeout(() => {
+        start();
+        animating.current = false;
+        gsap.set(".transition-overlay", { pointerEvents: "none" });
+        gsap.set(".transition-panel", { scaleY: 0 });
+      }, 2000);
+
       // COVER: Panels fahren von unten hoch und decken den Screen ab
       gsap
         .timeline({
           onComplete: () => {
+            clearTimeout(outerSafety);
             if (samePage) {
               // Cover liegt → zur Sektion springen → Cover wieder aufdecken.
               // force:true, weil Lenis gerade per stop() pausiert ist.

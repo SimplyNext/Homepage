@@ -40,7 +40,13 @@ export default function Template({ children }: { children: ReactNode }) {
         gsap.set(panels, { transformOrigin: "top", scaleY: 0 });
       }
       gsap.set(".transition-overlay", { pointerEvents: "none" });
-      if (el) gsap.set(el, { clearProps: "opacity,visibility,transform,willChange" });
+      if (el) {
+        gsap.set(el, { clearProps: "opacity,visibility,transform,willChange" });
+        // Direkter DOM-Fallback: GSAP clearProps nach tl.kill() ist in React
+        // StrictMode (Doppelmount) nicht immer zuverlässig.
+        el.style.removeProperty("opacity");
+        el.style.removeProperty("visibility");
+      }
     };
 
     // Pins der neuen Seite neu vermessen und an den richtigen Startpunkt
@@ -103,14 +109,30 @@ export default function Template({ children }: { children: ReactNode }) {
     // position:fixed und bricht damit kurzzeitig ALLE ScrollTriggern-Pins
     // (Phone & Pinned-Text), solange die Animation läuft. Mit reinem
     // autoAlpha entsteht dieses Fenster gar nicht erst.
+    //
+    // immediateRender: covered – wenn panels abdecken, el sofort auf
+    // autoAlpha:0 setzen (sonst kurzer Flash des neuen Inhalts bevor die
+    // Panels fertig sind). Im nicht-abgedeckten Fall (covered=false) KEIN
+    // immediateRender: dann setzt GSAP el erst beim ersten rAF auf 0, was
+    // den synchronen React-StrictMode-Cleanup-Zyklus ausschließt und
+    // verhindert, dass el dauerhaft auf opacity:0 hängen bleibt.
     tl.from(
       el,
-      { autoAlpha: 0, duration: 0.5, ease: "power2.out" },
+      { autoAlpha: 0, duration: 0.5, ease: "power2.out", immediateRender: covered },
       covered ? "<0.15" : 0
     );
     tl.set(el, { clearProps: "willChange" });
 
+    // Absoluter Fallback: Inhalt nach max. 1,5 s sichtbar machen,
+    // unabhängig von Animationsstatus (rAF-Throttling, Hintergrund-Tab, …).
+    const safetyTimer = window.setTimeout(() => {
+      if (!el) return;
+      el.style.removeProperty("opacity");
+      el.style.removeProperty("visibility");
+    }, 1500);
+
     return () => {
+      clearTimeout(safetyTimer);
       tl.kill();
       // Niemals abgedeckt zurücklassen – sonst schwarzer Screen bis Reload.
       forceRevealed();
