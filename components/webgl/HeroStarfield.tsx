@@ -108,7 +108,7 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
         color={PALETTE[theme].star}
         size={PALETTE[theme].size}
         map={sprite}
-        sizeAttenuation
+        sizeAttenuation={false}
         transparent
         alphaTest={0.02}
         depthWrite={false}
