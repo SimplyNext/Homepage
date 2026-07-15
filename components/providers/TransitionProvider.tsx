@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useRef,
   type ReactNode,
 } from "react";
@@ -116,6 +117,36 @@ export default function TransitionProvider({
     },
     [router, pathname, stop, start, scrollTo]
   );
+
+  // WÄCHTER: Nach JEDER Cross-Page-Navigation die Overlay-Panels garantiert
+  // wieder aufdecken. Dieser Effekt lebt in der persistenten Provider-Komponente
+  // (überdauert die Navigation) und feuert bei jeder pathname-Änderung – anders
+  // als das Reveal in template.tsx, dessen Layout-Effect bei clientseitiger
+  // Navigation in Produktion NICHT läuft und die Panels sonst dauerhaft auf
+  // scaleY:1 (schwarzer Screen) stehen ließe. Same-Page-Anker (nur Hash) ändern
+  // den pathname nicht → hier kein Reveal (der Fall wird in navigate() via
+  // revealPanels behandelt).
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return; // Erstaufruf/Direktload: kein Cover liegt an, nichts aufzudecken.
+    }
+    const panels = gsap.utils.toArray<HTMLElement>(".transition-panel");
+    if (!panels.length) return;
+    gsap
+      .timeline({
+        onComplete: () => {
+          start();
+          animating.current = false;
+        },
+      })
+      .set(panels, { transformOrigin: "top" })
+      .to(panels, { scaleY: 0, duration: 0.5, ease: "power3.inOut", stagger: 0.05 })
+      .set(".transition-overlay", { pointerEvents: "none" }, ">-0.1");
+    // Bewusst nur auf pathname reagieren – start ist stabil (useCallback in Lenis-Provider).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return (
     <TransitionContext.Provider value={{ navigate }}>
