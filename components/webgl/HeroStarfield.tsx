@@ -24,16 +24,18 @@ import * as THREE from "three";
 type Theme = "light" | "dark";
 
 const PALETTE: Record<Theme, { bg: string; star: string; size: number }> = {
-  // size = Basis-Punktgröße in Gerätepixeln (wird pro Stern zufällig skaliert)
-  dark: { bg: "#0b0b0c", star: "#edeae3", size: 2.6 },
-  light: { bg: "#f6f4ef", star: "#20202a", size: 2.4 },
+  // size = Basis-Punktgröße in Gerätepixeln (wird pro Stern zufällig skaliert).
+  // star bewusst neutral-kühl (nicht cremig) → Cluster wirken nicht bräunlich.
+  dark: { bg: "#0b0b0c", star: "#eaecf0", size: 2.4 },
+  light: { bg: "#f6f4ef", star: "#20202a", size: 2.2 },
 };
 
 const COUNT = 6500;
-// Streuung deutlich breiter als der sichtbare Frustum, damit auch bei voller
+// Streuung deutlich breiter als der sichtbare Frustum, damit auch bei kräftiger
 // Parallaxe rundum Sterne stehen (keine leeren schwarzen Ränder).
-const SPREAD_XY = 3200; // Gesamtbreite/-höhe der Punktwolke (±1600)
+const SPREAD_XY = 4200; // Gesamtbreite/-höhe der Punktwolke (±2100)
 const SPREAD_Z = 1400; // Tiefe (±700) – nur für dezente Parallaxe-Staffelung
+const PARALLAX = 0.2; // Bruchteil des Maus-Offsets → spürbare, aber randsichere Parallaxe
 
 const VERT = /* glsl */ `
   attribute float aSize;
@@ -55,9 +57,10 @@ const FRAG = /* glsl */ `
   uniform vec3 uColor;
   varying float vBright;
   void main() {
-    // Scharfer runder Punkt: harte Kante mit minimalem Soft-Edge (Antialiasing).
+    // Runder Stern: definierter Kern + weicher Rand (nicht rasiermesserscharf,
+    // aber auch kein verwaschener Blob). → sieht nach Stern aus, nicht nach Punkt.
     float d = length(gl_PointCoord - vec2(0.5));
-    float alpha = smoothstep(0.5, 0.46, d);
+    float alpha = smoothstep(0.5, 0.28, d);
     if (alpha <= 0.01) discard;
     gl_FragColor = vec4(uColor, alpha * vBright);
   }
@@ -78,10 +81,10 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
       positions[i * 3 + 0] = (Math.random() - 0.5) * SPREAD_XY;
       positions[i * 3 + 1] = (Math.random() - 0.5) * SPREAD_XY;
       positions[i * 3 + 2] = (Math.random() - 0.5) * SPREAD_Z;
-      // Größe klein-lastig mit einzelnen deutlich größeren Sternen (pow² skewt
-      // Richtung klein). → natürliche, unterschiedliche Sterngrößen.
+      // Größe stark klein-lastig: pow⁴ macht große Sterne SELTEN → viele feine
+      // Punkte, nur vereinzelt größere (nicht so viele große wie zuvor).
       const r = Math.random();
-      sizes[i] = base * (0.5 + Math.pow(r, 2) * 3.4);
+      sizes[i] = base * (0.45 + Math.pow(r, 4) * 2.2);
       // Helligkeit variiert pro Stern (ersetzt die Fog-Tiefenoptik ohne Ringe).
       // Untergrenze bewusst hoch → knackige Sterne statt ausgeblichener Punkte.
       bright[i] = 0.6 + Math.random() * 0.4;
@@ -104,9 +107,14 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
   );
 
   // Opaker Grund + Sternfarbe theme-abhängig setzen/aktualisieren. KEIN Fog.
+  // scene.background erzwingt einen OPAKEN Hintergrund direkt im Canvas –
+  // unabhängig davon, ob der WebGL-Context alpha:false respektiert. Damit kann
+  // die dahinterliegende Aurora unter keinen Umständen durchscheinen.
   useEffect(() => {
     const pal = PALETTE[theme];
-    gl.setClearColor(new THREE.Color(pal.bg), 1);
+    const bg = new THREE.Color(pal.bg);
+    gl.setClearColor(bg, 1);
+    scene.background = bg;
     scene.fog = null;
     uniforms.uColor.value.set(pal.star);
     uniforms.uPixelRatio.value = Math.min(gl.getPixelRatio(), 2);
@@ -114,11 +122,11 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
-      // Nur ein kleiner Bruchteil des Maus-Offsets → dezente Parallaxe; die
-      // Kamera bleibt weit innerhalb der breiten Punktwolke (keine schwarzen Ränder).
+      // Spürbare Parallaxe (PARALLAX), aber das Feld (±2100) ist breit genug,
+      // dass die Kamera nie über den bevölkerten Bereich hinausschaut.
       target.current.set(
-        (e.clientX - window.innerWidth / 2) * 0.06,
-        (e.clientY - window.innerHeight / 2) * 0.06
+        (e.clientX - window.innerWidth / 2) * PARALLAX,
+        (e.clientY - window.innerHeight / 2) * PARALLAX
       );
     };
     if (!reduced) window.addEventListener("pointermove", onMove, { passive: true });
