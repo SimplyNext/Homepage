@@ -78,8 +78,9 @@ export default function HeroSignature() {
       <HeroStarfieldMount />
 
       <div className="relative z-10 mx-auto w-full max-w-shell px-gutter pb-[10vh] pt-40">
-        <div className="text-scrim pointer-events-none absolute inset-x-[-10%] bottom-0 top-1/4" aria-hidden />
-
+        {/* Kein text-scrim mehr: der radiale Fast-Schwarz-Verlauf erzeugte auf
+            8-Bit-Monitoren Banding-Ringe („braune konzentrische Kreise").
+            Der Sternen-Grund ist bereits dunkel & uniform – Text bleibt lesbar. */}
         <div className="relative">
           <p className="hero-fade mb-8 font-mono text-xs uppercase tracking-label text-ink-muted">
             <span className="text-accent-soft">{"{"}</span> {t("eyebrow")}{" "}

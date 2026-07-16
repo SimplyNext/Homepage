@@ -43,7 +43,7 @@ export default function ContactFinale() {
       className="relative z-10 flex min-h-[90svh] items-center"
     >
       <div className="relative mx-auto w-full max-w-shell px-gutter py-section text-center">
-        <div className="text-scrim pointer-events-none absolute inset-[-5%]" aria-hidden />
+        {/* text-scrim entfernt (Banding-Ringe auf 8-Bit-Monitoren) */}
         <div className="relative">
           <h2 className="mx-auto max-w-4xl font-display text-display-md font-medium leading-[0.95] text-ink sm:text-display-lg">
             <SplitText split="words" stagger={0.05}>

@@ -174,21 +174,6 @@ html.lenis body {
    Runde 7 – „Cinematic Studio"-Utilities für die Homepage
    ============================================================ */
 
-/* Statischer Fallback hinter/statt der WebGL-Aurora (Ladezustand,
-   kein WebGL, contextlost). Farblich an die Shader-Paletten angelehnt. */
-.aurora-fallback {
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(29, 47, 143, 0.5), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 80% 70%, rgba(15, 81, 56, 0.4), transparent 65%),
-    rgb(var(--color-base-900));
-}
-html.light .aurora-fallback {
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(201, 210, 244, 0.75), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 80% 70%, rgba(207, 228, 214, 0.65), transparent 65%),
-    rgb(var(--color-base-900));
-}
-
 /* Liquid-Glass: fast transparente Fläche + Blur + Gradient-Randlinie
    (mask-composite-Trick). Light-Mode: dunkle Randlinie, da die weiße auf
    Papier unsichtbar wäre. Unterlage bg-base-800/40 kommt im Markup dazu,
@@ -292,16 +277,6 @@ html.light .liquid-glass::before {
 }
 .animate-scroll-hint {
   animation: scroll-hint 1.8s cubic-bezier(0.7, 0, 0.2, 1) infinite;
-}
-
-/* Weicher Kontrast-Scrim hinter Textblöcken auf der Aurora –
-   theme-reaktiv (dunkelt im Dark-Mode ab, hellt im Light-Mode auf). */
-.text-scrim {
-  background: radial-gradient(
-    ellipse 120% 120% at 50% 50%,
-    rgb(var(--color-base-900) / 0.6),
-    transparent 70%
-  );
 }
 
 ::-webkit-scrollbar {
