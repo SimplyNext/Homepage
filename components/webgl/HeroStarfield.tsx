@@ -30,12 +30,18 @@ const PALETTE: Record<Theme, { bg: string; star: string; size: number }> = {
   light: { bg: "#f6f4ef", star: "#20202a", size: 2.2 },
 };
 
-const COUNT = 6500;
+// Flaches Feld verteilt die Punkte gleichmäßig über die Fläche (statt sie per
+// Tiefe zur Mitte zu häufen) → für dieselbe sichtbare Dichte braucht es mehr.
+const COUNT = 16000;
 // Streuung deutlich breiter als der sichtbare Frustum, damit auch bei kräftiger
 // Parallaxe rundum Sterne stehen (keine leeren schwarzen Ränder).
 const SPREAD_XY = 4200; // Gesamtbreite/-höhe der Punktwolke (±2100)
-const SPREAD_Z = 1400; // Tiefe (±700) – nur für dezente Parallaxe-Staffelung
-const PARALLAX = 0.2; // Bruchteil des Maus-Offsets → spürbare, aber randsichere Parallaxe
+// FLACHES Feld: kaum Tiefe. Ein tiefer 3D-Würfel führt in der Perspektive dazu,
+// dass sich entfernte Punkte zur Bildmitte häufen → zentraler Helligkeits-/
+// Dichteverlauf, der als konzentrische „Sonnensystem"-Kreise wahrnehmbar ist.
+// Nahezu flach = gleichmäßige Dichte über den ganzen Bildschirm, keine Ringe.
+const SPREAD_Z = 120; // Tiefe (±60) – nur minimale Staffelung, kein Dichte-Gradient
+const PARALLAX = 0.32; // Bruchteil des Maus-Offsets → deutlich spürbare, randsichere Parallaxe
 
 const VERT = /* glsl */ `
   attribute float aSize;
@@ -53,7 +59,7 @@ const VERT = /* glsl */ `
 `;
 
 const FRAG = /* glsl */ `
-  precision mediump float;
+  precision highp float;
   uniform vec3 uColor;
   varying float vBright;
   void main() {

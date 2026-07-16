@@ -1,5 +1,4 @@
 import { setRequestLocale } from "next-intl/server";
-import HomeSceneMount from "@/components/webgl/HomeSceneMount";
 import HeroSignature from "@/components/sections/home/HeroSignature";
 import PhoneJourney from "@/components/sections/home/PhoneJourney";
 import AppsRail from "@/components/sections/home/AppsRail";
@@ -17,8 +16,10 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Eine WebGL-Ebene für die ganze Homepage: Aurora + 3D-Phone */}
-      <HomeSceneMount />
+      {/* Aurora-Hintergrund entfernt: seine sehr dunklen fBm-Schlieren wirkten
+          im Dark-Mode als bräunliche konzentrische Blobs („Sonnensystem") und
+          schlugen je nach Gerät im Hero durch. Seite nutzt jetzt den soliden
+          Theme-Grund; der Hero hat seinen eigenen Sternenhimmel. */}
       <HeroSignature />
       <PhoneJourney />
       <AppsRail />
