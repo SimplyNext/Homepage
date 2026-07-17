@@ -32,7 +32,7 @@ const PALETTE: Record<Theme, { bg: string; star: string; size: number }> = {
   light: { bg: "#f6f4ef", star: "#20202a", size: 1.9 },
 };
 
-const COUNT = 17000;
+const COUNT = 22000;
 // ECHTES TIEFEN-VOLUMEN statt flacher Fläche: Die Sterne stehen zwischen NEAR
 // und FAR (Distanz vor der Kamera). X/Y werden PROPORTIONAL zur Distanz gestreut
 // (halfSpan = d * SPAN_PER_DIST) → jede Tiefenschicht füllt denselben Bildaus-
