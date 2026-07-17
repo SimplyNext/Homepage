@@ -28,44 +28,50 @@ type Theme = "light" | "dark";
 const PALETTE: Record<Theme, { bg: string; star: string; size: number }> = {
   // size = Basis-Punktgröße in Gerätepixeln (wird pro Stern zufällig skaliert).
   // star bewusst neutral-kühl (nicht cremig) → Cluster wirken nicht bräunlich.
-  dark: { bg: "#0b0b0c", star: "#eaecf0", size: 2.4 },
-  light: { bg: "#f6f4ef", star: "#20202a", size: 2.2 },
+  dark: { bg: "#0b0b0c", star: "#eaecf0", size: 2.0 },
+  light: { bg: "#f6f4ef", star: "#20202a", size: 1.9 },
 };
 
-const COUNT = 16000;
+const COUNT = 17000;
 // ECHTES TIEFEN-VOLUMEN statt flacher Fläche: Die Sterne stehen zwischen NEAR
 // und FAR (Distanz vor der Kamera). X/Y werden PROPORTIONAL zur Distanz gestreut
 // (halfSpan = d * SPAN_PER_DIST) → jede Tiefenschicht füllt denselben Bildaus-
 // schnitt → gleichmäßige Winkeldichte über den ganzen Schirm, KEIN Häufen zur
-// Mitte (das wäre der frühere „Sonnensystem"-Dichtegradient). Zusammen mit der
-// perspektivischen Punktgröße (Vertex-Shader) und der Kamera-Parallaxe entsteht
-// so ein Raum, in dem nahe Sterne groß sind und sich stärker bewegen als ferne.
+// Mitte. Zusammen mit der perspektivischen Punktgröße (Vertex-Shader) und der
+// Kamera-Parallaxe entsteht so ein Raum: nahe Sterne groß & schnell, ferne fein.
 const CAM_Z = 1000; // muss mit der <Canvas camera position [0,0,1000]> übereinstimmen
-const NEAR = 120; // nächste Sterne (Distanz zur Kamera) – groß & schnell
-const FAR = 1700; // fernste Sterne – fein & träge (innerhalb camera.far = 2000)
-// tan(fov/2) bei fov 55° ≈ 0.52, großzügig überfüllt (×~1.6 fürs Breitbild), damit
-// bei kräftiger Parallaxe rundum Sterne stehen (keine leeren schwarzen Ränder).
-const SPAN_PER_DIST = 0.85;
-const PARALLAX = 0.28; // Bruchteil des Maus-Offsets; nahe Sterne wandern durch Tiefe zusätzlich
+const NEAR = 260; // nächste Sterne (Distanz zur Kamera) – groß & schnell
+const FAR = 1650; // fernste Sterne – fein & träge (innerhalb camera.far = 2000)
+// halfSpan = d * SPAN_PER_DIST + SPAN_MARGIN. tan(fov/2) bei fov 55° ≈ 0.52; mit
+// Breitbild-Faktor ~2.4 großzügig überfüllt. SPAN_MARGIN ist ein KONSTANTER Puffer,
+// der garantiert, dass selbst die schmale NAH-Ebene deutlich breiter ist als der
+// Parallaxe-Kameraweg → die großen nahen Sterne stehen bis an die Ränder (nicht
+// nur in der Mitte) und beim Mausschwenk läuft die Kamera nie aus dem Feld.
+const SPAN_PER_DIST = 1.25;
+const SPAN_MARGIN = 240;
+const PARALLAX = 0.1; // sanfter Kameraweg; die Tiefe macht die Bewegung sichtbar (nah ≫ fern)
 
 const VERT = /* glsl */ `
   attribute float aSize;
   attribute float aBright;
+  attribute float aSoft;
   uniform float uPixelRatio;
   uniform float uFocal;
   uniform float uNear;
   uniform float uFar;
   varying float vBright;
+  varying float vSoft;
   void main() {
     vec4 mv = modelViewMatrix * vec4(position, 1.0);
     float dist = -mv.z; // Distanz vor der Kamera (positiv)
     // Perspektivische Größe: nahe Sterne groß, ferne winzig – der stärkste
     // statische 3D-Hinweis. Geclampt gegen Riesen-Blobs bzw. Sub-Pixel-Flimmern.
-    gl_PointSize = clamp(aSize * uPixelRatio * (uFocal / dist), 0.6, 9.0);
+    gl_PointSize = clamp(aSize * uPixelRatio * (uFocal / dist), 0.8, 13.0);
     // Dezente Tiefen-Helligkeit: ferne Sterne etwas dunkler (atmosphärische Tiefe).
     // Räumlich gleichverteilt (jede Schicht füllt den Schirm) → KEIN radialer Ring.
     float depthFade = mix(0.45, 1.0, clamp((uFar - dist) / (uFar - uNear), 0.0, 1.0));
     vBright = aBright * depthFade;
+    vSoft = aSoft;
     gl_Position = projectionMatrix * mv;
   }
 `;
@@ -74,12 +80,17 @@ const FRAG = /* glsl */ `
   precision highp float;
   uniform vec3 uColor;
   varying float vBright;
+  varying float vSoft;
   void main() {
-    // Runder Stern: definierter Kern + weicher Rand (nicht rasiermesserscharf,
-    // aber auch kein verwaschener Blob). → sieht nach Stern aus, nicht nach Punkt.
-    float d = length(gl_PointCoord - vec2(0.5));
-    float alpha = smoothstep(0.5, 0.28, d);
-    if (alpha <= 0.01) discard;
+    // Echter Stern statt „weißer Punkt": heller, kompakter KERN + weicher GLOW-Hof,
+    // der weich zum Rand ausläuft. vSoft variiert pro Stern die Schärfe: scharfe,
+    // funkelnde Sterne (vSoft≈0) neben leicht unscharfen, diffus glühenden (vSoft≈1).
+    float d = length(gl_PointCoord - vec2(0.5)); // 0 = Zentrum … ~0.5 = Rand
+    float innerEdge = mix(0.14, 0.34, vSoft);     // weiche Sterne: größerer, unschärferer Kern
+    float core = smoothstep(0.5, innerEdge, d);   // heller Kern
+    float glow = smoothstep(0.5, 0.0, d);         // weiter, weicher Hof
+    float alpha = clamp(core + pow(glow, 1.6) * mix(0.22, 0.45, vSoft), 0.0, 1.0);
+    if (alpha <= 0.004) discard;
     gl_FragColor = vec4(uColor, alpha * vBright);
   }
 `;
@@ -94,12 +105,14 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
     const positions = new Float32Array(COUNT * 3);
     const sizes = new Float32Array(COUNT);
     const bright = new Float32Array(COUNT);
+    const soft = new Float32Array(COUNT);
     const base = PALETTE[theme].size;
     for (let i = 0; i < COUNT; i++) {
-      // Distanz vor der Kamera; X/Y proportional dazu → frustum-füllend, keine
-      // zentrale Häufung. Kamera blickt von +Z auf den Ursprung, also z = CAM_Z - d.
+      // Distanz vor der Kamera; X/Y proportional dazu (+ konstanter Rand) →
+      // frustum-füllend, keine zentrale Häufung, und die schmale NAH-Ebene reicht
+      // bis über die Ränder hinaus. Kamera blickt von +Z auf 0 → z = CAM_Z - d.
       const d = NEAR + Math.random() * (FAR - NEAR);
-      const halfSpan = d * SPAN_PER_DIST;
+      const halfSpan = d * SPAN_PER_DIST + SPAN_MARGIN;
       positions[i * 3 + 0] = (Math.random() - 0.5) * 2 * halfSpan;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 2 * halfSpan;
       positions[i * 3 + 2] = CAM_Z - d;
@@ -110,11 +123,15 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
       // Helligkeit variiert pro Stern (ersetzt die Fog-Tiefenoptik ohne Ringe).
       // Untergrenze bewusst hoch → knackige Sterne statt ausgeblichener Punkte.
       bright[i] = 0.6 + Math.random() * 0.4;
+      // Schärfe-Variation: viele scharf/funkelnd (klein), einige diffus glühend.
+      // pow³ → weiche, unscharfe Sterne bleiben die Ausnahme.
+      soft[i] = Math.pow(Math.random(), 3);
     }
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     g.setAttribute("aSize", new THREE.BufferAttribute(sizes, 1));
     g.setAttribute("aBright", new THREE.BufferAttribute(bright, 1));
+    g.setAttribute("aSoft", new THREE.BufferAttribute(soft, 1));
     return g;
     // theme steckt nur in der Basisgröße; Neuaufbau bei Theme-Wechsel ist ok.
   }, [theme]);
@@ -124,7 +141,7 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
       uColor: { value: new THREE.Color(PALETTE[theme].star) },
       uPixelRatio: { value: 1 },
       // Fokuslänge der Größen-Perspektive: bei Distanz ≈ uFocal ist die Punktgröße
-      // ≈ aSize. Nahe (NEAR≈120) → ~5×, ferne (FAR≈1700) → ~0.35× (dann geclampt).
+      // ≈ aSize. Nahe (NEAR≈260) → ~2.3×, ferne (FAR≈1650) → ~0.36× (dann geclampt).
       uFocal: { value: 600 },
       uNear: { value: NEAR },
       uFar: { value: FAR },
