@@ -9,13 +9,15 @@ import * as THREE from "three";
  * Hero füllt und die dahinterliegende fixe Aurora genau in diesem Bereich
  * abdeckt (der Rest der Seite behält die Aurora).
  *
- * – Dichtes Sternenfeld (THREE.Points) mit eigenem ShaderMaterial:
- *   scharfe, runde Punkte in UNTERSCHIEDLICHEN Größen und Helligkeiten.
- * – Kein Tiefen-Fog (der erzeugte konzentrische Helligkeitsringe = „Sonnensystem"),
- *   stattdessen zufällige Helligkeit pro Stern.
- * – Kamera folgt der Maus (dezente Parallaxe), lookAt(0,0,0). Die Parallaxe ist
- *   bewusst klein gehalten und das Feld breit gestreut, damit die Kamera nie
- *   über den bevölkerten Bereich hinausschaut (keine schwarzen Ränder).
+ * – Dichtes Sternenfeld (THREE.Points) in einem echten TIEFEN-VOLUMEN: die Punkte
+ *   stehen zwischen NEAR und FAR gestaffelt, X/Y proportional zur Distanz gestreut
+ *   (frustum-füllend → gleichmäßige Winkeldichte, kein Häufen zur Mitte).
+ * – Perspektivische Punktgröße (uFocal/dist): nahe Sterne groß, ferne winzig +
+ *   dezente Tiefen-Helligkeit → räumlicher Eindruck. Kein Tiefen-Fog (der erzeugte
+ *   früher konzentrische Helligkeitsringe = „Sonnensystem").
+ * – Kamera folgt der Maus (Parallaxe). Durch die Tiefe wandern nahe Sterne stärker
+ *   als ferne (Bewegungs-Parallaxe = Raumgefühl). Feld breit überfüllt gestreut,
+ *   damit die Kamera nie über den bevölkerten Bereich hinausschaut (keine Ränder).
  * – Theme-abhängig: dunkler Grund + cremefarbene Sterne (Dark), heller Grund +
  *   anthrazitfarbene Sterne (Light). Grund via gl.clearColor (alpha:false) → opak.
  * – prefers-reduced-motion: Kamera fix (Standbild).
@@ -30,30 +32,40 @@ const PALETTE: Record<Theme, { bg: string; star: string; size: number }> = {
   light: { bg: "#f6f4ef", star: "#20202a", size: 2.2 },
 };
 
-// Flaches Feld verteilt die Punkte gleichmäßig über die Fläche (statt sie per
-// Tiefe zur Mitte zu häufen) → für dieselbe sichtbare Dichte braucht es mehr.
 const COUNT = 16000;
-// Streuung deutlich breiter als der sichtbare Frustum, damit auch bei kräftiger
-// Parallaxe rundum Sterne stehen (keine leeren schwarzen Ränder).
-const SPREAD_XY = 4200; // Gesamtbreite/-höhe der Punktwolke (±2100)
-// FLACHES Feld: kaum Tiefe. Ein tiefer 3D-Würfel führt in der Perspektive dazu,
-// dass sich entfernte Punkte zur Bildmitte häufen → zentraler Helligkeits-/
-// Dichteverlauf, der als konzentrische „Sonnensystem"-Kreise wahrnehmbar ist.
-// Nahezu flach = gleichmäßige Dichte über den ganzen Bildschirm, keine Ringe.
-const SPREAD_Z = 120; // Tiefe (±60) – nur minimale Staffelung, kein Dichte-Gradient
-const PARALLAX = 0.32; // Bruchteil des Maus-Offsets → deutlich spürbare, randsichere Parallaxe
+// ECHTES TIEFEN-VOLUMEN statt flacher Fläche: Die Sterne stehen zwischen NEAR
+// und FAR (Distanz vor der Kamera). X/Y werden PROPORTIONAL zur Distanz gestreut
+// (halfSpan = d * SPAN_PER_DIST) → jede Tiefenschicht füllt denselben Bildaus-
+// schnitt → gleichmäßige Winkeldichte über den ganzen Schirm, KEIN Häufen zur
+// Mitte (das wäre der frühere „Sonnensystem"-Dichtegradient). Zusammen mit der
+// perspektivischen Punktgröße (Vertex-Shader) und der Kamera-Parallaxe entsteht
+// so ein Raum, in dem nahe Sterne groß sind und sich stärker bewegen als ferne.
+const CAM_Z = 1000; // muss mit der <Canvas camera position [0,0,1000]> übereinstimmen
+const NEAR = 120; // nächste Sterne (Distanz zur Kamera) – groß & schnell
+const FAR = 1700; // fernste Sterne – fein & träge (innerhalb camera.far = 2000)
+// tan(fov/2) bei fov 55° ≈ 0.52, großzügig überfüllt (×~1.6 fürs Breitbild), damit
+// bei kräftiger Parallaxe rundum Sterne stehen (keine leeren schwarzen Ränder).
+const SPAN_PER_DIST = 0.85;
+const PARALLAX = 0.28; // Bruchteil des Maus-Offsets; nahe Sterne wandern durch Tiefe zusätzlich
 
 const VERT = /* glsl */ `
   attribute float aSize;
   attribute float aBright;
   uniform float uPixelRatio;
+  uniform float uFocal;
+  uniform float uNear;
+  uniform float uFar;
   varying float vBright;
   void main() {
-    vBright = aBright;
     vec4 mv = modelViewMatrix * vec4(position, 1.0);
-    // Bildschirm-konstante Größe (keine Distanz-Skalierung → keine Riesen-Kreise,
-    // keine distanzabhängigen Ringe). Größe variiert nur über aSize pro Stern.
-    gl_PointSize = aSize * uPixelRatio;
+    float dist = -mv.z; // Distanz vor der Kamera (positiv)
+    // Perspektivische Größe: nahe Sterne groß, ferne winzig – der stärkste
+    // statische 3D-Hinweis. Geclampt gegen Riesen-Blobs bzw. Sub-Pixel-Flimmern.
+    gl_PointSize = clamp(aSize * uPixelRatio * (uFocal / dist), 0.6, 9.0);
+    // Dezente Tiefen-Helligkeit: ferne Sterne etwas dunkler (atmosphärische Tiefe).
+    // Räumlich gleichverteilt (jede Schicht füllt den Schirm) → KEIN radialer Ring.
+    float depthFade = mix(0.45, 1.0, clamp((uFar - dist) / (uFar - uNear), 0.0, 1.0));
+    vBright = aBright * depthFade;
     gl_Position = projectionMatrix * mv;
   }
 `;
@@ -84,9 +96,13 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
     const bright = new Float32Array(COUNT);
     const base = PALETTE[theme].size;
     for (let i = 0; i < COUNT; i++) {
-      positions[i * 3 + 0] = (Math.random() - 0.5) * SPREAD_XY;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * SPREAD_XY;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * SPREAD_Z;
+      // Distanz vor der Kamera; X/Y proportional dazu → frustum-füllend, keine
+      // zentrale Häufung. Kamera blickt von +Z auf den Ursprung, also z = CAM_Z - d.
+      const d = NEAR + Math.random() * (FAR - NEAR);
+      const halfSpan = d * SPAN_PER_DIST;
+      positions[i * 3 + 0] = (Math.random() - 0.5) * 2 * halfSpan;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 2 * halfSpan;
+      positions[i * 3 + 2] = CAM_Z - d;
       // Größe stark klein-lastig: pow⁴ macht große Sterne SELTEN → viele feine
       // Punkte, nur vereinzelt größere (nicht so viele große wie zuvor).
       const r = Math.random();
@@ -107,6 +123,11 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
     () => ({
       uColor: { value: new THREE.Color(PALETTE[theme].star) },
       uPixelRatio: { value: 1 },
+      // Fokuslänge der Größen-Perspektive: bei Distanz ≈ uFocal ist die Punktgröße
+      // ≈ aSize. Nahe (NEAR≈120) → ~5×, ferne (FAR≈1700) → ~0.35× (dann geclampt).
+      uFocal: { value: 600 },
+      uNear: { value: NEAR },
+      uFar: { value: FAR },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -128,8 +149,8 @@ function Stars({ theme, reduced }: { theme: Theme; reduced: boolean }) {
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
-      // Spürbare Parallaxe (PARALLAX), aber das Feld (±2100) ist breit genug,
-      // dass die Kamera nie über den bevölkerten Bereich hinausschaut.
+      // Spürbare Parallaxe (PARALLAX); das Feld ist breit überfüllt gestreut,
+      // sodass die Kamera nie über den bevölkerten Bereich hinausschaut.
       target.current.set(
         (e.clientX - window.innerWidth / 2) * PARALLAX,
         (e.clientY - window.innerHeight / 2) * PARALLAX
