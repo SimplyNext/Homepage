@@ -8,7 +8,10 @@ export const site = {
   tagline: "Premium-Apps. Plattformübergreifend gebaut.",
   description:
     "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
-  url: "https://simplynext.de",
+  // Kanonische Domain = www (die apex-Domain simplynext.de leitet per 308 auf
+  // www um). Wird für metadataBase, Sitemap und robots.txt genutzt → alle
+  // ausgegebenen URLs sind direkt die endgültigen www-URLs (keine Redirect-Kette).
+  url: "https://www.simplynext.de",
   email: "info@simplynext.de",
   legal: {
     companyName: "SimplyNext",
