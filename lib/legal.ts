@@ -8,14 +8,11 @@ import type { AppData } from "./apps";
 
 export type LegalSection = { heading: string; paragraphs?: string[]; list?: string[]; afterList?: string[] };
 
-const address = [
-  site.legal.companyName,
-  `Inhaber: ${site.legal.responsible}`,
-  site.legal.street,
-  `${site.legal.zip} ${site.legal.city}`,
-  site.legal.country,
-];
-
+/**
+ * Das Impressum identifiziert den Anbieter (§5 DDG) – nicht das einzelne
+ * Produkt. Website und App-Seiten nutzen daher dieselbe Fassung
+ * (e-recht24-Vorlage). Einzige Impressum-Quelle im Projekt.
+ */
 export function impressumWebsiteSections(locale: string): LegalSection[] {
   if (locale === "en") {
     return [
@@ -90,46 +87,6 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
       paragraphs: ["e-recht24.de"],
     },
   ];
-}
-
-export function impressumSections(appName?: string): LegalSection[] {
-  const sections: LegalSection[] = [
-    { heading: "Angaben gemäß § 5 DDG", list: address },
-    { heading: "Kontakt", list: [`Telefon: ${site.legal.phone}`, `E-Mail: ${site.legal.email}`] },
-  ];
-
-  // Nur zeigen, wenn tatsächlich vorhanden (Kleinunternehmer i. d. R. ohne beides).
-  if (site.legal.vatId) {
-    sections.push({
-      heading: "Umsatzsteuer-ID",
-      paragraphs: [`Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: ${site.legal.vatId}`],
-    });
-  }
-  if (site.legal.register) {
-    sections.push({ heading: "Handelsregister", paragraphs: [site.legal.register] });
-  }
-
-  sections.push(
-    {
-      heading: "Verantwortlich nach § 18 Abs. 2 MStV",
-      list: [site.legal.responsible, site.legal.street, `${site.legal.zip} ${site.legal.city}`],
-    },
-    {
-      heading: "Haftung für Inhalte",
-      paragraphs: [
-        "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.",
-        "Bei Bekanntwerden konkreter Rechtsverletzungen entfernen wir entsprechende Inhalte umgehend.",
-      ],
-    },
-    {
-      heading: "Urheberrecht",
-      paragraphs: [
-        `Die durch ${site.legal.companyName} erstellten Inhalte${appName ? ` der App ${appName}` : ""} unterliegen dem deutschen Urheberrecht. Vervielfältigung und Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung.`,
-      ],
-    },
-  );
-
-  return sections;
 }
 
 export function datenschutzSections(app?: AppData): LegalSection[] {

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps, getApp } from "@/lib/apps";
-import { impressumSections } from "@/lib/legal";
+import { impressumWebsiteSections } from "@/lib/legal";
 import { routing } from "@/i18n/routing";
 import { InnerPageHeader, LegalDoc } from "@/components/layout/LegalDoc";
 
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         backHref={`/apps/${app.slug}`}
         backLabel={t("backToApp", { name: app.name })}
       />
-      <LegalDoc sections={impressumSections(app.name)} />
+      <LegalDoc sections={impressumWebsiteSections(locale)} hideEnNotice />
     </>
   );
 }
