@@ -6,8 +6,10 @@
 export const site = {
   name: "SimplyNext",
   tagline: "Premium-Apps. Plattformübergreifend gebaut.",
+  // Deutscher Fallback. Die tatsächlich ausgelieferten Metadaten kommen
+  // lokalisiert aus dem "meta"-Namespace der Message-Kataloge.
   description:
-    "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
+    "SimplyNext ist ein App-Studio für hochwertige, plattformübergreifende Anwendungen mit Flutter und Expo.",
   // Kanonische Domain = www (die apex-Domain simplynext.de leitet per 308 auf
   // www um). Wird für metadataBase, Sitemap und robots.txt genutzt → alle
   // ausgegebenen URLs sind direkt die endgültigen www-URLs (keine Redirect-Kette).

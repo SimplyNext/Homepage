@@ -1,14 +1,18 @@
 {
   "common": {
     "skipLink": "Zum Inhalt springen",
-    "themeToggle": { "toLight": "Zu Light-Mode wechseln", "toDark": "Zu Dark-Mode wechseln" },
-    "localeSwitch": { "toEnglish": "Switch to English", "toGerman": "Zu Deutsch wechseln" },
+    "themeToggle": { "toLight": "Zum Light-Mode wechseln", "toDark": "Zum Dark-Mode wechseln" },
+    "localeSwitch": { "toEnglish": "Switch to English", "toGerman": "Auf Deutsch wechseln" },
     "menuOpen": "Menü öffnen",
     "menuClose": "Menü schließen"
   },
   "nav": { "apps": "Apps", "studio": "Studio", "contact": "Kontakt" },
+  "meta": {
+    "tagline": "Premium-Apps. Plattformübergreifend gebaut.",
+    "description": "SimplyNext ist ein App-Studio für hochwertige, plattformübergreifende Anwendungen mit Flutter und Expo."
+  },
   "footer": {
-    "tagline": "SimplyNext ist ein App-Studio für premium plattformübergreifende Anwendungen mit Flutter und Expo.",
+    "tagline": "SimplyNext ist ein App-Studio für hochwertige, plattformübergreifende Anwendungen mit Flutter und Expo.",
     "columnApps": "Apps",
     "columnStudio": "Studio",
     "columnLegal": "Rechtliches",
@@ -23,7 +27,7 @@
     "eyebrow": "App-Studio · Flutter · Expo",
     "headlineLine1": "Wir bauen Apps,",
     "headlineLine2": "die in Erinnerung bleiben.",
-    "lead": "SimplyNext entwirft und entwickelt premium, plattformübergreifende Apps – kompromisslos in Performance, Detail und Gefühl.",
+    "lead": "SimplyNext entwirft und entwickelt hochwertige, plattformübergreifende Apps – kompromisslos in Performance, Detail und Anmutung.",
     "ctaWork": "Arbeiten ansehen",
     "scrollHint": "Scrollen"
   },
@@ -70,8 +74,6 @@
     "backToHome": "Zurück zur Startseite",
     "backToApp": "Zurück zu {name}",
     "updated": "Stand: {date}",
-    "note": "Hinweis:",
-    "noteText": "Dieser Text ist eine Vorlage und ersetzt keine Rechtsberatung. Bitte alle Platzhalter ausfüllen und vor Veröffentlichung fachkundig prüfen lassen.",
     "enNotice": "Legally binding version in German below.",
     "impressum": { "label": "impressum", "title": "Impressum", "titleWithApp": "Impressum – {name}" },
     "agb": {
@@ -79,14 +81,14 @@
       "title": "Allgemeine Geschäftsbedingungen",
       "titleWithApp": "Nutzungsbedingungen – {name}",
       "intro": "Für einzelne Apps können ergänzende Bedingungen gelten, die auf der jeweiligen App-Seite verlinkt sind.",
-      "introWithApp": "Die Bedingungen für die Nutzung der App „{name}\"."
+      "introWithApp": "Die Bedingungen für die Nutzung der App „{name}“."
     },
     "datenschutz": {
       "label": "datenschutz",
       "title": "Datenschutzerklärung",
       "titleWithApp": "Datenschutz – {name}",
       "intro": "Diese Erklärung gilt für diese Website. Für unsere Apps gelten die jeweils dort verlinkten App-Datenschutzerklärungen.",
-      "introWithApp": "Wie wir in der App „{name}\" mit deinen Daten umgehen."
+      "introWithApp": "Wie wir in der App „{name}“ mit deinen Daten umgehen."
     }
   },
   "notFound": {
@@ -99,8 +101,8 @@
       "summary": "Persönliche Allergen-Ampel, KI-Wochenplan und Lebensmittel-Check für ein Leben mit Unverträglichkeiten.",
       "category": "Gesundheit & Ernährung",
       "description": [
-        "Gluten, Laktose, Fructose, Histamin, Sorbit – oder einfach: dein Körper reagiert, und du weißt manchmal selbst nicht genau warum. EatSafety macht jede Mahlzeit wieder sicher, statt zur Recherche.",
-        "Du legst deine persönliche Allergen-Ampel an, und die KI plant, prüft und schreibt Rezepte ausschließlich mit dem um, was du verträgst – saisonal, regional und jeden Tag neu denkbar.",
+        "Gluten, Laktose, Fructose, Histamin, Sorbit – oder einfach: dein Körper reagiert, und du weißt manchmal selbst nicht genau warum. EatSafety macht jede Mahlzeit wieder zum Genuss – statt zur Recherche.",
+        "Du legst deine persönliche Allergen-Ampel an, und die KI plant, prüft und schreibt Rezepte ausschließlich mit dem um, was du verträgst – saisonal, regional und jeden Tag neu gedacht.",
         "Für alle, die mit Unverträglichkeiten nicht kämpfen, sondern einfach leben wollen. Weil Essen Freude machen soll – nicht Angst."
       ],
       "features": [
@@ -133,7 +135,7 @@
         { "title": "KI-Diagnose", "text": "Vom Fehlercode zur Lösung: verständliche Erklärung, Ursachen nach Wahrscheinlichkeit, Kosten, Schwierigkeitsgrad und Reparaturanleitung." },
         { "title": "Live-Daten", "text": "Motortemperatur, Drehzahl, Lambdawerte und mehr in Echtzeit – direkt vom Steuergerät, alle 500 ms aktualisiert." },
         { "title": "Wartungsplaner", "text": "Erinnerungen nach Datum oder Kilometerstand, Belege und Fotos hinterlegen, als PDF oder CSV exportieren – wiederkehrend automatisch geplant." },
-        { "title": "Kostentracking", "text": "Treibstoff mit Verbrauchsberechnung, Versicherung, Werkstatt und mehr – übersichtliche Diagramme zeigen, was dein Auto wirklich kostet." }
+        { "title": "Kostentracking", "text": "Kraftstoff mit Verbrauchsberechnung, Versicherung, Werkstatt und mehr – übersichtliche Diagramme zeigen, was dein Auto wirklich kostet." }
       ],
       "pricing": {
         "free": ["OBD2-Diagnose (Fehlercodes auslesen & löschen)", "6 KI-Anfragen pro Woche – erneuert sich automatisch"],
@@ -147,21 +149,21 @@
       "summary": "KI-Reiseplaner, Live-Besucherampel und automatische Audio-Guides – entdecke Städte wie ein Einheimischer, nicht wie ein Tourist.",
       "category": "Reisen & Navigation",
       "description": [
-        "Entdecke Städte so, wie es sich wirklich anfühlt – ohne Gedränge, ohne Touristenfallen, ohne starre Routen. NOOK ist dein intelligenter, unsichtbarer Reisebegleiter: Er plant, führt und begleitet dich wie ein einheimischer Freund.",
-        "Sag NOOK, wo du hinwillst, wie lange du bleibst und wofür dein Herz schlägt – die KI erstellt daraus in Sekunden einen personalisierten Tagesplan mit optimierten Routen. Vor Ort zeigt die Live-Besucherampel auf einen Blick, welche Orte gerade ruhig und welche überfüllt sind, und der Audio-Guide startet automatisch, sobald du eine Sehenswürdigkeit betrittst.",
+        "Entdecke Städte so, wie sie sich wirklich anfühlen – ohne Gedränge, ohne Touristenfallen, ohne starre Routen. NOOK ist dein intelligenter, unsichtbarer Reisebegleiter: Er plant, führt und begleitet dich wie ein einheimischer Freund.",
+        "Sag NOOK, wo du hinwillst, wie lange du bleibst und wofür dein Herz schlägt – die KI erstellt daraus in Sekunden einen personalisierten Tagesplan mit optimierten Routen. Vor Ort zeigt die Live-Besucherampel auf einen Blick, welche Orte gerade ruhig und welche überfüllt sind, und der Audio-Guide startet automatisch, sobald du dich einer Sehenswürdigkeit näherst.",
         "NOOK bucht nie eigenständig und trifft keine Entscheidungen ohne dich – die KI macht Vorschläge, die Kontrolle bleibt bei dir. Alle Standortdaten werden anonymisiert, DSGVO-konform, und alles ist offline verfügbar."
       ],
       "features": [
         { "title": "KI-Tagesplaner", "text": "Maßgeschneiderte Reiserouten in Sekunden – mit optimierten Wegen, Zeitplänen und Hotel-Empfehlungen direkt auf deiner Route. Gemeinsam planen und demokratisch über Stopps abstimmen." },
         { "title": "Live-Besucherampel", "text": "Echtzeit-Auslastung für alle Sehenswürdigkeiten: Grün heißt entspannt entdecken, Rot heißt – NOOK kennt eine ruhigere Alternative. Inklusive Crowd-Alert, bevor du in der Menge steckst." },
         { "title": "Automatischer Audio-Guide", "text": "Tritt in den 50-Meter-Radius einer Sehenswürdigkeit und dein persönlicher Audio-Guide startet von selbst. Professionelle Stimmen in 7 Sprachen, komplett offline verfügbar." },
-        { "title": "Smart Scanner", "text": "Kamera auf die Speisekarte halten – NOOK warnt sofort vor versteckten Gebühren, überteuerten Preisen und dem berüchtigten „Coperto\". Ausgabe in deiner Sprache." },
+        { "title": "Smart Scanner", "text": "Kamera auf die Speisekarte halten – NOOK warnt sofort vor versteckten Gebühren, überteuerten Preisen und dem berüchtigten „Coperto“. Ausgabe in deiner Sprache." },
         { "title": "ÖPNV-Assistent", "text": "Schnellste Verbindungen vor Ort samt Direktlinks zu offiziellen Tickets – kein Rätselraten in fremden Verkehrsnetzen." },
         { "title": "Entdecker-Stempelbuch", "text": "Jede besuchte Sehenswürdigkeit hinterlässt einen GPS-validierten Stempel. Abzeichen freischalten und dein digitales Reisetagebuch aufbauen." }
       ],
       "pricing": {
         "free": ["KI-Reiserouten & Karte mit Live-Besucherampel", "Gemeinsam planen, abstimmen & Ausgaben teilen", "Offline speichern – kein Roaming nötig"],
-        "premium": ["Einzel-Guides ab 1,99 €", "Stadtpässe (z. B. „Venedig komplett\") ab 9,99 €", "Weltweites Abo ab 4,99 €/Monat oder 39,99 €/Jahr"],
+        "premium": ["Einzel-Guides ab 1,99 €", "Stadtpässe (z. B. „Venedig komplett“) ab 9,99 €", "Weltweites Abo ab 4,99 €/Monat oder 39,99 €/Jahr"],
         "note": "Kostenlos starten. Premium, wenn du tiefer eintauchen willst."
       },
       "shots": ["KI-Reiseplaner", "Karte mit Besucherampel", "Audio-Guide"]

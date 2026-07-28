@@ -7,6 +7,10 @@
     "menuClose": "Close menu"
   },
   "nav": { "apps": "Apps", "studio": "Studio", "contact": "Contact" },
+  "meta": {
+    "tagline": "Premium apps. Built cross-platform.",
+    "description": "SimplyNext is an app studio building premium, cross-platform applications with Flutter and Expo."
+  },
   "footer": {
     "tagline": "SimplyNext is an app studio building premium, cross-platform applications with Flutter and Expo.",
     "columnApps": "Apps",
@@ -70,8 +74,6 @@
     "backToHome": "Back to homepage",
     "backToApp": "Back to {name}",
     "updated": "Last updated: {date}",
-    "note": "Note:",
-    "noteText": "This text is a template and does not constitute legal advice. Please fill in all placeholders and have it reviewed by a professional before publishing.",
     "enNotice": "Legally binding version in German below.",
     "impressum": { "label": "legal notice", "title": "Legal notice", "titleWithApp": "Legal notice – {name}" },
     "agb": {
@@ -96,10 +98,10 @@
   "apps": {
     "eatsafety": {
       "tagline": "Never guess again. Always eat safely.",
-      "summary": "A personal allergen traffic light, AI weekly meal plans and a food checker for life with intolerances.",
+      "summary": "A personal allergen traffic light, AI weekly meal plans and a food checker for living with intolerances.",
       "category": "Health & Nutrition",
       "description": [
-        "Gluten, lactose, fructose, histamine, sorbitol – or simply: your body reacts, and sometimes you don't even know exactly why. EatSafety makes every meal safe again, instead of a research project.",
+        "Gluten, lactose, fructose, histamine, sorbitol – or simply: your body reacts, and sometimes you don't even know exactly why. EatSafety makes every meal a pleasure again – instead of a research project.",
         "You set up your personal allergen traffic light, and the AI plans, checks and rewrites recipes using only what you can tolerate – seasonal, regional and reimagined every day.",
         "For everyone who doesn't want to fight their intolerances, but simply live with them. Because food should bring joy – not anxiety."
       ],
@@ -107,7 +109,7 @@
         { "title": "Allergen traffic light", "text": "Rate every problematic ingredient: 🔴 off-limits, 🟡 small amounts only, 🟢 fine – including personal notes the AI understands." },
         { "title": "AI weekly plan", "text": "A complete plan for breakfast, lunch and dinner – built exclusively from what you can tolerate. Seasonal and regional." },
         { "title": "Food checker", "text": "Scan a barcode, photograph an ingredient list, or type it in – an instant result against your personal exclusion list." },
-        { "title": "Leftover ideas", "text": "Type or speak what's still in your fridge – and get a creative, tolerable recipe in seconds." },
+        { "title": "Leftover ideas", "text": "Type or speak what's still in your fridge – and get a creative, gut-friendly recipe in seconds." },
         { "title": "Recipe transformer", "text": "Paste a URL or recipe text – EatSafety rewrites any recipe for your intolerances. Swapped ingredients are marked." },
         { "title": "Shopping list & favorites", "text": "Ingredients move from the weekly plan to your list with one tap. Check off, export as PDF, save favorite recipes." }
       ],
@@ -131,7 +133,7 @@
         { "title": "OBD2 diagnostics", "text": "Read and clear every stored fault code via Bluetooth – in seconds, no workshop, no waiting." },
         { "title": "Ask Toni!", "text": "Your round-the-clock AI mechanic. Send a question, a photo, or a fault code – and get precise answers about your car." },
         { "title": "AI diagnosis", "text": "From fault code to fix: a clear explanation, likely causes, costs, difficulty level and repair guide." },
-        { "title": "Live data", "text": "Engine temperature, RPM, lambda values and more in real time – straight from the ECU, refreshed every 500ms." },
+        { "title": "Live data", "text": "Engine temperature, RPM, lambda values and more in real time – straight from the ECU, refreshed every 500 ms." },
         { "title": "Maintenance planner", "text": "Reminders by date or mileage, store receipts and photos, export as PDF or CSV – recurring schedules set automatically." },
         { "title": "Cost tracking", "text": "Fuel with consumption calculations, insurance, workshop visits and more – clear charts show what your car really costs." }
       ],
@@ -153,15 +155,15 @@
       ],
       "features": [
         { "title": "AI day planner", "text": "Tailor-made itineraries in seconds – with optimized routes, schedules and hotel recommendations right along your path. Plan together and vote on stops democratically." },
-        { "title": "Live crowd indicator", "text": "Real-time occupancy for every sight: green means relaxed exploring, red means NOOK knows a quieter alternative. Includes a crowd alert before you're stuck in the masses." },
+        { "title": "Live crowd indicator", "text": "Real-time occupancy for every sight: green means relaxed exploring, red means NOOK knows a quieter alternative. Includes a crowd alert before you end up in the thick of it." },
         { "title": "Automatic audio guide", "text": "Step within 50 meters of a sight and your personal audio guide starts by itself. Professional voices in 7 languages, fully available offline." },
-        { "title": "Smart scanner", "text": "Point your camera at a menu – NOOK instantly warns you about hidden fees, inflated prices and the infamous \"coperto\". Output in your language." },
+        { "title": "Smart scanner", "text": "Point your camera at a menu – NOOK instantly warns you about hidden fees, inflated prices and the infamous “coperto”. Output in your language." },
         { "title": "Transit assistant", "text": "The fastest local connections plus direct links to official tickets – no more guesswork in unfamiliar transit networks." },
         { "title": "Explorer stamp book", "text": "Every sight you visit leaves a GPS-validated stamp. Unlock badges and build your digital travel journal." }
       ],
       "pricing": {
         "free": ["AI itineraries & map with live crowd indicator", "Plan together, vote & split expenses", "Save everything offline – no roaming needed"],
-        "premium": ["Single guides from €1.99", "City passes (e.g. \"Venice complete\") from €9.99", "Worldwide subscription from €4.99/month or €39.99/year"],
+        "premium": ["Single guides from €1.99", "City passes (e.g. “Venice complete”) from €9.99", "Worldwide subscription from €4.99/month or €39.99/year"],
         "note": "Start for free. Go premium when you want to dive deeper."
       },
       "shots": ["AI trip planner", "Map with crowd indicator", "Audio guide"]

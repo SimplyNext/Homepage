@@ -30,21 +30,27 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  // Titel/Beschreibung lokalisiert – sonst tragen auch die /en-Seiten den
+  // deutschen Text (sichtbar in Google-Snippets und Link-Vorschauen).
+  const t = await getTranslations({ locale, namespace: "meta" });
+  const title = `${site.name} — ${t("tagline")}`;
+  const description = t("description");
+
   return {
     metadataBase: new URL(site.url),
-    title: { default: `${site.name} — ${site.tagline}`, template: `%s · ${site.name}` },
-    description: site.description,
+    title: { default: title, template: `%s · ${site.name}` },
+    description,
     openGraph: {
       type: "website",
       locale: ogLocale[locale as keyof typeof ogLocale] ?? ogLocale.de,
       siteName: site.name,
-      title: `${site.name} — ${site.tagline}`,
-      description: site.description,
+      title,
+      description,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${site.name} — ${site.tagline}`,
-      description: site.description,
+      title,
+      description,
     },
     alternates: {
       languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
