@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps, getApp } from "@/lib/apps";
 import { impressumWebsiteSections } from "@/lib/legal";
+import { alternatesFor, noindex } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 import { InnerPageHeader, LegalDoc } from "@/components/layout/LegalDoc";
 
@@ -16,7 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { locale, slug } = await params;
   const app = getApp(slug);
   const t = await getTranslations({ locale, namespace: "legal.impressum" });
-  return { title: app ? t("titleWithApp", { name: app.name }) : t("title") };
+  return {
+    title: app ? t("titleWithApp", { name: app.name }) : t("title"),
+    alternates: alternatesFor(locale, `/apps/${slug}/impressum`),
+    robots: noindex,
+  };
 }
 
 export default async function Page({ params }: { params: Promise<Params> }) {

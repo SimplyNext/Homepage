@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps, getApp } from "@/lib/apps";
 import { site } from "@/lib/site";
+import { alternatesFor } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 import AppShowcase from "@/components/sections/AppShowcase";
 
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     title: `${app.name} — ${t("tagline")}`,
     description: t("summary"),
     openGraph: { title: `${app.name} · ${site.name}`, description: t("summary") },
+    alternates: alternatesFor(locale, `/apps/${slug}`),
   };
 }
 

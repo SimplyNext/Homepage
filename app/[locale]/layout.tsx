@@ -14,6 +14,7 @@ import CustomCursor from "@/components/cursor/CustomCursor";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { site } from "@/lib/site";
+import { alternatesFor } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 
 const ogLocale = { de: "de_DE", en: "en_US" } as const;
@@ -52,9 +53,7 @@ export async function generateMetadata({
       title,
       description,
     },
-    alternates: {
-      languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
-    },
+    alternates: alternatesFor(locale),
     robots: { index: true, follow: true },
   };
 }
