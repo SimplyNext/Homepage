@@ -22,7 +22,7 @@ export const site = {
     country: "Deutschland",
     phone: "01743389049",
     email: "info@simplynext.de",
-    vatId: "",
+    vatId: "DE463824630",
     register: "",
     profession: "App Entwickler",
     professionCountry: "Deutschland",

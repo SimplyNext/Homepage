@@ -32,6 +32,16 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
           "E-Mail: info@simplynext.de",
         ],
       },
+      ...(site.legal.vatId
+        ? [
+            {
+              heading: "VAT ID",
+              paragraphs: [
+                `Value Added Tax identification number pursuant to Sec. 27a of the German VAT Act: ${site.legal.vatId}`,
+              ],
+            },
+          ]
+        : []),
       {
         heading: "Professional Title and Professional Regulations",
         list: [
@@ -69,6 +79,16 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
         "E-Mail: info@simplynext.de",
       ],
     },
+    ...(site.legal.vatId
+      ? [
+          {
+            heading: "Umsatzsteuer-ID",
+            paragraphs: [
+              `Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: ${site.legal.vatId}`,
+            ],
+          },
+        ]
+      : []),
     {
       heading: "Berufsbezeichnung und berufsrechtliche Regelungen",
       list: [
