@@ -33,7 +33,7 @@
   },
   "journey": {
     "eyebrow": "The apps",
-    "heading": "Five apps. One standard.",
+    "heading": "{count} apps. One standard.",
     "counter": "{current} / {total}",
     "visitApp": "Explore the app"
   },
@@ -215,6 +215,66 @@
         "note": "Plans for every business – from solo trader to team."
       },
       "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"]
+    },
+    "shrinkit": {
+      "tagline": "In development – details to follow.",
+      "summary": "ShrinkIt is being built. Features, screenshots and pricing will be added once the app is ready.",
+      "category": "In development",
+      "description": [
+        "ShrinkIt is currently in development. The full description will appear here once the app is released.",
+        "We are building ShrinkIt to the same standard as our other apps: considered in every detail, fast in use and free of unnecessary weight.",
+        "Want to hear about it sooner? Write to us at info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Features to follow", "text": "The final feature set is not fixed yet and will be added here once development is complete." },
+        { "title": "Android first", "text": "The first version will be released for Android. An iOS version is planned." }
+      ],
+      "pricing": {
+        "free": ["Pricing model not yet decided"],
+        "premium": ["Details to follow at release"],
+        "note": "We will add pricing once the app is released."
+      },
+      "shots": ["Preview to follow", "Preview to follow", "Preview to follow"]
+    },
+    "fabula": {
+      "tagline": "In development – details to follow.",
+      "summary": "Fabula is being built. Features, screenshots and pricing will be added once the app is ready.",
+      "category": "In development",
+      "description": [
+        "Fabula is currently in development. The full description will appear here once the app is released.",
+        "We are building Fabula to the same standard as our other apps: considered in every detail, fast in use and free of unnecessary weight.",
+        "Want to hear about it sooner? Write to us at info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Features to follow", "text": "The final feature set is not fixed yet and will be added here once development is complete." },
+        { "title": "Android first", "text": "The first version will be released for Android. An iOS version is planned." }
+      ],
+      "pricing": {
+        "free": ["Pricing model not yet decided"],
+        "premium": ["Details to follow at release"],
+        "note": "We will add pricing once the app is released."
+      },
+      "shots": ["Preview to follow", "Preview to follow", "Preview to follow"]
+    },
+    "furly": {
+      "tagline": "In development – details to follow.",
+      "summary": "Furly is being built. Features, screenshots and pricing will be added once the app is ready.",
+      "category": "In development",
+      "description": [
+        "Furly is currently in development. The full description will appear here once the app is released.",
+        "We are building Furly to the same standard as our other apps: considered in every detail, fast in use and free of unnecessary weight.",
+        "Want to hear about it sooner? Write to us at info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Features to follow", "text": "The final feature set is not fixed yet and will be added here once development is complete." },
+        { "title": "Android first", "text": "The first version will be released for Android. An iOS version is planned." }
+      ],
+      "pricing": {
+        "free": ["Pricing model not yet decided"],
+        "premium": ["Details to follow at release"],
+        "note": "We will add pricing once the app is released."
+      },
+      "shots": ["Preview to follow", "Preview to follow", "Preview to follow"]
     }
   }
 }

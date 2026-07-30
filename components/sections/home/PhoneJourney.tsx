@@ -141,7 +141,7 @@ export default function PhoneJourney() {
                 <span className="text-accent-alt">{"}"}</span>
               </p>
               <h2 className="mt-4 font-display text-2xl font-medium text-ink-muted">
-                {t("heading")}
+                {t("heading", { count: apps.length })}
               </h2>
             </div>
 
@@ -164,7 +164,7 @@ export default function PhoneJourney() {
           <span className="text-accent-alt">{"}"}</span>
         </p>
         <h2 className="mt-4 font-display text-display-md font-medium text-ink">
-          {t("heading")}
+          {t("heading", { count: apps.length })}
         </h2>
 
         <div className="mt-16 flex flex-col gap-20 motion-reduce:md:grid motion-reduce:md:grid-cols-2 motion-reduce:md:gap-12">

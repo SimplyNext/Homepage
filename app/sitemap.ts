@@ -9,7 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Nur die App-Detailseiten. Die Rechtsunterseiten (AGB/Datenschutz/
   // Impressum je App) sind bewusst noindex – sie sind über alle Apps hinweg
   // nahezu identisch. Eine noindex-Seite in der Sitemap wäre widersprüchlich.
-  const appPaths = apps.map((a) => `/apps/${a.slug}`);
+  // Platzhalter-Apps sind noindex – sie gehören nicht in die Sitemap.
+  const appPaths = apps.filter((a) => !a.placeholder).map((a) => `/apps/${a.slug}`);
 
   return routing.locales.flatMap((locale) =>
     [...staticPaths, ...appPaths].map((p) => ({

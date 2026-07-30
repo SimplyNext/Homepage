@@ -33,7 +33,7 @@
   },
   "journey": {
     "eyebrow": "Die Apps",
-    "heading": "Fünf Apps. Ein Anspruch.",
+    "heading": "{count} Apps. Ein Anspruch.",
     "counter": "{current} / {total}",
     "visitApp": "App entdecken"
   },
@@ -215,6 +215,66 @@
         "note": "Pläne für jeden Betrieb – vom Einzelunternehmer bis zum Team."
       },
       "shots": ["Auftrags-Dashboard", "Foto-Analyse", "Angebots-Editor", "Kundenverwaltung", "Materialkatalog", "Fertiges PDF-Angebot"]
+    },
+    "shrinkit": {
+      "tagline": "In Entwicklung – Details folgen.",
+      "summary": "ShrinkIt entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
+      "category": "In Entwicklung",
+      "description": [
+        "ShrinkIt befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
+        "Wir bauen ShrinkIt mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
+        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
+        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+      ],
+      "pricing": {
+        "free": ["Preismodell steht noch nicht fest"],
+        "premium": ["Details folgen zur Veröffentlichung"],
+        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+      },
+      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
+    },
+    "fabula": {
+      "tagline": "In Entwicklung – Details folgen.",
+      "summary": "Fabula entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
+      "category": "In Entwicklung",
+      "description": [
+        "Fabula befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
+        "Wir bauen Fabula mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
+        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
+        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+      ],
+      "pricing": {
+        "free": ["Preismodell steht noch nicht fest"],
+        "premium": ["Details folgen zur Veröffentlichung"],
+        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+      },
+      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
+    },
+    "furly": {
+      "tagline": "In Entwicklung – Details folgen.",
+      "summary": "Furly entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
+      "category": "In Entwicklung",
+      "description": [
+        "Furly befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
+        "Wir bauen Furly mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
+        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+      ],
+      "features": [
+        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
+        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+      ],
+      "pricing": {
+        "free": ["Preismodell steht noch nicht fest"],
+        "premium": ["Details folgen zur Veröffentlichung"],
+        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+      },
+      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
     }
   }
 }

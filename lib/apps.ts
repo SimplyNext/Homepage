@@ -44,6 +44,14 @@ export type AppData = {
    * hochgezoomt/„zu groß" wirkt. Echte 1080×2640-Screenshots lassen es weg.
    */
   syntheticChrome?: boolean;
+  /**
+   * true, solange die App nur Platzhalter-Inhalte hat. Solche Seiten werden
+   * auf noindex gesetzt und aus der Sitemap gehalten – ihr Text ist über alle
+   * Platzhalter-Apps identisch, Google würde sie sonst als Duplikat bzw.
+   * „Gecrawlt – zurzeit nicht indexiert" melden. Flag entfernen, sobald echte
+   * Texte und Screenshots hinterlegt sind.
+   */
+  placeholder?: boolean;
   /** Nur Bildpfade – Alt-Texte kommen aus den Messages (apps.<slug>.shots[i]) */
   shots: { src: string }[];
   links: { type: "appstore" | "playstore" | "web"; url: string }[];
@@ -155,6 +163,72 @@ export const apps: AppData[] = [
       { src: "/images/apps/werkflow/werkflow_4.png" },
       { src: "/images/apps/werkflow/werkflow_5.png" },
       { src: "/images/apps/werkflow/werkflow_6.png" },
+    ],
+    links: [{ type: "playstore", url: "#" }],
+    since: "2026",
+  },
+  // --- Platzhalter-Apps -----------------------------------------------------
+  // Bilder sind generierte SVG-Platzhalter unter /public/images/apps/<slug>/.
+  // Zum Ersetzen: echte PNGs dort ablegen und die Endung hier auf .png ändern.
+  // Datenschutz/AGB nutzen weiter die Vorlage aus lib/legal.ts, bis eigene
+  // Fassungen in lib/legal-apps/ hinterlegt sind. Das Impressum ist ohnehin
+  // für alle Apps identisch (impressumWebsiteSections).
+  {
+    slug: "shrinkit",
+    name: "ShrinkIt",
+    os: ["Android"],
+    iosSoon: true,
+    status: "coming-soon",
+    accent: "#5FB0B7",
+    accentLight: "#2C6B70",
+    hero: "/images/apps/shrinkit/hero.svg",
+    heroFit: "contain",
+    syntheticChrome: true,
+    placeholder: true,
+    shots: [
+      { src: "/images/apps/shrinkit/shrinkit_1.svg" },
+      { src: "/images/apps/shrinkit/shrinkit_2.svg" },
+      { src: "/images/apps/shrinkit/shrinkit_3.svg" },
+    ],
+    links: [{ type: "playstore", url: "#" }],
+    since: "2026",
+  },
+  {
+    slug: "fabula",
+    name: "Fabula",
+    os: ["Android"],
+    iosSoon: true,
+    status: "coming-soon",
+    accent: "#A78BC8",
+    accentLight: "#5C4380",
+    hero: "/images/apps/fabula/hero.svg",
+    heroFit: "contain",
+    syntheticChrome: true,
+    placeholder: true,
+    shots: [
+      { src: "/images/apps/fabula/fabula_1.svg" },
+      { src: "/images/apps/fabula/fabula_2.svg" },
+      { src: "/images/apps/fabula/fabula_3.svg" },
+    ],
+    links: [{ type: "playstore", url: "#" }],
+    since: "2026",
+  },
+  {
+    slug: "furly",
+    name: "Furly",
+    os: ["Android"],
+    iosSoon: true,
+    status: "coming-soon",
+    accent: "#E08A7A",
+    accentLight: "#8A4436",
+    hero: "/images/apps/furly/hero.svg",
+    heroFit: "contain",
+    syntheticChrome: true,
+    placeholder: true,
+    shots: [
+      { src: "/images/apps/furly/furly_1.svg" },
+      { src: "/images/apps/furly/furly_2.svg" },
+      { src: "/images/apps/furly/furly_3.svg" },
     ],
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
