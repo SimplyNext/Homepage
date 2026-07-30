@@ -6,7 +6,17 @@
 import { site } from "./site";
 import type { AppData } from "./apps";
 
-export type LegalSection = { heading: string; paragraphs?: string[]; list?: string[]; afterList?: string[] };
+export type LegalSection = {
+  heading: string;
+  /** 3 = Unterabschnitt (z. B. „6.1 Supabase"). Default: 2. */
+  level?: 2 | 3;
+  paragraphs?: string[];
+  list?: string[];
+  /** Nummerierte Liste – für Rechtstexte mit gegliederten Absätzen (§ 1 Abs. 2). */
+  ordered?: boolean;
+  table?: { head: string[]; rows: string[][] };
+  afterList?: string[];
+};
 
 /**
  * Das Impressum identifiziert den Anbieter (§5 DDG) – nicht das einzelne
