@@ -66,25 +66,35 @@ Diese Daten werden ausschließlich zum Zweck der Anzeige auf Ihren eigenen Angeb
 ### 3.4 Kundendaten
 Wenn Sie Kunden in der App anlegen, verarbeiten wir die von Ihnen eingegebenen Daten Ihrer Endkunden:
 - Vor- und Nachname, ggf. Firma
-- Anschrift (Straße, Hausnummer, PLZ, Ort)
+- Anschrift (Straße, Hausnummer, PLZ, Ort, Land)
 - Telefonnummer (optional)
 - E-Mail-Adresse (optional)
 - Kundennummer
+- Umsatzsteuer-Identifikationsnummer (optional; erforderlich, wenn die Steuerschuldnerschaft des Leistungsempfängers nach § 13b UStG greift)
+- Kennzeichnung als Privat- oder Geschäftskunde (steuert die gesetzlich vorgeschriebenen Hinweise auf der Rechnung)
 
 **Hinweis:** Sie als Nutzer sind hinsichtlich der Daten Ihrer Kunden datenschutzrechtlich selbst Verantwortlicher (Art. 4 Nr. 7 DSGVO). Wir verarbeiten diese Daten in Ihrem Auftrag als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender Auftragsverarbeitungsvertrag (AVV) kann auf Anfrage bereitgestellt werden.
 
 **Rechtsgrundlage (aus Ihrer Sicht als Nutzer):** Art. 6 Abs. 1 lit. b oder f DSGVO, je nach Kundenbeziehung
 
-### 3.5 Angebots- und Materialdaten
+### 3.5 Angebots-, Rechnungs- und Materialdaten
+Aus einem angenommenen Angebot lässt sich in der App eine Rechnung erstellen. Verarbeitet werden dabei:
 - Angebotsnummer, Datum, Betreff, Gültigkeitsdauer
 - Positionen, Mengen, Einzelpreise, Gesamtsummen, MwSt.
 - Zahlungsbedingungen, Liefer-/Leistungszeit
 - Status (Entwurf, versendet, angenommen, abgelehnt)
 - Materialliste mit Bezeichnungen, Preisen, Einheiten
+- Bei Rechnungen zusätzlich die Angaben nach § 14 UStG: fortlaufende Rechnungsnummer, Rechnungsart (Rechnung, Abschlags-, Schluss- oder Stornorechnung) und Rechnungsdatum
+- Leistungsdatum bzw. Leistungszeitraum, Fälligkeit und Zahlungsziel
+- Aufteilung in Lohn- und Materialanteil (§ 35a EStG) sowie die Kennzeichen für § 13b, § 14b und § 19 UStG
+- Eine eingefrorene Kopie der Kundendaten zum Zeitpunkt der Rechnung. Zieht der Kunde später um, muss die archivierte Rechnung weiterhin die damals gültige Anschrift zeigen.
+- Das erzeugte PDF sowie die darin eingebettete E-Rechnung im Format ZUGFeRD 2.3 / Factur-X (Profil EN 16931). Diese XML-Datei enthält dieselben Rechnungsangaben nochmals in maschinenlesbarer Form, damit die Buchhaltung Ihres Kunden sie automatisch einlesen kann.
 
-**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung), für die Pflichtangaben und die Aufbewahrung zusätzlich Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung nach § 14 UStG, § 147 AO).
 
 **Aufbewahrungsfrist:** Angebots- und Rechnungsdaten werden aus steuerrechtlichen Gründen 10 Jahre aufbewahrt (§ 147 Abgabenordnung, § 257 HGB).
+
+**Unveränderbarkeit:** Eine versendete Rechnung lässt sich weder ändern noch löschen (Grundsätze ordnungsmäßiger Buchführung, GoBD). Eine Korrektur ist nur über eine Stornorechnung möglich, die auf die ursprüngliche Rechnung verweist. Ein Löschverlangen nach Art. 17 DSGVO tritt insoweit hinter die gesetzliche Aufbewahrungspflicht zurück (Art. 17 Abs. 3 lit. b DSGVO); die Daten werden gesperrt und nach Ablauf der Frist gelöscht.
 
 ### 3.6 Fotos und Sprachaufnahmen (KI-Analyse)
 Um Ihnen die automatische Angebotserstellung per KI zu ermöglichen, können Sie:
