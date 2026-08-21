@@ -64,7 +64,7 @@ export const apps: AppData[] = [
     name: "EatSafety",
     os: ["Android"],
     iosSoon: true,
-    status: "live",
+    status: "coming-soon",
     accent: "#78967A",
     accentLight: "#4F6B52",
     hero: "/images/apps/eatsafety/hero.png",
@@ -88,7 +88,7 @@ export const apps: AppData[] = [
     name: "WeFixIt",
     os: ["Android"],
     iosSoon: true,
-    status: "live",
+    status: "coming-soon",
     accent: "#FCAE27",
     accentLight: "#8F4C12",
     hero: "/images/apps/wefixit/hero.png",
@@ -151,7 +151,7 @@ export const apps: AppData[] = [
     name: "Werkflow",
     os: ["Android"],
     iosSoon: true,
-    status: "coming-soon",
+    status: "live",
     accent: "#F28C28",
     accentLight: "#8F4C12",
     hero: "/images/apps/werkflow/hero.png",
@@ -167,28 +167,29 @@ export const apps: AppData[] = [
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
   },
-  // --- Platzhalter-Apps -----------------------------------------------------
-  // Bilder sind generierte SVG-Platzhalter unter /public/images/apps/<slug>/.
-  // Zum Ersetzen: echte PNGs dort ablegen und die Endung hier auf .png ändern.
-  // Datenschutz/AGB nutzen weiter die Vorlage aus lib/legal.ts, bis eigene
-  // Fassungen in lib/legal-apps/ hinterlegt sind. Das Impressum ist ohnehin
-  // für alle Apps identisch (impressumWebsiteSections).
+  // Fabula und Furly tragen noch Platzhalter-Marketingtexte und generierte
+  // SVG-Bilder; sie bleiben bis dahin auf `placeholder: true` (noindex, nicht
+  // in der Sitemap). Zum Freischalten: echte Texte in messages/*.json und
+  // echte PNGs unter /public/images/apps/<slug>/ hinterlegen, dann Endungen
+  // hier anpassen und das Flag entfernen.
   {
     slug: "shrinkit",
     name: "ShrinkIt",
     os: ["Android"],
     iosSoon: true,
-    status: "coming-soon",
+    status: "live",
     accent: "#5FB0B7",
     accentLight: "#2C6B70",
-    hero: "/images/apps/shrinkit/hero.svg",
+    hero: "/images/apps/shrinkit/hero.png",
     heroFit: "contain",
-    syntheticChrome: true,
-    placeholder: true,
     shots: [
-      { src: "/images/apps/shrinkit/shrinkit_1.svg" },
-      { src: "/images/apps/shrinkit/shrinkit_2.svg" },
-      { src: "/images/apps/shrinkit/shrinkit_3.svg" },
+      { src: "/images/apps/shrinkit/shrinkit_1.png" },
+      { src: "/images/apps/shrinkit/shrinkit_2.png" },
+      { src: "/images/apps/shrinkit/shrinkit_3.png" },
+      { src: "/images/apps/shrinkit/shrinkit_4.png" },
+      { src: "/images/apps/shrinkit/shrinkit_5.png" },
+      { src: "/images/apps/shrinkit/shrinkit_6.png" },
+      { src: "/images/apps/shrinkit/shrinkit_7.png" },
     ],
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
@@ -198,7 +199,7 @@ export const apps: AppData[] = [
     name: "Fabula",
     os: ["Android"],
     iosSoon: true,
-    status: "coming-soon",
+    status: "live",
     accent: "#A78BC8",
     accentLight: "#5C4380",
     hero: "/images/apps/fabula/hero.svg",

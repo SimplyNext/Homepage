@@ -217,24 +217,28 @@
       "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"]
     },
     "shrinkit": {
-      "tagline": "In development – details to follow.",
-      "summary": "ShrinkIt is being built. Features, screenshots and pricing will be added once the app is ready.",
-      "category": "In development",
+      "tagline": "Big files, made small – no upload, no subscription.",
+      "summary": "Shrink photos, videos and audio – entirely on your device, with a size preview before you save.",
+      "category": "Tools · Photo & Video",
       "description": [
-        "ShrinkIt is currently in development. The full description will appear here once the app is released.",
-        "We are building ShrinkIt to the same standard as our other apps: considered in every detail, fast in use and free of unnecessary weight.",
-        "Want to hear about it sooner? Write to us at info@simplynext.de."
+        "Your storage is full, and every new photo, video and song makes it worse. ShrinkIt makes big files small – right on your device.",
+        "No sign-up, no account, no cloud. Your files never leave your device – because ShrinkIt has no server to send them to. Compression runs on your device's own codecs and works without an internet connection.",
+        "And you see how big the file will be before you save it – measured, not guessed. Originals are only removed if you explicitly confirm it."
       ],
       "features": [
-        { "title": "Features to follow", "text": "The final feature set is not fixed yet and will be added here once development is complete." },
-        { "title": "Android first", "text": "The first version will be released for Android. An iOS version is planned." }
+        { "title": "Photos with a size preview", "text": "JPG, PNG and WebP. Pick a quality level and see the resulting size before saving – or set a target size directly." },
+        { "title": "Videos in three levels", "text": "MP4, MOV and AVI. Three quality levels for the quick route, with live progress you can cancel at any time." },
+        { "title": "Audio with real controls", "text": "MP3, M4A, WAV and AAC. Set bitrate, sample rate and mono/stereo yourself – instead of a single slider." },
+        { "title": "Choose your output format", "text": "M4A sounds better at the same bitrate. MP3 plays on virtually any device and keeps track details and cover art." },
+        { "title": "Several files at once", "text": "Process multiple files in one run. The history keeps photos, videos and audio apart – open, share, save to your gallery or delete." },
+        { "title": "Genuinely local", "text": "Nothing is uploaded, nothing analysed, nothing passed to third parties. Shrinking works just the same with no connection at all." }
       ],
       "pricing": {
-        "free": ["Pricing model not yet decided"],
-        "premium": ["Details to follow at release"],
-        "note": "We will add pricing once the app is released."
+        "free": ["Up to 5 files per run", "All formats and settings", "Ad-supported"],
+        "premium": ["Up to 50 files per run", "No size limit on individual images", "No ads"],
+        "note": "One-time purchase – no subscription, no recurring costs."
       },
-      "shots": ["Preview to follow", "Preview to follow", "Preview to follow"]
+      "shots": ["Home screen with media picker", "Editor: target size and output format", "Editor: quick bitrate presets", "Editor: manual bitrate", "Editor: sample rate and channels", "Result with space saved", "History by media type"]
     },
     "fabula": {
       "tagline": "In development – details to follow.",

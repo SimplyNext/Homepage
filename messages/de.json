@@ -217,24 +217,28 @@
       "shots": ["Auftrags-Dashboard", "Foto-Analyse", "Angebots-Editor", "Kundenverwaltung", "Materialkatalog", "Fertiges PDF-Angebot"]
     },
     "shrinkit": {
-      "tagline": "In Entwicklung – Details folgen.",
-      "summary": "ShrinkIt entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
-      "category": "In Entwicklung",
+      "tagline": "Große Dateien klein – ohne Upload, ohne Abo.",
+      "summary": "Fotos, Videos und Audio verkleinern – vollständig auf dem Gerät, mit Größenvorschau vor dem Speichern.",
+      "category": "Tools · Foto & Video",
       "description": [
-        "ShrinkIt befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
-        "Wir bauen ShrinkIt mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
-        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+        "Dein Speicher ist voll, und jedes neue Foto, Video und Lied macht es schlimmer. ShrinkIt macht große Dateien klein – direkt auf deinem Gerät.",
+        "Keine Anmeldung, kein Konto, keine Cloud. Deine Dateien verlassen dein Gerät nicht – denn ShrinkIt hat gar keinen Server, an den es sie schicken könnte. Die Komprimierung läuft über die Codecs deines Geräts und funktioniert auch ohne Internetverbindung.",
+        "Und du siehst vor dem Speichern, wie groß die Datei wird – gemessen, nicht geraten. Originale verschwinden nur, wenn du es ausdrücklich bestätigst."
       ],
       "features": [
-        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
-        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+        { "title": "Fotos mit Größenvorschau", "text": "JPG, PNG und WebP. Qualitätsstufe frei wählen und vor dem Speichern sehen, wie groß die Datei wird – oder direkt eine Zielgröße vorgeben." },
+        { "title": "Videos in drei Stufen", "text": "MP4, MOV und AVI. Drei Qualitätsstufen für den schnellen Weg, Fortschritt live sichtbar und jederzeit abbrechbar." },
+        { "title": "Audio mit echten Reglern", "text": "MP3, M4A, WAV und AAC. Bitrate, Abtastrate und Mono/Stereo frei einstellen – statt eines einzigen Schiebers." },
+        { "title": "Ausgabeformat selbst wählen", "text": "M4A klingt bei gleicher Bitrate besser. MP3 läuft auf praktisch jedem Gerät und behält Titelangaben und Cover." },
+        { "title": "Mehrere Dateien auf einmal", "text": "Mehrere Dateien in einem Durchgang. Die Chronologie trennt nach Fotos, Videos und Audio – öffnen, teilen, in die Galerie speichern oder löschen." },
+        { "title": "Wirklich lokal", "text": "Nichts wird hochgeladen, nichts ausgewertet, nichts an Dritte weitergegeben. Ohne Internetverbindung funktioniert das Verkleinern genauso." }
       ],
       "pricing": {
-        "free": ["Preismodell steht noch nicht fest"],
-        "premium": ["Details folgen zur Veröffentlichung"],
-        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+        "free": ["Bis zu 5 Dateien pro Durchgang", "Alle Formate und Einstellungen", "Werbefinanziert"],
+        "premium": ["Bis zu 50 Dateien pro Durchgang", "Keine Größenbeschränkung für einzelne Bilder", "Keine Werbung"],
+        "note": "Einmalig kaufen – kein Abo, keine Folgekosten."
       },
-      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
+      "shots": ["Startseite mit Medienauswahl", "Editor: Zielgröße und Ausgabeformat", "Editor: Bitrate schnell wählen", "Editor: Bitrate manuell einstellen", "Editor: Abtastrate und Kanäle", "Ergebnis mit gesparter Größe", "Chronologie nach Medientyp"]
     },
     "fabula": {
       "tagline": "In Entwicklung – Details folgen.",
