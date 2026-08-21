@@ -72,6 +72,7 @@ Wenn Sie Kunden in der App anlegen, verarbeiten wir die von Ihnen eingegebenen D
 - Kundennummer
 - Umsatzsteuer-Identifikationsnummer (optional; erforderlich, wenn die Steuerschuldnerschaft des Leistungsempfängers nach § 13b UStG greift)
 - Kennzeichnung als Privat- oder Geschäftskunde (steuert die gesetzlich vorgeschriebenen Hinweise auf der Rechnung)
+- Leitweg-ID (optional; nur bei öffentlichen Auftraggebern. Die Behörde teilt sie mit, damit die Rechnung auf ihrer Eingangsplattform der richtigen Stelle zugeordnet wird.)
 
 **Hinweis:** Sie als Nutzer sind hinsichtlich der Daten Ihrer Kunden datenschutzrechtlich selbst Verantwortlicher (Art. 4 Nr. 7 DSGVO). Wir verarbeiten diese Daten in Ihrem Auftrag als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender Auftragsverarbeitungsvertrag (AVV) kann auf Anfrage bereitgestellt werden.
 
@@ -89,6 +90,7 @@ Aus einem angenommenen Angebot lässt sich in der App eine Rechnung erstellen. V
 - Aufteilung in Lohn- und Materialanteil (§ 35a EStG) sowie die Kennzeichen für § 13b, § 14b und § 19 UStG
 - Eine eingefrorene Kopie der Kundendaten zum Zeitpunkt der Rechnung. Zieht der Kunde später um, muss die archivierte Rechnung weiterhin die damals gültige Anschrift zeigen.
 - Das erzeugte PDF sowie die darin eingebettete E-Rechnung im Format ZUGFeRD 2.3 / Factur-X (Profil EN 16931). Diese XML-Datei enthält dieselben Rechnungsangaben nochmals in maschinenlesbarer Form, damit die Buchhaltung Ihres Kunden sie automatisch einlesen kann.
+- Bei Rechnungen an öffentliche Auftraggeber entsteht dieselbe Datei stattdessen im Format XRechnung 3.0. Sie enthält zusätzlich die Leitweg-ID sowie einen Ansprechpartner Ihres Betriebs mit Telefonnummer und E-Mail-Adresse, weil die Rechnungseingangsplattform der Behörde diese Angaben verlangt.
 
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung), für die Pflichtangaben und die Aufbewahrung zusätzlich Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung nach § 14 UStG, § 147 AO).
 
