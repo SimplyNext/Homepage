@@ -178,9 +178,6 @@ Google Ireland Limited / Google LLC
 Die Zahlungsabwicklung für Abonnements erfolgt vollständig über Google Play. Es gilt zusätzlich die Datenschutzerklärung von Google:
 https://policies.google.com/privacy
 
-### 4.5 Google ARCore (optional, geräteinterne Verarbeitung)
-Für die optionale Aufmaß-Funktion (Kamera-basierte Vermessung von Längen, Flächen, Winkeln) wird die Google-ARCore-Bibliothek genutzt. Die Bildverarbeitung erfolgt vollständig lokal auf Ihrem Gerät; es findet **keine** Übermittlung von Kamerabildern an Google oder an uns statt.
-
 ---
 
 ## 5. Berechtigungen der App
@@ -189,13 +186,13 @@ Die App fordert folgende Systemberechtigungen an:
 
 | Berechtigung | Zweck | Pflicht |
 |---|---|---|
-| Kamera | Aufnahme von Fotos für die KI-gestützte Angebotserstellung; optionale AR-Vermessungsfunktion | Nur bei aktiver Nutzung der Foto-/AR-Funktion |
+| Kamera | Aufnahme von Fotos für die KI-gestützte Angebotserstellung | Nur bei aktiver Nutzung der Foto-Funktion |
 | Mikrofon | Aufnahme von Sprachnotizen zur Angebotserstellung | Nur bei aktiver Nutzung der Sprachfunktion |
 | Internetzugriff | Kommunikation mit unseren Servern (Supabase, RevenueCat) | Erforderlich für Grundfunktionen |
 
 Die App fordert **keinen** Zugriff auf Standort, Kontakte, SMS, Anrufliste oder andere Apps an.
 
-Berechtigungen werden zur Laufzeit angefragt und sind in den Android-Systemeinstellungen jederzeit widerrufbar. Ohne Kamera-/Mikrofonzugriff sind die betroffenen Einzelfunktionen (Foto-Analyse, Sprachaufnahme, AR-Aufmaß) nicht nutzbar; die übrige App bleibt voll funktionsfähig.
+Berechtigungen werden zur Laufzeit angefragt und sind in den Android-Systemeinstellungen jederzeit widerrufbar. Ohne Kamera-/Mikrofonzugriff sind die betroffenen Einzelfunktionen (Foto-Analyse, Sprachaufnahme) nicht nutzbar; die übrige App bleibt voll funktionsfähig.
 
 ---
 
