@@ -145,10 +145,19 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnung nutzen, gilt gemäß den Nutzungsbedingungen der Gemini-API ausdrücklich, dass Google Ihre Eingaben (Prompts, Bilder, Audiodateien) und die generierten Antworten nicht zur Verbesserung von Google-Produkten verwendet. Eingaben werden dort ausschließlich zeitlich begrenzt zur Missbrauchserkennung und aus Sicherheitsgründen protokolliert (Quelle: Gemini API – Nutzungsbedingungen für kostenpflichtige Dienste).",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung kann jederzeit mit Wirkung für die Zukunft in den App-Einstellungen widerrufen werden (Toggle „KI-Analyse verwenden“).",
       "Wichtiger Hinweis: Achten Sie beim Fotografieren von Baustellen/Kundenwohnungen darauf, dass keine Personen oder sensible private Unterlagen im Bild erkennbar sind, da Sie hierfür als Nutzer selbst verantwortlich sind.",
+      "Diktierfunktion (Sprache zu Text): In Angeboten, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Die App wählt den Weg dazu beim Antippen des Mikrofons und zeigt ihn im Aufnahmedialog an. Bei erreichbarem Server (Anzeige „Online“) wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer – an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Empfang oder ohne Einwilligung (Anzeige „Offline“) wird die Spracherkennung Ihres Betriebssystems genutzt; dabei wird nichts an uns übermittelt, für die Verarbeitung durch den Gerätehersteller gelten dessen Bestimmungen. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente.",
     ],
   },
   {
-    heading: "3.7 Abonnement- und Zahlungsdaten",
+    heading: "3.7 Freie Notizen",
+    level: 3,
+    paragraphs: [
+      "In der App können Sie freie Notizen anlegen (getippt oder diktiert). Ihr Inhalt wird auf unseren Servern (Supabase, siehe Ziff. 4.1) gespeichert und ist ausschließlich Ihrem Konto zugeordnet. Welche Angaben eine Notiz enthält, bestimmen allein Sie; sie lässt sich jederzeit in der App löschen.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)",
+    ],
+  },
+  {
+    heading: "3.8 Abonnement- und Zahlungsdaten",
     level: 3,
     paragraphs: [
       "Für die Nutzung kostenpflichtiger Funktionen (Abo-Modelle „Solo“, „Kleiner Betrieb“, „Pro“) verarbeiten wir:",
@@ -164,7 +173,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
   },
   {
-    heading: "3.8 Technische Daten / Nutzungsdaten",
+    heading: "3.9 Technische Daten / Nutzungsdaten",
     level: 3,
     paragraphs: ["Bei Nutzung der App werden aus technischen Gründen automatisch verarbeitet:"],
     list: [
@@ -187,7 +196,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., verarbeitet Daten auf Servern innerhalb der EU.",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.7 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, erzeugte PDF- und ZUGFeRD-Dateien, Firmenlogo, Unterschrift-Bilddatei).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.9 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Firmenlogo, Unterschrift-Bilddatei).",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
   },
@@ -195,7 +204,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "4.2 KI-Analysedienste (Google Gemini primär, OpenAI GPT-4o als Fallback)",
     level: 3,
     paragraphs: [
-      "Zur automatisierten Auswertung von Fotos, Sprachaufnahmen und Textbeschreibungen (siehe Ziff. 3.6) nutzen wir:",
+      "Zur automatisierten Auswertung von Fotos, Sprachaufnahmen und Textbeschreibungen sowie zur Umwandlung von Diktaten in Text (siehe Ziff. 3.6) nutzen wir:",
     ],
     list: [
       "Google Gemini (Google Ireland Limited / Google LLC, USA) – primärer und regulär genutzter KI-Dienst, kostenpflichtiger Tarif ohne Trainingsnutzung Ihrer Daten. Datenschutzerklärung: policies.google.com/privacy · Nutzungsbedingungen: ai.google.dev/gemini-api/terms#paid-services",
@@ -231,7 +240,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       head: ["Berechtigung", "Zweck", "Pflicht"],
       rows: [
         ["Kamera", "Aufnahme von Fotos für die KI-gestützte Angebotserstellung", "Nur bei aktiver Nutzung der Foto-Funktion"],
-        ["Mikrofon", "Aufnahme von Sprachnotizen zur Angebotserstellung", "Nur bei aktiver Nutzung der Sprachfunktion"],
+        ["Mikrofon", "Aufnahme von Sprachnotizen zur Angebotserstellung sowie Diktieren von Texten", "Nur bei aktiver Nutzung der Sprachfunktion"],
         ["Internetzugriff", "Kommunikation mit unseren Servern (Supabase, RevenueCat)", "Erforderlich für Grundfunktionen"],
       ],
     },
@@ -249,7 +258,8 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Angebots-/Rechnungsdaten", "10 Jahre (steuerrechtliche Aufbewahrungspflicht). Versendete Rechnungen sind ab Versand unveränderbar (GoBD)."],
         ["Rechnungs-PDF und eingebettete ZUGFeRD-Datei", "10 Jahre, wie die zugehörige Rechnung"],
         ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. bis zum Ende der Geschäftsbeziehung"],
-        ["Fotos/Sprachaufnahmen zur KI-Analyse", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
+        ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
+        ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Abo-/Kaufdaten", "Gemäß gesetzlichen Aufbewahrungspflichten sowie den Bestimmungen von RevenueCat/Google Play"],
       ],

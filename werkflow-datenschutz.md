@@ -118,7 +118,19 @@ Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnun
 
 **Wichtiger Hinweis:** Achten Sie beim Fotografieren von Baustellen/Kundenwohnungen darauf, dass keine Personen oder sensible private Unterlagen im Bild erkennbar sind, da Sie hierfür als Nutzer selbst verantwortlich sind.
 
-### 3.7 Abonnement- und Zahlungsdaten
+**Diktierfunktion (Sprache zu Text):** In Angeboten, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei **nicht ausgewertet**, sondern ausschließlich in Text umgewandelt. Die App wählt den Weg dazu beim Antippen des Mikrofons und zeigt ihn im Aufnahmedialog an:
+
+- **Erreichbarer Server (Anzeige „Online"):** Die Aufnahme wird — nur nach Ihrer Einwilligung nach dieser Ziffer — an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt. Die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht.
+- **Kein Empfang oder keine Einwilligung (Anzeige „Offline"):** Es wird die Spracherkennung Ihres Betriebssystems (Android bzw. iOS) genutzt. Dabei wird **nichts an uns übermittelt**; für die Verarbeitung durch den Gerätehersteller gelten dessen Bestimmungen.
+
+Ein Diktat verbraucht keines Ihrer Analyse-Kontingente.
+
+### 3.7 Freie Notizen
+In der App können Sie freie Notizen anlegen (getippt oder diktiert). Ihr Inhalt wird auf unseren Servern (Supabase, siehe Ziff. 4.1) gespeichert und ist ausschließlich Ihrem Konto zugeordnet. Welche Angaben eine Notiz enthält, bestimmen allein Sie; sie lässt sich jederzeit in der App löschen.
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)
+
+### 3.8 Abonnement- und Zahlungsdaten
 Für die Nutzung kostenpflichtiger Funktionen (Abo-Modelle „Solo", „Kleiner Betrieb", „Pro") verarbeiten wir:
 - Ihre Nutzer-ID (zur Zuordnung des Abos zu Ihrem Konto)
 - Abo-Status, gebuchter Tarif, Ablaufdatum
@@ -128,7 +140,7 @@ Die eigentliche Zahlungsabwicklung erfolgt vollständig über **Google Play Bill
 
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)
 
-### 3.8 Technische Daten / Nutzungsdaten
+### 3.9 Technische Daten / Nutzungsdaten
 Bei Nutzung der App werden aus technischen Gründen automatisch verarbeitet:
 - Geräteinformationen (Betriebssystem, App-Version)
 - Fehlerprotokolle (zur Fehlerbehebung)
@@ -145,12 +157,12 @@ Wir setzen sorgfältig ausgewählte Dienstleister ein, die Ihre Daten ausschlie�
 ### 4.1 Supabase (Backend, Datenbank, Authentifizierung, Dateispeicher)
 Supabase Inc., verarbeitet Daten auf Servern innerhalb der EU.
 
-Übermittelte Daten: sämtliche unter Ziff. 3.1–3.7 genannten Daten (Konto-, Profil-, Kunden-, Angebots- und Materialdaten, Firmenlogo, Unterschrift-Bilddatei).
+Übermittelte Daten: sämtliche unter Ziff. 3.1–3.9 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, Firmenlogo, Unterschrift-Bilddatei).
 
 Datenschutzerklärung: https://supabase.com/privacy
 
 ### 4.2 KI-Analysedienste (Google Gemini als primärer Dienst, OpenAI GPT-4o als Fallback)
-Zur automatisierten Auswertung von Fotos, Sprachaufnahmen und Textbeschreibungen (siehe Ziff. 3.6) nutzen wir:
+Zur automatisierten Auswertung von Fotos, Sprachaufnahmen und Textbeschreibungen sowie zur Umwandlung von Diktaten in Text (siehe Ziff. 3.6) nutzen wir:
 
 - **Google Gemini** (Google Ireland Limited / Google LLC, USA) — primärer und regulär genutzter KI-Dienst, kostenpflichtiger Tarif ohne Trainingsnutzung Ihrer Daten
   Datenschutzerklärung: https://policies.google.com/privacy
@@ -187,7 +199,7 @@ Die App fordert folgende Systemberechtigungen an:
 | Berechtigung | Zweck | Pflicht |
 |---|---|---|
 | Kamera | Aufnahme von Fotos für die KI-gestützte Angebotserstellung | Nur bei aktiver Nutzung der Foto-Funktion |
-| Mikrofon | Aufnahme von Sprachnotizen zur Angebotserstellung | Nur bei aktiver Nutzung der Sprachfunktion |
+| Mikrofon | Aufnahme von Sprachnotizen zur Angebotserstellung sowie Diktieren von Texten | Nur bei aktiver Nutzung der Sprachfunktion |
 | Internetzugriff | Kommunikation mit unseren Servern (Supabase, RevenueCat) | Erforderlich für Grundfunktionen |
 
 Die App fordert **keinen** Zugriff auf Standort, Kontakte, SMS, Anrufliste oder andere Apps an.
@@ -203,7 +215,8 @@ Berechtigungen werden zur Laufzeit angefragt und sind in den Android-Systemeinst
 | Kontodaten | Bis zur Löschung des Nutzerkontos |
 | Angebots-/Rechnungsdaten | 10 Jahre (steuerrechtliche Aufbewahrungspflicht) |
 | Kundendaten | Bis zur Löschung durch den Nutzer bzw. bis zum Ende der Geschäftsbeziehung |
-| Fotos/Sprachaufnahmen zur KI-Analyse | Nur temporär während der Verarbeitung, keine dauerhafte Speicherung |
+| Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat | Nur temporär während der Verarbeitung, keine dauerhafte Speicherung |
+| Freie Notizen | Bis zur Löschung durch den Nutzer bzw. Account-Löschung |
 | Firmenlogo, Unterschrift | Bis zur Löschung durch den Nutzer bzw. Account-Löschung |
 | Abo-/Kaufdaten | Gemäß gesetzlichen Aufbewahrungspflichten sowie den Bestimmungen von RevenueCat/Google Play |
 
