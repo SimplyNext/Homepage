@@ -2,7 +2,8 @@ import type { LegalSection } from "../legal";
 
 /**
  * App-spezifische Rechtstexte für ShrinkIt – übernommen aus
- * shrinkit-{datenschutz,agb}.md (Stand: 30.07.2026).
+ * shrinkit-{datenschutz,agb}.md (Stand: 05.08.2026 – Erweiterung um
+ * Audiokomprimierung).
  *
  * Quelle bleibt das Markdown-Dokument im Repository-Root: Änderungen dort
  * müssen hier nachgezogen werden.
@@ -32,7 +33,7 @@ export const shrinkitDatenschutz: LegalSection[] = [
   {
     heading: "2. Das Wichtigste in Kurzform",
     paragraphs: [
-      "ShrinkIt verkleinert Fotos und Videos vollständig auf Ihrem Gerät. Ihre Bilder und Videos werden nicht auf Server übertragen – weder an uns noch an Dritte. Wir betreiben für ShrinkIt keinen eigenen Server, keine Nutzerkonten und keine Datenbank. Wir haben deshalb technisch keinen Zugriff auf Ihre Mediendateien.",
+      "ShrinkIt verkleinert Fotos, Videos und Audiodateien vollständig auf Ihrem Gerät. Ihre Bilder, Videos und Audiodateien werden nicht auf Server übertragen – weder an uns noch an Dritte. Wir betreiben für ShrinkIt keinen eigenen Server, keine Nutzerkonten und keine Datenbank. Wir haben deshalb technisch keinen Zugriff auf Ihre Mediendateien.",
       "Personenbezogene Daten entstehen dennoch an drei Stellen, über die diese Erklärung informiert:",
     ],
     ordered: true,
@@ -44,16 +45,16 @@ export const shrinkitDatenschutz: LegalSection[] = [
   },
   { heading: "3. Verarbeitung auf Ihrem Gerät (keine Übermittlung)" },
   {
-    heading: "3.1 Fotos, Videos und deren Metadaten",
+    heading: "3.1 Fotos, Videos, Audiodateien und deren Metadaten",
     level: 3,
     paragraphs: ["Wenn Sie Dateien zum Verkleinern auswählen, liest die App:"],
     list: [
-      "die ausgewählten Bild- und Videodateien,",
-      "deren Dateigröße, Pixelmaße und Änderungsdatum,",
+      "die ausgewählten Bild-, Video- und Audiodateien,",
+      "deren Dateigröße, Pixelmaße bzw. Spieldauer, Bitrate, Abtastrate und Änderungsdatum,",
       "die geräteinterne Medien-Kennung (Asset-ID), um eine Datei auf Ihren Wunsch aus der Galerie löschen zu können.",
     ],
     afterList: [
-      "Die Komprimierung erfolgt ausschließlich lokal über die Bild- und Video-Codecs Ihres Betriebssystems. Es findet kein Upload, keine Cloud-Verarbeitung und keine Auswertung durch uns oder Dritte statt.",
+      "Die Komprimierung erfolgt ausschließlich lokal über die Bild-, Video- und Audio-Codecs Ihres Betriebssystems bzw. den in der App mitgelieferten MP3-Kodierer (LAME). Es findet kein Upload, keine Cloud-Verarbeitung und keine Auswertung durch uns oder Dritte statt. Wir werten insbesondere weder Bildinhalte noch Tonaufnahmen aus.",
       "Die Ergebnisdateien werden im app-eigenen, für andere Apps nicht zugänglichen Speicherbereich Ihres Geräts abgelegt und in der App unter „Chronologie“ aufgelistet. Auf Ihren Wunsch speichert die App eine Kopie in Ihre Galerie.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrags). Eine Übermittlung an uns findet nicht statt; insoweit liegt keine Verarbeitung durch uns vor.",
       "Hinweis zur Funktion „Alle ersetzen“: Diese Funktion speichert die verkleinerten Dateien in Ihrer Galerie und löscht danach die Originale. Dieser Vorgang ist nicht umkehrbar und wird vor der Ausführung ausdrücklich bestätigt. Bitte legen Sie vorher Sicherungskopien an.",
@@ -201,7 +202,7 @@ export const shrinkitDatenschutz: LegalSection[] = [
       "Keine Analyse- oder Tracking-Werkzeuge (kein Firebase Analytics, kein Crashlytics, kein Sentry, kein Facebook-SDK).",
       "Kein Nutzerkonto, keine Registrierung, keine Anmeldung.",
       "Keine eigenen Server und keine eigene Datenbank für ShrinkIt.",
-      "Keine Auswertung, Weitergabe oder Speicherung Ihrer Fotos und Videos durch uns.",
+      "Keine Auswertung, Weitergabe oder Speicherung Ihrer Fotos, Videos und Audiodateien durch uns.",
       "Kein Verkauf von Daten an Dritte.",
       "Kein Zugriff auf Standort, Kontakte, SMS, Anrufliste oder andere Apps.",
     ],
@@ -212,14 +213,15 @@ export const shrinkitDatenschutz: LegalSection[] = [
     table: {
       head: ["Berechtigung", "Zweck", "Erforderlich"],
       rows: [
-        ["Zugriff auf Fotos und Videos (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, ab Android 14 zusätzlich READ_MEDIA_VISUAL_USER_SELECTED; bis Android 12 READ_EXTERNAL_STORAGE)", "Auswahl der zu verkleinernden Dateien; optionales Löschen des Originals auf Ihren Wunsch", "Ja, für die Kernfunktion"],
+        ["Zugriff auf Fotos und Videos (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, ab Android 14 zusätzlich READ_MEDIA_VISUAL_USER_SELECTED; bis Android 12 READ_EXTERNAL_STORAGE)", "Auswahl der zu verkleinernden Bild- und Videodateien; optionales Löschen des Originals auf Ihren Wunsch", "Ja, für die Kernfunktion"],
+        ["Zugriff auf Audiodateien (READ_MEDIA_AUDIO, ab Android 13; bis Android 12 READ_EXTERNAL_STORAGE)", "Auswahl der zu verkleinernden Audiodateien; optionales Löschen des Originals auf Ihren Wunsch", "Nur für die Audiokomprimierung"],
         ["Speichern in der Galerie (WRITE_EXTERNAL_STORAGE, nur bis Android 9)", "Ablegen der Ergebnisdatei in Ihrer Galerie", "Nur beim Speichern"],
         ["Internetzugriff (INTERNET, ACCESS_NETWORK_STATE)", "Werbung, Kaufprüfung, Schriftart-Download", "Für die Komprimierung selbst nicht erforderlich"],
         ["Werbe-ID (com.google.android.gms.permission.AD_ID)", "Auslieferung von Werbung in der kostenlosen Version", "Nur bei erteilter Einwilligung"],
       ],
     },
     afterList: [
-      "Die Medienberechtigung wird erst angefragt, wenn Sie „Bild auswählen“ oder „Video auswählen“ antippen – nicht beim Start der App. Ab Android 14 können Sie auch nur einzelne Dateien freigeben; die App funktioniert dann ausschließlich mit den freigegebenen Dateien.",
+      "Die jeweilige Medienberechtigung wird erst angefragt, wenn Sie „Bild auswählen“, „Video auswählen“ oder „Audio auswählen“ antippen – nicht beim Start der App. Wer nur Bilder verkleinert, wird nie nach dem Zugriff auf Audiodateien gefragt. Ab Android 14 können Sie bei Fotos und Videos auch nur einzelne Dateien freigeben; die App funktioniert dann ausschließlich mit den freigegebenen Dateien.",
       "Alle Berechtigungen können Sie in den Android-Systemeinstellungen jederzeit widerrufen. Ohne Medienzugriff ist die Komprimierung nicht nutzbar; die App weist darauf hin und bietet den Weg in die Einstellungen an.",
     ],
   },
@@ -327,7 +329,7 @@ export const shrinkitAgb: LegalSection[] = [
   {
     heading: "§ 2 Vertragsgegenstand und Leistungsbeschreibung",
     paragraphs: [
-      "(1) ShrinkIt verkleinert Fotos und Videos. Die Komprimierung erfolgt vollständig auf Ihrem Gerät; eine Übertragung Ihrer Mediendateien an uns oder an Dritte findet nicht statt.",
+      "(1) ShrinkIt verkleinert Fotos, Videos und Audiodateien. Die Komprimierung erfolgt vollständig auf Ihrem Gerät; eine Übertragung Ihrer Mediendateien an uns oder an Dritte findet nicht statt.",
       "(2) Der Funktionsumfang umfasst insbesondere:",
     ],
     list: [
@@ -335,6 +337,8 @@ export const shrinkitAgb: LegalSection[] = [
       "Verkleinerung von Bildern auf eine gewünschte Zieldateigröße,",
       "Verkleinerung von Bildern über eine frei wählbare Zielauflösung (Breite/Höhe),",
       "Verkleinerung von Videos über wählbare Qualitätsstufen,",
+      "Verkleinerung von Audiodateien über wählbare Qualitätsstufen sowie über Bitrate, Abtastrate und Kanalzahl,",
+      "Wahl des Ausgabeformats bei Audiodateien (M4A/AAC oder MP3),",
       "Verarbeitung mehrerer Dateien in einem Durchgang,",
       "Übersicht der erzeugten Dateien („Chronologie“) mit Öffnen, Teilen und Löschen,",
       "Speichern der Ergebnisse in der Galerie sowie optionales Ersetzen der Originale,",
@@ -343,7 +347,7 @@ export const shrinkitAgb: LegalSection[] = [
     afterList: [
       "(3) Kostenlose Version: Die App ist ohne Registrierung und ohne Nutzerkonto kostenlos nutzbar. Es gelten folgende Beschränkungen: maximal 5 Dateien pro Durchgang; Bilder mit einer Dateigröße über 5 MB erfordern die Pro-Version; es wird Werbung eingeblendet (§ 6).",
       "(4) Pro-Version: Durch einen einmaligen Kauf werden dauerhaft freigeschaltet: Verarbeitung von bis zu 50 Dateien pro Durchgang, keine Größenbeschränkung für Einzelbilder, werbefreie Nutzung. Es handelt sich nicht um ein Abonnement. Es entstehen keine wiederkehrenden Kosten und keine Kündigungspflicht. Der jeweils gültige Preis und Funktionsumfang ergeben sich aus der Darstellung in der App im Zeitpunkt des Kaufs.",
-      "(5) Verlustbehaftete Komprimierung: Die Verkleinerung von Bildern und Videos erfolgt verlustbehaftet. Ein Qualitätsverlust ist verfahrensbedingt und kein Mangel. Das Ausmaß der Einsparung hängt vom Ausgangsmaterial, den gewählten Einstellungen und den Codecs Ihres Geräts ab; die in der App angezeigten Werte vor der Verarbeitung sind Schätzwerte und keine zugesagte Eigenschaft.",
+      "(5) Verlustbehaftete Komprimierung: Die Verkleinerung von Bildern, Videos und Audiodateien erfolgt verlustbehaftet. Ein Qualitäts- bzw. Klangverlust ist verfahrensbedingt und kein Mangel. Das Ausmaß der Einsparung hängt vom Ausgangsmaterial, den gewählten Einstellungen und den Codecs Ihres Geräts ab; die in der App angezeigten Werte vor der Verarbeitung sind Schätzwerte und keine zugesagte Eigenschaft.",
       "(6) Der Anbieter darf den Funktionsumfang im Rahmen der technischen Weiterentwicklung anpassen, erweitern oder einschränken, sofern dies für den Nutzer zumutbar ist und der vertraglich vereinbarte Kernumfang – bei Pro-Nutzern der nach Absatz 4 erworbene Umfang – erhalten bleibt.",
     ],
   },
@@ -399,8 +403,8 @@ export const shrinkitAgb: LegalSection[] = [
     paragraphs: [
       "(1) Sicherungskopien. Sie sind für die Sicherung Ihrer Daten selbst verantwortlich. Legen Sie vor der Verarbeitung – insbesondere vor Nutzung der Funktion „Alle ersetzen“ – Sicherungskopien Ihrer Originaldateien an.",
       "(2) Löschfunktionen. Die Funktionen „Alle ersetzen“, „Original löschen“ und „Alle löschen“ entfernen Dateien endgültig aus Ihrer Galerie bzw. aus der App. Diese Vorgänge sind nicht umkehrbar und werden vor der Ausführung ausdrücklich bestätigt. Für die Folgen einer von Ihnen bestätigten Löschung übernehmen wir keine Haftung, soweit sich aus § 11 nichts anderes ergibt.",
-      "(3) Rechte an den Inhalten. Sie versichern, dass Sie über die zur Verarbeitung erforderlichen Rechte an den von Ihnen ausgewählten Fotos und Videos verfügen und keine Rechte Dritter (Urheberrechte, Persönlichkeitsrechte, Datenschutzrechte abgebildeter Personen) verletzen.",
-      "(4) Datenschutzrechtliche Eigenverantwortung. Verarbeiten Sie mit der App personenbezogene Daten Dritter – etwa Fotos, auf denen andere Personen erkennbar sind –, sind Sie dafür datenschutzrechtlich selbst verantwortlich (Art. 4 Nr. 7 DSGVO). Da die Verarbeitung ausschließlich lokal auf Ihrem Gerät erfolgt und wir keinen Zugriff auf Ihre Dateien haben, entsteht insoweit kein Auftragsverarbeitungsverhältnis mit uns.",
+      "(3) Rechte an den Inhalten. Sie versichern, dass Sie über die zur Verarbeitung erforderlichen Rechte an den von Ihnen ausgewählten Fotos, Videos und Audiodateien verfügen und keine Rechte Dritter (Urheberrechte, Leistungsschutzrechte, Persönlichkeitsrechte, Datenschutzrechte abgebildeter oder aufgenommener Personen) verletzen.",
+      "(4) Datenschutzrechtliche Eigenverantwortung. Verarbeiten Sie mit der App personenbezogene Daten Dritter – etwa Fotos, auf denen andere Personen erkennbar sind, oder Aufnahmen, auf denen andere Personen zu hören sind –, sind Sie dafür datenschutzrechtlich selbst verantwortlich (Art. 4 Nr. 7 DSGVO). Da die Verarbeitung ausschließlich lokal auf Ihrem Gerät erfolgt und wir keinen Zugriff auf Ihre Dateien haben, entsteht insoweit kein Auftragsverarbeitungsverhältnis mit uns.",
       "(5) Untersagte Nutzung. Es ist untersagt, die App zu nutzen, um rechtswidrige Inhalte zu verarbeiten oder zu verbreiten, sowie die App zu dekompilieren, zu verändern oder Schutzmechanismen – insbesondere die Beschränkungen der kostenlosen Version – zu umgehen. Gesetzlich zwingend erlaubte Handlungen (z. B. § 69e UrhG) bleiben unberührt.",
     ],
   },
