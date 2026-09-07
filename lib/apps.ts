@@ -167,11 +167,12 @@ export const apps: AppData[] = [
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
   },
-  // Fabula und Furly tragen noch Platzhalter-Marketingtexte und generierte
-  // SVG-Bilder; sie bleiben bis dahin auf `placeholder: true` (noindex, nicht
-  // in der Sitemap). Zum Freischalten: echte Texte in messages/*.json und
-  // echte PNGs unter /public/images/apps/<slug>/ hinterlegen, dann Endungen
-  // hier anpassen und das Flag entfernen.
+  // Fabula hat echte Marketingtexte, aber noch generierte SVG-Platzhalter statt
+  // Screenshots; Furly hat beides noch nicht. Beide bleiben deshalb auf
+  // `placeholder: true` (noindex, nicht in der Sitemap) – eine indexierte Seite
+  // mit „Screenshot folgt“-Bildern nützt niemandem. Zum Freischalten: echte
+  // PNGs unter /public/images/apps/<slug>/ hinterlegen, hero/shots-Endungen
+  // hier auf .png umstellen, `syntheticChrome` prüfen und das Flag entfernen.
   {
     slug: "shrinkit",
     name: "ShrinkIt",

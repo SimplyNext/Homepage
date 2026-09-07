@@ -241,22 +241,26 @@
       "shots": ["Startseite mit Medienauswahl", "Editor: Zielgröße und Ausgabeformat", "Editor: Bitrate schnell wählen", "Editor: Bitrate manuell einstellen", "Editor: Abtastrate und Kanäle", "Ergebnis mit gesparter Größe", "Chronologie nach Medientyp"]
     },
     "fabula": {
-      "tagline": "In Entwicklung – Details folgen.",
-      "summary": "Fabula entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
-      "category": "In Entwicklung",
+      "tagline": "Hörgeschichten, in denen dein Kind die Hauptrolle spielt.",
+      "summary": "Eigene Figuren erfinden, Geschichtenwelt wählen, vorlesen lassen – jede Geschichte ist neu.",
+      "category": "Familie · Hörgeschichten",
       "description": [
-        "Fabula befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
-        "Wir bauen Fabula mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
-        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+        "Fabula macht dein Kind zur Hauptfigur seiner eigenen Geschichte – und liest sie ihm anschließend vor. Ihr erfindet gemeinsam eine Figur, wählt eine Geschichtenwelt, und kurz darauf liegt eine ganz neue Hörgeschichte bereit. Keine zwei Geschichten sind gleich.",
+        "Figuren bekommen Name, Alter und Aussehen – Haupt- und Nebenfiguren, so viele ihr mögt. Sie bleiben gespeichert und können immer wieder auftreten. Dazu eine von zehn Geschichtenwelten und, wenn ihr mögt, ein paar Stichworte: ein verlorener Teddy, ein Ausflug zum Zahnarzt, der erste Schultag. Was euch gerade beschäftigt, wird zur Geschichte.",
+        "Geschichten und Stimmen entstehen mit künstlicher Intelligenz (Google Gemini). Das heißt: jede Geschichte ist wirklich neu – und gelegentlich auch überraschend. Dafür braucht Fabula ein Konto und eine Internetverbindung; heruntergeladene Geschichten laufen danach offline. Für Kinder ab 6 Jahren, gemeinsam mit ihren Eltern."
       ],
       "features": [
-        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
-        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+        { "title": "Dein Kind ist die Hauptfigur", "text": "Name, Alter, Aussehen – Haupt- und Nebenfiguren, so viele ihr mögt. Die Figuren bleiben gespeichert und treten in jeder neuen Geschichte wieder auf." },
+        { "title": "Zehn Geschichtenwelten", "text": "Abenteuer, Fantasie, Tiere, Gutenacht, Freundschaft, Detektiv, Märchen, Lustiges, Natur oder Lernen. Mit ein paar Stichworten wird daraus genau eure Geschichte." },
+        { "title": "Neun Erzählstimmen, sechs Sprachen", "text": "Warm, lebhaft, ruhig oder kräftig – ihr sucht die Lieblingsstimme aus. Deutsch, Englisch, Spanisch, Französisch, Italienisch und Portugiesisch, ideal für mehrsprachige Familien." },
+        { "title": "Zum Einschlafen gemacht", "text": "Der Einschlaf-Timer lässt die Geschichte von selbst leiser werden. Vorlesetempo einstellbar, Kapitel spielen automatisch weiter – und Lieblingsfiguren erleben auf Wunsch ein neues Kapitel." },
+        { "title": "Offline hören und mitlesen", "text": "Geschichten herunterladen für Autofahrt, Zug oder Ferienhaus – auf Wunsch nur über WLAN. Der Text steht zum Mitlesen daneben, die Schriftgröße stellt ihr frei ein." },
+        { "title": "Für Eltern gebaut", "text": "Eine Eltern-PIN schützt Einstellungen, Käufe und den Elternbereich. Keine Werbung, keine Werbenetzwerke. Und jede Geschichte lässt sich mit einem Tipp melden – wir schauen uns jede Meldung an." }
       ],
       "pricing": {
-        "free": ["Preismodell steht noch nicht fest"],
-        "premium": ["Details folgen zur Veröffentlichung"],
-        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+        "free": ["App, Konto und Elternbereich", "Figuren erfinden und dauerhaft speichern", "Keine Werbung, keine Werbenetzwerke"],
+        "premium": ["Story-Guthaben kaufen, wenn ihr es braucht", "Guthaben verfällt nicht und bleibt am Konto", "Abgezogen wird erst, wenn die Geschichte fertig ist"],
+        "note": "Kein Abo, keine monatlichen Kosten – ihr kauft Guthaben nur dann, wenn eine neue Geschichte entstehen soll."
       },
       "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
     },
