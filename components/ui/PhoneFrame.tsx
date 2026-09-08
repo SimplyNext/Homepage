@@ -17,38 +17,48 @@ import { useMountedTheme } from "@/hooks/useMountedTheme";
 export function PhoneFrame({
   children,
   className,
+  island = true,
 }: {
   children: ReactNode;
   className?: string;
+  /**
+   * Künstliche Dynamic Island zeichnen. Nur sinnvoll, wenn der Screen-Inhalt
+   * KEIN echtes OS-Chrome mitbringt – sonst legt sich die schwarze Pille über
+   * die echte Statusleiste und verdeckt Uhrzeit und Akkustand.
+   */
+  island?: boolean;
 }) {
   const { resolvedTheme } = useMountedTheme();
   const light = resolvedTheme === "light";
 
-  // Dark Mode → silberner Metall-Rahmen; Light Mode → dunkles Gerät.
-  const frame = light
-    ? {
-        borderColor: "#17171A",
-        background: "#1F1F23",
-        boxShadow:
-          "0 40px 120px -30px rgba(0,0,0,0.55), 0 10px 30px -10px rgba(0,0,0,0.4)",
-      }
-    : {
-        borderColor: "#c9ccd2",
-        background: "linear-gradient(145deg, #e6e8ec 0%, #b9bdc6 100%)",
-        boxShadow:
-          "0 40px 120px -30px rgba(0,0,0,0.6), 0 10px 30px -10px rgba(0,0,0,0.45)",
-      };
+  /**
+   * Gehäuse in beiden Themes dunkel – echte Geräte sind dunkel, und ein
+   * silberner Rahmen um einen hellen Screenshot wirkt auf dunklem Grund wie
+   * eine Zeichnung. Die Tiefe kommt aus einer feinen hellen Kante plus einer
+   * inneren Lichtkante, nicht aus einem Farbverlauf.
+   */
+  const frame = {
+    background: light ? "#101013" : "#18181B",
+    boxShadow: light
+      ? "inset 0 0 0 1.5px #3A3A40, inset 0 1.5px 0 rgba(255,255,255,0.12), 0 40px 120px -30px rgba(0,0,0,0.5), 0 10px 30px -12px rgba(0,0,0,0.4)"
+      : "inset 0 0 0 1.5px #4E5056, inset 0 1.5px 0 rgba(255,255,255,0.16), 0 44px 130px -30px rgba(0,0,0,0.75), 0 12px 34px -14px rgba(0,0,0,0.55)",
+  };
 
   return (
     <div
-      className={`relative rounded-[2.6rem] border-[10px] ${className ?? ""}`}
+      // Schmalerer Steg als vorher (10px): bei ~230px Gerätebreite sind 8px
+      // rund 3,5 % – das entspricht einem echten Rand. Kein prozentuales
+      // Padding, das bezöge sich in CSS auf die Breite des Elternelements.
+      className={`relative rounded-[1.9rem] p-[8px] md:p-[9px] ${className ?? ""}`}
       style={frame}
     >
-      {/* Dynamic Island */}
-      <div className="absolute left-1/2 top-3 z-20 h-6 w-24 -translate-x-1/2 rounded-full bg-black" />
+      {/* Dynamic Island – nur ohne echtes OS-Chrome im Screenshot */}
+      {island && (
+        <div className="absolute left-1/2 top-3 z-20 h-6 w-24 -translate-x-1/2 rounded-full bg-black" />
+      )}
       {/* Screen */}
       <div
-        className="relative h-full w-full overflow-hidden rounded-[1.9rem] bg-black"
+        className="relative h-full w-full overflow-hidden rounded-[1.6rem] bg-black"
         style={{ transformStyle: "preserve-3d" }}
       >
         {children}
@@ -59,7 +69,10 @@ export function PhoneFrame({
 
 /**
  * Screen-Inhalt eines Phones.
- * – chrome=false: echter 1080×2640-Screenshot → full-bleed (object-cover).
+ * – chrome=false: echter 1080×2640-Screenshot → object-contain. NICHT cover:
+ *   der Rahmen trägt seine 10px Border im Border-Box, der Screen ist dadurch
+ *   ~5,6 % schmaler als 1080/2640 – cover würde links und rechts beschneiden
+ *   und damit Uhrzeit und Akku aus der Statusleiste schneiden.
  * – chrome=true: rohe App-UI ohne OS-Chrome (z. B. NOOK/CoCo) → künstliche
  *   Statusleiste oben + Home-Indikator unten, Bild eingerückt dazwischen.
  *   So wirkt das Bild normal groß statt hochgezoomt.
@@ -85,7 +98,7 @@ export function PhoneScreenContent({
         fill
         sizes={sizes}
         priority={priority}
-        className="object-cover"
+        className="object-contain"
       />
     );
   }

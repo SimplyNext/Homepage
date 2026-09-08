@@ -274,7 +274,8 @@ export default function AppShowcase({ app }: { app: AppData }) {
             {app.shots.map((s, i) => (
               <PhoneFrame
                 key={i}
-                className="aspect-[1080/2640] w-[220px] shrink-0 md:h-[min(58svh,520px)] md:w-auto"
+                className="aspect-[1080/2640] w-[248px] shrink-0 md:h-[min(64svh,580px)] md:w-auto"
+                island={!!app.syntheticChrome}
               >
                 <PhoneScreenContent
                   src={s.src}

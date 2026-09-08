@@ -72,7 +72,12 @@ export default function JourneyPhone({ apps }: { apps: AppData[] }) {
           className="journey-phone-turn relative"
           style={{ transformStyle: "preserve-3d", willChange: "transform" }}
         >
-          <PhoneFrame className="h-[68svh] max-h-[620px] w-[calc(68svh*1080/2640)] max-w-[254px]">
+          <PhoneFrame
+            className="h-[72svh] max-h-[660px] w-[calc(72svh*1080/2640)] max-w-[272px]"
+            // Ein Rahmen für alle Apps: die Island darf nur erscheinen, wenn
+            // KEIN gezeigter Screenshot eine echte Statusleiste mitbringt.
+            island={apps.every((a) => a.syntheticChrome)}
+          >
             {apps.map((app, i) => (
               <div
                 key={app.slug}
