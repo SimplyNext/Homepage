@@ -167,12 +167,12 @@ export const apps: AppData[] = [
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
   },
-  // Fabula hat echte Marketingtexte, aber noch generierte SVG-Platzhalter statt
-  // Screenshots; Furly hat beides noch nicht. Beide bleiben deshalb auf
-  // `placeholder: true` (noindex, nicht in der Sitemap) – eine indexierte Seite
-  // mit „Screenshot folgt“-Bildern nützt niemandem. Zum Freischalten: echte
-  // PNGs unter /public/images/apps/<slug>/ hinterlegen, hero/shots-Endungen
-  // hier auf .png umstellen, `syntheticChrome` prüfen und das Flag entfernen.
+  // Furly hat noch Platzhalter-Marketingtexte und generierte SVG-Bilder und
+  // bleibt deshalb auf `placeholder: true` (noindex, nicht in der Sitemap) –
+  // eine indexierte Seite mit „Screenshot folgt“-Bildern nützt niemandem. Zum
+  // Freischalten: echte Texte in messages/*.json, echte PNGs unter
+  // /public/images/apps/furly/ hinterlegen, hero/shots-Endungen hier auf .png
+  // umstellen, `syntheticChrome` prüfen und das Flag entfernen.
   {
     slug: "shrinkit",
     name: "ShrinkIt",
@@ -201,16 +201,20 @@ export const apps: AppData[] = [
     os: ["Android"],
     iosSoon: true,
     status: "live",
-    accent: "#A78BC8",
-    accentLight: "#5C4380",
-    hero: "/images/apps/fabula/hero.svg",
+    accent: "#EAA216",
+    accentLight: "#7A5A0C",
+    hero: "/images/apps/fabula/hero.png",
     heroFit: "contain",
-    syntheticChrome: true,
-    placeholder: true,
     shots: [
-      { src: "/images/apps/fabula/fabula_1.svg" },
-      { src: "/images/apps/fabula/fabula_2.svg" },
-      { src: "/images/apps/fabula/fabula_3.svg" },
+      { src: "/images/apps/fabula/fabula_1.png" },
+      { src: "/images/apps/fabula/fabula_2.png" },
+      { src: "/images/apps/fabula/fabula_3.png" },
+      { src: "/images/apps/fabula/fabula_4.png" },
+      { src: "/images/apps/fabula/fabula_5.png" },
+      { src: "/images/apps/fabula/fabula_6.png" },
+      { src: "/images/apps/fabula/fabula_7.png" },
+      { src: "/images/apps/fabula/fabula_8.png" },
+      { src: "/images/apps/fabula/fabula_9.png" },
     ],
     links: [{ type: "playstore", url: "#" }],
     since: "2026",

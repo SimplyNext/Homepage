@@ -262,7 +262,7 @@
         "premium": ["Story-Guthaben kaufen, wenn ihr es braucht", "Guthaben verfällt nicht und bleibt am Konto", "Abgezogen wird erst, wenn die Geschichte fertig ist"],
         "note": "Kein Abo, keine monatlichen Kosten – ihr kauft Guthaben nur dann, wenn eine neue Geschichte entstehen soll."
       },
-      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
+      "shots": ["Meine Geschichten mit allen erstellten Titeln", "Figur anlegen: Name, Alter und Avatar", "Haupt- und Nebenfiguren in der Charakterliste", "Zehn Geschichtenwelten zur Auswahl", "Eigenes Stichwort für die Geschichte", "Player mit Kapiteln und Text zum Mitlesen", "Vorlesestimme mit Hörprobe wählen", "Tempo, Autoplay und Einschlaf-Timer", "Eltern-PIN schützt den Erwachsenenbereich"]
     },
     "furly": {
       "tagline": "In Entwicklung – Details folgen.",
