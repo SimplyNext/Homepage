@@ -2,10 +2,14 @@ import type { LegalSection } from "../legal";
 
 /**
  * App-spezifische Rechtstexte für Werkflow – übernommen aus
- * werkflow-{datenschutz,agb}.md (Stand: 28.07.2026).
+ * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: 14.09.2026 –
+ * GoBD-Archivierung, gestaffelte Aufbewahrungsfristen, Änderungsprotokoll,
+ * Export für Steuerberater, Resend für Konto-E-Mails).
  *
- * Quelle bleibt das Markdown-Dokument im Repository-Root: Änderungen dort
- * müssen hier nachgezogen werden.
+ * Quelle bleibt das Markdown-Dokument im App-Repository: Änderungen dort
+ * müssen hier nachgezogen werden. Der Renderer kennt nur eine Liste pro
+ * Abschnitt – mehrere Listen in einer Ziffer werden deshalb auf Unter-
+ * abschnitte mit den fett gesetzten Stichworten der Vorlage verteilt.
  */
 
 export const werkflowDatenschutz: LegalSection[] = [
@@ -31,7 +35,7 @@ export const werkflowDatenschutz: LegalSection[] = [
   {
     heading: "2. Allgemeines zur Datenverarbeitung",
     paragraphs: [
-      "WerkFlow ist eine App für Handwerksbetriebe zur Erstellung von Angeboten, Kundenverwaltung und Materiallisten. Bei der Nutzung der App werden personenbezogene Daten verarbeitet. Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, Adresse, E-Mail-Adresse oder Nutzerverhalten.",
+      "WerkFlow ist eine App für Handwerksbetriebe zur Erstellung von Angeboten und Rechnungen (einschließlich E-Rechnungen), zur Kundenverwaltung und zur Verwaltung von Materiallisten. Bei der Nutzung der App werden personenbezogene Daten verarbeitet. Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, Adresse, E-Mail-Adresse oder Nutzerverhalten.",
       "Wir verarbeiten Ihre Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen App sowie unserer Inhalte und Leistungen erforderlich ist, oder soweit Sie eingewilligt haben.",
     ],
   },
@@ -45,13 +49,16 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Passwort (verschlüsselt gespeichert, für uns nicht einsehbar)",
       "Zeitpunkt der Registrierung, Login-Historie, Session-Token",
     ],
-    afterList: ["Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung – Bereitstellung des Nutzerkontos)"],
+    afterList: [
+      "An Ihre E-Mail-Adresse senden wir ausschließlich Konto-E-Mails: die Bestätigung bei der Registrierung und den Link zum Zurücksetzen des Passworts (Versand über Resend, siehe Ziff. 4.5).",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung – Bereitstellung des Nutzerkontos)",
+    ],
   },
   {
     heading: "3.2 Firmenprofildaten",
     level: 3,
     paragraphs: [
-      "Zur Erstellung rechtssicherer Angebote und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
+      "Zur Erstellung rechtssicherer Angebote, Rechnungen und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
     ],
     list: [
       "Firmenname, Rechtsform",
@@ -63,6 +70,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Firmenlogo (Bilddatei)",
       "Name und Position der unterschriftsberechtigten Person",
       "Digitale Unterschrift (als Bilddatei)",
+      "Wenn Sie den DATEV-Export nutzen: Kontenrahmen, Berater- und Mandantennummer bei Ihrem Steuerberater, Debitoren- und Erlöskonten",
     ],
     afterList: [
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) sowie Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung, soweit Pflichtangaben für Rechnungen/Angebote nach § 14 UStG erforderlich sind)",
@@ -72,11 +80,11 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.3 Bankverbindung (besonders sensible Finanzdaten)",
     level: 3,
     paragraphs: [
-      "Zur Angabe auf erstellten Angeboten/PDF-Dokumenten können Sie folgende Daten hinterlegen:",
+      "Zur Angabe auf Ihren Angeboten und Rechnungen können Sie folgende Daten hinterlegen:",
     ],
     list: ["Bankname", "IBAN", "BIC"],
     afterList: [
-      "Diese Daten werden ausschließlich zum Zweck der Anzeige auf Ihren eigenen Angebotsdokumenten gespeichert und nicht zur Zahlungsabwicklung innerhalb der App genutzt.",
+      "Diese Daten werden ausschließlich zum Zweck der Anzeige auf Ihren eigenen Angeboten und Rechnungen gespeichert. Auf Rechnungen stehen sie zusätzlich als Zahlungsangabe in der eingebetteten E-Rechnung (ZUGFeRD bzw. XRechnung). Sie werden nicht zur Zahlungsabwicklung innerhalb der App genutzt.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)",
     ],
   },
@@ -111,19 +119,51 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Angebotsnummer, Datum, Betreff, Gültigkeitsdauer",
       "Positionen, Mengen, Einzelpreise, Gesamtsummen, MwSt.",
       "Zahlungsbedingungen, Liefer-/Leistungszeit",
-      "Status (Entwurf, versendet, angenommen, abgelehnt)",
+      "Status (Entwurf, versendet, angenommen, abgelehnt, durch neue Version ersetzt)",
+      "Bei versendeten Angeboten: Versandzeitpunkt, das versendete PDF so, wie Ihr Kunde es erhalten hat, und dessen Prüfsumme (SHA-256)",
       "Materialliste mit Bezeichnungen, Preisen, Einheiten",
       "Bei Rechnungen zusätzlich die Angaben nach § 14 UStG: fortlaufende Rechnungsnummer, Rechnungsart (Rechnung, Abschlags-, Schluss- oder Stornorechnung) und Rechnungsdatum",
       "Leistungsdatum bzw. Leistungszeitraum, Fälligkeit und Zahlungsziel",
       "Aufteilung in Lohn- und Materialanteil (§ 35a EStG) sowie die Kennzeichen für § 13b, § 14b und § 19 UStG",
       "Eine eingefrorene Kopie der Kundendaten zum Zeitpunkt der Rechnung. Zieht der Kunde später um, muss die archivierte Rechnung weiterhin die damals gültige Anschrift zeigen.",
-      "Das erzeugte PDF sowie die darin eingebettete E-Rechnung im Format ZUGFeRD 2.3 / Factur-X (Profil EN 16931). Diese XML-Datei enthält dieselben Rechnungsangaben nochmals in maschinenlesbarer Form, damit die Buchhaltung Ihres Kunden sie automatisch einlesen kann.",
+      "Das erzeugte PDF mit seiner Prüfsumme (SHA-256) sowie die darin eingebettete E-Rechnung im Format ZUGFeRD 2.3 / Factur-X (Profil EN 16931). Diese XML-Datei enthält dieselben Rechnungsangaben nochmals in maschinenlesbarer Form, damit die Buchhaltung Ihres Kunden sie automatisch einlesen kann.",
       "Bei Rechnungen an öffentliche Auftraggeber entsteht dieselbe Datei stattdessen im Format XRechnung 3.0. Sie enthält zusätzlich die Leitweg-ID sowie einen Ansprechpartner Ihres Betriebs mit Telefonnummer und E-Mail-Adresse, weil die Rechnungseingangsplattform der Behörde diese Angaben verlangt.",
     ],
     afterList: [
-      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung), für die Pflichtangaben und die Aufbewahrung zusätzlich Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung nach § 14 UStG, § 147 AO).",
-      "Aufbewahrungsfrist: Angebots- und Rechnungsdaten werden aus steuerrechtlichen Gründen 10 Jahre aufbewahrt (§ 147 Abgabenordnung, § 257 HGB).",
-      "Unveränderbarkeit: Eine versendete Rechnung lässt sich weder ändern noch löschen (Grundsätze ordnungsmäßiger Buchführung, GoBD). Eine Korrektur ist nur über eine Stornorechnung möglich, die auf die ursprüngliche Rechnung verweist. Ein Löschverlangen nach Art. 17 DSGVO tritt insoweit hinter die gesetzliche Aufbewahrungspflicht zurück (Art. 17 Abs. 3 lit. b DSGVO); die Daten werden gesperrt und nach Ablauf der Frist gelöscht.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung), für die Pflichtangaben zusätzlich Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung nach § 14 UStG).",
+      "Unveränderbarkeit: Eine versendete Rechnung lässt sich in der App weder ändern noch vor Ablauf der Aufbewahrungsfrist löschen (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form, GoBD). Eine Korrektur ist nur über eine Stornorechnung möglich, die auf die ursprüngliche Rechnung verweist. Dasselbe gilt für versendete Angebote: Eine Änderung legt eine neue Version mit neuer Angebotsnummer an, die alte Version bleibt erhalten.",
+    ],
+  },
+  {
+    heading: "Aufbewahrungspflichten",
+    level: 3,
+    paragraphs: [
+      "Die gesetzlichen Aufbewahrungspflichten für Ihre Geschäftsunterlagen treffen Sie als Unternehmer. Es gelten insbesondere:",
+    ],
+    list: [
+      "Rechnungen, Abschlags-, Schluss- und Stornorechnungen einschließlich der eingebetteten E-Rechnung (XML) sowie Angebote, aus denen ein Auftrag hervorgegangen ist: 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 257 Abs. 1 Nr. 4, Abs. 4 HGB, § 14b UStG)",
+      "Angebote ohne anschließenden Auftrag: 6 Jahre (§ 147 Abs. 1 Nr. 2, 3, Abs. 3 AO, § 257 Abs. 1 Nr. 2, 3, Abs. 4 HGB)",
+    ],
+    afterList: [
+      "Die Frist beginnt nicht mit dem Tag der Erstellung, sondern mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist (§ 147 Abs. 4 AO, § 257 Abs. 5 HGB). Beispiel: Eine Rechnung vom 15.05.2026 ist bis zum 31.12.2034 aufzubewahren. Die Frist verlängert sich, solange die Unterlagen für eine noch nicht abgeschlossene Steuerfestsetzung von Bedeutung sind (§ 147 Abs. 3 Satz 5 AO).",
+    ],
+  },
+  {
+    heading: "Speicherung und Löschung durch uns",
+    level: 3,
+    paragraphs: [
+      "Wir speichern Ihre versendeten Angebote und Rechnungen einschließlich PDF und E-Rechnung bis zum Ende der Aufbewahrungsfrist. Vorher lassen sie sich nicht löschen, auch nicht von Ihnen, damit Ihre Aufbewahrungspflicht erfüllt bleibt. Entwürfe können Sie jederzeit löschen.",
+      "Nach Ablauf der Frist löschen wir die Belege automatisch, weil wir personenbezogene Daten nicht länger speichern dürfen, als es erforderlich ist (Art. 5 Abs. 1 lit. e, Art. 17 Abs. 1 lit. a DSGVO):",
+    ],
+    list: [
+      "Ab dem 1. Oktober des letzten Aufbewahrungsjahres zeigen wir Ihnen in der App an, welche Belege betroffen sind, und bieten sie zum Herunterladen an (Ziff. 7). Eine E-Mail senden wir dazu nicht.",
+      "Am 31. März des folgenden Jahres löschen wir Datensatz, PDF und E-Rechnung dieser Belege, auch wenn Sie die App in der Zwischenzeit nicht geöffnet haben.",
+      "Brauchen Sie Belege länger, etwa weil eine Außenprüfung, ein Einspruch oder ein anderes Verfahren läuft (§ 147 Abs. 3 Satz 5 AO), können Sie die Aufbewahrung in der App um jeweils ein Jahr verlängern.",
+      "Zwischen Fristende und Löschtermin können Sie Belege auch selbst in der App löschen.",
+    ],
+    afterList: [
+      "Beispiel: Eine Rechnung vom 15.05.2026 ist bis zum 31.12.2034 aufzubewahren. Ab dem 01.10.2034 weist die App auf die Löschung hin, gelöscht wird am 31.03.2035.",
+      "Wenn Sie Ihr Konto löschen, werden alle Daten einschließlich der Angebote und Rechnungen sofort und endgültig gelöscht, auch wenn die Aufbewahrungsfrist noch läuft. Die App bietet Ihnen deshalb vorher an, das Archiv aller Jahre herunterzuladen (Ziff. 7).",
     ],
   },
   {
@@ -186,6 +226,26 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
   },
   {
+    heading: "3.10 Änderungsprotokoll der Belege",
+    level: 3,
+    paragraphs: [
+      "Damit nachvollziehbar bleibt, wann ein Angebot oder eine Rechnung entstanden, versendet oder geändert wurde, führt die App zu jedem Beleg ein Protokoll. Gespeichert werden:",
+    ],
+    list: [
+      "Zeitpunkt und Art des Vorgangs (angelegt, geändert, ausgestellt, Statusänderung, PDF archiviert, geteilt, exportiert, Aufbewahrung verlängert, gelöscht)",
+      "Belegart und Belegnummer",
+      "die Namen der geänderten Felder, bei bereits versendeten Belegen zusätzlich alter und neuer Wert der geänderten Felder (z. B. Zahlungsstatus und Zahlungsdatum); bei einer Löschung Belegnummer, Datum und Betrag",
+      "ob der Vorgang von Ihnen oder automatisch vom System ausgelöst wurde",
+      "Prüfsummen (SHA-256), die jeden Eintrag mit dem vorherigen verketten, damit nachträgliche Änderungen am Protokoll erkennbar sind",
+    ],
+    afterList: [
+      "Vollständige Belege oder Kundendaten stehen nicht im Protokoll. Das Protokoll lässt sich in der App nicht bearbeiten; Sie erhalten es mit dem Export für Ihren Steuerberater und mit dem Datenexport (Ziff. 7).",
+      "Zweck: Nachweis, dass Buchungen und Aufzeichnungen nicht unbemerkt verändert wurden (§ 146 Abs. 4 AO, GoBD).",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung – GoBD-konforme Belegführung) und Art. 6 Abs. 1 lit. c DSGVO (Ihre Aufzeichnungspflicht nach § 146 Abs. 4 AO)",
+      "Speicherdauer: Wie der zugehörige Beleg. Wird ein Beleg nach Fristablauf gelöscht, entfernen wir aus seinen Protokolleinträgen Belegbezug, Belegnummer, Feldnamen und Werte. Übrig bleiben nur Zeitpunkt, Art des Vorgangs und Prüfsummen, damit die Kette prüfbar bleibt. Diese Reste werden mit dem Konto gelöscht.",
+    ],
+  },
+  {
     heading: "4. Empfänger der Daten / Auftragsverarbeiter",
     paragraphs: [
       "Wir setzen sorgfältig ausgewählte Dienstleister ein, die Ihre Daten ausschließlich nach unserer Weisung verarbeiten. Mit allen Anbietern bestehen, soweit erforderlich, Verträge zur Auftragsverarbeitung (Art. 28 DSGVO).",
@@ -195,8 +255,9 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "4.1 Supabase (Backend, Datenbank, Authentifizierung, Dateispeicher)",
     level: 3,
     paragraphs: [
-      "Supabase Inc., verarbeitet Daten auf Servern innerhalb der EU.",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.9 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Firmenlogo, Unterschrift-Bilddatei).",
+      "Supabase Inc., USA. Die Daten werden auf Servern in der EU gespeichert (Rechenzentrum in Irland).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei).",
+      "Drittlandtransfer: Da Supabase ein Unternehmen mit Sitz in den USA ist, lässt sich ein Zugriff aus den USA (z. B. im Rahmen von Wartung und Support) nicht ausschließen. Dieser ist über den Auftragsverarbeitungsvertrag mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) abgesichert.",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
   },
@@ -208,7 +269,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
     list: [
       "Google Gemini (Google Ireland Limited / Google LLC, USA) – primärer und regulär genutzter KI-Dienst, kostenpflichtiger Tarif ohne Trainingsnutzung Ihrer Daten. Datenschutzerklärung: policies.google.com/privacy · Nutzungsbedingungen: ai.google.dev/gemini-api/terms#paid-services",
-      "OpenAI GPT-4o (OpenAI, L.L.C., USA) – ausschließlich als technischer Fallback, falls Google Gemini vorübergehend nicht verfügbar ist. Datenschutzerklärung: openai.com/privacy",
+      "OpenAI GPT-4o (Vertragspartner für Kunden im EWR: OpenAI Ireland Ltd., Dublin, Irland; verbunden mit OpenAI, L.L.C., USA) – ausschließlich als technischer Fallback, falls Google Gemini vorübergehend nicht verfügbar ist. Grundlage ist der Auftragsverarbeitungsvertrag (Data Processing Addendum) von OpenAI. Datenschutzerklärung: openai.com/policies/eu-privacy-policy",
     ],
     afterList: [
       "Drittlandtransfer: Da diese Anbieter auch Server in den USA betreiben, kann es zu einer Übermittlung personenbezogener Daten in ein Land außerhalb der EU/des EWR kommen. Wir stellen ein angemessenes Datenschutzniveau durch den Abschluss von EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) mit den jeweiligen Anbietern sicher.",
@@ -221,7 +282,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     paragraphs: [
       "RevenueCat, Inc., San Francisco, USA",
       "Übermittelte Daten: Nutzer-ID, Kauf- und Abo-Status, geräteseitige Kaufbestätigungen.",
-      "Datenschutzerklärung: revenuecat.com/privacy",
+      "Datenschutzerklärung: www.revenuecat.com/privacy",
       "Drittlandtransfer: USA, abgesichert über EU-Standardvertragsklauseln.",
     ],
   },
@@ -231,6 +292,18 @@ export const werkflowDatenschutz: LegalSection[] = [
     paragraphs: [
       "Google Ireland Limited / Google LLC",
       "Die Zahlungsabwicklung für Abonnements erfolgt vollständig über Google Play. Es gilt zusätzlich die Datenschutzerklärung von Google: policies.google.com/privacy",
+    ],
+  },
+  {
+    heading: "4.5 Resend (Versand von Konto-E-Mails)",
+    level: 3,
+    paragraphs: [
+      "Resend, Inc., San Francisco, USA",
+      "Zweck: Versand der Bestätigungs-E-Mail bei der Registrierung und der E-Mail zum Zurücksetzen des Passworts (Ziff. 3.1).",
+      "Übermittelte Daten: Ihre E-Mail-Adresse, der Inhalt der jeweiligen Konto-E-Mail, Versandzeitpunkt und Zustellstatus.",
+      "Datenschutzerklärung: resend.com/legal/privacy-policy",
+      "Drittlandtransfer: USA, abgesichert über EU-Standardvertragsklauseln.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung – Bereitstellung des Nutzerkontos)",
     ],
   },
   {
@@ -255,9 +328,12 @@ export const werkflowDatenschutz: LegalSection[] = [
       head: ["Datenkategorie", "Speicherdauer"],
       rows: [
         ["Kontodaten", "Bis zur Löschung des Nutzerkontos"],
-        ["Angebots-/Rechnungsdaten", "10 Jahre (steuerrechtliche Aufbewahrungspflicht). Versendete Rechnungen sind ab Versand unveränderbar (GoBD)."],
-        ["Rechnungs-PDF und eingebettete ZUGFeRD-Datei", "10 Jahre, wie die zugehörige Rechnung"],
-        ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. bis zum Ende der Geschäftsbeziehung"],
+        [
+          "Angebote und Rechnungen einschließlich PDF und E-Rechnung (ZUGFeRD/XRechnung)",
+          "Entwürfe bis zur Löschung durch Sie. Versendete Belege bis zum Ende der Aufbewahrungsfrist (8 bzw. 6 Jahre ab Ende des Kalenderjahres); automatische Löschung am 31. März danach, Hinweis in der App ab 1. Oktober, Verlängerung möglich (Ziff. 3.5). Bei Kontolöschung sofort.",
+        ],
+        ["Änderungsprotokoll der Belege", "Wie der zugehörige Beleg; danach nur geschwärzte Einträge ohne Belegbezug bis zur Kontolöschung (Ziff. 3.10)"],
+        ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung. Die Kopie der Kundendaten in einer versendeten Rechnung bleibt so lange erhalten wie die Rechnung."],
         ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
@@ -283,8 +359,9 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "In der App direkt nutzbare Funktionen",
     level: 3,
     list: [
-      "Datenexport: Unter Einstellungen → „Meine Daten exportieren“ können Sie alle gespeicherten Daten als JSON-Datei herunterladen.",
-      "Account-Löschung: Unter Einstellungen → „Account löschen“ können Sie Ihr Konto und alle zugehörigen Daten unwiderruflich löschen lassen.",
+      "Datenexport: Unter Einstellungen → „Meine Daten exportieren“ können Sie alle gespeicherten Daten als JSON-Datei herunterladen, einschließlich Ihrer Rechnungen mit den E-Rechnungs-Daten und des Änderungsprotokolls.",
+      "Export für Steuerberater: Unter Einstellungen → „Export für Steuerberater“ erhalten Sie Ihre Angebote und Rechnungen eines Zeitraums als ZIP-Archiv (PDF, E-Rechnung, Tabellen, Änderungsprotokoll) und auf Wunsch einen DATEV-Buchungsstapel. Die Datei entsteht auf Ihrem Gerät; Sie entscheiden, wo Sie sie speichern und an wen Sie sie weitergeben.",
+      "Account-Löschung: Unter Einstellungen → „Account löschen“ können Sie Ihr Konto und alle zugehörigen Daten unwiderruflich löschen lassen. Dabei werden auch Ihre Angebote und Rechnungen gelöscht; die App bietet Ihnen vorher an, das Archiv aller Jahre herunterzuladen (Ziff. 3.5).",
       "Widerruf KI-Einwilligung: Unter Einstellungen können Sie die KI-gestützte Analyse jederzeit deaktivieren.",
     ],
     afterList: ["Für alle weiteren Anfragen wenden Sie sich an: info@simplynext.de"],
@@ -300,6 +377,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Sichere, PKCE-basierte Authentifizierung mit automatischem Token-Ablauf und -Erneuerung",
       "API-Schlüssel Dritter (z. B. RevenueCat) werden nicht im App-Code hinterlegt, sondern serverseitig gesichert bereitgestellt",
       "Passwörter werden ausschließlich verschlüsselt (gehasht) gespeichert",
+      "Versendete Belege und ihre archivierten PDFs sind auf Datenbank- und Speicherebene gegen Änderung und vorzeitiges Löschen gesperrt; Prüfsummen und ein verkettetes Änderungsprotokoll machen Veränderungen erkennbar",
     ],
   },
   {
@@ -346,7 +424,7 @@ export const werkflowAgb: LegalSection[] = [
     ],
     afterList: [
       "(nachfolgend „Anbieter“) betrieben werden.",
-      "(2) Die App richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB, insbesondere Handwerksbetriebe und Selbstständige, die die App zur Erstellung von Angeboten, zur Kundenverwaltung und zur Verwaltung von Materiallisten im Rahmen ihrer gewerblichen oder selbstständigen beruflichen Tätigkeit nutzen (B2B). Eine Nutzung durch Verbraucher im Sinne des § 13 BGB ist nicht vorgesehen.",
+      "(2) Die App richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB, insbesondere Handwerksbetriebe und Selbstständige, die die App zur Erstellung von Angeboten und Rechnungen, zur Kundenverwaltung und zur Verwaltung von Materiallisten im Rahmen ihrer gewerblichen oder selbstständigen beruflichen Tätigkeit nutzen (B2B). Eine Nutzung durch Verbraucher im Sinne des § 13 BGB ist nicht vorgesehen.",
       "(3) Abweichenden, entgegenstehenden oder ergänzenden Allgemeinen Geschäftsbedingungen des Nutzers wird widersprochen; sie werden nicht Vertragsbestandteil, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.",
     ],
   },
@@ -357,15 +435,20 @@ export const werkflowAgb: LegalSection[] = [
     ],
     list: [
       "Erstellung, Verwaltung und Export (PDF) von Angeboten",
+      "Erstellung von Rechnungen, Abschlags-, Schluss- und Stornorechnungen mit fortlaufender Rechnungsnummer, als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X, Profil EN 16931) bzw. als XRechnung für öffentliche Auftraggeber",
       "Verwaltung von Kundendaten",
       "Verwaltung einer Material-Preisliste",
       "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebotsvorschlägen",
       "Digitale Unterschriftenerfassung",
+      "Freie Notizen und Diktierfunktion",
+      "Export der eigenen Daten",
+      "Unterstützung einer GoBD-konformen Arbeitsweise: unveränderbare Archivierung versendeter Angebote und Rechnungen, Änderungsprotokoll, Export für Steuerberater und Betriebsprüfung (ZIP-Archiv nach dem Beschreibungsstandard für die Datenüberlassung, DATEV-Buchungsstapel) sowie eine Vorlage für die Verfahrensdokumentation",
     ],
     afterList: [
-      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose Angebote, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses.",
-      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte.",
+      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose KI-gestützte Angebote, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses.",
+      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot oder einer Rechnung auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte.",
       "(4) Der Anbieter ist berechtigt, den Funktionsumfang der App im Rahmen der technischen Weiterentwicklung anzupassen, zu erweitern oder einzuschränken, sofern dies dem Nutzer zumutbar ist und der vertraglich vereinbarte Kernumfang der jeweils gebuchten Leistung erhalten bleibt.",
+      "(5) Die App unterstützt eine GoBD-konforme Arbeitsweise; sie ist kein zertifiziertes Buchführungssystem und ersetzt weder die Buchführung noch die steuerliche Beratung. Die Verantwortung für die Ordnungsmäßigkeit der Aufzeichnungen, für eine vollständige Verfahrensdokumentation und für die mit dem Steuerberater abgestimmte Kontenzuordnung im DATEV-Export liegt beim Nutzer.",
     ],
   },
   {
@@ -391,12 +474,14 @@ export const werkflowAgb: LegalSection[] = [
   {
     heading: "§ 5 Pflichten des Nutzers",
     paragraphs: [
-      "(1) Der Nutzer ist für sämtliche in der App eingegebenen oder über die App verarbeiteten Daten (insbesondere Kundendaten, Angebotsdaten, Fotos) selbst verantwortlich.",
+      "(1) Der Nutzer ist für sämtliche in der App eingegebenen oder über die App verarbeiteten Daten (insbesondere Kundendaten, Angebots- und Rechnungsdaten, Fotos) selbst verantwortlich.",
       "(2) Der Nutzer verpflichtet sich, bei der Verarbeitung personenbezogener Daten Dritter (insbesondere seiner eigenen Kunden) über die App die geltenden datenschutzrechtlichen Vorschriften, insbesondere die DSGVO, einzuhalten. Der Nutzer ist im Verhältnis zu seinen eigenen Kunden datenschutzrechtlich Verantwortlicher im Sinne von Art. 4 Nr. 7 DSGVO.",
       "(3) Der Nutzer verpflichtet sich, beim Fotografieren im Rahmen der KI-Analyse-Funktion (z. B. auf Baustellen oder in Kundenwohnungen) sicherzustellen, dass keine Personen oder sensiblen privaten Unterlagen erkennbar abgebildet werden, sofern dies nicht zur Leistungserbringung erforderlich und rechtlich zulässig ist.",
       "(4) Der Nutzer verpflichtet sich, seine Zugangsdaten (E-Mail, Passwort) geheim zu halten und vor dem Zugriff Dritter zu schützen. Bei Verdacht auf missbräuchliche Nutzung ist der Anbieter unverzüglich zu informieren.",
       "(5) Es ist untersagt, die App zu nutzen, um rechtswidrige, beleidigende, diskriminierende oder gegen Rechte Dritter verstoßende Inhalte zu erstellen, zu speichern oder zu verbreiten.",
-      "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote (einschließlich Preisen, Steuerangaben und Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Angebotsinhalte durch den Anbieter findet nicht statt.",
+      "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote und Rechnungen (einschließlich Preisen, Steuerangaben und der Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Inhalte durch den Anbieter findet nicht statt. Die App unterstützt die Einhaltung der Pflichtangaben, ersetzt aber keine steuerliche Beratung.",
+      "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen und Angebote, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
+      "(8) Nach Ablauf der Aufbewahrungsfrist löscht der Anbieter die betroffenen Belege einschließlich PDF und E-Rechnung automatisch am 31. März des folgenden Jahres. Ab dem 1. Oktober des letzten Aufbewahrungsjahres weist die App darauf hin und bietet die Belege zum Herunterladen an. Verlängert sich die Aufbewahrungsfrist im Einzelfall, etwa wegen einer Außenprüfung oder eines Einspruchs (§ 147 Abs. 3 Satz 5 AO), hat der Nutzer die Aufbewahrung in der App rechtzeitig zu verlängern oder die Belege vorher selbst zu sichern. Der Anbieter empfiehlt, die Belege zusätzlich mindestens einmal jährlich über den Export für Steuerberater auf einem eigenen Datenträger zu sichern. Vor einer Kündigung oder Kontolöschung hat der Nutzer seine aufbewahrungspflichtigen Unterlagen selbst zu sichern.",
     ],
   },
   {
@@ -412,13 +497,13 @@ export const werkflowAgb: LegalSection[] = [
     paragraphs: [
       "(1) Der Anbieter räumt dem Nutzer für die Dauer des Nutzungsvertrags ein einfaches, nicht übertragbares und nicht unterlizenzierbares Recht zur Nutzung der App entsprechend ihrer bestimmungsgemäßen Funktion ein.",
       "(2) Sämtliche Rechte an der App selbst (Software, Quellcode, Design, Marken) verbleiben beim Anbieter bzw. den jeweiligen Rechteinhabern. Eine Vervielfältigung, Dekompilierung, Bearbeitung oder sonstige Nutzung über den vertraglich vereinbarten Zweck hinaus ist nicht gestattet, soweit dies nicht gesetzlich zwingend erlaubt ist (z. B. § 69e UrhG).",
-      "(3) Vom Nutzer in die App eingegebene Daten (Angebote, Kundendaten, Materiallisten, Logos) verbleiben im Eigentum des Nutzers. Der Anbieter verarbeitet diese Daten ausschließlich zur Erbringung der vertraglich geschuldeten Leistung.",
+      "(3) Vom Nutzer in die App eingegebene Daten (Angebote, Rechnungen, Kundendaten, Materiallisten, Logos) verbleiben im Eigentum des Nutzers. Der Anbieter verarbeitet diese Daten ausschließlich zur Erbringung der vertraglich geschuldeten Leistung.",
     ],
   },
   {
     heading: "§ 8 Verfügbarkeit, Änderungen, Wartung",
     paragraphs: [
-      "(1) Der Anbieter bemüht sich um eine möglichst unterbrechungsfreie Verfügbarkeit der App, kann jedoch keine 100%ige Verfügbarkeit garantieren. Wartungsarbeiten, technische Störungen oder Ausfälle bei eingesetzten Drittanbietern (insbesondere Supabase, Google, OpenAI, RevenueCat) können zu vorübergehenden Einschränkungen führen.",
+      "(1) Der Anbieter bemüht sich um eine möglichst unterbrechungsfreie Verfügbarkeit der App, kann jedoch keine 100%ige Verfügbarkeit garantieren. Wartungsarbeiten, technische Störungen oder Ausfälle bei eingesetzten Drittanbietern (insbesondere Supabase, Google, OpenAI, RevenueCat, Resend) können zu vorübergehenden Einschränkungen führen.",
       "(2) Der Anbieter behält sich vor, die App im Rahmen der Weiterentwicklung technisch anzupassen, sofern dies dem Nutzer zumutbar ist.",
       "(3) Bei wesentlichen Änderungen dieser AGB wird der Anbieter den Nutzer in angemessener Frist vor Inkrafttreten in Textform (z. B. per E-Mail oder In-App-Hinweis) informieren. Widerspricht der Nutzer nicht innerhalb von 6 Wochen nach Zugang der Änderungsmitteilung, gelten die geänderten AGB als angenommen. Auf diese Wirkung wird der Nutzer in der Änderungsmitteilung gesondert hingewiesen.",
     ],
@@ -431,7 +516,7 @@ export const werkflowAgb: LegalSection[] = [
       "(3) Im Übrigen ist die Haftung des Anbieters für leichte Fahrlässigkeit ausgeschlossen.",
       "(4) Die vorstehenden Haftungsbeschränkungen gelten nicht für Ansprüche aus der Verletzung von Datenschutzvorschriften, soweit diese nach der DSGVO zwingend sind.",
       "(5) Der Anbieter übernimmt keine Haftung für die Richtigkeit KI-generierter Inhalte (§ 6 Abs. 2) sowie für Inhalte, die der Nutzer selbst in die App eingibt oder über die App an Dritte versendet.",
-      "(6) Für Schäden, die durch Störungen, Ausfälle oder Datenverluste bei eingesetzten Drittanbietern (Supabase, Google, OpenAI, RevenueCat, Google Play) entstehen, haftet der Anbieter nur, soweit ihn ein eigenes Verschulden bei der Auswahl oder Überwachung dieser Dienstleister trifft.",
+      "(6) Für Schäden, die durch Störungen, Ausfälle oder Datenverluste bei eingesetzten Drittanbietern (Supabase, Google, OpenAI, RevenueCat, Resend, Google Play) entstehen, haftet der Anbieter nur, soweit ihn ein eigenes Verschulden bei der Auswahl oder Überwachung dieser Dienstleister trifft.",
     ],
   },
   {
@@ -441,11 +526,11 @@ export const werkflowAgb: LegalSection[] = [
     ],
   },
   {
-    heading: "§ 11 Vertragslaufzeit, Kündigung, Account-Löschung",
+    heading: "§ 11 Vertragslaufzeit, Kündigung des Nutzungsvertrags, Account-Löschung",
     paragraphs: [
       "(1) Der Nutzungsvertrag über die kostenlose Testversion wird auf unbestimmte Zeit geschlossen und kann von beiden Seiten jederzeit ohne Einhaltung einer Frist gekündigt werden.",
       "(2) Kostenpflichtige Abonnements laufen für die gewählte Vertragslaufzeit (monatlich) und verlängern sich automatisch gemäß § 4 Abs. 2.",
-      "(3) Der Nutzer kann sein Nutzerkonto jederzeit über die Funktion „Account löschen“ in den App-Einstellungen unwiderruflich löschen lassen. Mit der Löschung werden sämtliche zugehörigen Daten entfernt, soweit dem keine gesetzlichen Aufbewahrungspflichten (z. B. steuerrechtliche Aufbewahrungsfristen für Angebots-/Rechnungsdaten) entgegenstehen.",
+      "(3) Der Nutzer kann sein Nutzerkonto jederzeit über die Funktion „Account löschen“ in den App-Einstellungen unwiderruflich löschen lassen. Mit der Löschung werden sämtliche zugehörigen Daten endgültig entfernt, auch Angebote und Rechnungen. Aufbewahrungspflichtige Unterlagen hat der Nutzer vorher selbst zu sichern (§ 5 Abs. 7 und 8); die App bietet dazu vor der Löschung den Export aller Jahre an.",
       "(4) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt für beide Parteien unberührt. Ein wichtiger Grund liegt für den Anbieter insbesondere vor bei schwerwiegenden oder wiederholten Verstößen des Nutzers gegen diese AGB, insbesondere gegen § 5.",
     ],
   },
