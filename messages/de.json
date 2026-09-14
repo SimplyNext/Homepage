@@ -235,7 +235,7 @@
       ],
       "pricing": {
         "free": ["Bis zu 5 Dateien pro Durchgang", "Alle Formate und Einstellungen", "Werbefinanziert"],
-        "premium": ["Bis zu 50 Dateien pro Durchgang", "Keine Größenbeschränkung für einzelne Bilder", "Keine Werbung"],
+        "premium": ["Bis zu 100 Dateien pro Durchgang", "Keine Größenbeschränkung für einzelne Bilder", "Keine Werbung"],
         "note": "Einmalig kaufen – kein Abo, keine Folgekosten."
       },
       "shots": ["Startseite mit Medienauswahl", "Editor: Zielgröße und Ausgabeformat", "Editor: Bitrate schnell wählen", "Editor: Bitrate manuell einstellen", "Editor: Abtastrate und Kanäle", "Ergebnis mit gesparter Größe", "Chronologie nach Medientyp"]

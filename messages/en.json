@@ -235,7 +235,7 @@
       ],
       "pricing": {
         "free": ["Up to 5 files per run", "All formats and settings", "Ad-supported"],
-        "premium": ["Up to 50 files per run", "No size limit on individual images", "No ads"],
+        "premium": ["Up to 100 files per run", "No size limit on individual images", "No ads"],
         "note": "One-time purchase – no subscription, no recurring costs."
       },
       "shots": ["Home screen with media picker", "Editor: target size and output format", "Editor: quick bitrate presets", "Editor: manual bitrate", "Editor: sample rate and channels", "Result with space saved", "History by media type"]
