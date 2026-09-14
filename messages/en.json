@@ -193,26 +193,26 @@
       "shots": ["World map with learning worlds", "Lesson with CoCo", "Bonus mini-game"]
     },
     "werkflow": {
-      "tagline": "AI quotes in seconds – from photo to finished PDF.",
-      "summary": "The smart app for tradespeople: photograph the job site, describe the job by voice – the AI builds the professional PDF quote.",
+      "tagline": "From photo to quote, from quote to e-invoice.",
+      "summary": "The app for tradespeople: photograph the job site, describe the job by voice – the AI writes the quote, one tap turns it into the invoice.",
       "category": "Business & Trades",
       "description": [
-        "No more hours of typing: take a photo of the job site, describe the job with a voice note – and the AI automatically turns it into a complete, professional quote as a PDF. In under 2 minutes, right on site.",
-        "Werkflow was built for tradespeople, installers and small businesses across all trades – electricians, painters, plumbers, carpenters or roofers. Customer management, an order dashboard, a materials catalog and digital signatures included: your entire office in your pocket.",
-        "More time on site, less time at the desk: create quotes on the spot and send them by email – no catching up in the evening. Your data is encrypted and stored securely in the cloud."
+        "No more paperwork in the evening: photograph the job site, describe the job by voice – and the AI turns it into a complete, professional quote as a PDF. Right on site, in a few minutes. Once the customer accepts, one tap turns the quote into the invoice.",
+        "Werkflow was built for tradespeople, installers and small businesses across all trades – electricians, painters, plumbers, carpenters or roofers. The app works out advance, final and cancellation invoices for you, and every invoice carries a ZUGFeRD or XRechnung e-invoice that DATEV, Lexware and similar tools read in directly.",
+        "Built for the tax office, too: Werkflow archives sent quotes and invoices unalterably and with a change log, as the German GoBD rules require. For your tax advisor there is an export as a ZIP archive and a DATEV booking batch. Your data is stored on servers in the EU."
       ],
       "features": [
         { "title": "AI photo analysis", "text": "Photograph the job site or damaged area – the AI recognizes the required materials and work steps and suggests matching quote line items." },
-        { "title": "Voice input", "text": "Briefly describe the job by voice – the AI turns your description into structured line items. Works even with dirty hands." },
-        { "title": "PDF quotes", "text": "A print-ready PDF in seconds, with your company logo, hourly rates, materials and digital signature – sent straight to the customer by email." },
-        { "title": "Customer management", "text": "All customers in one place: store contact details and create quotes with one click, straight from the customer list." },
-        { "title": "Order dashboard", "text": "Sent, accepted, declined? Your control center shows every quote and its status at a glance – with a filterable history." },
-        { "title": "Materials catalog", "text": "Store your standard materials with units and prices – the AI uses them automatically for consistent, correct calculations." }
+        { "title": "Speak instead of type", "text": "Briefly describe the job by voice – the AI turns it into structured line items. Dictate text in quotes, invoices and notes, even with dirty hands." },
+        { "title": "From quote to invoice", "text": "One tap turns the accepted quote into the invoice: sequential number, every mandatory detail under German VAT law, plus advance, final and cancellation invoices." },
+        { "title": "E-invoicing included", "text": "Every invoice as a PDF with an embedded e-invoice (ZUGFeRD / Factur-X), or as XRechnung for public-sector clients – ready for DATEV, Lexware and more." },
+        { "title": "GoBD archive and tax advisor export", "text": "Sent documents stay unalterable and every change is logged. The export delivers a ZIP archive and a DATEV booking batch, plus a template for the process documentation." },
+        { "title": "Enter once, use everywhere", "text": "Store company details, logo, bank details, signature and customers once. Your materials catalog with prices feeds into every AI calculation automatically." }
       ],
       "pricing": {
-        "free": ["Try it for free", "First AI quotes included"],
-        "premium": ["Solo: 20 AI analyses/month, unlimited PDFs", "Business: 100 AI analyses/month, up to 5 team members", "Pro: unlimited AI analyses & full team access"],
-        "note": "Plans for every business – from solo trader to team."
+        "free": ["3 free AI quotes, full feature set", "Unlimited invoices for those quotes", "No credit card, nothing to cancel"],
+        "premium": ["Solo: 20 AI quotes per month", "Small business: 50 AI quotes per month", "Pro: 100 AI quotes per month", "Every plan: unlimited invoices, advance and cancellation invoices, e-invoicing included"],
+        "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes."
       },
       "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"]
     },

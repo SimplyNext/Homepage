@@ -193,26 +193,26 @@
       "shots": ["Weltkarte mit Lernwelten", "Lektion mit CoCo", "Bonus-Minispiel"]
     },
     "werkflow": {
-      "tagline": "KI-Angebote in Sekunden – vom Foto zum fertigen PDF.",
-      "summary": "Die smarte Handwerker-App: Baustelle fotografieren, Auftrag einsprechen – die KI erstellt das professionelle PDF-Angebot.",
+      "tagline": "Vom Foto zum Angebot, vom Angebot zur E-Rechnung.",
+      "summary": "Die Handwerker-App: Baustelle fotografieren, Auftrag einsprechen – die KI schreibt das Angebot, ein Tipp macht daraus die Rechnung.",
       "category": "Business & Handwerk",
       "description": [
-        "Schluss mit stundenlangem Tippen: Mach ein Foto von der Baustelle, beschreibe den Auftrag per Sprachaufnahme – und die KI erstellt daraus automatisch ein vollständiges, professionelles Angebot als PDF. In unter 2 Minuten, direkt vor Ort.",
-        "Werkflow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt – ob Elektriker, Maler, Installateur, Schreiner oder Dachdecker. Kundenverwaltung, Auftrags-Dashboard, Materialkatalog und digitale Unterschrift inklusive: dein ganzes Büro in der Hosentasche.",
-        "Mehr Zeit auf der Baustelle, weniger Zeit im Büro: Angebote sofort vor Ort erstellen und per E-Mail versenden – kein Nacharbeiten am Abend. Deine Daten sind verschlüsselt und sicher in der Cloud gespeichert."
+        "Schluss mit Büroarbeit am Feierabend: Fotografiere die Baustelle, sprich den Auftrag ein – und die KI erstellt daraus ein vollständiges, professionelles Angebot als PDF. Direkt vor Ort, in wenigen Minuten. Nimmt der Kunde an, wird aus dem Angebot mit einem Tipp die Rechnung.",
+        "Werkflow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt – ob Elektriker, Maler, Installateur, Schreiner oder Dachdecker. Abschlags-, Schluss- und Stornorechnungen rechnet die App für dich durch, und jede Rechnung enthält die E-Rechnung nach ZUGFeRD oder XRechnung, die DATEV, Lexware & Co. direkt einlesen.",
+        "Auch fürs Finanzamt gebaut: Versendete Angebote und Rechnungen archiviert Werkflow unveränderbar und mit Änderungsprotokoll, wie es die GoBD verlangen. Für deinen Steuerberater gibt es den Export als ZIP-Archiv und DATEV-Buchungsstapel. Deine Daten liegen auf Servern in der EU."
       ],
       "features": [
         { "title": "Foto-Analyse per KI", "text": "Baustelle oder Schadensbereich fotografieren – die KI erkennt benötigte Materialien und Arbeitsschritte und schlägt passende Angebotspositionen vor." },
-        { "title": "Spracheingabe", "text": "Auftrag kurz einsprechen – die KI wandelt deine Beschreibung in strukturierte Positionen um. Funktioniert auch mit schmutzigen Händen." },
-        { "title": "PDF-Angebote", "text": "In Sekunden ein druckfertiges PDF mit Firmenlogo, Stundensätzen, Materialien und digitaler Unterschrift – direkt per E-Mail an den Kunden." },
-        { "title": "Kundenverwaltung", "text": "Alle Kunden an einem Ort: Kontaktdaten speichern und Angebote mit einem Klick direkt aus der Kundenliste erstellen." },
-        { "title": "Auftrags-Dashboard", "text": "Gesendet, angenommen, abgelehnt? Dein Kontrollzentrum zeigt alle Angebote und ihren Status auf einen Blick – mit filterbarer Historie." },
-        { "title": "Materialkatalog", "text": "Standardmaterialien mit Einheiten und Preisen hinterlegen – die KI greift automatisch darauf zurück, für konsistente und korrekte Kalkulationen." }
+        { "title": "Einsprechen statt tippen", "text": "Auftrag kurz einsprechen – die KI macht daraus strukturierte Positionen. Texte in Angeboten, Rechnungen und Notizen diktierst du einfach, auch mit schmutzigen Händen." },
+        { "title": "Vom Angebot zur Rechnung", "text": "Aus dem angenommenen Angebot wird mit einem Tipp die Rechnung: fortlaufende Nummer, alle Pflichtangaben nach § 14 UStG, dazu Abschlags-, Schluss- und Stornorechnung." },
+        { "title": "E-Rechnung inklusive", "text": "Jede Rechnung als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X), für öffentliche Auftraggeber als XRechnung – bereit für DATEV, Lexware & Co." },
+        { "title": "GoBD-Archiv und Steuerberater-Export", "text": "Versendete Belege bleiben unveränderbar, jede Änderung steht im Protokoll. Der Export liefert ZIP-Archiv und DATEV-Buchungsstapel, dazu eine Vorlage für die Verfahrensdokumentation." },
+        { "title": "Einmal eintragen, überall drin", "text": "Firmendaten, Logo, Bankverbindung, Unterschrift und Kunden hinterlegst du einmal. Dein Materialkatalog mit Preisen fließt automatisch in jede KI-Kalkulation ein." }
       ],
       "pricing": {
-        "free": ["Kostenlos ausprobieren", "Erste KI-Angebote inklusive"],
-        "premium": ["Solo: 20 KI-Analysen/Monat, unbegrenzte PDFs", "Business: 100 KI-Analysen/Monat, bis zu 5 Team-Mitglieder", "Pro: unbegrenzte KI-Analysen & voller Teamzugang"],
-        "note": "Pläne für jeden Betrieb – vom Einzelunternehmer bis zum Team."
+        "free": ["3 KI-Angebote kostenlos, voller Funktionsumfang", "Rechnungen zu diesen Angeboten unbegrenzt", "Keine Kreditkarte nötig, nichts zu kündigen"],
+        "premium": ["Solo: 20 KI-Angebote pro Monat", "Kleiner Betrieb: 50 KI-Angebote pro Monat", "Pro: 100 KI-Angebote pro Monat", "In jedem Tarif: Rechnungen, Abschläge und Stornos unbegrenzt, E-Rechnung inklusive"],
+        "note": "Monatliches Abo über Google Play, monatlich kündbar. Die Tarife unterscheiden sich nur in der Zahl der KI-Angebote."
       },
       "shots": ["Auftrags-Dashboard", "Foto-Analyse", "Angebots-Editor", "Kundenverwaltung", "Materialkatalog", "Fertiges PDF-Angebot"]
     },
