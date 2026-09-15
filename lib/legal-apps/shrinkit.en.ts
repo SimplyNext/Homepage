@@ -1,8 +1,9 @@
 import type { LegalSection } from "../legal";
 
 /**
- * Englische Übersetzung der ShrinkIt-Rechtstexte (shrinkit.ts, Stand
- * 05.08.2026) – nur zur Information, verbindlich ist die deutsche Fassung.
+ * Englische Übersetzung der ShrinkIt-Rechtstexte (shrinkit.ts, Datenschutz
+ * Stand 05.08.2026, AGB Stand 15.09.2026) – nur zur Information, verbindlich
+ * ist die deutsche Fassung.
  * Aufbau und Reihenfolge entsprechen der deutschen Datei 1:1; Menüpfade
  * nutzen die englischen Bezeichnungen der App (app_en.arb).
  */
@@ -353,19 +354,20 @@ export const shrinkitAgbEn: LegalSection[] = [
   },
   {
     paragraphs: [
-      "(3) Free version. The App can be used free of charge without registration and without a user account. The following restrictions and conditions apply in the free version:",
+      "(3) Free version. The App can be used free of charge without registration and without a user account. The free version is subject to the following restrictions and conditions:",
     ],
     list: [
-      "a maximum of 5 files per run,",
-      "images with a file size of more than 5 MB require the Pro version,",
+      "a maximum of 5 files per batch,",
+      "files above the following sizes require the Pro version: images 5 MB, videos 60 MB, audio files 10 MB,",
+      "if a selection contains even one file above these limits, processing the entire selection requires the Pro version,",
       "advertising is displayed (§ 6).",
     ],
   },
   {
     paragraphs: ["(4) Pro version. A one-time purchase permanently unlocks:"],
     list: [
-      "processing of up to 100 files per run,",
-      "no size restriction for individual images,",
+      "processing of up to 100 files per batch,",
+      "no file size limit for images, videos and audio files,",
       "ad-free use.",
     ],
     afterList: [

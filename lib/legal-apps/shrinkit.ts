@@ -2,8 +2,9 @@ import type { LegalSection } from "../legal";
 
 /**
  * App-spezifische Rechtstexte für ShrinkIt – wortgleich übernommen aus
- * ShrinkIt/docs/{datenschutzerklaerung,agb}.md (Stand: 05.08.2026, Pro-Version
- * mit bis zu 100 Dateien pro Durchgang).
+ * ShrinkIt/docs/{datenschutzerklaerung,agb}.md (Datenschutz Stand 05.08.2026,
+ * AGB Stand 15.09.2026: Free-Grenzen 5/60/10 MB für Bild/Video/Audio; die
+ * verschachtelte Liste der Grenzen steht hier in einem Listenpunkt).
  *
  * Quelle bleiben die Markdown-Dokumente im App-Repository: Änderungen dort
  * müssen hier nachgezogen werden. Abschnitte ohne `heading` setzen den
@@ -368,7 +369,8 @@ export const shrinkitAgb: LegalSection[] = [
     ],
     list: [
       "maximal 5 Dateien pro Durchgang,",
-      "Bilder mit einer Dateigröße über 5 MB erfordern die Pro-Version,",
+      "Dateien oberhalb folgender Dateigrößen erfordern die Pro-Version: Bilder 5 MB, Videos 60 MB, Audiodateien 10 MB,",
+      "enthält eine Auswahl auch nur eine Datei oberhalb dieser Grenze, erfordert die Verarbeitung der gesamten Auswahl die Pro-Version,",
       "es wird Werbung eingeblendet (§ 6).",
     ],
   },
@@ -376,7 +378,7 @@ export const shrinkitAgb: LegalSection[] = [
     paragraphs: ["(4) Pro-Version. Durch einen einmaligen Kauf werden dauerhaft freigeschaltet:"],
     list: [
       "Verarbeitung von bis zu 100 Dateien pro Durchgang,",
-      "keine Größenbeschränkung für Einzelbilder,",
+      "keine Dateigrößenbeschränkung für Bilder, Videos und Audiodateien,",
       "werbefreie Nutzung.",
     ],
     afterList: [

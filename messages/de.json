@@ -234,8 +234,8 @@
         { "title": "Wirklich lokal", "text": "Nichts wird hochgeladen, nichts ausgewertet, nichts an Dritte weitergegeben. Ohne Internetverbindung funktioniert das Verkleinern genauso." }
       ],
       "pricing": {
-        "free": ["Bis zu 5 Dateien pro Durchgang", "Alle Formate und Einstellungen", "Werbefinanziert"],
-        "premium": ["Bis zu 100 Dateien pro Durchgang", "Keine Größenbeschränkung für einzelne Bilder", "Keine Werbung"],
+        "free": ["Bis zu 5 Dateien pro Durchgang", "Dateien bis 5 MB (Bilder), 60 MB (Videos) und 10 MB (Audio)", "Alle Formate und Einstellungen", "Werbefinanziert"],
+        "premium": ["Bis zu 100 Dateien pro Durchgang", "Keine Dateigrößenbeschränkung für Bilder, Videos und Audio", "Keine Werbung"],
         "note": "Einmalig kaufen – kein Abo, keine Folgekosten."
       },
       "shots": ["Startseite mit Medienauswahl", "Editor: Zielgröße und Ausgabeformat", "Editor: Bitrate schnell wählen", "Editor: Bitrate manuell einstellen", "Editor: Abtastrate und Kanäle", "Ergebnis mit gesparter Größe", "Chronologie nach Medientyp"]

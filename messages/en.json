@@ -234,8 +234,8 @@
         { "title": "Genuinely local", "text": "Nothing is uploaded, nothing analysed, nothing passed to third parties. Shrinking works just the same with no connection at all." }
       ],
       "pricing": {
-        "free": ["Up to 5 files per run", "All formats and settings", "Ad-supported"],
-        "premium": ["Up to 100 files per run", "No size limit on individual images", "No ads"],
+        "free": ["Up to 5 files per run", "Files up to 5 MB (images), 60 MB (videos) and 10 MB (audio)", "All formats and settings", "Ad-supported"],
+        "premium": ["Up to 100 files per run", "No file size limit for images, videos and audio", "No ads"],
         "note": "One-time purchase – no subscription, no recurring costs."
       },
       "shots": ["Home screen with media picker", "Editor: target size and output format", "Editor: quick bitrate presets", "Editor: manual bitrate", "Editor: sample rate and channels", "Result with space saved", "History by media type"]
