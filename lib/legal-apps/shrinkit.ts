@@ -1,12 +1,13 @@
 import type { LegalSection } from "../legal";
 
 /**
- * App-spezifische Rechtstexte für ShrinkIt – übernommen aus
- * shrinkit-{datenschutz,agb}.md (Stand: 05.08.2026 – Erweiterung um
- * Audiokomprimierung).
+ * App-spezifische Rechtstexte für ShrinkIt – wortgleich übernommen aus
+ * ShrinkIt/docs/{datenschutzerklaerung,agb}.md (Stand: 05.08.2026, Pro-Version
+ * mit bis zu 100 Dateien pro Durchgang).
  *
- * Quelle bleibt das Markdown-Dokument im Repository-Root: Änderungen dort
- * müssen hier nachgezogen werden.
+ * Quelle bleiben die Markdown-Dokumente im App-Repository: Änderungen dort
+ * müssen hier nachgezogen werden. Abschnitte ohne `heading` setzen den
+ * vorigen fort, wenn eine Ziffer mehrere Aufzählungen enthält.
  */
 
 export const shrinkitDatenschutz: LegalSection[] = [
@@ -141,7 +142,7 @@ export const shrinkitDatenschutz: LegalSection[] = [
       "Store-Land, Gerätemodell, Betriebssystemversion, App-Version.",
     ],
     afterList: [
-      "RevenueCat verarbeitet diese Daten als Auftragsverarbeiter nach unserer Weisung; ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO liegt vor. Datenschutzerklärung: revenuecat.com/privacy.",
+      "RevenueCat verarbeitet diese Daten als Auftragsverarbeiter nach unserer Weisung; ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO liegt vor. Datenschutzerklärung: www.revenuecat.com/privacy.",
       "Drittlandübermittlung: USA, abgesichert über EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Kaufvertrags und Bereitstellung der gekauften Funktionen).",
     ],
@@ -209,7 +210,6 @@ export const shrinkitDatenschutz: LegalSection[] = [
   },
   {
     heading: "7. Berechtigungen der App",
-    paragraphs: ["Die App fordert folgende Systemberechtigungen an:"],
     table: {
       head: ["Berechtigung", "Zweck", "Erforderlich"],
       rows: [
@@ -253,11 +253,28 @@ export const shrinkitDatenschutz: LegalSection[] = [
       "Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)",
     ],
     afterList: [
-      "Zuständige Aufsichtsbehörde für uns: Landesbeauftragter für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart, baden-wuerttemberg.datenschutz.de",
-      "Wichtiger, praktischer Hinweis: Da ShrinkIt ohne Nutzerkonto arbeitet und wir keine eigene Datenbank betreiben, liegen uns in der Regel keine Daten vor, die einer bestimmten Person zugeordnet werden können. Ein Auskunftsersuchen an uns wird daher meist ergebnislos bleiben. Für Daten, die bei den in Ziff. 4–6 genannten Anbietern liegen, wenden Sie sich bitte direkt an diese: Google (Werbung, Play, Fonts, Absturzberichte) unter policies.google.com/privacy, RevenueCat (Kaufstatus) unter revenuecat.com/privacy.",
-      "Wir unterstützen Sie auf Anfrage bei der Weiterleitung. So üben Sie Ihre Rechte unmittelbar in der App aus: Ergebnisdateien löschen über Chronologie → Einzeln löschen oder „Alle löschen“; Werbe-Einwilligung ändern oder widerrufen über Einstellungen → Rechtliches → Werbeeinstellungen; alle lokalen Daten entfernen durch Deinstallation oder Android-Einstellungen → Apps → ShrinkIt → Speicher → Daten löschen.",
-      "Kontakt für datenschutzrechtliche Anfragen: info@simplynext.de",
+      "Zuständige Aufsichtsbehörde für uns: Landesbeauftragter für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart, www.baden-wuerttemberg.datenschutz.de",
     ],
+  },
+  {
+    paragraphs: [
+      "Wichtiger, praktischer Hinweis: Da ShrinkIt ohne Nutzerkonto arbeitet und wir keine eigene Datenbank betreiben, liegen uns in der Regel keine Daten vor, die einer bestimmten Person zugeordnet werden können. Ein Auskunftsersuchen an uns wird daher meist ergebnislos bleiben. Für Daten, die bei den in Ziff. 4–6 genannten Anbietern liegen, wenden Sie sich bitte direkt an diese:",
+    ],
+    list: [
+      "Google (Werbung, Play, Fonts, Absturzberichte): policies.google.com/privacy",
+      "RevenueCat (Kaufstatus): www.revenuecat.com/privacy",
+    ],
+  },
+  {
+    paragraphs: [
+      "Wir unterstützen Sie auf Anfrage bei der Weiterleitung. So üben Sie Ihre Rechte unmittelbar in der App aus:",
+    ],
+    list: [
+      "Ergebnisdateien löschen: Chronologie → Einzeln löschen oder „Alle löschen“",
+      "Werbe-Einwilligung ändern oder widerrufen: Einstellungen → Rechtliches → Werbeeinstellungen",
+      "Alle lokalen Daten entfernen: App deinstallieren oder Android-Einstellungen → Apps → ShrinkIt → Speicher → Daten löschen",
+    ],
+    afterList: ["Kontakt für datenschutzrechtliche Anfragen: info@simplynext.de"],
   },
   {
     heading: "10. Datensicherheit",
@@ -321,7 +338,7 @@ export const shrinkitAgb: LegalSection[] = [
     afterList: [
       "(„Anbieter“, „wir“).",
       "(2) Die App richtet sich an Verbraucher (§ 13 BGB) und an Unternehmer (§ 14 BGB). Regelungen, die ausdrücklich nur für eine dieser Gruppen gelten, sind entsprechend gekennzeichnet.",
-      "(3) Zwei getrennte Vertragsverhältnisse: Der Vertrag über die Nutzung der App (Lizenz- und Nutzungsvertrag) kommt zwischen Ihnen und uns zustande. Der Bezug der App und der Kauf der Pro-Version erfolgen über den Google Play Store; für den Kauf- und Zahlungsvorgang tritt Google nach den Bestimmungen von Google Play als Verkäufer auf. Insoweit gelten zusätzlich die Nutzungsbedingungen von Google Play. Diese AGB regeln nicht das Verhältnis zwischen Ihnen und Google.",
+      "(3) Zwei getrennte Vertragsverhältnisse: Der Vertrag über die Nutzung der App (Lizenz- und Nutzungsvertrag) kommt zwischen Ihnen und uns zustande. Der Bezug der App und der Kauf der Pro-Version erfolgen über den Google Play Store; für den Kauf- und Zahlungsvorgang tritt Google nach den Bestimmungen von Google Play als Verkäufer auf. Insoweit gelten zusätzlich die Nutzungsbedingungen von Google Play (play.google.com/intl/de_de/about/play-terms/). Diese AGB regeln nicht das Verhältnis zwischen Ihnen und Google.",
       "(4) Entgegenstehenden oder ergänzenden Bedingungen des Nutzers wird widersprochen, es sei denn, wir stimmen ihrer Geltung ausdrücklich in Textform zu.",
       "(5) Zur Nutzung der App müssen Sie mindestens 16 Jahre alt sein. Jüngere Nutzer benötigen die Zustimmung eines Erziehungsberechtigten; dieser wird in diesem Fall Vertragspartner.",
     ],
@@ -344,10 +361,27 @@ export const shrinkitAgb: LegalSection[] = [
       "Speichern der Ergebnisse in der Galerie sowie optionales Ersetzen der Originale,",
       "Bedienoberfläche in sieben Sprachen, hell/dunkel.",
     ],
+  },
+  {
+    paragraphs: [
+      "(3) Kostenlose Version. Die App ist ohne Registrierung und ohne Nutzerkonto kostenlos nutzbar. In der kostenlosen Version gelten folgende Beschränkungen und Bedingungen:",
+    ],
+    list: [
+      "maximal 5 Dateien pro Durchgang,",
+      "Bilder mit einer Dateigröße über 5 MB erfordern die Pro-Version,",
+      "es wird Werbung eingeblendet (§ 6).",
+    ],
+  },
+  {
+    paragraphs: ["(4) Pro-Version. Durch einen einmaligen Kauf werden dauerhaft freigeschaltet:"],
+    list: [
+      "Verarbeitung von bis zu 100 Dateien pro Durchgang,",
+      "keine Größenbeschränkung für Einzelbilder,",
+      "werbefreie Nutzung.",
+    ],
     afterList: [
-      "(3) Kostenlose Version: Die App ist ohne Registrierung und ohne Nutzerkonto kostenlos nutzbar. Es gelten folgende Beschränkungen: maximal 5 Dateien pro Durchgang; Bilder mit einer Dateigröße über 5 MB erfordern die Pro-Version; es wird Werbung eingeblendet (§ 6).",
-      "(4) Pro-Version: Durch einen einmaligen Kauf werden dauerhaft freigeschaltet: Verarbeitung von bis zu 100 Dateien pro Durchgang, keine Größenbeschränkung für Einzelbilder, werbefreie Nutzung. Es handelt sich nicht um ein Abonnement. Es entstehen keine wiederkehrenden Kosten und keine Kündigungspflicht. Der jeweils gültige Preis und Funktionsumfang ergeben sich aus der Darstellung in der App im Zeitpunkt des Kaufs.",
-      "(5) Verlustbehaftete Komprimierung: Die Verkleinerung von Bildern, Videos und Audiodateien erfolgt verlustbehaftet. Ein Qualitäts- bzw. Klangverlust ist verfahrensbedingt und kein Mangel. Das Ausmaß der Einsparung hängt vom Ausgangsmaterial, den gewählten Einstellungen und den Codecs Ihres Geräts ab; die in der App angezeigten Werte vor der Verarbeitung sind Schätzwerte und keine zugesagte Eigenschaft.",
+      "Es handelt sich nicht um ein Abonnement. Es entstehen keine wiederkehrenden Kosten und keine Kündigungspflicht. Der jeweils gültige Preis und Funktionsumfang ergeben sich aus der Darstellung in der App im Zeitpunkt des Kaufs.",
+      "(5) Verlustbehaftete Komprimierung. Die Verkleinerung von Bildern, Videos und Audiodateien erfolgt verlustbehaftet. Ein Qualitäts- bzw. Klangverlust ist verfahrensbedingt und kein Mangel. Das Ausmaß der Einsparung hängt vom Ausgangsmaterial, den gewählten Einstellungen und den Codecs Ihres Geräts ab; die in der App angezeigten Werte vor der Verarbeitung sind Schätzwerte und keine zugesagte Eigenschaft.",
       "(6) Der Anbieter darf den Funktionsumfang im Rahmen der technischen Weiterentwicklung anpassen, erweitern oder einschränken, sofern dies für den Nutzer zumutbar ist und der vertraglich vereinbarte Kernumfang – bei Pro-Nutzern der nach Absatz 4 erworbene Umfang – erhalten bleibt.",
     ],
   },
@@ -373,7 +407,7 @@ export const shrinkitAgb: LegalSection[] = [
     heading: "§ 5 Widerrufsrecht (für Verbraucher)",
     paragraphs: [
       "(1) Verbrauchern steht bei Fernabsatzverträgen grundsätzlich ein vierzehntägiges Widerrufsrecht zu. Da der Kauf der Pro-Version nach § 1 Abs. 3 über Google Play abgewickelt wird, ist ein Widerruf gegenüber Google zu erklären; Google stellt hierfür ein Verfahren im Google Play Store bereit.",
-      "(2) Soweit ein widerrufbarer Vertrag über digitale Inhalte mit uns zustande kommt, gilt die nachfolgende Widerrufsbelehrung.",
+      "(2) Soweit ein widerrufbarer Vertrag über digitale Inhalte mit uns zustande kommt, gilt folgende",
     ],
   },
   {
@@ -384,7 +418,15 @@ export const shrinkitAgb: LegalSection[] = [
       "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z. B. per Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren: SimplyNext, Nuri Toker, Mechenseerstr. 12, 88316 Isny im Allgäu, E-Mail: info@simplynext.de",
       "Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.",
       "Folgen des Widerrufs. Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist. Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.",
-      "Vorzeitiges Erlöschen des Widerrufsrechts. Bei einem Vertrag über die Bereitstellung digitaler Inhalte, die nicht auf einem körperlichen Datenträger geliefert werden, erlischt das Widerrufsrecht, wenn wir mit der Vertragserfüllung begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist beginnen, und Ihre Kenntnis davon bestätigt haben, dass Sie durch Ihre Zustimmung mit Beginn der Vertragserfüllung Ihr Widerrufsrecht verlieren, und wir Ihnen eine Bestätigung hierüber zur Verfügung gestellt haben (§ 356 Abs. 5 BGB).",
+      "Vorzeitiges Erlöschen des Widerrufsrechts. Bei einem Vertrag über die Bereitstellung digitaler Inhalte, die nicht auf einem körperlichen Datenträger geliefert werden, erlischt das Widerrufsrecht, wenn wir mit der Vertragserfüllung begonnen haben, nachdem Sie",
+    ],
+    ordered: true,
+    list: [
+      "ausdrücklich zugestimmt haben, dass wir mit der Vertragserfüllung vor Ablauf der Widerrufsfrist beginnen, und",
+      "Ihre Kenntnis davon bestätigt haben, dass Sie durch Ihre Zustimmung mit Beginn der Vertragserfüllung Ihr Widerrufsrecht verlieren,",
+    ],
+    afterList: [
+      "und wir Ihnen eine Bestätigung hierüber zur Verfügung gestellt haben (§ 356 Abs. 5 BGB).",
       "Da die Pro-Version unmittelbar nach dem Kauf freigeschaltet wird, erlischt das Widerrufsrecht regelmäßig mit dieser Freischaltung.",
       "(3) Für Unternehmer (§ 14 BGB) besteht kein gesetzliches Widerrufsrecht.",
     ],

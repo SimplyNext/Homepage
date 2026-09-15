@@ -62,13 +62,16 @@ export async function LegalDoc({ sections, updated, hideEnNotice = false }: { se
           const Heading = sub ? "h3" : "h2";
           // Abstände als Margins statt space-y, damit Unterabschnitte enger
           // ans übergeordnete Kapitel rücken.
-          const gap = i === 0 ? "" : sub ? "mt-8" : "mt-12";
+          // Abschnitte ohne Überschrift setzen den vorigen nahtlos fort.
+          const gap = i === 0 || !s.heading ? "" : sub ? "mt-8" : "mt-12";
 
           return (
             <section key={i} className={gap}>
-              <Heading className={sub ? "font-display text-base font-medium" : "font-display text-xl font-medium"}>
-                {s.heading}
-              </Heading>
+              {s.heading && (
+                <Heading className={sub ? "font-display text-base font-medium" : "font-display text-xl font-medium"}>
+                  {s.heading}
+                </Heading>
+              )}
               {s.paragraphs?.map((p, j) => (
                 <p key={j} className="mt-3 leading-relaxed text-ink-muted">
                   {p}

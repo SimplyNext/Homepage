@@ -7,7 +7,9 @@ import { site } from "./site";
 import type { AppData } from "./apps";
 
 export type LegalSection = {
-  heading: string;
+  /** Ohne Überschrift: Fortsetzung des vorigen Abschnitts – für Ziffern mit
+   *  mehreren Aufzählungen, die ein Abschnitt allein nicht abbildet. */
+  heading?: string;
   /** 3 = Unterabschnitt (z. B. „6.1 Supabase"). Default: 2. */
   level?: 2 | 3;
   paragraphs?: string[];
