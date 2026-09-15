@@ -121,7 +121,8 @@ export function impressumWebsiteSections(locale: string): LegalSection[] {
   ];
 }
 
-export function datenschutzSections(app?: AppData): LegalSection[] {
+export function datenschutzSections(app?: AppData, locale = "de"): LegalSection[] {
+  if (locale === "en") return datenschutzSectionsEn(app);
   const subject = app ? `der App „${app.name}“` : "dieser Website";
   return [
     {
@@ -173,6 +174,64 @@ export function datenschutzSections(app?: AppData): LegalSection[] {
       heading: "6. Beschwerderecht & Kontakt",
       paragraphs: [
         `Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren. Bei Fragen erreichst du uns unter ${site.legal.email}.`,
+      ],
+    },
+  ];
+}
+
+/** Englische Übersetzung der Vorlage – verbindlich bleibt die deutsche Fassung. */
+function datenschutzSectionsEn(app?: AppData): LegalSection[] {
+  const subject = app ? `the app “${app.name}”` : "this website";
+  return [
+    {
+      heading: "1. Controller",
+      paragraphs: [`Responsible for data processing in connection with ${subject}:`],
+      list: [site.legal.companyName, site.legal.responsible, site.legal.street, `${site.legal.zip} ${site.legal.city}`, `E-Mail: ${site.legal.email}`],
+    },
+    {
+      heading: "2. Overview",
+      paragraphs: [
+        `Protecting your data matters to us. We process data exclusively in accordance with the statutory provisions (GDPR, German Federal Data Protection Act (BDSG), German Digital Services Act (DDG)). This policy explains the nature, scope and purpose of processing in connection with ${subject}.`,
+      ],
+    },
+    app
+      ? {
+          heading: "3. Processing in the App",
+          paragraphs: [
+            "Insofar as the app works without an account, your content generally remains locally on your device. Data is only transferred where this is necessary for a feature.",
+            "[PLACEHOLDER: describe specifically which data the app processes – e.g. location, camera, push token, anonymous statistics.]",
+          ],
+        }
+      : {
+          heading: "3. Server Logs",
+          paragraphs: [
+            "When the site is accessed, the hosting provider automatically stores data in log files (e.g. IP address, time, page accessed). The legal basis is Art. 6(1)(f) GDPR.",
+          ],
+        },
+    app
+      ? {
+          heading: "4. Third-Party Providers & App Stores",
+          paragraphs: [
+            "The app is obtained via the Apple App Store or Google Play; these process data under their own responsibility and in accordance with their own terms.",
+            "[PLACEHOLDER: name the SDKs/services used, e.g. Firebase, Sentry, RevenueCat – with purpose and legal basis.]",
+          ],
+        }
+      : {
+          heading: "4. Hosting & Cookies",
+          paragraphs: [
+            "This website is hosted by Vercel and does not embed external fonts or trackers. No marketing cookies are set.",
+          ],
+        },
+    {
+      heading: "5. Your Rights",
+      paragraphs: [
+        "Under the GDPR you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), data portability (Art. 20) and objection (Art. 21). You can withdraw your consent at any time.",
+      ],
+    },
+    {
+      heading: "6. Right to Lodge a Complaint & Contact",
+      paragraphs: [
+        `You can lodge a complaint with a data protection supervisory authority. If you have any questions, you can reach us at ${site.legal.email}.`,
       ],
     },
   ];
@@ -516,7 +575,8 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
   ];
 }
 
-export function agbSections(app?: AppData): LegalSection[] {
+export function agbSections(app?: AppData, locale = "de"): LegalSection[] {
+  if (locale === "en") return agbSectionsEn(app);
   const product = app ? `die App „${app.name}“` : "die angebotenen Apps und Leistungen";
   return [
     {
@@ -552,6 +612,47 @@ export function agbSections(app?: AppData): LegalSection[] {
     {
       heading: "§ 7 Schlussbestimmungen",
       paragraphs: ["Es gilt deutsches Recht. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen unberührt."],
+    },
+  ];
+}
+
+/** Englische Übersetzung der Vorlage – verbindlich bleibt die deutsche Fassung. */
+function agbSectionsEn(app?: AppData): LegalSection[] {
+  const product = app ? `the app “${app.name}”` : "the apps and services offered";
+  return [
+    {
+      heading: "§ 1 Scope",
+      paragraphs: [`These terms apply to the use of ${product}, provided by ${site.legal.companyName} (“Provider”).`],
+    },
+    {
+      heading: "§ 2 Description of Services",
+      paragraphs: [
+        "The Provider makes the app available in its current version. The range of functions and availability are set out in the product description. There is no entitlement to uninterrupted availability.",
+      ],
+    },
+    {
+      heading: "§ 3 Rights of Use",
+      paragraphs: [
+        "The Provider grants a simple, non-transferable right of use. Modification, decompilation or redistribution beyond what is permitted by law is not allowed.",
+      ],
+    },
+    {
+      heading: "§ 4 User Obligations",
+      paragraphs: ["The app must not be used abusively or unlawfully; security mechanisms must not be circumvented."],
+    },
+    {
+      heading: "§ 5 Liability",
+      paragraphs: [
+        "The Provider is liable without limitation for intent and gross negligence and for injury to life, body or health. In the case of simple negligence, the Provider is liable only for breach of essential contractual obligations, limited to the foreseeable damage typical for the contract.",
+      ],
+    },
+    {
+      heading: "§ 6 Prices & Purchases",
+      paragraphs: ["[PLACEHOLDER: If paid or with in-app purchases/subscriptions – describe prices, billing via the app store, terms and cancellation. Otherwise remove.]"],
+    },
+    {
+      heading: "§ 7 Final Provisions",
+      paragraphs: ["German law applies. Should individual provisions be invalid, the validity of the remaining provisions shall remain unaffected."],
     },
   ];
 }

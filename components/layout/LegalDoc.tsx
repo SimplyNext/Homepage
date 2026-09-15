@@ -44,8 +44,8 @@ export async function LegalDoc({ sections, updated, hideEnNotice = false }: { se
 
   return (
     <article className="mx-auto max-w-3xl px-gutter py-20">
-      {/* Rechtstexte bleiben bewusst Deutsch (rechtlich verbindliche Fassung
-          für ein deutsches Unternehmen) – auf /en nur ein kurzer Hinweis. */}
+      {/* Auf /en stehen Übersetzungen zur Information; rechtlich verbindlich
+          bleibt die deutsche Fassung – darauf weist der Hinweis hin. */}
       {!hideEnNotice && locale !== "de" && (
         <p className="mb-8 rounded-lg border border-line bg-base-800 px-4 py-3 text-sm text-ink-muted">
           {t("enNotice")}

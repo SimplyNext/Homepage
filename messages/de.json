@@ -74,7 +74,7 @@
     "backToHome": "Zurück zur Startseite",
     "backToApp": "Zurück zu {name}",
     "updated": "Stand: {date}",
-    "enNotice": "Legally binding version in German below.",
+    "enNotice": "Convenience translation – only the German version is legally binding.",
     "impressum": { "label": "impressum", "title": "Impressum", "titleWithApp": "Impressum – {name}" },
     "agb": {
       "label": "agb",
