@@ -91,6 +91,32 @@
       "introWithApp": "Wie wir in der App „{name}“ mit deinen Daten umgehen."
     }
   },
+  "accountDeletion": {
+    "linkLabel": "Konto löschen",
+    "label": "konto löschen",
+    "titleWithApp": "Konto löschen – {name}",
+    "subscriptionsLink": "Abos bei Google Play verwalten",
+    "mailButton": "E-Mail vorbereiten",
+    "privacyBefore": "Weitere Informationen finden Sie in unserer ",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": ".",
+    "provider": "Anbieter",
+    "form": {
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "confirmBackup": "Ich habe meine Belege gesichert und weiß, dass mein Konto mit allen Angeboten und Rechnungen endgültig gelöscht wird.",
+      "confirmWord": "Zur Bestätigung „{word}“ eingeben",
+      "word": "LÖSCHEN",
+      "submit": "Konto endgültig löschen",
+      "submitting": "Wird gelöscht …",
+      "errorCredentials": "E-Mail-Adresse oder Passwort stimmen nicht. Passwort vergessen? Setzen Sie es in der App zurück oder beantragen Sie die Löschung per E-Mail.",
+      "errorNotConfirmed": "Diese E-Mail-Adresse ist noch nicht bestätigt. Bitte beantragen Sie die Löschung per E-Mail.",
+      "errorRateLimit": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es erneut.",
+      "errorGeneric": "Die Löschung hat nicht geklappt. Bitte versuchen Sie es später erneut oder beantragen Sie die Löschung per E-Mail.",
+      "successTitle": "Ihr Konto wurde gelöscht.",
+      "successText": "Alle zugehörigen Daten wurden entfernt. Denken Sie daran, ein laufendes Abo bei Google Play zu kündigen."
+    }
+  },
   "notFound": {
     "title": "Diese Seite gibt es nicht.",
     "cta": "Zur Startseite"

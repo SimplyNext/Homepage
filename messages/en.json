@@ -91,6 +91,32 @@
       "introWithApp": "How we handle your data in the app “{name}”."
     }
   },
+  "accountDeletion": {
+    "linkLabel": "Delete account",
+    "label": "delete account",
+    "titleWithApp": "Delete account – {name}",
+    "subscriptionsLink": "Manage subscriptions on Google Play",
+    "mailButton": "Compose e-mail",
+    "privacyBefore": "Further information can be found in our ",
+    "privacyLink": "privacy policy",
+    "privacyAfter": ".",
+    "provider": "Provider",
+    "form": {
+      "email": "E-mail address",
+      "password": "Password",
+      "confirmBackup": "I have backed up my documents and understand that my account, including all quotes and invoices, will be permanently deleted.",
+      "confirmWord": "Type “{word}” to confirm",
+      "word": "DELETE",
+      "submit": "Permanently delete account",
+      "submitting": "Deleting …",
+      "errorCredentials": "E-mail address or password is incorrect. Forgot your password? Reset it in the app or request deletion by e-mail.",
+      "errorNotConfirmed": "This e-mail address has not been confirmed yet. Please request deletion by e-mail.",
+      "errorRateLimit": "Too many attempts. Please wait a few minutes and try again.",
+      "errorGeneric": "The deletion did not work. Please try again later or request deletion by e-mail.",
+      "successTitle": "Your account has been deleted.",
+      "successText": "All associated data has been removed. Remember to cancel any active subscription on Google Play."
+    }
+  },
   "notFound": {
     "title": "This page doesn't exist.",
     "cta": "Back to homepage"

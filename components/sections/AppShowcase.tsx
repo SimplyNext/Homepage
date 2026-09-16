@@ -11,6 +11,7 @@ import Magnetic from "@/components/ui/Magnetic";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { PhoneFrame, PhoneScreenContent } from "@/components/ui/PhoneFrame";
 import type { AppData } from "@/lib/apps";
+import { hasAccountDeletion } from "@/lib/account-deletion-apps";
 import { useAppContent } from "@/lib/useAppContent";
 import { useMountedTheme } from "@/hooks/useMountedTheme";
 
@@ -34,6 +35,7 @@ export default function AppShowcase({ app }: { app: AppData }) {
   const t = useTranslations("appShowcase");
   const tStatus = useTranslations("status");
   const tLegal = useTranslations("legal");
+  const tDeletion = useTranslations("accountDeletion");
 
   useGSAP(
     () => {
@@ -87,6 +89,10 @@ export default function AppShowcase({ app }: { app: AppData }) {
     { href: `/apps/${app.slug}/datenschutz`, label: tLegal("datenschutz.title") },
     { href: `/apps/${app.slug}/agb`, label: tLegal("agb.title") },
     { href: `/apps/${app.slug}/impressum`, label: tLegal("impressum.title") },
+    // Google Play verlangt für Apps mit Nutzerkonto einen Löschweg ohne App.
+    ...(hasAccountDeletion(app.slug)
+      ? [{ href: `/apps/${app.slug}/konto-loeschen`, label: tDeletion("linkLabel") }]
+      : []),
   ];
 
   return (

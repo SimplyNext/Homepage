@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { ArrowLeft } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -38,7 +39,17 @@ export function InnerPageHeader({
   );
 }
 
-export async function LegalDoc({ sections, updated, hideEnNotice = false }: { sections: LegalSection[]; updated?: string; hideEnNotice?: boolean }) {
+export async function LegalDoc({
+  sections,
+  updated,
+  hideEnNotice = false,
+  slots,
+}: {
+  sections: LegalSection[];
+  updated?: string;
+  hideEnNotice?: boolean;
+  slots?: Record<string, ReactNode>;
+}) {
   const locale = await getLocale();
   const t = await getTranslations("legal");
 
@@ -123,6 +134,7 @@ export async function LegalDoc({ sections, updated, hideEnNotice = false }: { se
                   {p}
                 </p>
               ))}
+              {s.slot && slots?.[s.slot]}
             </section>
           );
         })}

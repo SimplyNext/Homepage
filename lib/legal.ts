@@ -18,6 +18,9 @@ export type LegalSection = {
   ordered?: boolean;
   table?: { head: string[]; rows: string[][] };
   afterList?: string[];
+  /** Name eines interaktiven Bausteins, den LegalDoc über `slots` am Ende des
+   *  Abschnitts einsetzt (z. B. das Löschformular). */
+  slot?: string;
 };
 
 /**
