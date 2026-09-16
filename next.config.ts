@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { accountDeletion } from "./lib/account-deletion";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
+// Die „Konto löschen“-Seiten melden Nutzer im Browser direkt bei der
+// Supabase-Instanz der App an (das Passwort läuft nicht über diese Website).
+// Genau diese Adressen – und nur sie – dürfen deshalb angesprochen werden.
+const accountDeletionOrigins = Object.values(accountDeletion)
+  .map((c) => new URL(c.supabaseUrl).origin)
+  .join(" ");
 
 const csp = `
   default-src 'self';
@@ -9,7 +17,7 @@ const csp = `
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob:;
   font-src 'self' data:;
-  connect-src 'self';
+  connect-src 'self' ${accountDeletionOrigins};
   frame-ancestors 'none';
   base-uri 'self';
   form-action 'self';
