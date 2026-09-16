@@ -29,12 +29,14 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3c3d3dXVld3htb21rb3NpZWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MDIyMTIsImV4cCI6MjA4NzA3ODIxMn0.TkyEMSSwoMxQJm6tmEAtxQgknDJeMJL03RGiAlbsatg",
     mailSubject: "Konto löschen – WerkFlow",
     // Quelle: werkflow/docs/konto-loeschen.md. Ergänzt um „Möglichkeit 2: Hier
-    // auf dieser Seite löschen“; die E-Mail ist dadurch Möglichkeit 3.
+    // auf dieser Seite löschen“; der E-Mail-Antrag steht nur noch als Hinweis
+    // für Nutzer ohne Kontozugang darunter (Passwort vergessen, E-Mail nie
+    // bestätigt, Störung) – darauf verweisen auch die Fehlermeldungen.
     sections: {
       de: [
         {
           paragraphs: [
-            "Diese Seite erklärt, wie Sie Ihr Konto in der App WerkFlow von SimplyNext und alle zugehörigen Daten löschen. Sie können die Löschung direkt in der App oder hier auf dieser Seite vornehmen oder – auch ohne die App – per E-Mail beantragen.",
+            "Diese Seite erklärt, wie Sie Ihr Konto in der App WerkFlow von SimplyNext und alle zugehörigen Daten löschen. Sie können die Löschung direkt in der App oder hier auf dieser Seite vornehmen.",
           ],
         },
         {
@@ -64,14 +66,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           slot: "form",
         },
         {
-          heading: "Möglichkeit 3: Ohne App per E-Mail beantragen",
-          paragraphs: ["Schreiben Sie eine E-Mail an info@simplynext.de"],
-          list: [
-            "Betreff: Konto löschen – WerkFlow",
-            "Absender: die E-Mail-Adresse, mit der Sie in WerkFlow registriert sind",
-          ],
-          afterList: [
-            "Zu Ihrem Schutz löschen wir nur Konten, deren E-Mail-Adresse mit dem Absender übereinstimmt. Kommt die E-Mail von einer anderen Adresse, fragen wir zur Bestätigung bei der registrierten Adresse nach. Wir löschen Ihr Konto innerhalb von 30 Tagen und bestätigen Ihnen die Löschung per E-Mail.",
+          paragraphs: [
+            "Kein Zugang mehr zu Ihrem Konto? Schreiben Sie von Ihrer registrierten E-Mail-Adresse an info@simplynext.de (Betreff: „Konto löschen – WerkFlow“). Wir löschen Ihr Konto innerhalb von 30 Tagen und bestätigen es Ihnen per E-Mail.",
           ],
           slot: "mail",
         },
@@ -99,7 +95,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
       en: [
         {
           paragraphs: [
-            "This page explains how to delete your account in the app WerkFlow by SimplyNext and all associated data. You can delete it directly in the app or here on this page, or – even without the app – request deletion by e-mail.",
+            "This page explains how to delete your account in the app WerkFlow by SimplyNext and all associated data. You can delete it directly in the app or here on this page.",
           ],
         },
         {
@@ -129,14 +125,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           slot: "form",
         },
         {
-          heading: "Option 3: Request by E-Mail Without the App",
-          paragraphs: ["Send an e-mail to info@simplynext.de"],
-          list: [
-            "Subject: Konto löschen – WerkFlow (Delete account – WerkFlow)",
-            "Sender: the e-mail address you registered with in WerkFlow",
-          ],
-          afterList: [
-            "For your protection, we only delete accounts whose e-mail address matches the sender. If the e-mail comes from a different address, we will ask for confirmation at the registered address. We will delete your account within 30 days and confirm the deletion to you by e-mail.",
+          paragraphs: [
+            "No longer have access to your account? Write from your registered e-mail address to info@simplynext.de (subject: “Konto löschen – WerkFlow”). We will delete your account within 30 days and confirm it to you by e-mail.",
           ],
           slot: "mail",
         },
