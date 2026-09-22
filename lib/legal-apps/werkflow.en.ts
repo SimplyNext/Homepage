@@ -245,6 +245,25 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
   },
   {
+    heading: "3.11 Feedback and Ratings",
+    level: 3,
+    paragraphs: [
+      "Under Settings → “Send feedback”, you can voluntarily send us a rating of 1 to 5 stars and optionally a text (up to 2,000 characters). The following is stored:",
+    ],
+    list: [
+      "your user ID",
+      "star rating and text",
+      "app version",
+      "time of submission",
+    ],
+    afterList: [
+      "Purpose: improving the app. Only we as the provider read your feedback; it is not published or passed on to third parties. It is stored on our servers (Supabase, see section 4.1). Please do not include any personal data of your customers in the text.",
+      "Legal basis: Art. 6(1)(f) GDPR (legitimate interest in improving the app). Submitting feedback is voluntary. You can object to the processing at any time (Art. 21 GDPR), e.g. by e-mail to info@simplynext.de; we will then delete your feedback.",
+      "Storage period: until your account is deleted; your feedback is deleted together with the account.",
+      "Rating on Google Play: After the second quote sent, the app shows the Google Play rating dialog once (Google Play In-App Review API); whether it actually appears is decided by Google. Under Settings → “Rate the app” you can also open the app's listing in the Google Play Store. A rating you submit there goes directly to Google and is published in accordance with Google's terms. We receive neither stars nor text; the app does not learn whether you have rated it. Google is responsible for this processing (see section 4.4).",
+    ],
+  },
+  {
     heading: "4. Recipients of Data / Processors",
     paragraphs: [
       "We use carefully selected service providers who process your data exclusively on our instructions. Where necessary, data processing agreements (Art. 28 GDPR) are in place with all providers.",
@@ -291,6 +310,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     paragraphs: [
       "Google Ireland Limited / Google LLC",
       "Payment for subscriptions is processed entirely via Google Play. Google's privacy policy also applies: policies.google.com/privacy",
+      "Google Play also provides the rating dialog and the app's store listing (section 3.11). Google processes ratings you submit there under its own responsibility.",
     ],
   },
   {
@@ -334,9 +354,10 @@ export const werkflowDatenschutzEn: LegalSection[] = [
         ["Change log of documents", "The same as the associated document; afterwards only redacted entries without document reference until the account is deleted (section 3.10)"],
         ["Customer data", "Until deleted by the user or the account is deleted. The copy of the customer data in a sent invoice is retained for as long as the invoice."],
         ["Photos/voice recordings for AI analysis and dictation", "Only temporarily during processing, no permanent storage"],
+        ["Feedback (stars, text, app version)", "Until account deletion or until you object (section 3.11)"],
         ["Free-form notes", "Until deleted by the user or the account is deleted"],
         ["Company logo, signature", "Until deleted by the user or the account is deleted"],
-        ["Subscription/purchase data", "In accordance with statutory retention obligations and the terms of RevenueCat/Google Play"],
+        ["Subscription/purchase data", "Subscription status until account deletion. Subscription event log for at most 90 days, immediately upon account deletion. Customer record at RevenueCat until account deletion. Purchase receipts at Google Play in accordance with Google's terms."],
       ],
     },
   },

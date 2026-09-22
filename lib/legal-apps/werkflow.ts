@@ -251,6 +251,25 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
   },
   {
+    heading: "3.11 Feedback und Bewertungen",
+    level: 3,
+    paragraphs: [
+      "Über Einstellungen → „Feedback senden“ können Sie uns freiwillig eine Bewertung mit 1 bis 5 Sternen und optional einen Text (höchstens 2.000 Zeichen) schicken. Gespeichert werden:",
+    ],
+    list: [
+      "Ihre Nutzer-ID",
+      "Sternebewertung und Text",
+      "App-Version",
+      "Zeitpunkt des Absendens",
+    ],
+    afterList: [
+      "Zweck: Verbesserung der App. Ihr Feedback lesen nur wir als Anbieter; es wird nicht veröffentlicht und nicht an Dritte weitergegeben. Gespeichert wird es auf unseren Servern (Supabase, siehe Ziff. 4.1). Bitte nennen Sie im Text keine personenbezogenen Daten Ihrer Kunden.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung der App). Das Absenden ist freiwillig. Sie können der Verarbeitung jederzeit widersprechen (Art. 21 DSGVO), z. B. per E-Mail an info@simplynext.de; wir löschen Ihr Feedback dann.",
+      "Speicherdauer: Bis zur Löschung Ihres Kontos; mit dem Konto wird auch Ihr Feedback gelöscht.",
+      "Bewertung bei Google Play: Nach dem zweiten versendeten Angebot blendet die App einmalig das Bewertungsfenster von Google Play ein (Google Play In-App Review API); ob es tatsächlich erscheint, entscheidet Google. Über Einstellungen → „App bewerten“ öffnen Sie außerdem den Eintrag der App im Google Play Store. Eine dort abgegebene Bewertung geht direkt an Google und wird nach den Bestimmungen von Google veröffentlicht. Wir erhalten davon weder Sterne noch Text; ob Sie bewertet haben, erfährt die App nicht. Verantwortlich für diese Verarbeitung ist Google (siehe Ziff. 4.4).",
+    ],
+  },
+  {
     heading: "4. Empfänger der Daten / Auftragsverarbeiter",
     paragraphs: [
       "Wir setzen sorgfältig ausgewählte Dienstleister ein, die Ihre Daten ausschließlich nach unserer Weisung verarbeiten. Mit allen Anbietern bestehen, soweit erforderlich, Verträge zur Auftragsverarbeitung (Art. 28 DSGVO).",
@@ -297,6 +316,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     paragraphs: [
       "Google Ireland Limited / Google LLC",
       "Die Zahlungsabwicklung für Abonnements erfolgt vollständig über Google Play. Es gilt zusätzlich die Datenschutzerklärung von Google: policies.google.com/privacy",
+      "Außerdem stellt Google Play das Bewertungsfenster und den Store-Eintrag der App bereit (Ziff. 3.11). Bewertungen, die Sie dort abgeben, verarbeitet Google in eigener Verantwortung.",
     ],
   },
   {
@@ -340,9 +360,10 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Änderungsprotokoll der Belege", "Wie der zugehörige Beleg; danach nur geschwärzte Einträge ohne Belegbezug bis zur Kontolöschung (Ziff. 3.10)"],
         ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung. Die Kopie der Kundendaten in einer versendeten Rechnung bleibt so lange erhalten wie die Rechnung."],
         ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
+        ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
-        ["Abo-/Kaufdaten", "Gemäß gesetzlichen Aufbewahrungspflichten sowie den Bestimmungen von RevenueCat/Google Play"],
+        ["Abo-/Kaufdaten", "Abo-Status bis zur Account-Löschung. Protokoll der Abo-Ereignisse höchstens 90 Tage, bei Account-Löschung sofort. Kundeneintrag bei RevenueCat bis zur Account-Löschung. Kaufbelege bei Google Play gemäß den Bestimmungen von Google."],
       ],
     },
   },
