@@ -2,7 +2,7 @@ import type { LegalSection } from "../legal";
 
 /**
  * Englische Übersetzung der Werkflow-Rechtstexte (werkflow.ts, Stand
- * 14.09.2026) – nur zur Information, verbindlich ist die deutsche Fassung.
+ * September 2026) – nur zur Information, verbindlich ist die deutsche Fassung.
  * Aufbau und Reihenfolge entsprechen der deutschen Datei 1:1. Deutsche
  * Fachbegriffe ohne englische Entsprechung (GoBD, ZUGFeRD, XRechnung,
  * Leitweg-ID) bleiben stehen und werden beim ersten Vorkommen erklärt;
@@ -108,7 +108,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "3.5 Quote, Invoice and Material Data",
     level: 3,
     paragraphs: [
-      "An invoice can be created in the app from an accepted quote. The following is processed:",
+      "Invoices can be created in the app from an accepted quote or without a prior quote. The following is processed:",
     ],
     list: [
       "Quote number, date, subject, validity period",
@@ -138,9 +138,11 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     list: [
       "Invoices, partial, final and cancellation invoices including the embedded e-invoice (XML), as well as quotes that led to an order: 8 years (§ 147(1) no. 4, (3) of the German Fiscal Code (AO), § 257(1) no. 4, (4) of the German Commercial Code (HGB), § 14b UStG)",
       "Quotes without a subsequent order: 6 years (§ 147(1) nos. 2, 3, (3) AO, § 257(1) nos. 2, 3, (4) HGB)",
+      "For context, not kept in WerkFlow: incoming invoices and other accounting vouchers 8 years (§ 147(1) no. 4, (3) AO, § 14b(1) UStG); books, inventories and annual financial statements 10 years (§ 147(1) no. 1, (3) AO, § 257(1) no. 1, (4) HGB)",
     ],
     afterList: [
-      "The period does not begin on the day of creation but at the end of the calendar year in which the document was created (§ 147(4) AO, § 257(5) HGB). Example: an invoice dated 15 May 2026 must be retained until 31 December 2034. The period is extended as long as the documents are relevant for a tax assessment that has not yet been completed (§ 147(3) sentence 5 AO).",
+      "The period does not begin on the day of creation but at the end of the calendar year in which the document was created (§ 147(4) AO, § 257(5) HGB). Example: an invoice dated 15 May 2026 must be retained until 31 December 2034, a quote without an order dated the same day until 31 December 2032. The period is extended as long as the documents are relevant for a tax assessment that has not yet been completed (§ 147(3) sentence 5 AO).",
+      "The 8 years apply regardless of whether an invoice exists on paper, as a PDF, as ZUGFeRD or as XRechnung (§ 14b(1) UStG). For e-invoices, the structured XML part is authoritative and must be preserved unchanged in its original form: for ZUGFeRD the XML file embedded in the PDF, for XRechnung the XML file itself. A PDF generated from it is only a visual representation. WerkFlow therefore stores the PDF and the e-invoice together and unchanged.",
     ],
   },
   {
@@ -174,7 +176,8 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
     afterList: [
       "This content is only transmitted to our servers (Supabase, see section 4.1) via a secure connection after your express consent (consent dialog in the app) and forwarded from there to an AI service for automated analysis.",
-      "Primary AI service: Google Gemini (paid plan with billing enabled) processes photos, voice recordings and text descriptions for quote creation as well as photos of material lists by default.",
+      "Primary AI service: Google Gemini (paid plan with billing enabled) processes photos, voice recordings and text descriptions for quote creation, photos of material lists and job descriptions from which items and a service text are generated for an invoice without a quote by default.",
+      "So that the AI can use your own descriptions and prices, the entries of your material list (description, unit, price) are also transmitted.",
       "Fallback service: If Google Gemini is temporarily unavailable (e.g. due to a technical fault), the request is automatically forwarded to OpenAI (GPT-4o, including Whisper transcription for voice recordings where applicable) so that your request can still be processed. The fallback is only used in exceptional cases.",
       "The raw data (photos, audio files) is not stored permanently on our servers after the AI analysis has been completed, but is only transmitted for the duration of processing.",
       "As we use a paid plan with billing enabled for Google Gemini, the Gemini API terms of use expressly provide that Google does not use your input (prompts, images, audio files) or the generated responses to improve Google products. Input is only logged there for a limited time for abuse detection and for security reasons (source: Gemini API – terms of use for paid services).",
@@ -201,6 +204,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "your user ID (to assign the subscription to your account)",
       "subscription status, plan booked, expiry date",
       "purchase history (managed via RevenueCat, see section 4.3)",
+      "number of AI quotes and AI invoices used in the current month (to calculate your quota)",
     ],
     afterList: [
       "The actual payment processing takes place entirely via Google Play Billing. At no time do we collect, store or view credit card or other payment data.",
@@ -378,7 +382,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
   {
     heading: "9. No Automated Decision-Making",
     paragraphs: [
-      "No automated decision-making within the meaning of Art. 22 GDPR that produces legal effects concerning you takes place. The AI-supported recognition of materials and working hours serves only as a suggestion; you check and confirm all AI-generated information yourself before it is adopted into a quote (see the confirmation requirement in the app: “I have reviewed the AI-generated data and confirm its accuracy”).",
+      "No automated decision-making within the meaning of Art. 22 GDPR that produces legal effects concerning you takes place. The AI-supported recognition of materials and working hours serves only as a suggestion; you check all AI-generated information before saving or sending a document (for quotes additionally via the confirmation in the app: “I have reviewed the AI-generated data and confirm its accuracy”).",
     ],
   },
   {
@@ -433,15 +437,15 @@ export const werkflowAgbEn: LegalSection[] = [
       "Creation of invoices, partial, final and cancellation invoices with sequential invoice numbers, as a PDF with an embedded e-invoice (ZUGFeRD / Factur-X, profile EN 16931) or as an XRechnung for public-sector clients",
       "Management of customer data",
       "Management of a material price list",
-      "AI-supported analysis of photos, voice recordings and text descriptions for the automated creation of quote suggestions",
+      "AI-supported analysis of photos, voice recordings and text descriptions for the automated creation of quote suggestions as well as invoice items and service descriptions for invoices without a prior quote",
       "Digital signature capture",
       "Free-form notes and dictation",
       "Export of the user's own data",
       "Support for a GoBD-compliant way of working (German principles for proper electronic bookkeeping): immutable archiving of sent quotes and invoices, change log, export for tax advisors and tax audits (ZIP archive according to the description standard for data provision, DATEV posting batch) and a template for the process documentation",
     ],
     afterList: [
-      "(2) The App is offered as a free trial version (3 free AI-supported quotes, no credit card required) and in paid subscription plans (“Solo”, “Small Business”, “Pro”). The range of functions of each plan is as shown in the App at the time the contract is concluded.",
-      "(3) The suggestions created by the App with AI support (material recognition, working time estimates) are non-binding suggestions. The user is obliged to check all automatically generated information for accuracy and completeness before using it in a quote or invoice. The Provider gives no guarantee for the accuracy of AI-generated content.",
+      "(2) The App is offered as a free trial version (3 free AI quotes and 3 free AI invoices, no credit card required) and in paid subscription plans (“Solo”, “Small Business”, “Pro”). The range of functions of each plan is as shown in the App at the time the contract is concluded.",
+      "(3) The suggestions created by the App with AI support (material recognition, working time estimates, invoice items, service descriptions) are non-binding suggestions. The user is obliged to check all automatically generated information for accuracy and completeness before using it in a quote or invoice. The Provider gives no guarantee for the accuracy of AI-generated content. Prices mentioned in the description are adopted as net prices; prices described as gross are converted to net by the App using the tax rate stored in the profile.",
       "(4) The Provider is entitled to adapt, extend or restrict the range of functions of the App in the course of technical development, provided this is reasonable for the user and the contractually agreed core scope of the respective service booked is maintained.",
       "(5) The App supports a GoBD-compliant way of working; it is not a certified accounting system and replaces neither bookkeeping nor tax advice. Responsibility for the correctness of the records, for complete process documentation and for the account assignment in the DATEV export agreed with the tax advisor lies with the user.",
     ],

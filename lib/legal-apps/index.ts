@@ -20,7 +20,9 @@ import { werkflowAgbEn, werkflowDatenschutzEn } from "./werkflow.en";
  * Fassung, muss die englische nachgezogen werden.
  */
 type LegalDocs = { datenschutz: LegalSection[]; agb: LegalSection[] };
-type AppLegal = { de: LegalDocs; en: LegalDocs };
+// updated: „Stand“ der app-eigenen Texte; ohne Eintrag zeigt die Seite das
+// Startjahr der App (app.since).
+type AppLegal = { de: LegalDocs; en: LegalDocs; updated?: { de: string; en: string } };
 
 const appLegal: Record<string, AppLegal> = {
   nook: {
@@ -30,6 +32,7 @@ const appLegal: Record<string, AppLegal> = {
   werkflow: {
     de: { datenschutz: werkflowDatenschutz, agb: werkflowAgb },
     en: { datenschutz: werkflowDatenschutzEn, agb: werkflowAgbEn },
+    updated: { de: "September 2026", en: "September 2026" },
   },
   fabula: {
     de: { datenschutz: fabulaDatenschutz, agb: fabulaAgb },
@@ -45,4 +48,10 @@ export function appLegalSections(slug: string, doc: keyof LegalDocs, locale: str
   const entry = appLegal[slug];
   if (!entry) return undefined;
   return (locale === "en" ? entry.en : entry.de)[doc];
+}
+
+export function appLegalUpdated(slug: string, locale: string): string | undefined {
+  const updated = appLegal[slug]?.updated;
+  if (!updated) return undefined;
+  return locale === "en" ? updated.en : updated.de;
 }

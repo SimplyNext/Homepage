@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps, getApp } from "@/lib/apps";
 import { datenschutzSections } from "@/lib/legal";
-import { appLegalSections } from "@/lib/legal-apps";
+import { appLegalSections, appLegalUpdated } from "@/lib/legal-apps";
 import { alternatesFor, noindex } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 import { InnerPageHeader, LegalDoc } from "@/components/layout/LegalDoc";
@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       />
       <LegalDoc
         sections={appLegalSections(app.slug, "datenschutz", locale) ?? datenschutzSections(app, locale)}
-        updated={app.since}
+        updated={appLegalUpdated(app.slug, locale) ?? app.since}
       />
     </>
   );

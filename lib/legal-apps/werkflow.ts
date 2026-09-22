@@ -2,9 +2,10 @@ import type { LegalSection } from "../legal";
 
 /**
  * App-spezifische Rechtstexte für Werkflow – übernommen aus
- * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: 14.09.2026 –
+ * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: September 2026 –
  * GoBD-Archivierung, gestaffelte Aufbewahrungsfristen, Änderungsprotokoll,
- * Export für Steuerberater, Resend für Konto-E-Mails).
+ * Export für Steuerberater, Resend für Konto-E-Mails; KI-Rechnungen ohne
+ * Angebot mit eigenem Kontingent).
  *
  * Quelle bleibt das Markdown-Dokument im App-Repository: Änderungen dort
  * müssen hier nachgezogen werden. Der Renderer kennt nur eine Liste pro
@@ -113,7 +114,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.5 Angebots-, Rechnungs- und Materialdaten",
     level: 3,
     paragraphs: [
-      "Aus einem angenommenen Angebot lässt sich in der App eine Rechnung erstellen. Verarbeitet werden dabei:",
+      "Rechnungen lassen sich in der App aus einem angenommenen Angebot oder ohne vorheriges Angebot erstellen. Verarbeitet werden dabei:",
     ],
     list: [
       "Angebotsnummer, Datum, Betreff, Gültigkeitsdauer",
@@ -143,9 +144,11 @@ export const werkflowDatenschutz: LegalSection[] = [
     list: [
       "Rechnungen, Abschlags-, Schluss- und Stornorechnungen einschließlich der eingebetteten E-Rechnung (XML) sowie Angebote, aus denen ein Auftrag hervorgegangen ist: 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 257 Abs. 1 Nr. 4, Abs. 4 HGB, § 14b UStG)",
       "Angebote ohne anschließenden Auftrag: 6 Jahre (§ 147 Abs. 1 Nr. 2, 3, Abs. 3 AO, § 257 Abs. 1 Nr. 2, 3, Abs. 4 HGB)",
+      "Zur Einordnung, nicht in WerkFlow geführt: Eingangsrechnungen und sonstige Buchungsbelege 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 14b Abs. 1 UStG); Bücher, Inventare und Jahresabschlüsse 10 Jahre (§ 147 Abs. 1 Nr. 1, Abs. 3 AO, § 257 Abs. 1 Nr. 1, Abs. 4 HGB)",
     ],
     afterList: [
-      "Die Frist beginnt nicht mit dem Tag der Erstellung, sondern mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist (§ 147 Abs. 4 AO, § 257 Abs. 5 HGB). Beispiel: Eine Rechnung vom 15.05.2026 ist bis zum 31.12.2034 aufzubewahren. Die Frist verlängert sich, solange die Unterlagen für eine noch nicht abgeschlossene Steuerfestsetzung von Bedeutung sind (§ 147 Abs. 3 Satz 5 AO).",
+      "Die Frist beginnt nicht mit dem Tag der Erstellung, sondern mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist (§ 147 Abs. 4 AO, § 257 Abs. 5 HGB). Beispiel: Eine Rechnung vom 15.05.2026 ist bis zum 31.12.2034 aufzubewahren, ein Angebot ohne Auftrag vom selben Tag bis zum 31.12.2032. Die Frist verlängert sich, solange die Unterlagen für eine noch nicht abgeschlossene Steuerfestsetzung von Bedeutung sind (§ 147 Abs. 3 Satz 5 AO).",
+      "Die 8 Jahre gelten unabhängig davon, ob eine Rechnung auf Papier, als PDF, als ZUGFeRD- oder als XRechnung vorliegt (§ 14b Abs. 1 UStG). Bei E-Rechnungen ist der strukturierte XML-Teil maßgeblich und muss in seiner ursprünglichen Form unverändert erhalten bleiben: bei ZUGFeRD die im PDF eingebettete XML-Datei, bei XRechnung die XML-Datei selbst. Ein daraus erzeugtes PDF ist nur eine Ansicht. WerkFlow speichert deshalb PDF und E-Rechnung zusammen und unverändert.",
     ],
   },
   {
@@ -179,7 +182,8 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
     afterList: [
       "Diese Inhalte werden nur nach Ihrer ausdrücklichen Einwilligung (Zustimmungsdialog in der App) über eine gesicherte Verbindung an unsere Server (Supabase, siehe Ziff. 4.1) übermittelt und von dort zur automatisierten Analyse an einen KI-Dienst weitergeleitet.",
-      "Primärer KI-Dienst: Google Gemini (kostenpflichtiger Tarif mit aktivierter Abrechnung) verarbeitet standardmäßig Fotos, Sprachaufnahmen und Textbeschreibungen für die Angebotserstellung sowie Fotos von Materiallisten.",
+      "Primärer KI-Dienst: Google Gemini (kostenpflichtiger Tarif mit aktivierter Abrechnung) verarbeitet standardmäßig Fotos, Sprachaufnahmen und Textbeschreibungen für die Angebotserstellung, Fotos von Materiallisten sowie Leistungsbeschreibungen, aus denen für eine Rechnung ohne Angebot Positionen und ein Leistungstext entstehen.",
+      "Damit die KI Ihre eigenen Bezeichnungen und Preise verwenden kann, werden die Einträge Ihrer Materialliste (Bezeichnung, Einheit, Preis) mit übermittelt.",
       "Fallback-Dienst: Ist Google Gemini vorübergehend nicht erreichbar (z. B. bei einer technischen Störung), wird die Anfrage automatisch an OpenAI (GPT-4o, ggf. inkl. Whisper-Transkription bei Sprachaufnahmen) weitergeleitet, damit Ihre Anfrage dennoch bearbeitet werden kann. Der Fallback kommt nur im Ausnahmefall zum Einsatz.",
       "Die Rohdaten (Fotos, Audiodateien) werden nach Abschluss der KI-Analyse nicht dauerhaft auf unseren Servern gespeichert, sondern nur für die Dauer der Verarbeitung übermittelt.",
       "Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnung nutzen, gilt gemäß den Nutzungsbedingungen der Gemini-API ausdrücklich, dass Google Ihre Eingaben (Prompts, Bilder, Audiodateien) und die generierten Antworten nicht zur Verbesserung von Google-Produkten verwendet. Eingaben werden dort ausschließlich zeitlich begrenzt zur Missbrauchserkennung und aus Sicherheitsgründen protokolliert (Quelle: Gemini API – Nutzungsbedingungen für kostenpflichtige Dienste).",
@@ -206,6 +210,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Ihre Nutzer-ID (zur Zuordnung des Abos zu Ihrem Konto)",
       "Abo-Status, gebuchter Tarif, Ablaufdatum",
       "Kaufhistorie (verwaltet über RevenueCat, siehe Ziff. 4.3)",
+      "Anzahl der im laufenden Monat genutzten KI-Angebote und KI-Rechnungen (zur Berechnung Ihres Kontingents)",
     ],
     afterList: [
       "Die eigentliche Zahlungsabwicklung erfolgt vollständig über Google Play Billing. Kreditkarten- oder sonstige Zahlungsdaten werden von uns zu keinem Zeitpunkt erhoben, gespeichert oder eingesehen.",
@@ -383,7 +388,7 @@ export const werkflowDatenschutz: LegalSection[] = [
   {
     heading: "9. Keine automatisierte Entscheidungsfindung",
     paragraphs: [
-      "Es findet keine automatisierte Entscheidungsfindung im Sinne des Art. 22 DSGVO statt, die rechtliche Wirkung gegenüber Ihnen entfaltet. Die KI-gestützte Erkennung von Materialien und Arbeitszeiten dient lediglich als Vorschlag; Sie prüfen und bestätigen alle KI-generierten Angaben vor der Übernahme in ein Angebot selbst (siehe Bestätigungspflicht in der App: „Ich habe die KI-generierten Daten geprüft und bestätige deren Richtigkeit“).",
+      "Es findet keine automatisierte Entscheidungsfindung im Sinne des Art. 22 DSGVO statt, die rechtliche Wirkung gegenüber Ihnen entfaltet. Die KI-gestützte Erkennung von Materialien und Arbeitszeiten dient lediglich als Vorschlag; Sie prüfen alle KI-generierten Angaben, bevor Sie einen Beleg speichern oder versenden (bei Angeboten zusätzlich über die Bestätigung in der App: „Ich habe die KI-generierten Daten geprüft und bestätige deren Richtigkeit“).",
     ],
   },
   {
@@ -438,15 +443,15 @@ export const werkflowAgb: LegalSection[] = [
       "Erstellung von Rechnungen, Abschlags-, Schluss- und Stornorechnungen mit fortlaufender Rechnungsnummer, als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X, Profil EN 16931) bzw. als XRechnung für öffentliche Auftraggeber",
       "Verwaltung von Kundendaten",
       "Verwaltung einer Material-Preisliste",
-      "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebotsvorschlägen",
+      "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebotsvorschlägen sowie von Rechnungspositionen und Leistungstexten für Rechnungen ohne vorheriges Angebot",
       "Digitale Unterschriftenerfassung",
       "Freie Notizen und Diktierfunktion",
       "Export der eigenen Daten",
       "Unterstützung einer GoBD-konformen Arbeitsweise: unveränderbare Archivierung versendeter Angebote und Rechnungen, Änderungsprotokoll, Export für Steuerberater und Betriebsprüfung (ZIP-Archiv nach dem Beschreibungsstandard für die Datenüberlassung, DATEV-Buchungsstapel) sowie eine Vorlage für die Verfahrensdokumentation",
     ],
     afterList: [
-      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose KI-gestützte Angebote, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses.",
-      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot oder einer Rechnung auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte.",
+      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose KI-Angebote und 3 kostenlose KI-Rechnungen, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses.",
+      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung, Rechnungspositionen, Leistungstexte) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot oder einer Rechnung auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte. In der Beschreibung genannte Preise werden als Nettopreise übernommen; als brutto bezeichnete Preise rechnet die App mit dem im Profil hinterlegten Steuersatz auf netto um.",
       "(4) Der Anbieter ist berechtigt, den Funktionsumfang der App im Rahmen der technischen Weiterentwicklung anzupassen, zu erweitern oder einzuschränken, sofern dies dem Nutzer zumutbar ist und der vertraglich vereinbarte Kernumfang der jeweils gebuchten Leistung erhalten bleibt.",
       "(5) Die App unterstützt eine GoBD-konforme Arbeitsweise; sie ist kein zertifiziertes Buchführungssystem und ersetzt weder die Buchführung noch die steuerliche Beratung. Die Verantwortung für die Ordnungsmäßigkeit der Aufzeichnungen, für eine vollständige Verfahrensdokumentation und für die mit dem Steuerberater abgestimmte Kontenzuordnung im DATEV-Export liegt beim Nutzer.",
     ],
