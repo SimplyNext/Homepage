@@ -5,6 +5,8 @@ import { nookAgb, nookDatenschutz } from "./nook";
 import { nookAgbEn, nookDatenschutzEn } from "./nook.en";
 import { shrinkitAgb, shrinkitDatenschutz } from "./shrinkit";
 import { shrinkitAgbEn, shrinkitDatenschutzEn } from "./shrinkit.en";
+import { wefixitAgb, wefixitDatenschutz } from "./wefixit";
+import { wefixitAgbEn, wefixitDatenschutzEn } from "./wefixit.en";
 import { werkflowAgb, werkflowDatenschutz } from "./werkflow";
 import { werkflowAgbEn, werkflowDatenschutzEn } from "./werkflow.en";
 
@@ -20,9 +22,10 @@ import { werkflowAgbEn, werkflowDatenschutzEn } from "./werkflow.en";
  * Fassung, muss die englische nachgezogen werden.
  */
 type LegalDocs = { datenschutz: LegalSection[]; agb: LegalSection[] };
-// updated: „Stand“ der app-eigenen Texte; ohne Eintrag zeigt die Seite das
-// Startjahr der App (app.since).
-type AppLegal = { de: LegalDocs; en: LegalDocs; updated?: { de: string; en: string } };
+// updated: „Stand“ je Dokument; ohne Eintrag zeigt die Seite das Startjahr
+// der App (app.since). Datenschutz und AGB können auseinanderlaufen.
+type Updated = Partial<Record<keyof LegalDocs, { de: string; en: string }>>;
+type AppLegal = { de: LegalDocs; en: LegalDocs; updated?: Updated };
 
 const appLegal: Record<string, AppLegal> = {
   nook: {
@@ -32,11 +35,22 @@ const appLegal: Record<string, AppLegal> = {
   werkflow: {
     de: { datenschutz: werkflowDatenschutz, agb: werkflowAgb },
     en: { datenschutz: werkflowDatenschutzEn, agb: werkflowAgbEn },
-    updated: { de: "September 2026", en: "September 2026" },
+    updated: {
+      datenschutz: { de: "September 2026", en: "September 2026" },
+      agb: { de: "September 2026", en: "September 2026" },
+    },
   },
   fabula: {
     de: { datenschutz: fabulaDatenschutz, agb: fabulaAgb },
     en: { datenschutz: fabulaDatenschutzEn, agb: fabulaAgbEn },
+  },
+  wefixit: {
+    de: { datenschutz: wefixitDatenschutz, agb: wefixitAgb },
+    en: { datenschutz: wefixitDatenschutzEn, agb: wefixitAgbEn },
+    updated: {
+      datenschutz: { de: "September 2026", en: "September 2026" },
+      agb: { de: "Juli 2026", en: "July 2026" },
+    },
   },
   shrinkit: {
     de: { datenschutz: shrinkitDatenschutz, agb: shrinkitAgb },
@@ -50,8 +64,8 @@ export function appLegalSections(slug: string, doc: keyof LegalDocs, locale: str
   return (locale === "en" ? entry.en : entry.de)[doc];
 }
 
-export function appLegalUpdated(slug: string, locale: string): string | undefined {
-  const updated = appLegal[slug]?.updated;
+export function appLegalUpdated(slug: string, doc: keyof LegalDocs, locale: string): string | undefined {
+  const updated = appLegal[slug]?.updated?.[doc];
   if (!updated) return undefined;
   return locale === "en" ? updated.en : updated.de;
 }

@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         backHref={`/apps/${app.slug}`}
         backLabel={t("backToApp", { name: app.name })}
       />
-      <LegalDoc sections={appLegalSections(app.slug, "agb", locale) ?? agbSections(app, locale)} updated={appLegalUpdated(app.slug, locale) ?? app.since} />
+      <LegalDoc sections={appLegalSections(app.slug, "agb", locale) ?? agbSections(app, locale)} updated={appLegalUpdated(app.slug, "agb", locale) ?? app.since} />
     </>
   );
 }

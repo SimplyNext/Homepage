@@ -4,7 +4,7 @@
  * lib/account-deletion.ts ins Browser-Bundle zu ziehen. Der Typ dort erzwingt,
  * dass jede App hier auch eine Konfiguration hat.
  */
-export const ACCOUNT_DELETION_SLUGS = ["werkflow"] as const;
+export const ACCOUNT_DELETION_SLUGS = ["werkflow", "wefixit"] as const;
 
 export type AccountDeletionSlug = (typeof ACCOUNT_DELETION_SLUGS)[number];
 

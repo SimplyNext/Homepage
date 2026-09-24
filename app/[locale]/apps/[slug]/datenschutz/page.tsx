@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       />
       <LegalDoc
         sections={appLegalSections(app.slug, "datenschutz", locale) ?? datenschutzSections(app, locale)}
-        updated={appLegalUpdated(app.slug, locale) ?? app.since}
+        updated={appLegalUpdated(app.slug, "datenschutz", locale) ?? app.since}
       />
     </>
   );
