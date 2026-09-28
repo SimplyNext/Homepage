@@ -153,10 +153,7 @@ export const fabulaAgb: LegalSection[] = [
     ],
     list: [
       "SimplyNext",
-      "Inhaber: Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Deutschland",
+      "Vollständige Anbieterangaben: siehe Impressum",
       "E-Mail: info@simplynext.de",
     ],
     afterList: ["Mit der Nutzung der App erklärst du dich mit diesen Bedingungen einverstanden."],

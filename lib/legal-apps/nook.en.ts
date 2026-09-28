@@ -208,7 +208,7 @@ export const nookAgbEn: LegalSection[] = [
     heading: "§ 1 Scope",
     ordered: true,
     list: [
-      "These General Terms and Conditions (Terms) apply to the use of the mobile application NOOK (hereinafter “App”), which is provided by SimplyNext, owner Nuri Toker, Mechenseerstr. 12, 88316 Isny im Allgäu, Germany (hereinafter “Provider”).",
+      "These General Terms and Conditions (Terms) apply to the use of the mobile application NOOK (hereinafter “App”), which is provided by SimplyNext (hereinafter “Provider”; full provider details in the legal notice).",
       "By registering or using the App for the first time, the user agrees to these Terms.",
       "Deviating terms of the user are not recognised unless the Provider expressly agrees to their validity in writing.",
     ],

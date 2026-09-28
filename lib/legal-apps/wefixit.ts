@@ -211,10 +211,7 @@ export const wefixitAgb: LegalSection[] = [
     heading: "1. Anbieter und Geltungsbereich",
     paragraphs: [
       "SimplyNext",
-      "Inhaber: Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Deutschland",
+      "Vollständige Anbieterangaben: siehe Impressum",
       "Telefon: 01743389049",
       "E-Mail: info@simplynext.de",
       "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der mobilen Anwendung „WeFixIt\" (im Folgenden „App\") durch Verbraucher im Sinne des § 13 BGB. Mit der Registrierung eines Nutzerkontos und/oder der Nutzung kostenpflichtiger Zusatzfunktionen erkennen Sie diese AGB an.",

@@ -419,9 +419,6 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     paragraphs: ["If you have any questions about data protection, please contact:"],
     list: [
       "SimplyNext",
-      "Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
       "E-Mail: info@simplynext.de",
       "Phone: +49 1743389049",
     ],
@@ -436,10 +433,7 @@ export const werkflowAgbEn: LegalSection[] = [
     ],
     list: [
       "SimplyNext",
-      "Owner: Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Germany",
+      "Full provider details: see legal notice",
       "E-Mail: info@simplynext.de",
       "Phone: +49 1743389049",
       "VAT ID: DE463824630",
@@ -570,9 +564,6 @@ export const werkflowAgbEn: LegalSection[] = [
     paragraphs: ["If you have any questions about these Terms, please contact:"],
     list: [
       "SimplyNext",
-      "Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
       "E-Mail: info@simplynext.de",
       "Phone: +49 1743389049",
     ],

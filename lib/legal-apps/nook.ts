@@ -211,7 +211,7 @@ export const nookAgb: LegalSection[] = [
     heading: "§ 1 Geltungsbereich",
     ordered: true,
     list: [
-      "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der mobilen Applikation NOOK (nachfolgend „App“), die von SimplyNext, Inhaber Nuri Toker, Mechenseerstr. 12, 88316 Isny im Allgäu (nachfolgend „Anbieter“) bereitgestellt wird.",
+      "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der mobilen Applikation NOOK (nachfolgend „App“), die von SimplyNext (nachfolgend „Anbieter“; vollständige Anbieterangaben im Impressum) bereitgestellt wird.",
       "Mit der Registrierung oder der erstmaligen Nutzung der App erklärt sich der Nutzer mit diesen AGB einverstanden.",
       "Abweichende Bedingungen des Nutzers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.",
     ],

@@ -310,10 +310,6 @@ export const shrinkitDatenschutz: LegalSection[] = [
     heading: "14. Kontakt",
     list: [
       "SimplyNext",
-      "Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Deutschland",
       "E-Mail: info@simplynext.de",
       "Telefon: 01743389049",
     ],
@@ -328,10 +324,7 @@ export const shrinkitAgb: LegalSection[] = [
     ],
     list: [
       "SimplyNext",
-      "Inhaber: Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Deutschland",
+      "Vollständige Anbieterangaben: siehe Impressum",
       "E-Mail: info@simplynext.de",
       "Telefon: 01743389049",
       "USt-IdNr.: DE463824630",
@@ -543,10 +536,6 @@ export const shrinkitAgb: LegalSection[] = [
     heading: "Kontakt",
     list: [
       "SimplyNext",
-      "Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Deutschland",
       "E-Mail: info@simplynext.de",
       "Telefon: 01743389049",
     ],

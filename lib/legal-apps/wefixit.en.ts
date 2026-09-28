@@ -207,10 +207,7 @@ export const wefixitAgbEn: LegalSection[] = [
     heading: "1. Provider and Scope",
     paragraphs: [
       "SimplyNext",
-      "Owner: Nuri Toker",
-      "Mechenseerstr. 12",
-      "88316 Isny im Allgäu",
-      "Germany",
+      "Full provider details: see legal notice",
       "Phone: +49 174 3389049",
       "Email: info@simplynext.de",
       "These Terms and Conditions (\"Terms\") apply to the use of the \"WeFixIt\" mobile application (the \"App\") by consumers within the meaning of § 13 BGB (German Civil Code). By registering a user account and/or using paid add-on features, you accept these Terms.",
