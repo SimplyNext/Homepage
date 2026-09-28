@@ -318,11 +318,11 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "4.5 Resend (Sending Account E-Mails)",
     level: 3,
     paragraphs: [
-      "Resend, Inc., San Francisco, USA",
+      "Plus Five Five, Inc. (Resend), 2261 Market Street #5039, San Francisco, CA 94114, USA",
       "Purpose: sending the confirmation e-mail upon registration and the password reset e-mail (section 3.1).",
       "Data transmitted: your e-mail address, the content of the respective account e-mail, time of sending and delivery status.",
       "Privacy policy: resend.com/legal/privacy-policy",
-      "Transfer to third countries: USA, safeguarded by EU Standard Contractual Clauses.",
+      "Transfer to third countries: USA, safeguarded by Resend's data processing agreement with EU Standard Contractual Clauses; Resend is also certified under the EU-U.S. Data Privacy Framework.",
       "Legal basis: Art. 6(1)(b) GDPR (performance of a contract – provision of the user account)",
     ],
   },

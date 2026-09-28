@@ -324,11 +324,11 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "4.5 Resend (Versand von Konto-E-Mails)",
     level: 3,
     paragraphs: [
-      "Resend, Inc., San Francisco, USA",
+      "Plus Five Five, Inc. (Resend), 2261 Market Street #5039, San Francisco, CA 94114, USA",
       "Zweck: Versand der Bestätigungs-E-Mail bei der Registrierung und der E-Mail zum Zurücksetzen des Passworts (Ziff. 3.1).",
       "Übermittelte Daten: Ihre E-Mail-Adresse, der Inhalt der jeweiligen Konto-E-Mail, Versandzeitpunkt und Zustellstatus.",
       "Datenschutzerklärung: resend.com/legal/privacy-policy",
-      "Drittlandtransfer: USA, abgesichert über EU-Standardvertragsklauseln.",
+      "Drittlandtransfer: USA, abgesichert über den Auftragsverarbeitungsvertrag von Resend mit EU-Standardvertragsklauseln; Resend ist zudem nach dem EU-U.S. Data Privacy Framework zertifiziert.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung – Bereitstellung des Nutzerkontos)",
     ],
   },
