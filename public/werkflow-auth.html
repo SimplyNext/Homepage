@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>WerkFlow – Konto</title>
+<style>
+  :root { --blue:#2167F1; --text:#111827; --muted:#6b7280; --bg:#f5f7fb; --card:#fff; --ok:#15803d; --err:#b91c1c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --text:#e5e7eb; --muted:#9ca3af; --bg:#0d1218; --card:#171e27; --ok:#4ade80; --err:#f87171; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text);
+         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:16px; }
+  .card { background:var(--card); max-width:440px; width:100%; border-radius:16px; padding:32px 24px;
+          box-shadow:0 4px 24px rgba(0,0,0,.08); text-align:center; }
+  h1 { font-size:22px; margin:12px 0 8px; }
+  p { color:var(--muted); line-height:1.5; margin:8px 0; }
+  .icon { font-size:44px; }
+  .btn { display:inline-block; margin-top:20px; padding:14px 24px; background:var(--blue); color:#fff; border-radius:10px;
+         text-decoration:none; font-weight:600; font-size:16px; }
+  .ok { color:var(--ok); } .err { color:var(--err); }
+  .hint { font-size:13px; margin-top:20px; }
+  footer { font-size:12px; color:var(--muted); margin-top:28px; }
+  [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="icon" id="icon">⏳</div>
+  <h1 id="title">Einen Moment …</h1>
+  <p id="text">Ihr Link wird geprüft.</p>
+  <a class="btn" id="open" hidden>WerkFlow öffnen</a>
+  <p class="hint" id="hint" hidden>Die Schaltfläche öffnet die App nur auf dem Smartphone, auf dem WerkFlow installiert ist.</p>
+  <footer>SimplyNext · Inhaber: Nuri Toker · Mechenseerstr. 12 · 88316 Isny im Allgäu<br>
+    <a href="mailto:info@simplynext.de">info@simplynext.de</a></footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // Konto-Links aus den WerkFlow-Mails. Die Mail verweist hierher statt
+  // direkt auf die App: manche Mail-Apps und alle PCs blockieren den Sprung
+  // auf werkflow://, der Nutzer sah dann nichts passieren.
+  // ?type=signup&token_hash=…   → Adresse hier bestätigen, dann zur App
+  // ?type=recovery&token_hash=… → per Klick in die App (neues Passwort)
+  const SUPABASE_URL = 'https://pwswwuuewxmomkosieez.supabase.co';
+  // Öffentlicher Schlüssel (steht auch in der App), kein Geheimnis.
+  const SUPABASE_KEY = 'sb_publishable_Wjl_r60R7KvqAS1giKav6w_17tzwkgq';
+  const PACKAGE = 'de.simplynext.werkflow';
+
+  const q = new URLSearchParams(location.search);
+  const type = q.get('type');
+  const tokenHash = q.get('token_hash');
+  const $ = (id) => document.getElementById(id);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isMobile = isAndroid || /iPhone|iPad/i.test(navigator.userAgent);
+
+  function appLink(path) {
+    // Chrome auf Android öffnet intent:// verlässlicher als ein eigenes Schema.
+    if (isAndroid) {
+      const [p, query] = path.split('?');
+      return 'intent://auth/' + p + (query ? '?' + query : '') +
+        '#Intent;scheme=werkflow;package=' + PACKAGE + ';end';
+    }
+    return 'werkflow://auth/' + path;
+  }
+
+  function show(icon, title, text, cls, button, path) {
+    $('icon').textContent = icon;
+    $('title').textContent = title;
+    $('title').className = cls || '';
+    $('text').textContent = text;
+    if (button) {
+      $('open').textContent = button;
+      $('open').href = appLink(path);
+      $('open').hidden = false;
+      $('hint').hidden = isMobile;
+    }
+  }
+
+  async function run() {
+    if (!tokenHash || (type !== 'signup' && type !== 'recovery')) {
+      show('⚠️', 'Link unvollständig', 'Bitte öffnen Sie den Link direkt aus der E-Mail. Wurde er beim Kopieren abgeschnitten, kopieren Sie ihn bitte vollständig.', 'err');
+      return;
+    }
+    if (type === 'recovery') {
+      // Den Link prüft die App selbst; hier würde er sonst verbraucht.
+      show('🔑', 'Neues Passwort vergeben', 'Tippen Sie auf die Schaltfläche. WerkFlow öffnet sich, und Sie können ein neues Passwort festlegen. Öffnen Sie diese Mail dafür auf dem Smartphone mit WerkFlow.', '', 'In WerkFlow neues Passwort vergeben', 'reset-password?token_hash=' + encodeURIComponent(tokenHash));
+      return;
+    }
+    try {
+      const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+      });
+      const { error } = await client.auth.verifyOtp({ token_hash: tokenHash, type: 'email' });
+      if (error) throw error;
+      show('✅', 'E-Mail-Adresse bestätigt', 'Ihr WerkFlow-Konto ist aktiv. Öffnen Sie die App und melden Sie sich mit Ihrer E-Mail-Adresse und Ihrem Passwort an.', 'ok', 'WerkFlow öffnen', 'login');
+    } catch (e) {
+      const expired = /expired|invalid|not found|already/i.test(String(e && (e.code || e.message)));
+      show('⚠️', expired ? 'Link abgelaufen oder schon benutzt' : 'Bestätigung fehlgeschlagen',
+        expired
+          ? 'Haben Sie den Link schon einmal geöffnet, ist Ihre Adresse bereits bestätigt. Melden Sie sich einfach in der App an. Sonst registrieren Sie sich in der App erneut mit derselben Adresse, dann kommt eine neue Mail.'
+          : 'Bitte prüfen Sie Ihre Internetverbindung und laden Sie die Seite neu.',
+        'err', 'WerkFlow öffnen', 'login');
+    }
+  }
+  run();
+</script>
+</body>
+</html>

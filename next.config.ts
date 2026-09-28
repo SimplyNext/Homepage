@@ -27,6 +27,16 @@ const csp = `
   .replace(/\s{2,}/g, " ")
   .trim();
 
+// Bestätigungsseite für die Konto-Mails von WerkFlow (public/werkflow-auth.html,
+// Quelle: werkflow/docs/web/werkflow-auth.html). Sie lädt supabase-js von
+// jsDelivr und bestätigt die E-Mail-Adresse direkt bei Supabase. Nur diese
+// Seite bekommt den CDN-Zugriff; die Regel steht nach der allgemeinen und
+// ersetzt sie für diesen Pfad.
+const werkflowAuthCsp = csp.replace(
+  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+);
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -47,6 +57,13 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+        ],
+      },
+      {
+        source: "/werkflow-auth.html",
+        headers: [
+          { key: "Content-Security-Policy", value: werkflowAuthCsp },
+          { key: "X-Robots-Tag", value: "noindex" },
         ],
       },
     ];

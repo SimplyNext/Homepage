@@ -170,7 +170,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "To enable automatic quote creation using AI, you can:",
     ],
     list: [
-      "take photos of construction sites/damage using the device camera",
+      "take photos of construction sites using the device camera or choose them from the gallery",
       "record voice notes using the microphone",
       "upload photos of handwritten or printed material lists",
     ],
@@ -179,11 +179,12 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "Primary AI service: Google Gemini (paid plan with billing enabled) processes photos, voice recordings and text descriptions for quote creation, photos of material lists and job descriptions from which items and a service text are generated for an invoice without a quote by default.",
       "So that the AI can use your own descriptions and prices, the entries of your material list (description, unit, price) are also transmitted.",
       "Fallback service: If Google Gemini is temporarily unavailable (e.g. due to a technical fault), the request is automatically forwarded to OpenAI (GPT-4o, including Whisper transcription for voice recordings where applicable) so that your request can still be processed. The fallback is only used in exceptional cases.",
-      "The raw data (photos, audio files) is not stored permanently on our servers after the AI analysis has been completed, but is only transmitted for the duration of processing.",
+      "The raw data (photos, audio files) is not stored permanently on our servers after the AI analysis has been completed, but is only transmitted for the duration of processing. This does not apply to photos that you add to a quote or invoice (see below).",
       "As we use a paid plan with billing enabled for Google Gemini, the Gemini API terms of use expressly provide that Google does not use your input (prompts, images, audio files) or the generated responses to improve Google products. Input is only logged there for a limited time for abuse detection and for security reasons (source: Gemini API – terms of use for paid services).",
       "Legal basis: Art. 6(1)(a) GDPR (consent). Consent can be withdrawn at any time with effect for the future in the app settings (toggle “Use AI Analysis”).",
       "Important note: When photographing construction sites/customers' homes, make sure that no people or sensitive private documents are recognisable in the picture, as you as the user are responsible for this.",
       "Dictation (speech to text): In quotes, invoices and notes, you can dictate text instead of typing. Unlike the quote analysis, the spoken content is not analysed but only converted into text. For this purpose, the recording is transmitted to our server – only with your consent under this section and only with an internet connection – and converted into text there by Google Gemini or, as a substitute, OpenAI Whisper; the audio file is not stored permanently after conversion and is deleted from your device immediately. Without consent or without an internet connection, dictation is not available; the app does not use on-device speech recognition. Dictation does not use up any of your analysis quotas. Without a subscription, dictation is available in quotes only as long as free AI quotes remain, in invoices only as long as free AI invoices remain, and in notes until both quotas are used up. With a subscription, it remains available everywhere, even after the monthly quota has been reached.",
+      "Photos for quotes and invoices: Photos that you add to a quote or invoice in the app – including the photo for the AI analysis as soon as you save the quote – are stored in a storage area on our servers that only your account can access (Supabase, see section 4.1), so that you can view them again later with the document. They do not appear on the document and are not transmitted to your customers. You can delete them individually at any time; they are also deleted together with the deleted draft or document and with your account. Legal basis: Art. 6(1)(b) GDPR (provision of the feature you use).",
     ],
   },
   {
@@ -274,7 +275,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. The data is stored on servers in the EU (data centre in Ireland).",
-      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, invoice and material data, free-form notes, generated PDF and ZUGFeRD files, change log, company logo, signature image file).",
+      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, invoice and material data, free-form notes, generated PDF and ZUGFeRD files, change log, company logo, signature image file, photos for quotes and invoices).",
       "Transfer to third countries: As Supabase is a company based in the USA, access from the USA (e.g. in the context of maintenance and support) cannot be ruled out. This is safeguarded by the data processing agreement with EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).",
       "Privacy policy: supabase.com/privacy",
     ],
@@ -331,7 +332,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     table: {
       head: ["Permission", "Purpose", "Mandatory"],
       rows: [
-        ["Camera", "Taking photos for AI-supported quote creation", "Only when actively using the photo feature"],
+        ["Camera", "Taking photos for AI-supported quote creation and for quotes and invoices", "Only when actively using the photo feature"],
         ["Microphone", "Recording voice notes for quote creation and dictating text", "Only when actively using the voice feature"],
         ["Internet access", "Communication with our servers (Supabase, RevenueCat)", "Required for basic functions"],
       ],
@@ -354,6 +355,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
         ["Change log of documents", "The same as the associated document; afterwards only redacted entries without document reference until the account is deleted (section 3.10)"],
         ["Customer data", "Until deleted by the user or the account is deleted. The copy of the customer data in a sent invoice is retained for as long as the invoice."],
         ["Photos/voice recordings for AI analysis and dictation", "Only temporarily during processing, no permanent storage"],
+        ["Photos for quotes and invoices", "Until deleted by you, together with the deleted draft or document, or with the account"],
         ["Feedback (stars, text, app version)", "Until account deletion or until you object (section 3.11)"],
         ["Free-form notes", "Until deleted by the user or the account is deleted"],
         ["Company logo, signature", "Until deleted by the user or the account is deleted"],

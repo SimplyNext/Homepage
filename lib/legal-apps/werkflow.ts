@@ -176,7 +176,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Um Ihnen die automatische Angebotserstellung per KI zu ermöglichen, können Sie:",
     ],
     list: [
-      "Fotos von Baustellen/Schäden über die Gerätekamera aufnehmen",
+      "Fotos von Baustellen über die Gerätekamera aufnehmen oder aus der Galerie wählen",
       "Sprachnotizen über das Mikrofon aufzeichnen",
       "Fotos von handschriftlichen oder gedruckten Materiallisten hochladen",
     ],
@@ -185,11 +185,12 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Primärer KI-Dienst: Google Gemini (kostenpflichtiger Tarif mit aktivierter Abrechnung) verarbeitet standardmäßig Fotos, Sprachaufnahmen und Textbeschreibungen für die Angebotserstellung, Fotos von Materiallisten sowie Leistungsbeschreibungen, aus denen für eine Rechnung ohne Angebot Positionen und ein Leistungstext entstehen.",
       "Damit die KI Ihre eigenen Bezeichnungen und Preise verwenden kann, werden die Einträge Ihrer Materialliste (Bezeichnung, Einheit, Preis) mit übermittelt.",
       "Fallback-Dienst: Ist Google Gemini vorübergehend nicht erreichbar (z. B. bei einer technischen Störung), wird die Anfrage automatisch an OpenAI (GPT-4o, ggf. inkl. Whisper-Transkription bei Sprachaufnahmen) weitergeleitet, damit Ihre Anfrage dennoch bearbeitet werden kann. Der Fallback kommt nur im Ausnahmefall zum Einsatz.",
-      "Die Rohdaten (Fotos, Audiodateien) werden nach Abschluss der KI-Analyse nicht dauerhaft auf unseren Servern gespeichert, sondern nur für die Dauer der Verarbeitung übermittelt.",
+      "Die Rohdaten (Fotos, Audiodateien) werden nach Abschluss der KI-Analyse nicht dauerhaft auf unseren Servern gespeichert, sondern nur für die Dauer der Verarbeitung übermittelt. Ausgenommen sind Fotos, die Sie einem Angebot oder einer Rechnung hinzufügen (siehe unten).",
       "Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnung nutzen, gilt gemäß den Nutzungsbedingungen der Gemini-API ausdrücklich, dass Google Ihre Eingaben (Prompts, Bilder, Audiodateien) und die generierten Antworten nicht zur Verbesserung von Google-Produkten verwendet. Eingaben werden dort ausschließlich zeitlich begrenzt zur Missbrauchserkennung und aus Sicherheitsgründen protokolliert (Quelle: Gemini API – Nutzungsbedingungen für kostenpflichtige Dienste).",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung kann jederzeit mit Wirkung für die Zukunft in den App-Einstellungen widerrufen werden (Toggle „KI-Analyse verwenden“).",
       "Wichtiger Hinweis: Achten Sie beim Fotografieren von Baustellen/Kundenwohnungen darauf, dass keine Personen oder sensible private Unterlagen im Bild erkennbar sind, da Sie hierfür als Nutzer selbst verantwortlich sind.",
       "Diktierfunktion (Sprache zu Text): In Angeboten, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Dazu wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer und nur bei bestehender Internetverbindung – an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Einwilligung oder ohne Internetverbindung steht das Diktat nicht zur Verfügung; eine Spracherkennung auf dem Gerät nutzt die App nicht. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente. Ohne Abonnement steht das Diktat in Angeboten nur zur Verfügung, solange kostenlose KI-Angebote übrig sind, in Rechnungen, solange kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Mit einem Abonnement bleibt es überall verfügbar, auch nach Erreichen des monatlichen Kontingents.",
+      "Fotos zu Angeboten und Rechnungen: Fotos, die Sie in der App einem Angebot oder einer Rechnung hinzufügen – auch das Foto für die KI-Analyse, sobald Sie das Angebot speichern –, speichern wir in einem nur Ihrem Konto zugänglichen Speicher auf unseren Servern (Supabase, siehe Ziff. 4.1), damit Sie sie später beim Beleg wieder ansehen können. Sie stehen nicht auf dem Beleg und werden nicht an Ihre Kunden übermittelt. Sie können sie jederzeit einzeln löschen; außerdem werden sie mit dem gelöschten Entwurf oder Beleg und mit Ihrem Konto gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion).",
     ],
   },
   {
@@ -280,7 +281,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. Die Daten werden auf Servern in der EU gespeichert (Rechenzentrum in Irland).",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten und Rechnungen).",
       "Drittlandtransfer: Da Supabase ein Unternehmen mit Sitz in den USA ist, lässt sich ein Zugriff aus den USA (z. B. im Rahmen von Wartung und Support) nicht ausschließen. Dieser ist über den Auftragsverarbeitungsvertrag mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) abgesichert.",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
@@ -337,7 +338,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     table: {
       head: ["Berechtigung", "Zweck", "Pflicht"],
       rows: [
-        ["Kamera", "Aufnahme von Fotos für die KI-gestützte Angebotserstellung", "Nur bei aktiver Nutzung der Foto-Funktion"],
+        ["Kamera", "Aufnahme von Fotos für die KI-gestützte Angebotserstellung und zu Angeboten und Rechnungen", "Nur bei aktiver Nutzung der Foto-Funktion"],
         ["Mikrofon", "Aufnahme von Sprachnotizen zur Angebotserstellung sowie Diktieren von Texten", "Nur bei aktiver Nutzung der Sprachfunktion"],
         ["Internetzugriff", "Kommunikation mit unseren Servern (Supabase, RevenueCat)", "Erforderlich für Grundfunktionen"],
       ],
@@ -360,6 +361,7 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Änderungsprotokoll der Belege", "Wie der zugehörige Beleg; danach nur geschwärzte Einträge ohne Belegbezug bis zur Kontolöschung (Ziff. 3.10)"],
         ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung. Die Kopie der Kundendaten in einer versendeten Rechnung bleibt so lange erhalten wie die Rechnung."],
         ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
+        ["Fotos zu Angeboten und Rechnungen", "Bis zur Löschung durch Sie, mit dem gelöschten Entwurf bzw. Beleg oder mit dem Konto"],
         ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
