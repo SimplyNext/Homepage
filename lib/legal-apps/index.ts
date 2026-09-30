@@ -43,6 +43,10 @@ const appLegal: Record<string, AppLegal> = {
   fabula: {
     de: { datenschutz: fabulaDatenschutz, agb: fabulaAgb },
     en: { datenschutz: fabulaDatenschutzEn, agb: fabulaAgbEn },
+    updated: {
+      datenschutz: { de: "15.09.2026", en: "15 September 2026" },
+      agb: { de: "15.09.2026", en: "15 September 2026" },
+    },
   },
   wefixit: {
     de: { datenschutz: wefixitDatenschutz, agb: wefixitAgb },
