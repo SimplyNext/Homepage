@@ -273,7 +273,7 @@
       "description": [
         "Fabula turns your child into the hero of their own story – and then reads it to them. You invent a character together, pick a story world, and moments later a brand-new audio story is ready. No two stories are alike.",
         "Characters get a name, an age and a look – lead and supporting roles, as many as you like. They stay saved and can appear again and again. Add one of ten story worlds and, if you want, a few keywords: a lost teddy, a trip to the dentist, the first day of school. Whatever is on your minds becomes the story.",
-        "Stories and voices are created with artificial intelligence (Google Gemini). That means every story really is new – and occasionally surprising. Fabula needs an account and an internet connection for this; downloaded stories then play offline. For children aged 6 and up, together with their parents."
+        "Stories and voices are created with artificial intelligence (OpenAI). That means every story really is new – and occasionally surprising. Fabula needs an account and an internet connection for this; downloaded stories then play offline. For children aged 6 and up, together with their parents."
       ],
       "features": [
         { "title": "Your child is the main character", "text": "Name, age, appearance – lead and supporting characters, as many as you like. They stay saved and return in every new story." },

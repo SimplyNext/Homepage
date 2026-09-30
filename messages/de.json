@@ -273,7 +273,7 @@
       "description": [
         "Fabula macht dein Kind zur Hauptfigur seiner eigenen Geschichte – und liest sie ihm anschließend vor. Ihr erfindet gemeinsam eine Figur, wählt eine Geschichtenwelt, und kurz darauf liegt eine ganz neue Hörgeschichte bereit. Keine zwei Geschichten sind gleich.",
         "Figuren bekommen Name, Alter und Aussehen – Haupt- und Nebenfiguren, so viele ihr mögt. Sie bleiben gespeichert und können immer wieder auftreten. Dazu eine von zehn Geschichtenwelten und, wenn ihr mögt, ein paar Stichworte: ein verlorener Teddy, ein Ausflug zum Zahnarzt, der erste Schultag. Was euch gerade beschäftigt, wird zur Geschichte.",
-        "Geschichten und Stimmen entstehen mit künstlicher Intelligenz (Google Gemini). Das heißt: jede Geschichte ist wirklich neu – und gelegentlich auch überraschend. Dafür braucht Fabula ein Konto und eine Internetverbindung; heruntergeladene Geschichten laufen danach offline. Für Kinder ab 6 Jahren, gemeinsam mit ihren Eltern."
+        "Geschichten und Stimmen entstehen mit künstlicher Intelligenz (OpenAI). Das heißt: jede Geschichte ist wirklich neu – und gelegentlich auch überraschend. Dafür braucht Fabula ein Konto und eine Internetverbindung; heruntergeladene Geschichten laufen danach offline. Für Kinder ab 6 Jahren, gemeinsam mit ihren Eltern."
       ],
       "features": [
         { "title": "Dein Kind ist die Hauptfigur", "text": "Name, Alter, Aussehen – Haupt- und Nebenfiguren, so viele ihr mögt. Die Figuren bleiben gespeichert und treten in jeder neuen Geschichte wieder auf." },
