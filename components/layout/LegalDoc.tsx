@@ -32,7 +32,7 @@ export function InnerPageHeader({
           <span className="text-accent-soft">{"{"}</span> {label}{" "}
           <span className="text-accent-alt">{"}"}</span>
         </p>
-        <h1 className="mt-4 font-display text-display-md font-medium">{title}</h1>
+        <h1 className="mt-4 font-display text-display-md font-extrabold tracking-[-0.04em]">{title}</h1>
         {intro && <p className="mt-5 max-w-prose leading-relaxed text-ink-muted">{intro}</p>}
       </div>
     </header>
@@ -58,7 +58,7 @@ export async function LegalDoc({
       {/* Auf /en stehen Übersetzungen zur Information; rechtlich verbindlich
           bleibt die deutsche Fassung – darauf weist der Hinweis hin. */}
       {!hideEnNotice && locale !== "de" && (
-        <p className="mb-8 rounded-lg border border-line bg-base-800 px-4 py-3 text-sm text-ink-muted">
+        <p className="mb-8 rounded-2xl bg-base-800 px-4 py-3 text-sm text-ink-muted">
           {t("enNotice")}
         </p>
       )}
@@ -79,7 +79,7 @@ export async function LegalDoc({
           return (
             <section key={i} className={gap}>
               {s.heading && (
-                <Heading className={sub ? "font-display text-base font-medium" : "font-display text-xl font-medium"}>
+                <Heading className={sub ? "font-display text-lg font-bold tracking-[-0.02em]" : "font-display text-2xl font-extrabold tracking-[-0.03em]"}>
                   {s.heading}
                 </Heading>
               )}

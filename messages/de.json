@@ -23,20 +23,6 @@
     "copyright": "Alle Rechte vorbehalten.",
     "stack": "Flutter · Expo"
   },
-  "hero": {
-    "eyebrow": "App-Studio · Flutter · Expo",
-    "headlineLine1": "Wir bauen Apps,",
-    "headlineLine2": "die in Erinnerung bleiben.",
-    "lead": "SimplyNext entwirft und entwickelt hochwertige, plattformübergreifende Apps – kompromisslos in Performance, Detail und Anmutung.",
-    "ctaWork": "Arbeiten ansehen",
-    "scrollHint": "Scrollen"
-  },
-  "journey": {
-    "eyebrow": "Die Apps",
-    "heading": "{count} Apps. Ein Anspruch.",
-    "counter": "{current} / {total}",
-    "visitApp": "App entdecken"
-  },
   "bento": {
     "eyebrow": "Überblick",
     "heading": "Was wir bauen",
@@ -57,11 +43,25 @@
     "claim": "Premium-Apps für jede Plattform.",
     "sub": "Android heute, iOS in Kürze — entwickelt in Deutschland."
   },
+  "galerie": {
+    "heroLine1": "Apps, die man",
+    "heroLine2": "gern benutzt.",
+    "heroLead": "SimplyNext entwickelt eigene Apps für Android und iOS.",
+    "statsNone": "{count} Apps in Entwicklung",
+    "heroCta": "Apps ansehen",
+    "navApps": "Apps",
+    "navAll": "Überblick",
+    "stageCounter": "App {current} von {total}",
+    "stageVisit": "App entdecken",
+    "gridHeading": "Alle {count} auf einen Blick.",
+    "mail": "E-Mail schreiben"
+  },
   "status": { "live": "Verfügbar", "beta": "Beta", "coming-soon": "Bald" },
   "appShowcase": {
     "backToApps": "Alle Apps",
     "iosSoon": "iOS bald",
     "iosSoonNote": "iOS-Version in Kürze verfügbar.",
+    "storeSoon": "Bald bei {store}",
     "featuresHeading": "Funktionen",
     "pricingHeading": "Preise",
     "free": "Kostenlos",

@@ -1,15 +1,17 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { apps } from "@/lib/apps";
+import { galerie, stageColor } from "@/lib/galerie";
 import { site } from "@/lib/site";
 import { routing } from "@/i18n/routing";
 
 /**
  * Open-Graph-Bild (1200×630) für Link-Vorschauen (WhatsApp, LinkedIn, X …).
- * Design: Hero-Look der Seite – dunkler Sternenhimmel (base-900 #0B0B0C),
- * Logo + Wortmarke, Tagline mit den Klammer-Akzenten aus dem Hero-Eyebrow.
- * Wird pro Locale statisch generiert (de/en-Tagline), Next.js verlinkt es
- * automatisch als og:image für alle Seiten unterhalb von /[locale].
+ * Design: der Galerie-Look der Seite – heller Grund, große dunkle Headline,
+ * unten je App eine Kachel in ihrer Bühnenfarbe. Wird pro Locale statisch
+ * generiert, Next.js verlinkt es automatisch als og:image für alle Seiten
+ * unterhalb von /[locale].
  */
 
 export const alt = `${site.name} — ${site.tagline}`;
@@ -20,25 +22,10 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const TAGLINE: Record<string, string> = {
-  de: "Premium-Apps. Plattformübergreifend gebaut.",
-  en: "Premium apps. Built cross-platform.",
+const HEADLINE: Record<string, [string, string]> = {
+  de: ["Apps, die man", "gern benutzt."],
+  en: ["Apps people", "enjoy using."],
 };
-
-// Deterministische "Sterne" (kein Math.random – Build bleibt reproduzierbar).
-function stars(count: number) {
-  let seed = 42;
-  const rnd = () => {
-    seed = (seed * 1103515245 + 12345) % 2147483648;
-    return seed / 2147483648;
-  };
-  return Array.from({ length: count }, () => ({
-    x: rnd() * 1200,
-    y: rnd() * 630,
-    s: 1 + rnd() * 2.2,
-    o: 0.25 + rnd() * 0.65,
-  }));
-}
 
 export default async function OpengraphImage({
   params,
@@ -46,10 +33,18 @@ export default async function OpengraphImage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const tagline = TAGLINE[locale] ?? TAGLINE.de;
+  const [line1, line2] = HEADLINE[locale] ?? HEADLINE.de;
 
   const logo = await readFile(path.join(process.cwd(), "public", "logo.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+  // Die Schrift der Seite (Bricolage Grotesque, fett) – als .woff, weil der
+  // Bild-Renderer keine variablen .woff2-Schriften lesen kann.
+  const font = await readFile(
+    path.join(
+      process.cwd(),
+      "node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-800-normal.woff"
+    )
+  );
 
   return new ImageResponse(
     (
@@ -59,80 +54,74 @@ export default async function OpengraphImage({
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0B0B0C",
-          backgroundImage:
-            "radial-gradient(circle at 50% 120%, rgba(59,91,255,0.22) 0%, rgba(59,91,255,0) 55%)",
-          position: "relative",
+          justifyContent: "space-between",
+          backgroundColor: galerie.ground,
+          color: galerie.ink,
+          fontFamily: "Bricolage Grotesque",
+          padding: "56px 64px 0",
         }}
       >
-        {/* Sternenfeld wie im Hero */}
-        {stars(110).map((st, i) => (
+        {/* Logo (auf seinem schwarzen Grund als Kachel) + Wortmarke */}
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <div
-            key={i}
             style={{
-              position: "absolute",
-              left: st.x,
-              top: st.y,
-              width: st.s,
-              height: st.s,
-              borderRadius: 9999,
-              backgroundColor: "#EDEAE3",
-              opacity: st.o,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 84,
+              height: 84,
+              borderRadius: 22,
+              backgroundColor: "#000000",
             }}
-          />
-        ))}
-
-        {/* Logo */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} width={306} height={220} alt="" />
-
-        {/* Wortmarke */}
-        <div
-          style={{
-            display: "flex",
-            marginTop: 34,
-            fontSize: 84,
-            fontWeight: 700,
-            letterSpacing: -2,
-            color: "#EDEAE3",
-          }}
-        >
-          {site.name}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logoSrc} width={78} height={56} alt="" />
+          </div>
+          <div style={{ display: "flex", fontSize: 40, fontWeight: 800, letterSpacing: -1 }}>
+            {site.name}
+          </div>
         </div>
 
-        {/* Tagline mit Klammer-Akzenten (wie Hero-Eyebrow) */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: 14,
-            marginTop: 18,
-            fontSize: 30,
-            color: "#8C8A85",
+            flexDirection: "column",
+            fontSize: 118,
+            fontWeight: 800,
+            lineHeight: 0.98,
+            letterSpacing: -5,
           }}
         >
-          <span style={{ color: "#F5A623" }}>{"{"}</span>
-          <span>{tagline}</span>
-          <span style={{ color: "#5C7A5E" }}>{"}"}</span>
+          <span>{line1}</span>
+          <span>{line2}</span>
         </div>
 
-        {/* URL dezent unten */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 42,
-            display: "flex",
-            fontSize: 22,
-            letterSpacing: 4,
-            color: "#66625C",
-          }}
-        >
-          simplynext.de
+        {/* Je App eine Kachel in ihrer Farbe, unten angeschnitten */}
+        <div style={{ display: "flex", gap: 14, height: 118 }}>
+          {apps.map((app) => (
+            <div
+              key={app.slug}
+              style={{
+                display: "flex",
+                flex: 1,
+                alignItems: "flex-start",
+                padding: "18px 0 0 16px",
+                borderRadius: "24px 24px 0 0",
+                backgroundColor: stageColor(app),
+                fontSize: 19,
+                fontWeight: 800,
+                letterSpacing: -0.5,
+              }}
+            >
+              {app.name}
+            </div>
+          ))}
         </div>
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [{ name: "Bricolage Grotesque", data: font, weight: 800, style: "normal" }],
+    }
   );
 }

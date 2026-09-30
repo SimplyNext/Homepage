@@ -1,103 +1,76 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TransitionLink from "@/components/ui/TransitionLink";
-import Magnetic from "@/components/ui/Magnetic";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 import LocaleSwitch from "@/components/layout/LocaleSwitch";
-import MobileNav from "@/components/layout/MobileNav";
 
+/**
+ * Kopf der Seite: Wortmarke links (scrollt mit der Seite weg) und eine
+ * schwebende Pille mit den Zielen, Sprach- und Theme-Umschalter. Die Pille
+ * bleibt stehen, versteckt sich beim Runterscrollen und kommt beim
+ * Hochscrollen zurück.
+ */
 export default function Header() {
-  const ref = useRef<HTMLElement>(null);
-  const t = useTranslations("nav");
+  const pill = useRef<HTMLElement>(null);
+  const t = useTranslations("galerie");
   const tCommon = useTranslations("common");
 
-  // Kontakt lebt bewusst nur im Footer – daher kein Kontakt-Punkt in der Navigation.
-  const nav = [
-    { href: "/#apps", label: t("apps") },
-    { href: "/#studio", label: t("studio") },
-  ];
+  useGSAP(() => {
+    if (!pill.current) return;
+    let last = 0;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const goingDown = y > last && y > 120;
+      gsap.to(pill.current, {
+        yPercent: goingDown ? -160 : 0,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  });
 
-  useGSAP(
-    () => {
-      if (!ref.current) return;
-      // Header beim Hochscrollen einblenden, beim Runterscrollen verstecken
-      gsap.set(ref.current, { yPercent: 0 });
-      let last = 0;
-      const onScroll = () => {
-        const y = window.scrollY;
-        const goingDown = y > last && y > 120;
-        gsap.to(ref.current, {
-          yPercent: goingDown ? -120 : 0,
-          duration: 0.5,
-          ease: "power3.out",
-        });
-        last = y;
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      return () => window.removeEventListener("scroll", onScroll);
-    },
-    { scope: ref },
-  );
+  const link =
+    "inline-flex min-h-[44px] items-center rounded-full px-4 text-[1rem] font-medium transition-colors hover:bg-base-900 sm:px-5";
 
   return (
-    <header
-      ref={ref}
-      className="fixed inset-x-0 top-0 z-[100] border-b border-line bg-base-900/75 pt-[env(safe-area-inset-top)] backdrop-blur-md"
-    >
-      <div className="mx-auto flex max-w-shell items-center justify-between px-gutter py-4 md:py-6">
-        <Magnetic strength={0.5}>
-          <TransitionLink
-            href="/"
-            className="flex items-center gap-3"
-            data-cursor
-          >
-            <Image
-              src="/logo.png"
-              alt="SimplyNext"
-              width={34}
-              height={34}
-              priority
-              className="h-[34px] w-[34px] object-contain"
-            />
-            <span className="font-display text-lg font-semibold tracking-tightest text-ink">
-              SimplyNext
-            </span>
-          </TransitionLink>
-        </Magnetic>
-
-        <div className="hidden items-center gap-6 md:flex">
-          <nav className="flex items-center gap-10">
-            {nav.map((n) => (
-              <Magnetic key={n.href} strength={0.3}>
-                <TransitionLink
-                  href={n.href}
-                  className="font-mono text-xs uppercase tracking-label text-ink/80 transition-colors hover:text-ink"
-                >
-                  {n.label}
-                </TransitionLink>
-              </Magnetic>
-            ))}
-          </nav>
-          <LocaleSwitch
-            labels={{
-              toEnglish: tCommon("localeSwitch.toEnglish"),
-              toGerman: tCommon("localeSwitch.toGerman"),
-            }}
-          />
-          <ThemeToggle
-            labels={{
-              toLight: tCommon("themeToggle.toLight"),
-              toDark: tCommon("themeToggle.toDark"),
-            }}
-          />
-        </div>
-
-        <MobileNav nav={nav} />
-      </div>
+    <header>
+      <TransitionLink
+        href="/"
+        className="absolute left-[clamp(1.25rem,4vw,4rem)] top-[calc(env(safe-area-inset-top)+1.75rem)] z-[90] font-display text-2xl font-extrabold tracking-[-0.03em] text-ink"
+        data-cursor
+      >
+        SimplyNext <span className="text-accent-soft">{"{"}</span>
+        <span className="text-accent-alt">{"}"}</span>
+      </TransitionLink>
+      <nav
+        ref={pill}
+        className="fixed right-4 top-[calc(env(safe-area-inset-top)+1.25rem)] z-[100] flex items-center gap-1 rounded-full bg-base-800/90 p-1.5 text-ink shadow-[0_8px_30px_rgba(20,22,28,0.14)] backdrop-blur-md md:left-1/2 md:right-auto md:-translate-x-1/2"
+      >
+        <TransitionLink href="/#apps" className={link} data-cursor>
+          {t("navApps")}
+        </TransitionLink>
+        <TransitionLink href="/#alle" className={`${link} max-sm:hidden`} data-cursor>
+          {t("navAll")}
+        </TransitionLink>
+        <LocaleSwitch
+          labels={{
+            toEnglish: tCommon("localeSwitch.toEnglish"),
+            toGerman: tCommon("localeSwitch.toGerman"),
+          }}
+        />
+        <ThemeToggle
+          labels={{
+            toLight: tCommon("themeToggle.toLight"),
+            toDark: tCommon("themeToggle.toDark"),
+          }}
+        />
+      </nav>
     </header>
   );
 }

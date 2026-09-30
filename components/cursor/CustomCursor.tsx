@@ -9,7 +9,6 @@ import { gsap, useGSAP } from "@/lib/gsap";
  *  - wächst und invertiert über interaktiven Elementen ([data-cursor])
  *  - blendet sich nur auf Geräten mit feinem Zeiger ein (Maus, kein Touch)
  *
- * Magnetisches Heranziehen einzelner Buttons übernimmt <Magnetic/>.
  */
 export default function CustomCursor() {
   const dot = useRef<HTMLDivElement>(null);

@@ -7,13 +7,13 @@ import { Apple, Play, Globe, ArrowLeft } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import SplitText from "@/components/ui/SplitText";
 import Reveal from "@/components/ui/Reveal";
-import Magnetic from "@/components/ui/Magnetic";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { PhoneFrame, PhoneScreenContent } from "@/components/ui/PhoneFrame";
+import { useApp } from "@/components/providers/AppsProvider";
 import type { AppData } from "@/lib/apps";
 import { hasAccountDeletion } from "@/lib/account-deletion-apps";
 import { useAppContent } from "@/lib/useAppContent";
-import { useMountedTheme } from "@/hooks/useMountedTheme";
+import { stageColor } from "@/lib/galerie";
 
 const linkMeta = {
   appstore: { icon: Apple, label: "App Store" },
@@ -21,16 +21,15 @@ const linkMeta = {
   web: { icon: Globe, label: "Web-App" },
 } as const;
 
-export default function AppShowcase({ app }: { app: AppData }) {
+const DISPLAY = "font-display font-extrabold tracking-[-0.045em]";
+
+export default function AppShowcase({ app: staticApp }: { app: AppData }) {
   const ref = useRef<HTMLDivElement>(null);
   const shotsStage = useRef<HTMLDivElement>(null);
   const shotsTrack = useRef<HTMLDivElement>(null);
-  const { resolvedTheme } = useMountedTheme();
-  // Hero-Bereich hat immer einen dunklen paperInk-Overlay, daher dort immer die
-  // helle Akzentfarbe (app.accent) verwenden, nicht die Theme-abhängige Variante.
-  const accentColor = app.accent;
-  // Theme-abhängige Variante nur für Bereiche mit adaptivem Hintergrund (z. B. Pricing)
-  const themeAccent = resolvedTheme === "light" ? app.accentLight : app.accent;
+  // Status und Store-Link kommen abgeglichen aus AppControl (AppsProvider).
+  const app = useApp(staticApp.slug) ?? staticApp;
+  const color = stageColor(app);
   const content = useAppContent(app.slug);
   const t = useTranslations("appShowcase");
   const tStatus = useTranslations("status");
@@ -39,8 +38,8 @@ export default function AppShowcase({ app }: { app: AppData }) {
 
   useGSAP(
     () => {
-      gsap.to(".app-hero-img", {
-        yPercent: 12,
+      gsap.to(".app-hero-phone", {
+        yPercent: -10,
         ease: "none",
         scrollTrigger: { trigger: ".app-hero", start: "top top", end: "bottom top", scrub: true },
       });
@@ -94,103 +93,112 @@ export default function AppShowcase({ app }: { app: AppData }) {
       ? [{ href: `/apps/${app.slug}/konto-loeschen`, label: tDeletion("linkLabel") }]
       : []),
   ];
+  const chip = "rounded-full border border-paperInk/30 px-3.5 py-1.5";
 
   return (
     <div ref={ref}>
-      {/* HERO */}
-      {/* Fester dunkler Grund: der Hero nutzt statische paper-Farben und muss
-          in beiden Themes lesbar bleiben (Light-Mode wäre sonst hell auf hell) */}
-      <section
-        className="app-hero relative flex min-h-[92svh] items-end overflow-hidden bg-paperInk"
-        data-cursor-dark
-      >
-        <div className="absolute inset-0">
-          {app.heroFit === "cover" ? (
-            <div className="app-hero-img absolute inset-[-8%]">
-              <Image src={app.hero} alt="" fill priority sizes="100vw" className="object-cover opacity-50" />
+      {/* HERO – farbige Fläche in der Bühnenfarbe der App, Text immer dunkel */}
+      <section className="app-hero bg-base-900 px-[clamp(0.75rem,2vw,2rem)] pt-24">
+        <div
+          className="relative mx-auto max-w-shell overflow-hidden rounded-[clamp(28px,4vw,56px)] text-paperInk"
+          style={{ background: color }}
+        >
+          <div className="grid items-end gap-10 px-[clamp(1.5rem,5vw,5rem)] pt-[clamp(2rem,5vw,4.5rem)] md:grid-cols-[1.25fr_1fr]">
+            <div className="pb-[clamp(2rem,5vw,4.5rem)]">
+              <TransitionLink
+                href="/#apps"
+                className="app-hero-fade inline-flex min-h-[44px] items-center gap-2 text-[1rem] font-semibold"
+                data-cursor
+              >
+                <ArrowLeft size={18} aria-hidden /> {t("backToApps")}
+              </TransitionLink>
+
+              <div className="app-hero-fade relative mt-8 h-20 w-20">
+                <Image src={app.hero} alt="" fill priority sizes="80px" className="object-contain" />
+              </div>
+
+              <h1 className={`${DISPLAY} mt-6 text-[clamp(3rem,8vw,7.5rem)] leading-[0.9]`}>
+                <SplitText trigger="load" stagger={0.03}>
+                  {app.name}
+                </SplitText>
+              </h1>
+              <p className="app-hero-fade mt-5 max-w-xl text-[clamp(1.15rem,1.8vw,1.6rem)] font-medium leading-snug">
+                {content.tagline}
+              </p>
+
+              <div className="app-hero-fade mt-7 flex flex-wrap gap-2 text-sm font-semibold">
+                {app.os.map((os) => (
+                  <span key={os} className={chip}>
+                    {os}
+                  </span>
+                ))}
+                {app.iosSoon && <span className={chip}>{t("iosSoon")}</span>}
+                <span className={chip}>{tStatus(app.status)}</span>
+                <span className={chip}>{content.category}</span>
+              </div>
+
+              <div className="app-hero-fade mt-9 flex flex-wrap gap-3">
+                {app.links.map((l) => {
+                  const m = linkMeta[l.type];
+                  // Store-Knopf nur, wenn die App live ist und einen echten Link hat.
+                  const available = app.status === "live" && l.url !== "#";
+                  return available ? (
+                    <a
+                      key={l.type}
+                      href={l.url}
+                      className="inline-flex min-h-[56px] items-center gap-2.5 rounded-full bg-paperInk px-7 text-[1rem] font-semibold text-paper transition-transform duration-300 ease-premium hover:scale-[1.04]"
+                      data-cursor
+                    >
+                      <m.icon size={18} aria-hidden /> {m.label}
+                    </a>
+                  ) : (
+                    <span
+                      key={l.type}
+                      className="inline-flex min-h-[56px] items-center gap-2.5 rounded-full border-2 border-paperInk px-7 text-[1rem] font-semibold"
+                    >
+                      <m.icon size={18} aria-hidden /> {t("storeSoon", { store: m.label })}
+                    </span>
+                  );
+                })}
+              </div>
+
+              {app.iosSoon && <p className="app-hero-fade mt-4 text-sm">{t("iosSoonNote")}</p>}
             </div>
-          ) : (
-            /* Logo-Heros (transparente PNGs): das Logo direkt – ohne Kachel/
-               Hintergrund – als HINTERSTE Ebene auf Akzent-Schein. Kein z-10
-               und pointer-events-none, damit der Text (Zurück-Link, Titel,
-               Buttons) darüber liegt und klickbar bleibt. */
+
+            {/* Gerät, unten von der Fläche angeschnitten */}
             <div
-              className="app-hero-img pointer-events-none absolute inset-[-8%] grid place-items-center"
-              style={{
-                background: `radial-gradient(50% 55% at 50% 42%, ${app.accent}2b, transparent 72%)`,
-              }}
+              className="relative mx-auto h-[clamp(320px,46vw,620px)] w-[min(300px,70%)] self-end"
+              aria-hidden
             >
-              <div className="relative aspect-square w-[min(52vh,460px)]">
-                <Image src={app.hero} alt="" fill priority sizes="460px" className="object-contain" />
+              <div className="app-hero-phone absolute inset-x-0 top-0 aspect-[1080/2640] rotate-[4deg] overflow-hidden rounded-[clamp(28px,3vw,44px)] border-[8px] border-paperInk bg-paperInk shadow-[0_50px_90px_rgba(20,22,28,0.35)]">
+                <Image
+                  src={app.shots[0].src}
+                  alt=""
+                  fill
+                  priority
+                  sizes="300px"
+                  className="object-cover object-top"
+                />
               </div>
             </div>
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent" />
-        </div>
-
-        <div className="relative mx-auto w-full max-w-shell px-gutter pb-[10vh] pt-32">
-          <TransitionLink
-            href="/#apps"
-            className="app-hero-fade inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-label text-paper/90 hover:text-paper"
-            data-cursor
-          >
-            <ArrowLeft size={14} /> {t("backToApps")}
-          </TransitionLink>
-
-          <div className="app-hero-fade mt-8 flex flex-wrap gap-3 font-mono text-[11px] font-medium uppercase tracking-wider text-paper/80">
-            {app.os.map((os) => (
-              <span key={os} className="rounded-full border border-paper/30 px-3 py-1">
-                {os}
-              </span>
-            ))}
-            {app.iosSoon && (
-              <span className="rounded-full border border-paper/30 px-3 py-1">{t("iosSoon")}</span>
-            )}
-            <span className="rounded-full border border-paper/30 px-3 py-1">{tStatus(app.status)}</span>
-            <span className="rounded-full border border-paper/30 px-3 py-1">{content.category}</span>
           </div>
-
-          <h1 className="mt-6 font-display text-display-lg font-medium text-paper">
-            <SplitText trigger="load" stagger={0.03}>
-              {app.name}
-            </SplitText>
-          </h1>
-          <p className="app-hero-fade mt-4 text-xl font-medium text-paper/80">
-            {content.tagline}
-          </p>
-
-          <div className="app-hero-fade mt-10 flex flex-wrap gap-4">
-            {app.links.map((l) => {
-              const m = linkMeta[l.type];
-              return (
-                <Magnetic key={l.type} strength={0.4}>
-                  <a
-                    href={l.url}
-                    className="inline-flex items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-base-900"
-                    data-cursor
-                  >
-                    <m.icon size={18} /> {m.label}
-                  </a>
-                </Magnetic>
-              );
-            })}
-          </div>
-
-          {app.iosSoon && (
-            <p className="app-hero-fade mt-4 font-mono text-xs text-paper/50">
-              {t("iosSoonNote")}
-            </p>
-          )}
         </div>
       </section>
 
       {/* BESCHREIBUNG */}
-      <section className="border-t border-line py-section">
-        <div className="mx-auto max-w-3xl px-gutter">
+      <section className="py-section">
+        <div className="mx-auto max-w-4xl px-gutter">
           <Reveal variant="up">
-            <div className="space-y-6">
+            <div className="space-y-7">
               {content.description.map((p, i) => (
-                <p key={i} className={i === 0 ? "text-2xl leading-snug text-ink" : "text-lg leading-relaxed text-ink-muted"}>
+                <p
+                  key={i}
+                  className={
+                    i === 0
+                      ? "font-display text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.03em] text-ink"
+                      : "max-w-3xl text-xl leading-relaxed text-ink-muted"
+                  }
+                >
                   {p}
                 </p>
               ))}
@@ -200,18 +208,18 @@ export default function AppShowcase({ app }: { app: AppData }) {
       </section>
 
       {/* FEATURES */}
-      <section className="border-t border-line py-section">
+      <section className="pb-section">
         <div className="mx-auto max-w-shell px-gutter">
-          <Reveal variant="clip">
-            <h2 className="font-display text-display-md font-medium">{t("featuresHeading")}</h2>
+          <Reveal as="h2" className={`${DISPLAY} text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95]`}>
+            {t("featuresHeading")}
           </Reveal>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {content.features.map((f, i) => (
-              <Reveal key={f.title} variant="up" delay={i * 0.05}>
-                <div className="h-full bg-base-900 p-8">
-                  <span className="font-mono text-xs text-ink-faint">0{i + 1}</span>
-                  <h3 className="mt-4 font-display text-xl font-medium">{f.title}</h3>
-                  <p className="mt-2 leading-relaxed text-ink-muted">{f.text}</p>
+              <Reveal key={f.title} variant="up" delay={(i % 3) * 0.06} className="h-full">
+                <div className="h-full rounded-[30px] bg-base-800 p-8">
+                  <span className="block h-3 w-10 rounded-full" style={{ background: color }} aria-hidden />
+                  <h3 className="mt-6 font-display text-2xl font-extrabold tracking-[-0.03em]">{f.title}</h3>
+                  <p className="mt-3 text-[17px] leading-relaxed text-ink-muted">{f.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -220,48 +228,49 @@ export default function AppShowcase({ app }: { app: AppData }) {
       </section>
 
       {/* PREISE */}
-      <section className="border-t border-line py-section">
+      <section className="pb-section">
         <div className="mx-auto max-w-shell px-gutter">
-          <Reveal variant="clip">
-            <h2 className="font-display text-display-md font-medium">{t("pricingHeading")}</h2>
+          <Reveal as="h2" className={`${DISPLAY} text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95]`}>
+            {t("pricingHeading")}
           </Reveal>
           {content.pricing.note && (
             <Reveal variant="up">
-              <p className="mt-4 text-lg text-ink-muted">{content.pricing.note}</p>
+              <p className="mt-5 max-w-3xl text-xl text-ink-muted">{content.pricing.note}</p>
             </Reveal>
           )}
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-            {(
-              [
-                { label: t("free"), items: content.pricing.free },
-                { label: t("premium"), items: content.pricing.premium },
-              ] as const
-            ).map((tier, i) => (
-              <Reveal key={tier.label} variant="up" delay={i * 0.05}>
-                <div className="h-full bg-base-900 p-8">
-                  <span
-                    className="font-mono text-xs uppercase tracking-label text-ink-faint"
-                    style={i === 1 ? { color: themeAccent } : undefined}
-                  >
-                    {tier.label}
-                  </span>
-                  <ul className="mt-6 space-y-3">
-                    {tier.items.map((item) => (
-                      <li key={item} className="flex gap-3 leading-relaxed text-ink-muted">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: themeAccent }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            <Reveal variant="up" className="h-full">
+              <div className="h-full rounded-[30px] bg-base-800 p-8">
+                <h3 className="font-display text-3xl font-extrabold tracking-[-0.03em]">{t("free")}</h3>
+                <ul className="mt-6 space-y-3">
+                  {content.pricing.free.map((item) => (
+                    <li key={item} className="flex gap-3 text-[17px] leading-relaxed text-ink-muted">
+                      <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-ink" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal variant="up" delay={0.06} className="h-full">
+              <div className="h-full rounded-[30px] p-8 text-paperInk" style={{ background: color }}>
+                <h3 className="font-display text-3xl font-extrabold tracking-[-0.03em]">{t("premium")}</h3>
+                <ul className="mt-6 space-y-3">
+                  {content.pricing.premium.map((item) => (
+                    <li key={item} className="flex gap-3 text-[17px] leading-relaxed">
+                      <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-paperInk" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* SHOWCASE / SHOTS — angepinnt mit horizontalem Track-Scroll (ab 768px) */}
-      <section className="app-shots relative border-t border-line">
+      <section className="app-shots relative">
         {/* Heading im Fluss (nicht absolut) + Phone-Höhe an den Viewport
             gekoppelt: so kann der Text auf keiner Viewport-Höhe in die
             Screenshots hineinlaufen. */}
@@ -270,7 +279,7 @@ export default function AppShowcase({ app }: { app: AppData }) {
           className="app-shots-stage relative overflow-hidden md:flex md:h-[100svh] md:flex-col md:justify-center md:pt-[90px]"
         >
           <div className="mx-auto w-full max-w-shell px-gutter pt-section md:pb-10 md:pt-0">
-            <p className="font-mono text-xs uppercase tracking-label text-ink-faint">{t("insightsHeading")}</p>
+            <h2 className={`${DISPLAY} text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95]`}>{t("insightsHeading")}</h2>
           </div>
 
           <div
@@ -296,12 +305,17 @@ export default function AppShowcase({ app }: { app: AppData }) {
       </section>
 
       {/* RECHTLICHES */}
-      <section className="border-t border-line py-14">
-        <div className="mx-auto flex max-w-shell flex-col items-start justify-between gap-4 px-gutter sm:flex-row sm:items-center">
-          <p className="text-sm text-ink-muted">{t("legalIntro", { name: app.name })}</p>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+      <section className="py-16">
+        <div className="mx-auto flex max-w-shell flex-col items-start justify-between gap-5 px-gutter lg:flex-row lg:items-center">
+          <p className="text-[1rem] text-ink-muted">{t("legalIntro", { name: app.name })}</p>
+          <nav className="flex flex-wrap gap-2.5">
             {legalLinks.map((l) => (
-              <TransitionLink key={l.href} href={l.href} className="text-sm text-ink-muted hover:text-ink" data-cursor>
+              <TransitionLink
+                key={l.href}
+                href={l.href}
+                className="inline-flex min-h-[44px] items-center rounded-full bg-base-800 px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-ink hover:text-base-900"
+                data-cursor
+              >
                 {l.label}
               </TransitionLink>
             ))}

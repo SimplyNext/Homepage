@@ -244,3 +244,24 @@ export const apps: AppData[] = [
 export function getApp(slug: string) {
   return apps.find((a) => a.slug === slug);
 }
+
+/** Je App der mit AppControl abgeglichene Status, siehe lib/app-status.ts. */
+export type StatusMap = Record<string, { status: AppStatus; playUrl?: string }>;
+
+/**
+ * Legt die abgeglichenen Status über die Werte oben. Bei Live-Apps ersetzt der
+ * echte Store-Link den Platzhalter „#“.
+ */
+export function withStatuses(map: StatusMap): AppData[] {
+  return apps.map((app) => {
+    const live = map[app.slug];
+    if (!live) return app;
+    return {
+      ...app,
+      status: live.status,
+      links: app.links.map((l) =>
+        l.type === "playstore" && live.playUrl ? { ...l, url: live.playUrl } : l
+      ),
+    };
+  });
+}

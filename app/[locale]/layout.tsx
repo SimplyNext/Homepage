@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import "@fontsource-variable/space-grotesk";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/instrument-sans";
 import "@fontsource-variable/jetbrains-mono";
 import "../globals.css";
 
@@ -13,6 +13,8 @@ import ThemeProvider from "@/components/theme/ThemeProvider";
 import CustomCursor from "@/components/cursor/CustomCursor";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AppsProvider from "@/components/providers/AppsProvider";
+import { getAppStatuses } from "@/lib/app-status";
 import { site } from "@/lib/site";
 import { alternatesFor } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
@@ -60,8 +62,8 @@ export async function generateMetadata({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F6F4EF" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B0B0C" },
+    { media: "(prefers-color-scheme: light)", color: "#F5F6F8" },
+    { media: "(prefers-color-scheme: dark)", color: "#14161C" },
   ],
   // Signalisiert, dass die Seite beide Farbschemata selbst beherrscht, damit
   // mobile Browser kein eigenes Auto-/Force-Dark über unser Theme legen.
@@ -83,6 +85,7 @@ export default async function LocaleLayout({
   // Statisches Rendering pro Locale (next-intl) + Skip-Link-Text serverseitig.
   setRequestLocale(locale);
   const t = await getTranslations("common");
+  const statuses = await getAppStatuses();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -95,11 +98,12 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <ThemeProvider>
+            <AppsProvider statuses={statuses}>
             <SmoothScrollProvider>
               <TransitionProvider>
                 <CustomCursor />
                 {/* Korn-Overlay über der gesamten Seite */}
-                <div className="grain pointer-events-none fixed inset-0 z-[110] opacity-[0.035] mix-blend-screen" aria-hidden />
+                <div className="grain pointer-events-none fixed inset-0 z-[110] opacity-[0.035] mix-blend-multiply" aria-hidden />
                 <a
                   href="#main"
                   className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[140] focus:rounded focus:bg-paper focus:px-4 focus:py-2 focus:text-paperInk"
@@ -115,6 +119,7 @@ export default async function LocaleLayout({
                 <Footer />
               </TransitionProvider>
             </SmoothScrollProvider>
+            </AppsProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

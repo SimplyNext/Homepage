@@ -5,8 +5,8 @@
 /**
  * Farb-System: semantische Tokens als CSS-Variablen (R G B, ohne rgb()-Wrapper),
  * damit Tailwind sie über rgb(var(--x) / <alpha-value>) mit Opacity-Modifiern
- * (z. B. bg-base-900/60) nutzen kann. :root = Dark (Standard/Fallback gemäß
- * "System folgen, Dark als Fallback"), html.light überschreibt für Light-Mode.
+ * (z. B. bg-base-900/60) nutzen kann. :root = Light (Standard/Fallback),
+ * html.dark überschreibt für den Dark-Mode.
  * Alle Werte sind gegen ihren jeweiligen Hintergrund auf WCAG AA geprüft
  * (Normaltext ≥4.5:1, große/graphische Elemente ≥3:1).
  *
@@ -16,90 +16,86 @@
  * das passende feste Dunkel dazu (Text auf den Paper-Buttons).
  */
 :root {
-  --font-display: "Space Grotesk Variable", Georgia, serif;
-  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
   /* Theme-unabhängig (immer gleich, egal ob Dark oder Light) */
-  --color-paper: 237 234 227; /* statisch, immer hell */
-  --color-paper-ink: 15 14 12; /* statisch, immer dunkel */
+  --color-paper: 245 246 248; /* statisch, immer hell */
+  --color-paper-ink: 20 22 28; /* statisch, immer dunkel */
 }
 
 /* ============================================================
-   Theming – zwei Ebenen:
+   Theming („Galerie“) – zwei Ebenen:
    1) prefers-color-scheme-Regeln (weiter unten): geben Force-Dark-Browsern
       (v. a. Samsung Internet) das NATIVE Signal "diese Seite beherrscht Dark
-      selbst" – sonst legen sie ihr eigenes Force-Dark über unser Theme und
-      invertieren den DOM-Text (nicht aber die WebGL-Aurora → weißer Text auf
-      hellem Grund). Sie greifen als Fallback ohne JS / vor der Hydration.
+      selbst" – sonst legen sie ihr eigenes Force-Dark über unser Theme.
+      Sie greifen als Fallback ohne JS / vor der Hydration.
    2) html.light / html.dark (höhere Spezifität): die von next-themes gesetzte
       NUTZERWAHL – gewinnt immer, sobald die Klasse am <html> steht.
+   Hell ist der Standard; die App-Bühnenfarben (lib/galerie.ts) sind in
+   beiden Themes gleich und tragen immer dunklen Text (paper-ink).
    ============================================================ */
 
-/* Dark-Palette: Default/Fallback (:root) + explizite Nutzerwahl (html.dark) */
+/* Light-Palette: Default/Fallback (:root) + explizite Nutzerwahl (html.light) */
 :root,
-html.dark {
-  --color-base-900: 11 11 12; /* Seiten-Hintergrund */
-  --color-base-800: 17 17 19; /* Card-/Panel-Hintergrund */
-  --color-ink: 237 234 227; /* Primärtext */
-  --color-ink-muted: 140 138 133; /* ~5.7:1 auf base-900 */
-  --color-ink-faint: 134 132 126; /* ~5.3:1 auf base-900 (Audit-Fix, war #5A5955 ≈2.8:1) */
-  --color-line: rgba(237, 234, 227, 0.16);
-  --color-accent: 59 91 255; /* #3B5BFF */
-  --color-accent-soft: 111 134 255; /* #6F86FF */
-  --color-accent-alt: 34 164 99; /* #22A463 */
-  --color-focus-ring: 111 134 255;
-  --color-grid-line: rgba(237, 234, 227, 0.05);
-  color-scheme: only dark;
-}
-
-/* Light-Palette: explizite Nutzerwahl (html.light) */
 html.light {
-  --color-base-900: 246 244 239; /* #F6F4EF */
-  --color-base-800: 237 234 227; /* #EDEAE3 */
-  --color-ink: 23 23 26; /* #17171A, ~17:1 auf base-900 */
-  --color-ink-muted: 74 72 68; /* #4A4844, ~8.3:1 auf base-900 */
-  --color-ink-faint: 102 96 89; /* #666059, ~5.7:1 auf base-900 */
-  --color-line: rgba(11, 11, 12, 0.14);
-  --color-accent: 42 63 204; /* #2A3FCC, ~7.1:1 auf base-900 */
-  --color-accent-soft: 74 92 214; /* #4A5CD6, ~5:1 auf base-900 */
-  --color-accent-alt: 21 122 69; /* #157A45, ~4.9:1 auf base-900 */
-  --color-focus-ring: 42 63 204;
-  --color-grid-line: rgba(11, 11, 12, 0.05);
+  --color-base-900: 245 246 248; /* #F5F6F8 Seiten-Hintergrund */
+  --color-base-800: 255 255 255; /* Karten */
+  --color-ink: 20 22 28; /* #14161C */
+  --color-ink-muted: 58 63 77; /* #3A3F4D, ~10:1 auf base-900 */
+  --color-ink-faint: 84 90 104; /* #545A68, ~6.4:1 auf base-900 */
+  --color-line: rgba(20, 22, 28, 0.14);
+  --color-accent: 138 90 0; /* #8A5A00, ~5.6:1 auf base-900 */
+  --color-accent-soft: 158 98 0; /* #9E6200, ~4.6:1 auf base-900 */
+  --color-accent-alt: 63 107 75; /* #3F6B4B, ~5.7:1 auf base-900 */
+  --color-focus-ring: 20 22 28;
   color-scheme: only light;
 }
 
-/* prefers-color-scheme-Spiegel (Werte müssen die Klassen-Paletten oben
-   spiegeln). Zweck s. Kommentar-Ebene 1. Greifen nur, solange keine
-   next-themes-Klasse gesetzt ist – html.light / html.dark schlagen sie. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-base-900: 11 11 12;
-    --color-base-800: 17 17 19;
-    --color-ink: 237 234 227;
-    --color-ink-muted: 140 138 133;
-    --color-ink-faint: 134 132 126;
-    --color-line: rgba(237, 234, 227, 0.16);
-    --color-accent: 59 91 255;
-    --color-accent-soft: 111 134 255;
-    --color-accent-alt: 34 164 99;
-    --color-focus-ring: 111 134 255;
-    --color-grid-line: rgba(237, 234, 227, 0.05);
-  }
+/* Dark-Palette: explizite Nutzerwahl (html.dark) */
+html.dark {
+  --color-base-900: 20 22 28; /* #14161C Seiten-Hintergrund */
+  --color-base-800: 30 33 41; /* #1E2129 Karten */
+  --color-ink: 245 246 248; /* #F5F6F8 */
+  --color-ink-muted: 184 189 200; /* ~9.5:1 auf base-900 */
+  --color-ink-faint: 146 152 166; /* ~6.3:1 auf base-900 */
+  --color-line: rgba(245, 246, 248, 0.16);
+  --color-accent: 252 174 39; /* #FCAE27 */
+  --color-accent-soft: 255 200 97; /* #FFC861 */
+  --color-accent-alt: 157 191 164; /* #9DBFA4 */
+  --color-focus-ring: 252 174 39;
+  color-scheme: only dark;
 }
+
+/* prefers-color-scheme-Spiegel (Werte müssen die Klassen-Paletten oben
+   spiegeln). Greifen nur, solange keine next-themes-Klasse gesetzt ist. */
 @media (prefers-color-scheme: light) {
   :root {
-    --color-base-900: 246 244 239;
-    --color-base-800: 237 234 227;
-    --color-ink: 23 23 26;
-    --color-ink-muted: 74 72 68;
-    --color-ink-faint: 102 96 89;
-    --color-line: rgba(11, 11, 12, 0.14);
-    --color-accent: 42 63 204;
-    --color-accent-soft: 74 92 214;
-    --color-accent-alt: 21 122 69;
-    --color-focus-ring: 42 63 204;
-    --color-grid-line: rgba(11, 11, 12, 0.05);
+    --color-base-900: 245 246 248; /* #F5F6F8 Seiten-Hintergrund */
+    --color-base-800: 255 255 255; /* Karten */
+    --color-ink: 20 22 28; /* #14161C */
+    --color-ink-muted: 58 63 77; /* #3A3F4D, ~10:1 auf base-900 */
+    --color-ink-faint: 84 90 104; /* #545A68, ~6.4:1 auf base-900 */
+    --color-line: rgba(20, 22, 28, 0.14);
+    --color-accent: 138 90 0; /* #8A5A00, ~5.6:1 auf base-900 */
+    --color-accent-soft: 158 98 0; /* #9E6200, ~4.6:1 auf base-900 */
+    --color-accent-alt: 63 107 75; /* #3F6B4B, ~5.7:1 auf base-900 */
+    --color-focus-ring: 20 22 28;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-base-900: 20 22 28; /* #14161C Seiten-Hintergrund */
+    --color-base-800: 30 33 41; /* #1E2129 Karten */
+    --color-ink: 245 246 248; /* #F5F6F8 */
+    --color-ink-muted: 184 189 200; /* ~9.5:1 auf base-900 */
+    --color-ink-faint: 146 152 166; /* ~6.3:1 auf base-900 */
+    --color-line: rgba(245, 246, 248, 0.16);
+    --color-accent: 252 174 39; /* #FCAE27 */
+    --color-accent-soft: 255 200 97; /* #FFC861 */
+    --color-accent-alt: 157 191 164; /* #9DBFA4 */
+    --color-focus-ring: 252 174 39;
   }
 }
 
@@ -114,10 +110,6 @@ html {
   /* color-scheme wird themebezogen in :root ("only dark") und html.light
      ("only light") gesetzt – das "only"-Keyword schaltet das eigenmächtige
      Force-Dark mobiler Browser ab (s. Kommentare dort). */
-}
-
-html.light body {
-  -webkit-font-smoothing: auto;
 }
 
 body {
@@ -157,91 +149,8 @@ html.lenis body {
   color: rgb(var(--color-base-900));
 }
 
-/* Feines Hintergrund-Raster, dezent (kein „Tech-Bro"-Glow) */
-.grid-lines {
-  background-image:
-    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
 /* Korn-Overlay für „filmische" Textur */
 .grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ============================================================
-   Runde 7 – „Cinematic Studio"-Utilities für die Homepage
-   ============================================================ */
-
-/* Liquid-Glass: fast transparente Fläche + Blur + Gradient-Randlinie
-   (mask-composite-Trick). Light-Mode: dunkle Randlinie, da die weiße auf
-   Papier unsichtbar wäre. Unterlage bg-base-800/40 kommt im Markup dazu,
-   damit Text immer auf bekannter Basis sitzt (Kontrast-Garantie). */
-.liquid-glass {
-  position: relative;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
-}
-.liquid-glass::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.4px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.15) 20%,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0) 60%,
-    rgba(255, 255, 255, 0.15) 80%,
-    rgba(255, 255, 255, 0.45) 100%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-html.light .liquid-glass {
-  background: rgba(11, 11, 12, 0.02);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
-}
-html.light .liquid-glass::before {
-  background: linear-gradient(
-    180deg,
-    rgba(11, 11, 12, 0.28) 0%,
-    rgba(11, 11, 12, 0.1) 20%,
-    rgba(11, 11, 12, 0) 40%,
-    rgba(11, 11, 12, 0) 60%,
-    rgba(11, 11, 12, 0.1) 80%,
-    rgba(11, 11, 12, 0.28) 100%
-  );
-}
-/* Ohne backdrop-filter: opake, ruhige Fläche statt Glas */
-@supports not (backdrop-filter: blur(1px)) {
-  .liquid-glass {
-    background: rgb(var(--color-base-800) / 0.92);
-  }
-}
-
-/* Feines Noise auf Bento-Tiles (soft-light, dezent) */
-.noise-overlay {
-  position: relative;
-}
-.noise-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.4;
-  mix-blend-mode: soft-light;
-  border-radius: inherit;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -264,19 +173,6 @@ html.light .liquid-glass::before {
 .marquee:hover .marquee-track,
 .marquee:focus-within .marquee-track {
   animation-play-state: paused;
-}
-
-/* Scroll-Hinweis: kleiner Strich wandert die Linie hinab */
-@keyframes scroll-hint {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(300%);
-  }
-}
-.animate-scroll-hint {
-  animation: scroll-hint 1.8s cubic-bezier(0.7, 0, 0.2, 1) infinite;
 }
 
 ::-webkit-scrollbar {

@@ -23,20 +23,6 @@
     "copyright": "All rights reserved.",
     "stack": "Flutter · Expo"
   },
-  "hero": {
-    "eyebrow": "App studio · Flutter · Expo",
-    "headlineLine1": "We build apps",
-    "headlineLine2": "that stay with you.",
-    "lead": "SimplyNext designs and builds premium, cross-platform apps – uncompromising in performance, detail and feel.",
-    "ctaWork": "See our work",
-    "scrollHint": "Scroll"
-  },
-  "journey": {
-    "eyebrow": "The apps",
-    "heading": "{count} apps. One standard.",
-    "counter": "{current} / {total}",
-    "visitApp": "Explore the app"
-  },
   "bento": {
     "eyebrow": "Overview",
     "heading": "What we build",
@@ -57,11 +43,25 @@
     "claim": "Premium apps for every platform.",
     "sub": "Android today, iOS soon — crafted in Germany."
   },
+  "galerie": {
+    "heroLine1": "Apps people",
+    "heroLine2": "enjoy using.",
+    "heroLead": "SimplyNext builds its own apps for Android and iOS.",
+    "statsNone": "{count} apps in development",
+    "heroCta": "See the apps",
+    "navApps": "Apps",
+    "navAll": "Overview",
+    "stageCounter": "App {current} of {total}",
+    "stageVisit": "Explore the app",
+    "gridHeading": "All {count} at a glance.",
+    "mail": "Send an email"
+  },
   "status": { "live": "Available", "beta": "Beta", "coming-soon": "Coming soon" },
   "appShowcase": {
     "backToApps": "All apps",
     "iosSoon": "iOS soon",
     "iosSoonNote": "iOS version coming soon.",
+    "storeSoon": "Coming soon to {store}",
     "featuresHeading": "Features",
     "pricingHeading": "Pricing",
     "free": "Free",
