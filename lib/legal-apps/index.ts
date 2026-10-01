@@ -59,6 +59,9 @@ const appLegal: Record<string, AppLegal> = {
   shrinkit: {
     de: { datenschutz: shrinkitDatenschutz, agb: shrinkitAgb },
     en: { datenschutz: shrinkitDatenschutzEn, agb: shrinkitAgbEn },
+    updated: {
+      agb: { de: "15.09.2026", en: "15 September 2026" },
+    },
   },
 };
 
