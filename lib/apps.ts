@@ -89,8 +89,8 @@ export const apps: AppData[] = [
     os: ["Android"],
     iosSoon: true,
     status: "coming-soon",
-    accent: "#FCAE27",
-    accentLight: "#8F4C12",
+    accent: "#F4846A",
+    accentLight: "#A3361F",
     hero: "/images/apps/wefixit/hero.png",
     heroFit: "contain",
     shots: [

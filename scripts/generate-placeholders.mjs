@@ -34,7 +34,7 @@ write("hero.svg", 1600, 1200, NEUTRAL);
 
 const apps = [
   { slug: "eatsafety", accent: "#759578" },
-  { slug: "wefixit", accent: "#E8923C" },
+  { slug: "wefixit", accent: "#F4846A" },
 ];
 
 for (const { slug, accent } of apps) {

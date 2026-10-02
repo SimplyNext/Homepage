@@ -14,7 +14,7 @@ export const galerie = {
 
 const stageColors: Record<string, string> = {
   eatsafety: "#9DBFA4",
-  wefixit: "#FCAE27",
+  wefixit: "#F4846A",
   nook: "#9CC4EA",
   "cocos-world": "#A5D38F",
   werkflow: "#A9B8FF",
