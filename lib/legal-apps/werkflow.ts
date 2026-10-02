@@ -59,7 +59,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.2 Firmenprofildaten",
     level: 3,
     paragraphs: [
-      "Zur Erstellung rechtssicherer Angebote, Rechnungen und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
+      "Zur Erstellung von Angeboten, Rechnungen und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
     ],
     list: [
       "Firmenname, Rechtsform",
@@ -504,6 +504,7 @@ export const werkflowAgb: LegalSection[] = [
       "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote und Rechnungen (einschließlich Preisen, Steuerangaben und der Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Inhalte durch den Anbieter findet nicht statt. Die App unterstützt die Einhaltung der Pflichtangaben, ersetzt aber keine steuerliche Beratung.",
       "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen und Angebote, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
       "(8) Nach Ablauf der Aufbewahrungsfrist löscht der Anbieter die betroffenen Belege einschließlich PDF und E-Rechnung automatisch am 31. März des folgenden Jahres. Ab dem 1. Oktober des letzten Aufbewahrungsjahres weist die App darauf hin und bietet die Belege zum Herunterladen an. Verlängert sich die Aufbewahrungsfrist im Einzelfall, etwa wegen einer Außenprüfung oder eines Einspruchs (§ 147 Abs. 3 Satz 5 AO), hat der Nutzer die Aufbewahrung in der App rechtzeitig zu verlängern oder die Belege vorher selbst zu sichern. Der Anbieter empfiehlt, die Belege zusätzlich mindestens einmal jährlich über den Export für Steuerberater auf einem eigenen Datenträger zu sichern. Vor einer Kündigung oder Kontolöschung hat der Nutzer seine aufbewahrungspflichtigen Unterlagen selbst zu sichern.",
+      "(9) Die App ersetzt keine rechtliche Beratung. Der Nutzer ist allein dafür verantwortlich, die gegenüber seinen eigenen Kunden geltenden Informations- und Belehrungspflichten einzuhalten. Das gilt insbesondere für Verträge mit Verbrauchern, die außerhalb von Geschäftsräumen oder im Fernabsatz geschlossen werden (§§ 312b, 312c BGB): Hier besteht ein Widerrufsrecht, über das der Nutzer nach Art. 246a EGBGB zu belehren hat. Die App erstellt und übermittelt keine Widerrufsbelehrung und kein Muster-Widerrufsformular.",
     ],
   },
   {

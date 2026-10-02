@@ -53,7 +53,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "3.2 Company Profile Data",
     level: 3,
     paragraphs: [
-      "To create legally compliant quotes, invoices and PDFs, we collect and store the information you enter about your business:",
+      "To create quotes, invoices and PDFs, we collect and store the information you enter about your business:",
     ],
     list: [
       "Company name, legal form",
@@ -498,6 +498,7 @@ export const werkflowAgbEn: LegalSection[] = [
       "(6) The user is solely responsible for the accuracy of the content of the quotes and invoices they create and send to their customers (including prices, tax information and the mandatory information under § 14 of the German VAT Act (UStG)). The Provider does not check the content. The App supports compliance with the mandatory information but does not replace tax advice.",
       "(7) The statutory retention obligations for invoices, quotes and other business records (in particular § 147 of the German Fiscal Code (AO), § 257 of the German Commercial Code (HGB), § 14b UStG) apply to the user. Invoices and quotes that led to an order must be retained for 8 years, quotes without a subsequent order for 6 years; in each case, the period begins at the end of the calendar year in which the document was created. Until the end of the retention period, the App stores sent quotes and invoices in an immutable form: corrections are only possible via a cancellation invoice or a new quote version with a new number, and a sent document can only be deleted after the period has expired.",
       "(8) After the retention period has expired, the Provider automatically deletes the affected documents, including PDF and e-invoice, on 31 March of the following year. From 1 October of the last retention year, the App points this out and offers the documents for download. If the retention period is extended in an individual case, for example due to a tax audit or an objection (§ 147(3) sentence 5 AO), the user must extend retention in the App in good time or back up the documents themselves beforehand. The Provider recommends additionally backing up the documents on a separate storage medium at least once a year via the export for tax advisors. Before cancellation or account deletion, the user must back up their records subject to retention themselves.",
+      "(9) The App does not replace legal advice. The user is solely responsible for complying with the information and notification obligations that apply towards their own customers. This applies in particular to contracts with consumers concluded off business premises or at a distance (§§ 312b, 312c BGB): such contracts carry a right of withdrawal, about which the user must inform the customer in accordance with Art. 246a EGBGB. The App does not create or transmit any withdrawal notice or model withdrawal form.",
     ],
   },
   {
