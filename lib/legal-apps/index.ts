@@ -1,6 +1,8 @@
 import type { LegalSection } from "../legal";
 import { fabulaAgb, fabulaDatenschutz } from "./fabula";
 import { fabulaAgbEn, fabulaDatenschutzEn } from "./fabula.en";
+import { furlyAgb, furlyDatenschutz } from "./furly";
+import { furlyAgbEn, furlyDatenschutzEn } from "./furly.en";
 import { nookAgb, nookDatenschutz } from "./nook";
 import { nookAgbEn, nookDatenschutzEn } from "./nook.en";
 import { shrinkitAgb, shrinkitDatenschutz } from "./shrinkit";
@@ -61,6 +63,14 @@ const appLegal: Record<string, AppLegal> = {
     en: { datenschutz: shrinkitDatenschutzEn, agb: shrinkitAgbEn },
     updated: {
       agb: { de: "15.09.2026", en: "15 September 2026" },
+    },
+  },
+  furly: {
+    de: { datenschutz: furlyDatenschutz, agb: furlyAgb },
+    en: { datenschutz: furlyDatenschutzEn, agb: furlyAgbEn },
+    updated: {
+      datenschutz: { de: "Oktober 2026", en: "October 2026" },
+      agb: { de: "Oktober 2026", en: "October 2026" },
     },
   },
 };

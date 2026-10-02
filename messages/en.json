@@ -291,24 +291,41 @@
       "shots": ["My stories with every title created so far", "Creating a character: name, age and avatar", "Lead and supporting characters in the list", "Ten story worlds to choose from", "Your own keyword for the story", "Player with chapters and text to read along", "Picking a narrator voice with a preview", "Speed, autoplay and sleep timer", "A parent PIN protects the adult area"]
     },
     "furly": {
-      "tagline": "In development – details to follow.",
-      "summary": "Furly is being built. Features, screenshots and pricing will be added once the app is ready.",
-      "category": "In development",
+      "tagline": "Health records, reminders, first aid and pet-friendly places in one app.",
+      "summary": "Health records, vaccination record, reminders, an emergency card, places nearby and an AI assistant – everything for life with a dog, cat, small pet or bird in one app.",
+      "category": "Pets & everyday life",
       "description": [
-        "Furly is currently in development. The full description will appear here once the app is released.",
-        "We are building Furly to the same standard as our other apps: considered in every detail, fast in use and free of unnecessary weight.",
-        "Want to hear about it sooner? Write to us at info@simplynext.de."
+        "Furly brings together everything that belongs to life with your pet – for dogs, cats, small animals and birds: health records, vaccinations, reminders, a daily routine, emergency help and places nearby.",
+        "It also includes a guide with a poison check, training plans and Furly Chat, an AI assistant for general questions about your pet. Furly Chat does not replace veterinary advice, diagnosis or treatment – for health concerns, always contact a vet.",
+        "Your data stays with you: Furly keeps weight, feeding and the daily routine on your device only, and you can delete your account completely at any time. No ads, no tracking."
       ],
       "features": [
-        { "title": "Features to follow", "text": "The final feature set is not fixed yet and will be added here once development is complete." },
-        { "title": "Android first", "text": "The first version will be released for Android. An iOS version is planned." }
+        { "title": "In an emergency", "text": "Emergency card with first aid steps even offline, poison hotline numbers for Germany, Austria and Switzerland, and the nearest open vet practice in one tap." },
+        { "title": "Health at a glance", "text": "Health record with treatments and notes, a digital vaccination record that tells you when a shot is due, and weight history with trend." },
+        { "title": "Every day", "text": "A daily routine to tick off – feeding, walks, medication – and reminders at the time you choose, exportable to your calendar." },
+        { "title": "Furly Chat", "text": "The AI assistant answers general questions about your pet, recognises emergencies and then clearly refers you to a vet." },
+        { "title": "Places nearby", "text": "Vets, dog parks, pet shops, poop bag dispensers and drinking water around you – with data from OpenStreetMap." },
+        { "title": "Lost & found", "text": "Reports near you with notifications and a shareable missing poster in one tap." }
       ],
       "pricing": {
-        "free": ["Pricing model not yet decided"],
-        "premium": ["Details to follow at release"],
-        "note": "We will add pricing once the app is released."
+        "free": ["One pet profile", "Five chat messages a day and one training plan", "All emergency, health and search features", "No ads"],
+        "premium": ["Unlimited pets", "Furly Chat without a daily limit", "Unlimited training plans", "Vet folder as a PDF", "Full history and saved articles"],
+        "note": "Furly Pro is available as a monthly or yearly subscription via Google Play and can be cancelled anytime. Emergency features are never restricted."
       },
-      "shots": ["Preview to follow", "Preview to follow", "Preview to follow"]
+      "shots": [
+        "Home screen with a due reminder and the daily routine",
+        "Today's reminders",
+        "Pet profile with vaccination status and weight",
+        "Pet overview: health record, vaccination record, reminders, weight",
+        "Upcoming reminders for one pet",
+        "Furly Chat answering questions about a pet",
+        "Discover: places, lost & found, guide, poison check and emergency",
+        "Places finder with vet practices nearby",
+        "Lost & found reports nearby",
+        "Guide with articles on poisons and emergencies",
+        "Poison check: can my pet eat this?",
+        "Training with a training plan and exercises"
+      ]
     }
   }
 }

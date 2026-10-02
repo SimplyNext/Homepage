@@ -1,4 +1,4 @@
-import { apps, type AppData } from "@/lib/apps";
+import { apps, getApp, type AppData } from "@/lib/apps";
 
 /**
  * Farbwelt der „Galerie“-Startseite (Prototyp): heller Grund, dunkle Tinte,
@@ -20,12 +20,21 @@ const stageColors: Record<string, string> = {
   werkflow: "#A9B8FF",
   shrinkit: "#8FD0D6",
   fabula: "#F2C25A",
-  furly: "#EFAE9F",
+  furly: "#E3B23C",
 };
 
 export function stageColor(app: AppData) {
   return stageColors[app.slug] ?? app.accent;
 }
 
-/** Apps mit echten Screenshots – nur sie bekommen einen Auftritt auf der Bühne. */
-export const stageApps = apps.filter((a) => !a.placeholder);
+/**
+ * Tausch auf der Bühne: CoCo's World tritt dort nicht auf, an seiner Stelle
+ * steht Furly. In der Kachel-Übersicht bleiben alle Apps.
+ */
+const STAGE_SWAP: Record<string, string> = { "cocos-world": "furly" };
+
+/** Apps auf der Bühne – nur mit echten Screenshots, Reihenfolge wie in lib/apps.ts. */
+export const stageApps = apps
+  .filter((a) => !Object.values(STAGE_SWAP).includes(a.slug))
+  .map((a) => (STAGE_SWAP[a.slug] ? getApp(STAGE_SWAP[a.slug]) ?? a : a))
+  .filter((a) => !a.placeholder);

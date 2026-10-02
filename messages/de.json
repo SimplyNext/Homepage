@@ -291,24 +291,41 @@
       "shots": ["Meine Geschichten mit allen erstellten Titeln", "Figur anlegen: Name, Alter und Avatar", "Haupt- und Nebenfiguren in der Charakterliste", "Zehn Geschichtenwelten zur Auswahl", "Eigenes Stichwort für die Geschichte", "Player mit Kapiteln und Text zum Mitlesen", "Vorlesestimme mit Hörprobe wählen", "Tempo, Autoplay und Einschlaf-Timer", "Eltern-PIN schützt den Erwachsenenbereich"]
     },
     "furly": {
-      "tagline": "In Entwicklung – Details folgen.",
-      "summary": "Furly entsteht gerade. Funktionen, Screenshots und Preise ergänzen wir, sobald die App fertig ist.",
-      "category": "In Entwicklung",
+      "tagline": "Gesundheit, Erinnerungen, Notfallhilfe und Orte für Hund, Katze & Co.",
+      "summary": "Krankenakte, Impfpass, Erinnerungen, Notfallkarte, Orte in der Nähe und ein KI-Assistent – alles für den Alltag mit Hund, Katze, Kleintier oder Vogel in einer App.",
+      "category": "Haustiere & Alltag",
       "description": [
-        "Furly befindet sich aktuell in Entwicklung. Sobald die App veröffentlicht ist, steht hier die vollständige Beschreibung.",
-        "Wir bauen Furly mit demselben Anspruch wie unsere übrigen Apps: durchdacht im Detail, schnell im Betrieb und ohne unnötigen Ballast.",
-        "Du möchtest früher Bescheid wissen? Schreib uns an info@simplynext.de."
+        "Furly bringt alles zusammen, was zum Alltag mit deinem Tier gehört – für Hunde, Katzen, Kleintiere und Vögel: Krankenakte, Impfungen, Erinnerungen, Tagesroutine, Notfallhilfe und Orte in deiner Nähe.",
+        "Dazu gehören ein Ratgeber mit Giftcheck, Trainingspläne und Furly Chat, ein KI-Assistent für allgemeine Fragen rund ums Tier. Furly Chat ersetzt keine tierärztliche Beratung, Diagnose oder Behandlung – bei gesundheitlichen Anliegen wende dich immer an eine Tierarztpraxis.",
+        "Deine Daten bleiben bei dir: Gewicht, Fütterung und Tagesroutine speichert Furly nur auf deinem Gerät, das Konto ist jederzeit vollständig löschbar. Keine Werbung, kein Tracking."
       ],
       "features": [
-        { "title": "Funktionen folgen", "text": "Der finale Funktionsumfang steht noch nicht fest und wird hier ergänzt, sobald die Entwicklung abgeschlossen ist." },
-        { "title": "Zunächst für Android", "text": "Die erste Version erscheint für Android. Eine iOS-Fassung ist geplant." }
+        { "title": "Im Notfall", "text": "Notfallkarte mit Erste-Hilfe-Schritten auch ohne Internet, Giftnotruf-Nummern für Deutschland, Österreich und die Schweiz und die nächste geöffnete Tierarztpraxis mit einem Tipp." },
+        { "title": "Gesundheit im Blick", "text": "Krankenakte mit Behandlungen und Notizen, digitaler Impfpass mit Hinweis bei fälligen Impfungen und Gewichtsverlauf mit Trend." },
+        { "title": "Jeden Tag", "text": "Tagesroutine zum Abhaken – Füttern, Gassi, Medikament – und Erinnerungen zur gewählten Uhrzeit, auf Wunsch im eigenen Kalender." },
+        { "title": "Furly Chat", "text": "Der KI-Assistent beantwortet allgemeine Fragen rund ums Tier, erkennt Notfallhinweise und verweist dann klar an die Tierarztpraxis." },
+        { "title": "Orte in der Nähe", "text": "Tierärzte, Hundewiesen, Tierbedarf, Kotbeutel-Spender und Trinkwasser in deiner Umgebung – mit Daten von OpenStreetMap." },
+        { "title": "Vermisst & Gefunden", "text": "Meldungen aus deiner Umgebung mit Benachrichtigung und ein Suchplakat zum Teilen mit einem Tipp." }
       ],
       "pricing": {
-        "free": ["Preismodell steht noch nicht fest"],
-        "premium": ["Details folgen zur Veröffentlichung"],
-        "note": "Die Preise ergänzen wir, sobald die App erscheint."
+        "free": ["Ein Tierprofil", "Fünf Chat-Nachrichten pro Tag und ein Trainingsplan", "Alle Notfall-, Gesundheits- und Suchfunktionen", "Keine Werbung"],
+        "premium": ["Beliebig viele Tiere", "Furly Chat ohne Tageslimit", "Unbegrenzte Trainingspläne", "Tierarzt-Mappe als PDF", "Gesamter Verlauf und Merkliste"],
+        "note": "Furly Pro gibt es als Monats- oder Jahresabo über Google Play, jederzeit kündbar. Notfall-Funktionen sind nie eingeschränkt."
       },
-      "shots": ["Vorschau folgt", "Vorschau folgt", "Vorschau folgt"]
+      "shots": [
+        "Startseite mit fälliger Erinnerung und Tagesroutine",
+        "Erinnerungen für heute",
+        "Tierprofil mit Impfstatus und Gewicht",
+        "Übersicht eines Tieres: Krankenakte, Impfpass, Erinnerungen, Gewicht",
+        "Anstehende Erinnerungen eines Tieres",
+        "Furly Chat beantwortet Fragen zum Tier",
+        "Entdecken: Orte, Vermisst & Gefunden, Ratgeber, Giftcheck und Notfall",
+        "Orte-Finder mit Tierarztpraxen in der Nähe",
+        "Vermisst & Gefunden in der Umgebung",
+        "Ratgeber mit Artikeln zu Giften und Notfällen",
+        "Giftcheck: Darf mein Tier das fressen?",
+        "Training mit Trainingsplan und Übungen"
+      ]
     }
   }
 }

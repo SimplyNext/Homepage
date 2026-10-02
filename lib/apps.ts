@@ -167,12 +167,6 @@ export const apps: AppData[] = [
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
   },
-  // Furly hat noch Platzhalter-Marketingtexte und generierte SVG-Bilder und
-  // bleibt deshalb auf `placeholder: true` (noindex, nicht in der Sitemap) –
-  // eine indexierte Seite mit „Screenshot folgt“-Bildern nützt niemandem. Zum
-  // Freischalten: echte Texte in messages/*.json, echte PNGs unter
-  // /public/images/apps/furly/ hinterlegen, hero/shots-Endungen hier auf .png
-  // umstellen, `syntheticChrome` prüfen und das Flag entfernen.
   {
     slug: "shrinkit",
     name: "ShrinkIt",
@@ -225,16 +219,23 @@ export const apps: AppData[] = [
     os: ["Android"],
     iosSoon: true,
     status: "coming-soon",
-    accent: "#E08A7A",
-    accentLight: "#8A4436",
-    hero: "/images/apps/furly/hero.svg",
+    accent: "#E3B23C",
+    accentLight: "#7A5A12",
+    hero: "/images/apps/furly/hero.png",
     heroFit: "contain",
-    syntheticChrome: true,
-    placeholder: true,
     shots: [
-      { src: "/images/apps/furly/furly_1.svg" },
-      { src: "/images/apps/furly/furly_2.svg" },
-      { src: "/images/apps/furly/furly_3.svg" },
+      { src: "/images/apps/furly/furly_1.png" },
+      { src: "/images/apps/furly/furly_2.png" },
+      { src: "/images/apps/furly/furly_3.png" },
+      { src: "/images/apps/furly/furly_4.png" },
+      { src: "/images/apps/furly/furly_5.png" },
+      { src: "/images/apps/furly/furly_6.png" },
+      { src: "/images/apps/furly/furly_7.png" },
+      { src: "/images/apps/furly/furly_8.png" },
+      { src: "/images/apps/furly/furly_9.png" },
+      { src: "/images/apps/furly/furly_10.png" },
+      { src: "/images/apps/furly/furly_11.png" },
+      { src: "/images/apps/furly/furly_12.png" },
     ],
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
