@@ -1,7 +1,7 @@
 import type { LegalSection } from "../legal";
 
 /**
- * App-spezifische Rechtstexte für Werkflow – übernommen aus
+ * App-spezifische Rechtstexte für WerkFlow – übernommen aus
  * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: September 2026 –
  * GoBD-Archivierung, gestaffelte Aufbewahrungsfristen, Änderungsprotokoll,
  * Export für Steuerberater, Resend für Konto-E-Mails; KI-Rechnungen ohne

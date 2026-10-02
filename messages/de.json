@@ -224,13 +224,13 @@
       "category": "Business & Handwerk",
       "description": [
         "Schluss mit Büroarbeit am Feierabend: Fotografiere die Baustelle, sprich den Auftrag ein – und die KI erstellt daraus ein vollständiges, professionelles Angebot als PDF. Direkt vor Ort, in wenigen Minuten. Nimmt der Kunde an, wird aus dem Angebot mit einem Tipp die Rechnung.",
-        "Werkflow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt – ob Elektriker, Maler, Installateur, Schreiner oder Dachdecker. Abschlags-, Schluss- und Stornorechnungen rechnet die App für dich durch, und jede Rechnung enthält die E-Rechnung nach ZUGFeRD oder XRechnung, die DATEV, Lexware & Co. direkt einlesen.",
-        "Auch fürs Finanzamt gebaut: Versendete Angebote und Rechnungen archiviert Werkflow unveränderbar und mit Änderungsprotokoll, wie es die GoBD verlangen. Für deinen Steuerberater gibt es den Export als ZIP-Archiv und DATEV-Buchungsstapel. Deine Daten liegen auf Servern in der EU."
+        "WerkFlow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt – ob Elektriker, Maler, Installateur, Schreiner oder Dachdecker. Abschlags-, Schluss- und Stornorechnungen rechnet die App für dich durch, und jede Rechnung enthält die E-Rechnung nach ZUGFeRD oder XRechnung, die DATEV, Lexware & Co. direkt einlesen.",
+        "Auch fürs Finanzamt gebaut: Versendete Angebote und Rechnungen archiviert WerkFlow unveränderbar und mit Änderungsprotokoll. WerkFlow unterstützt damit eine GoBD-konforme Arbeitsweise. Für deinen Steuerberater gibt es den Export als ZIP-Archiv und DATEV-Buchungsstapel. Deine Daten liegen auf Servern in der EU."
       ],
       "features": [
         { "title": "Foto-Analyse per KI", "text": "Baustelle oder Schadensbereich fotografieren – die KI erkennt benötigte Materialien und Arbeitsschritte und schlägt passende Angebotspositionen vor." },
         { "title": "Einsprechen statt tippen", "text": "Auftrag kurz einsprechen – die KI macht daraus strukturierte Positionen. Texte in Angeboten, Rechnungen und Notizen diktierst du einfach, auch mit schmutzigen Händen." },
-        { "title": "Vom Angebot zur Rechnung", "text": "Aus dem angenommenen Angebot wird mit einem Tipp die Rechnung: fortlaufende Nummer, alle Pflichtangaben nach § 14 UStG, dazu Abschlags-, Schluss- und Stornorechnung." },
+        { "title": "Vom Angebot zur Rechnung", "text": "Aus dem angenommenen Angebot wird mit einem Tipp die Rechnung: fortlaufende Nummer, die Pflichtangaben nach § 14 UStG, dazu Abschlags-, Schluss- und Stornorechnung." },
         { "title": "E-Rechnung inklusive", "text": "Jede Rechnung als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X), für öffentliche Auftraggeber als XRechnung – bereit für DATEV, Lexware & Co." },
         { "title": "GoBD-Archiv und Steuerberater-Export", "text": "Versendete Belege bleiben unveränderbar, jede Änderung steht im Protokoll. Der Export liefert ZIP-Archiv und DATEV-Buchungsstapel, dazu eine Vorlage für die Verfahrensdokumentation." },
         { "title": "Einmal eintragen, überall drin", "text": "Firmendaten, Logo, Bankverbindung, Unterschrift und Kunden hinterlegst du einmal. Dein Materialkatalog mit Preisen fließt automatisch in jede KI-Kalkulation ein." }

@@ -148,7 +148,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "werkflow",
-    name: "Werkflow",
+    name: "WerkFlow",
     os: ["Android"],
     iosSoon: true,
     status: "live",
