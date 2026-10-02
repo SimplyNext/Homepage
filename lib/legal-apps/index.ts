@@ -38,8 +38,8 @@ const appLegal: Record<string, AppLegal> = {
     de: { datenschutz: werkflowDatenschutz, agb: werkflowAgb },
     en: { datenschutz: werkflowDatenschutzEn, agb: werkflowAgbEn },
     updated: {
-      datenschutz: { de: "September 2026", en: "September 2026" },
-      agb: { de: "September 2026", en: "September 2026" },
+      datenschutz: { de: "Oktober 2026", en: "October 2026" },
+      agb: { de: "Oktober 2026", en: "October 2026" },
     },
   },
   fabula: {

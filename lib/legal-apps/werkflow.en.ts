@@ -2,7 +2,7 @@ import type { LegalSection } from "../legal";
 
 /**
  * Englische Übersetzung der WerkFlow-Rechtstexte (werkflow.ts, Stand
- * September 2026) – nur zur Information, verbindlich ist die deutsche Fassung.
+ * Oktober 2026) – nur zur Information, verbindlich ist die deutsche Fassung.
  * Aufbau und Reihenfolge entsprechen der deutschen Datei 1:1. Deutsche
  * Fachbegriffe ohne englische Entsprechung (GoBD, ZUGFeRD, XRechnung,
  * Leitweg-ID) bleiben stehen und werden beim ersten Vorkommen erklärt;
