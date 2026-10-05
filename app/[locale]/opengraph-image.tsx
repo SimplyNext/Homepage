@@ -35,8 +35,6 @@ export default async function OpengraphImage({
   const { locale } = await params;
   const [line1, line2] = HEADLINE[locale] ?? HEADLINE.de;
 
-  const logo = await readFile(path.join(process.cwd(), "public", "logo.png"));
-  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   // Die Schrift der Seite (Bricolage Grotesque, fett) – als .woff, weil der
   // Bild-Renderer keine variablen .woff2-Schriften lesen kann.
   const font = await readFile(
@@ -61,13 +59,11 @@ export default async function OpengraphImage({
           padding: "56px 64px 0",
         }}
       >
-        {/* Logo: Zeichen (Klammerpaar-Kachel) + Wortmarke */}
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} width={84} height={84} alt="" />
-          <div style={{ display: "flex", fontSize: 40, fontWeight: 800, letterSpacing: -1 }}>
-            {site.name}
-          </div>
+        {/* Logo: Wortmarke mit den Klammern wie im Kopf der Seite */}
+        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -1.3 }}>
+          {site.name}
+          <span style={{ marginLeft: 12, color: "#9E6200" }}>{"{"}</span>
+          <span style={{ color: "#3F6B4B" }}>{"}"}</span>
         </div>
 
         <div

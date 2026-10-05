@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import TransitionLink from "@/components/ui/TransitionLink";
-import LogoMark from "@/components/brand/LogoMark";
 import { apps } from "@/lib/apps";
 import { site } from "@/lib/site";
 
@@ -18,9 +17,9 @@ export default async function Footer() {
         <div className="mx-auto max-w-shell px-gutter pb-8 pt-20">
           <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
             <div>
-              <p className="flex items-center gap-[0.32em] font-display text-3xl font-extrabold tracking-[-0.035em]">
-                <LogoMark inverse className="h-[1.25em] w-[1.25em] shrink-0" />
-                SimplyNext
+              <p className="font-display text-3xl font-extrabold tracking-[-0.03em]">
+                SimplyNext <span className="brace-inv-open">{"{"}</span>
+                <span className="brace-inv-close">{"}"}</span>
               </p>
               <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-base-900/70">
                 {t("tagline")}

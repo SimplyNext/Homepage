@@ -50,8 +50,8 @@ html.light {
   --color-accent-soft: 158 98 0; /* #9E6200, ~4.6:1 auf base-900 */
   --color-accent-alt: 63 107 75; /* #3F6B4B, ~5.7:1 auf base-900 */
   --color-focus-ring: 20 22 28;
-  --logo-tile: 20 22 28; /* Logo-Kachel #14161C */
-  --logo-tile-inverse: 42 46 56; /* #2A2E38 auf dunklen Flächen */
+  --brace-inv-open: 255 200 97; /* Logo-Klammern auf invertierten Flächen (Footer) */
+  --brace-inv-close: 157 191 164;
   color-scheme: only light;
 }
 
@@ -67,8 +67,8 @@ html.dark {
   --color-accent-soft: 255 200 97; /* #FFC861 */
   --color-accent-alt: 157 191 164; /* #9DBFA4 */
   --color-focus-ring: 252 174 39;
-  --logo-tile: 42 46 56;
-  --logo-tile-inverse: 20 22 28;
+  --brace-inv-open: 158 98 0;
+  --brace-inv-close: 63 107 75;
   color-scheme: only dark;
 }
 
@@ -86,8 +86,8 @@ html.dark {
     --color-accent-soft: 158 98 0; /* #9E6200, ~4.6:1 auf base-900 */
     --color-accent-alt: 63 107 75; /* #3F6B4B, ~5.7:1 auf base-900 */
     --color-focus-ring: 20 22 28;
-    --logo-tile: 20 22 28; /* Logo-Kachel #14161C */
-    --logo-tile-inverse: 42 46 56; /* #2A2E38 auf dunklen Flächen */
+    --brace-inv-open: 255 200 97; /* Logo-Klammern auf invertierten Flächen (Footer) */
+    --brace-inv-close: 157 191 164;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -102,8 +102,8 @@ html.dark {
     --color-accent-soft: 255 200 97; /* #FFC861 */
     --color-accent-alt: 157 191 164; /* #9DBFA4 */
     --color-focus-ring: 252 174 39;
-    --logo-tile: 42 46 56;
-    --logo-tile-inverse: 20 22 28;
+    --brace-inv-open: 158 98 0;
+    --brace-inv-close: 63 107 75;
   }
 }
 
@@ -201,4 +201,12 @@ html.lenis body {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Logo-Klammern im invertierten Footer */
+.brace-inv-open {
+  color: rgb(var(--brace-inv-open));
+}
+.brace-inv-close {
+  color: rgb(var(--brace-inv-close));
 }
