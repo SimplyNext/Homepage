@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TransitionLink from "@/components/ui/TransitionLink";
+import LogoMark from "@/components/brand/LogoMark";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 import LocaleSwitch from "@/components/layout/LocaleSwitch";
 
@@ -42,11 +43,11 @@ export default function Header() {
     <header>
       <TransitionLink
         href="/"
-        className="absolute left-[clamp(1.25rem,4vw,4rem)] top-[calc(env(safe-area-inset-top)+1.75rem)] z-[90] font-display text-2xl font-extrabold tracking-[-0.03em] text-ink"
+        className="absolute left-[clamp(1.25rem,4vw,4rem)] top-[calc(env(safe-area-inset-top)+1.75rem)] z-[90] flex items-center gap-[0.32em] font-display text-2xl font-extrabold tracking-[-0.035em] text-ink"
         data-cursor
       >
-        SimplyNext <span className="text-accent-soft">{"{"}</span>
-        <span className="text-accent-alt">{"}"}</span>
+        <LogoMark className="h-[1.25em] w-[1.25em] shrink-0" />
+        SimplyNext
       </TransitionLink>
       <nav
         ref={pill}

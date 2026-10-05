@@ -61,22 +61,10 @@ export default async function OpengraphImage({
           padding: "56px 64px 0",
         }}
       >
-        {/* Logo (auf seinem schwarzen Grund als Kachel) + Wortmarke */}
+        {/* Logo: Zeichen (Klammerpaar-Kachel) + Wortmarke */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 84,
-              height: 84,
-              borderRadius: 22,
-              backgroundColor: "#000000",
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logoSrc} width={78} height={56} alt="" />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={84} height={84} alt="" />
           <div style={{ display: "flex", fontSize: 40, fontWeight: 800, letterSpacing: -1 }}>
             {site.name}
           </div>
