@@ -404,6 +404,17 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
         ],
       },
       {
+        heading: "5. Social Media Profiles",
+        paragraphs: [
+          "We maintain publicly accessible profiles on Instagram (@apps_by_simplynext) and TikTok (@simplynext.de) to present our apps. The providers are Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, D04 X2K5, Ireland (Instagram) and TikTok Technology Limited, 10 Earlsfort Terrace, Dublin 2, D02 T380, Ireland (TikTok).",
+          "When you visit our profiles, the platforms process your data (e.g. usage behaviour, device and location data, interactions) under their own responsibility, even if you do not have an account there. Details can be found in the providers' privacy policies: https://privacycenter.instagram.com/policy and https://www.tiktok.com/legal/privacy-policy-eea. This may involve transfers to third countries, in particular the USA.",
+          "For the page statistics (Insights) that Meta provides to us in aggregated form for our Instagram profile, we are joint controllers with Meta (Art. 26 GDPR). The details are set out in the “Page Insights Controller Addendum” (https://www.facebook.com/legal/terms/page_controller_addendum), under which Meta assumes primary responsibility for the processing and for fulfilling your rights.",
+          "If you comment on our posts or send us a message, we process this content and your profile name in order to reply. The legal basis is our legitimate interest in communicating with you (Art. 6 para. 1 lit. f GDPR).",
+          "We plan and publish our own posts using the service Buffer (Buffer Inc., USA). Buffer only receives our posts and access to our accounts, not any data of visitors to this website. Buffer acts as our processor; transfers to the USA are based on the EU-U.S. Data Privacy Framework or the EU Standard Contractual Clauses.",
+          "Your rights (access, rectification, erasure, objection, etc.) apply as described in this policy. As only the platforms have full access to user data, requests concerning that data are best addressed directly to the respective provider.",
+        ],
+      },
+      {
         heading: "Source",
         paragraphs: ["https://www.e-recht24.de"],
       },
@@ -569,6 +580,17 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
         "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
         "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.",
         "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.",
+      ],
+    },
+    {
+      heading: "5. Social-Media-Auftritte",
+      paragraphs: [
+        "Wir unterhalten öffentlich zugängliche Profile auf Instagram (@apps_by_simplynext) und TikTok (@simplynext.de), um unsere Apps vorzustellen. Anbieter sind die Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, D04 X2K5, Irland (Instagram) und die TikTok Technology Limited, 10 Earlsfort Terrace, Dublin 2, D02 T380, Irland (TikTok).",
+        "Wenn Sie unsere Profile aufrufen, verarbeiten die Plattformen Ihre Daten (z. B. Nutzungsverhalten, Geräte- und Standortdaten, Interaktionen) in eigener Verantwortung, auch wenn Sie dort kein Konto haben. Einzelheiten finden Sie in den Datenschutzerklärungen der Anbieter: https://privacycenter.instagram.com/policy und https://www.tiktok.com/legal/privacy-policy-eea. Dabei kann es zu Übermittlungen in Drittländer, insbesondere die USA, kommen.",
+        "Für die Seiten-Statistiken (Insights), die Meta uns zu unserem Instagram-Profil in zusammengefasster Form bereitstellt, sind wir mit Meta gemeinsam verantwortlich (Art. 26 DSGVO). Die Einzelheiten regelt die Vereinbarung „Page Insights Controller Addendum“ (https://www.facebook.com/legal/terms/page_controller_addendum). Meta übernimmt danach die primäre Verantwortung für die Verarbeitung und für die Erfüllung Ihrer Rechte.",
+        "Wenn Sie unsere Beiträge kommentieren oder uns eine Nachricht schreiben, verarbeiten wir diese Inhalte und Ihren Profilnamen, um zu antworten. Rechtsgrundlage ist unser berechtigtes Interesse an der Kommunikation mit Ihnen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Unsere eigenen Beiträge planen und veröffentlichen wir mit dem Dienst Buffer (Buffer Inc., USA). Buffer erhält dabei nur unsere Beiträge und den Zugang zu unseren Konten, keine Daten von Besucherinnen und Besuchern dieser Website. Buffer ist für uns als Auftragsverarbeiter tätig; die Übermittlung in die USA erfolgt auf Grundlage des EU-U.S. Data Privacy Framework bzw. der EU-Standardvertragsklauseln.",
+        "Ihre Rechte (Auskunft, Berichtigung, Löschung, Widerspruch usw.) gelten wie in dieser Erklärung beschrieben. Da nur die Plattformen vollen Zugriff auf die Nutzerdaten haben, wenden Sie sich mit Anfragen zu diesen Daten am besten direkt an den jeweiligen Anbieter.",
       ],
     },
     {
