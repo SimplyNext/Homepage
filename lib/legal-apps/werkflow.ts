@@ -2,7 +2,7 @@ import type { LegalSection } from "../legal";
 
 /**
  * App-spezifische Rechtstexte für WerkFlow – übernommen aus
- * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: Oktober 2026 –
+ * werkflow/docs/{datenschutzerklaerung,agb}.md (Stand: Oktober 2026, abgeglichen mit Commit 09ca3cd –
  * GoBD-Archivierung, gestaffelte Aufbewahrungsfristen, Änderungsprotokoll,
  * Export für Steuerberater, Resend für Konto-E-Mails; KI-Rechnungen ohne
  * Angebot mit eigenem Kontingent).
@@ -122,6 +122,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Zahlungsbedingungen, Liefer-/Leistungszeit",
       "Status (Entwurf, versendet, angenommen, abgelehnt, durch neue Version ersetzt)",
       "Bei versendeten Angeboten: Versandzeitpunkt, das versendete PDF so, wie Ihr Kunde es erhalten hat, und dessen Prüfsumme (SHA-256)",
+      "Bei angenommenen Angeboten die Auftragsbestätigung: fortlaufende Nummer, Tag und Art der Annahme (mündlich, E-Mail, Brief oder Unterschrift), voraussichtlicher Beginn, Ihr Vermerk; bei Privatkunden außerdem, wo der Auftrag zustande kam, ob ein Widerrufsrecht besteht und ob der Kunde den Beginn vor Ablauf der Widerrufsfrist verlangt hat; bei Annahme per Unterschrift Name und Unterschrift des Kunden als Bilddatei; das PDF der Auftragsbestätigung mit Prüfsumme (SHA-256)",
       "Materialliste mit Bezeichnungen, Preisen, Einheiten",
       "Bei Rechnungen zusätzlich die Angaben nach § 14 UStG: fortlaufende Rechnungsnummer, Rechnungsart (Rechnung, Abschlags-, Schluss- oder Stornorechnung) und Rechnungsdatum",
       "Leistungsdatum bzw. Leistungszeitraum, Fälligkeit und Zahlungsziel",
@@ -225,6 +226,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     list: [
       "Geräteinformationen (Betriebssystem, App-Version)",
       "Fehlerprotokolle (zur Fehlerbehebung)",
+      "Verbrauch der KI-Aufrufe: Zeitpunkt, Funktion, KI-Modell und Anzahl der verarbeiteten Tokens, keine Inhalte (zur Kostenkontrolle)",
       "Lokale Einstellungen (Theme, Spracheinstellung – nur lokal auf dem Gerät gespeichert)",
     ],
     afterList: [
@@ -281,7 +283,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. Die Daten werden auf Servern in der EU gespeichert (Rechenzentrum in Irland).",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten und Rechnungen).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten und Rechnungen, Auftragsbestätigungen mit Unterschriften Ihrer Kunden).",
       "Drittlandtransfer: Da Supabase ein Unternehmen mit Sitz in den USA ist, lässt sich ein Zugriff aus den USA (z. B. im Rahmen von Wartung und Support) nicht ausschließen. Dieser ist über den Auftragsverarbeitungsvertrag mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) abgesichert.",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
@@ -361,6 +363,8 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Änderungsprotokoll der Belege", "Wie der zugehörige Beleg; danach nur geschwärzte Einträge ohne Belegbezug bis zur Kontolöschung (Ziff. 3.10)"],
         ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung. Die Kopie der Kundendaten in einer versendeten Rechnung bleibt so lange erhalten wie die Rechnung."],
         ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
+        ["Verbrauch der KI-Aufrufe (Ziff. 3.9)", "Bis zur Account-Löschung"],
+        ["Auftragsbestätigungen einschließlich PDF und Unterschrift des Kunden", "Wie das zugehörige Angebot, mindestens 6 Jahre ab Ende des Jahres der Bestätigung (Ziff. 3.5). Bei Kontolöschung sofort."],
         ["Fotos zu Angeboten und Rechnungen", "Bis zur Löschung durch Sie, mit dem gelöschten Entwurf bzw. Beleg oder mit dem Konto"],
         ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
@@ -461,7 +465,8 @@ export const werkflowAgb: LegalSection[] = [
       "Verwaltung von Kundendaten",
       "Verwaltung einer Material-Preisliste",
       "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebotsvorschlägen sowie von Rechnungspositionen und Leistungstexten für Rechnungen ohne vorheriges Angebot",
-      "Digitale Unterschriftenerfassung",
+      "Digitale Unterschriftenerfassung, auch für die Annahme eines Angebots durch den Kunden",
+      "Auftragsbestätigungen mit Nachweis, wann und wie der Kunde angenommen hat; bei Verträgen mit Verbrauchern außerhalb von Geschäftsräumen oder im Fernabsatz einschließlich der amtlichen Muster-Widerrufsbelehrung und des Muster-Widerrufsformulars (Anlage 1 und 2 zu Art. 246a EGBGB)",
       "Freie Notizen und Diktierfunktion",
       "Export der eigenen Daten",
       "Unterstützung einer GoBD-konformen Arbeitsweise: unveränderbare Archivierung versendeter Angebote und Rechnungen, Änderungsprotokoll, Export für Steuerberater und Betriebsprüfung (ZIP-Archiv nach dem Beschreibungsstandard für die Datenüberlassung, DATEV-Buchungsstapel) sowie eine Vorlage für die Verfahrensdokumentation",
@@ -502,9 +507,9 @@ export const werkflowAgb: LegalSection[] = [
       "(4) Der Nutzer verpflichtet sich, seine Zugangsdaten (E-Mail, Passwort) geheim zu halten und vor dem Zugriff Dritter zu schützen. Bei Verdacht auf missbräuchliche Nutzung ist der Anbieter unverzüglich zu informieren.",
       "(5) Es ist untersagt, die App zu nutzen, um rechtswidrige, beleidigende, diskriminierende oder gegen Rechte Dritter verstoßende Inhalte zu erstellen, zu speichern oder zu verbreiten.",
       "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote und Rechnungen (einschließlich Preisen, Steuerangaben und der Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Inhalte durch den Anbieter findet nicht statt. Die App unterstützt die Einhaltung der Pflichtangaben, ersetzt aber keine steuerliche Beratung.",
-      "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen und Angebote, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
+      "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen, Auftragsbestätigungen und Angebote, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote, Auftragsbestätigungen und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
       "(8) Nach Ablauf der Aufbewahrungsfrist löscht der Anbieter die betroffenen Belege einschließlich PDF und E-Rechnung automatisch am 31. März des folgenden Jahres. Ab dem 1. Oktober des letzten Aufbewahrungsjahres weist die App darauf hin und bietet die Belege zum Herunterladen an. Verlängert sich die Aufbewahrungsfrist im Einzelfall, etwa wegen einer Außenprüfung oder eines Einspruchs (§ 147 Abs. 3 Satz 5 AO), hat der Nutzer die Aufbewahrung in der App rechtzeitig zu verlängern oder die Belege vorher selbst zu sichern. Der Anbieter empfiehlt, die Belege zusätzlich mindestens einmal jährlich über den Export für Steuerberater auf einem eigenen Datenträger zu sichern. Vor einer Kündigung oder Kontolöschung hat der Nutzer seine aufbewahrungspflichtigen Unterlagen selbst zu sichern.",
-      "(9) Die App ersetzt keine rechtliche Beratung. Der Nutzer ist allein dafür verantwortlich, die gegenüber seinen eigenen Kunden geltenden Informations- und Belehrungspflichten einzuhalten. Das gilt insbesondere für Verträge mit Verbrauchern, die außerhalb von Geschäftsräumen oder im Fernabsatz geschlossen werden (§§ 312b, 312c BGB): Hier besteht ein Widerrufsrecht, über das der Nutzer nach Art. 246a EGBGB zu belehren hat. Die App erstellt und übermittelt keine Widerrufsbelehrung und kein Muster-Widerrufsformular.",
+      "(9) Die App ersetzt keine rechtliche Beratung. Der Nutzer ist allein dafür verantwortlich, die gegenüber seinen eigenen Kunden geltenden Informations- und Belehrungspflichten einzuhalten. Das gilt insbesondere für Verträge mit Verbrauchern, die außerhalb von Geschäftsräumen oder im Fernabsatz geschlossen werden (§§ 312b, 312c BGB): Hier besteht ein Widerrufsrecht, über das der Nutzer nach Art. 246a EGBGB zu belehren hat. Die App stellt dafür die amtliche Muster-Widerrufsbelehrung und das Muster-Widerrufsformular unverändert bereit und ergänzt sie um die Angaben aus dem Firmenprofil. Ob im Einzelfall ein Widerrufsrecht besteht, ergibt sich aus den Angaben des Nutzers in der App, insbesondere ob der Kunde Verbraucher ist und wo der Vertrag geschlossen wurde. Der Nutzer ist für die Richtigkeit dieser Angaben, für vollständige und aktuelle Firmendaten sowie dafür verantwortlich, dass seine Kunden Belehrung und Auftragsbestätigung rechtzeitig erhalten. Die Unterschrift, die ein Kunde in der App leistet, ist eine einfache elektronische Signatur; sie ersetzt keine gesetzlich vorgeschriebene Schriftform.",
     ],
   },
   {
