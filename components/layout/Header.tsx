@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TransitionLink from "@/components/ui/TransitionLink";
@@ -36,6 +36,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   });
 
+  // Logo-Animation beim Hovern erneut abspielen – erst, wenn der letzte
+  // Durchlauf (gut 2 s, auch der beim Laden) fertig ist, damit sie nicht flackert.
+  const logoStart = useRef(0);
+  const replayLogo = (e: MouseEvent<HTMLAnchorElement>) => {
+    const svg = e.currentTarget.querySelector("svg.logo-anim");
+    const now = performance.now();
+    if (!svg || now - logoStart.current < 2100) return;
+    logoStart.current = now;
+    svg.classList.remove("logo-anim");
+    void svg.getBoundingClientRect();
+    svg.classList.add("logo-anim");
+  };
+
   const link =
     "inline-flex min-h-[44px] items-center rounded-full px-4 text-[1rem] font-medium transition-colors hover:bg-base-900 sm:px-5";
 
@@ -45,6 +58,7 @@ export default function Header() {
         href="/"
         className="absolute left-[clamp(1.25rem,4vw,4rem)] top-[calc(env(safe-area-inset-top)+1.75rem)] z-[90] flex items-center gap-[0.34em] font-display text-2xl font-extrabold tracking-[-0.035em] text-ink"
         data-cursor
+        onMouseEnter={replayLogo}
       >
         <LogoMark animated className="h-[1.1em] w-[1.1em] shrink-0" />
         SimplyNext
