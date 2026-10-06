@@ -333,8 +333,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           ordered: true,
           list: [
             "Öffnen Sie Fabula und melden Sie sich an.",
-            "Öffnen Sie die Einstellungen.",
-            "Tippen Sie auf „Konto löschen“.",
+            "Öffnen Sie die Einstellungen und geben Sie den Eltern-PIN ein.",
+            "Tippen Sie im Abschnitt „Konto“ auf „Konto löschen“.",
             "Bestätigen Sie die Löschung.",
           ],
           afterList: [
@@ -372,7 +372,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           list: [
             "Zustimmungen und Widerrufe beim Kauf: Ihre Zustimmung zum sofortigen Beginn der Leistung und erklärte Widerrufe bewahren wir als Nachweis auf, ohne Verbindung zu Ihrem gelöschten Konto. Sie werden drei Jahre nach Ende des Jahres, in dem sie erteilt bzw. erklärt wurden, automatisch gelöscht.",
             "Kaufbelege bei Google Play: Credits werden über Google Play verkauft und abgerechnet. Google bewahrt Ihre Bestellungen nach eigenen Bestimmungen und gesetzlichen Aufbewahrungspflichten auf; es gilt die Datenschutzerklärung von Google (policies.google.com/privacy).",
-            "Sicherungskopien: Technische Sicherungen unseres Hosting-Anbieters können gelöschte Daten noch bis zu 7 Tage enthalten und werden danach automatisch überschrieben.",
+            "Sicherungskopien: Technische Sicherungskopien unseres Hosting-Anbieters werden höchstens 7 Tage aufbewahrt.",
           ],
           slot: "footer",
         },
@@ -395,8 +395,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           ordered: true,
           list: [
             "Open Fabula and sign in.",
-            "Open the Settings.",
-            "Tap “Delete Account”.",
+            "Open the Settings and enter the parental PIN.",
+            "In the “Account” section, tap “Delete Account”.",
             "Confirm the deletion.",
           ],
           afterList: [
@@ -434,7 +434,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           list: [
             "Consents and withdrawals for purchases: We keep your consent to the immediate start of the service and any withdrawals you declared as evidence, without any link to your deleted account. They are deleted automatically three years after the end of the year in which they were given or declared.",
             "Purchase receipts at Google Play: Credits are sold and billed via Google Play. Google retains your orders in accordance with its own terms and statutory retention obligations; Google’s privacy policy applies (policies.google.com/privacy).",
-            "Backups: Technical backups of our hosting provider may still contain deleted data for up to 7 days and are then overwritten automatically.",
+            "Backups: Technical backups of our hosting provider are kept for no more than 7 days.",
           ],
           slot: "footer",
         },
