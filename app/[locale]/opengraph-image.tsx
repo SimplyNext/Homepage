@@ -59,11 +59,30 @@ export default async function OpengraphImage({
           padding: "56px 64px 0",
         }}
       >
-        {/* Logo: Wortmarke mit den Klammern wie im Kopf der Seite */}
-        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -1.3 }}>
-          {site.name}
-          <span style={{ marginLeft: 12, color: "#9E6200" }}>{"{"}</span>
-          <span style={{ color: "#3F6B4B" }}>{"}"}</span>
+        {/* Logo „App-Raster“ + Wortmarke wie im Kopf der Seite */}
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ display: "flex", position: "relative", width: 52, height: 52 }}>
+            {[
+              ["#F2C25A", 0, 8],
+              ["#F4846A", 26, 0],
+              ["#A9B8FF", 0, 31],
+              ["#9DBFA4", 24, 31],
+            ].map(([c, x, y]) => (
+              <div
+                key={c as string}
+                style={{
+                  position: "absolute",
+                  left: x as number,
+                  top: y as number,
+                  width: 21,
+                  height: 21,
+                  borderRadius: 5,
+                  backgroundColor: c as string,
+                }}
+              />
+            ))}
+          </div>
+          <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -1.5 }}>{site.name}</div>
         </div>
 
         <div
