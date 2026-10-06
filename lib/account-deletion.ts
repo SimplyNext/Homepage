@@ -20,6 +20,12 @@ export type AccountDeletionConfig = {
   anonKey: string;
   mailSubject: string;
   sections: Record<"de" | "en", LegalSection[]>;
+  /** Text der Pflicht-Checkbox, falls er vom Standard (Belege gesichert)
+   *  abweicht – z. B. für Apps ohne Angebote und Rechnungen. */
+  confirm?: Record<"de" | "en", string>;
+  /** Text nach erfolgreicher Löschung, falls er vom Standard (Abo bei Google
+   *  Play kündigen) abweicht. */
+  success?: Record<"de" | "en", string>;
 };
 
 export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig> = {
@@ -285,6 +291,149 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           heading: "Which Data We Do Not Delete",
           list: [
             "Purchase receipts at Google Play: Subscriptions are sold and billed via Google Play. Google retains your orders in accordance with its own terms and statutory retention obligations; Google's privacy policy applies (policies.google.com/privacy).",
+            "Backups: Technical backups of our hosting provider may still contain deleted data for up to 7 days and are then overwritten automatically.",
+          ],
+          slot: "footer",
+        },
+      ],
+    },
+  },
+  fabula: {
+    supabaseUrl: "https://alysmbbnvqeawoktnxit.supabase.co",
+    anonKey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFseXNtYmJudnFlYXdva3RueGl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2NDYwNjcsImV4cCI6MjA5OTIyMjA2N30.b89vkTMY7gOp3-N1L-VsfoQ0B4szKlk6xQib8g6xHs4",
+    mailSubject: "Konto löschen – Fabula",
+    // Quelle: vory/supabase/functions/delete-account (was gelöscht wird) und
+    // die Fabula-Datenschutzerklärung (Aufbewahrung von Zustimmungen und
+    // Widerrufen, Kaufbelege bei Google Play).
+    confirm: {
+      de: "Mir ist klar, dass alle Geschichten, Figuren und Credits endgültig gelöscht werden.",
+      en: "I understand that all stories, characters and credits will be permanently deleted.",
+    },
+    success: {
+      de: "Alle Geschichten, Figuren und Kontodaten wurden entfernt. Auf Ihrem Gerät gespeicherte Geschichten entfernen Sie, indem Sie die App deinstallieren oder ihre Daten löschen.",
+      en: "All stories, characters and account data have been removed. To remove stories saved on your device, uninstall the app or clear its data.",
+    },
+    sections: {
+      de: [
+        {
+          paragraphs: [
+            "Diese Seite erklärt, wie Sie Ihr Konto in der App Fabula von SimplyNext und alle zugehörigen Daten löschen. Sie können die Löschung direkt in der App oder hier auf dieser Seite vornehmen.",
+          ],
+        },
+        {
+          heading: "Wichtig vor der Löschung",
+          list: [
+            "Credits verfallen: Gekaufte und noch nicht genutzte Credits gehen mit dem Konto endgültig verloren. Möchten Sie den Kaufpreis nicht genutzter Credits zurück, schreiben Sie uns bitte vor dem Löschen an info@simplynext.de.",
+            "Keine Wiederherstellung: Alle Geschichten, Kapitel, Hörbücher und Figuren werden gelöscht und lassen sich nicht wiederherstellen.",
+          ],
+        },
+        {
+          heading: "Möglichkeit 1: In der App löschen",
+          ordered: true,
+          list: [
+            "Öffnen Sie Fabula und melden Sie sich an.",
+            "Öffnen Sie die Einstellungen.",
+            "Tippen Sie auf „Konto löschen“.",
+            "Bestätigen Sie die Löschung.",
+          ],
+          afterList: [
+            "Die Löschung erfolgt sofort. Dabei werden auch die auf dem Gerät gespeicherten Geschichten und der Eltern-PIN entfernt.",
+          ],
+        },
+        {
+          heading: "Möglichkeit 2: Hier auf dieser Seite löschen",
+          paragraphs: [
+            "Melden Sie sich mit der E-Mail-Adresse und dem Passwort Ihres Fabula-Kontos an. Ihre Anmeldedaten gehen verschlüsselt direkt an unseren Anmeldedienst und werden auf dieser Website nicht gespeichert. Die Löschung erfolgt sofort.",
+          ],
+          slot: "form",
+        },
+        {
+          paragraphs: [
+            "Kein Zugang mehr zu Ihrem Konto? Schreiben Sie von Ihrer registrierten E-Mail-Adresse an info@simplynext.de (Betreff: „Konto löschen – Fabula“). Wir löschen Ihr Konto innerhalb von 30 Tagen und bestätigen es Ihnen per E-Mail.",
+          ],
+          slot: "mail",
+        },
+        {
+          heading: "Welche Daten gelöscht werden",
+          paragraphs: ["Sofort und endgültig gelöscht werden:"],
+          list: [
+            "Kontodaten (E-Mail-Adresse, Passwort, Anmeldedaten) und Ihr Profil",
+            "Geschichten, Kapitel und Stichwörter",
+            "Hörbücher (Audiodateien) auf unserem Server",
+            "Figuren",
+            "Credits, Kaufnachweise und Guthabenbuchungen bei uns",
+            "Inhaltsmeldungen und das Kosten- und Nutzungsprotokoll der KI",
+            "Ihr Kundeneintrag bei unserem Abrechnungsdienstleister RevenueCat",
+          ],
+        },
+        {
+          heading: "Welche Daten nicht von uns gelöscht werden",
+          list: [
+            "Zustimmungen und Widerrufe beim Kauf: Ihre Zustimmung zum sofortigen Beginn der Leistung und erklärte Widerrufe bewahren wir als Nachweis auf, ohne Verbindung zu Ihrem gelöschten Konto. Sie werden drei Jahre nach Ende des Jahres, in dem sie erteilt bzw. erklärt wurden, automatisch gelöscht.",
+            "Kaufbelege bei Google Play: Credits werden über Google Play verkauft und abgerechnet. Google bewahrt Ihre Bestellungen nach eigenen Bestimmungen und gesetzlichen Aufbewahrungspflichten auf; es gilt die Datenschutzerklärung von Google (policies.google.com/privacy).",
+            "Sicherungskopien: Technische Sicherungen unseres Hosting-Anbieters können gelöschte Daten noch bis zu 7 Tage enthalten und werden danach automatisch überschrieben.",
+          ],
+          slot: "footer",
+        },
+      ],
+      en: [
+        {
+          paragraphs: [
+            "This page explains how to delete your account in the app Fabula by SimplyNext and all associated data. You can delete it directly in the app or here on this page.",
+          ],
+        },
+        {
+          heading: "Important Before Deleting",
+          list: [
+            "Credits are lost: Purchased credits you have not yet used are permanently lost together with the account. If you would like a refund for unused credits, please write to info@simplynext.de before deleting.",
+            "No recovery: All stories, chapters, audiobooks and characters are deleted and cannot be recovered.",
+          ],
+        },
+        {
+          heading: "Option 1: Delete in the App",
+          ordered: true,
+          list: [
+            "Open Fabula and sign in.",
+            "Open the Settings.",
+            "Tap “Delete Account”.",
+            "Confirm the deletion.",
+          ],
+          afterList: [
+            "The deletion takes effect immediately. This also removes the stories saved on the device and the parental PIN.",
+          ],
+        },
+        {
+          heading: "Option 2: Delete Here on This Page",
+          paragraphs: [
+            "Sign in with the e-mail address and password of your Fabula account. Your sign-in details are sent encrypted directly to our authentication service and are not stored on this website. The deletion takes effect immediately.",
+          ],
+          slot: "form",
+        },
+        {
+          paragraphs: [
+            "No longer have access to your account? Write from your registered e-mail address to info@simplynext.de (subject: “Konto löschen – Fabula”). We will delete your account within 30 days and confirm it to you by e-mail.",
+          ],
+          slot: "mail",
+        },
+        {
+          heading: "Which Data Is Deleted",
+          paragraphs: ["The following is deleted immediately and permanently:"],
+          list: [
+            "Account data (e-mail address, password, sign-in data) and your profile",
+            "Stories, chapters and keywords",
+            "Audiobooks (audio files) on our server",
+            "Characters",
+            "Credits, purchase records and credit bookings with us",
+            "Content reports and the AI cost and usage log",
+            "Your customer record at our billing service provider RevenueCat",
+          ],
+        },
+        {
+          heading: "Which Data We Do Not Delete",
+          list: [
+            "Consents and withdrawals for purchases: We keep your consent to the immediate start of the service and any withdrawals you declared as evidence, without any link to your deleted account. They are deleted automatically three years after the end of the year in which they were given or declared.",
+            "Purchase receipts at Google Play: Credits are sold and billed via Google Play. Google retains your orders in accordance with its own terms and statutory retention obligations; Google’s privacy policy applies (policies.google.com/privacy).",
             "Backups: Technical backups of our hosting provider may still contain deleted data for up to 7 days and are then overwritten automatically.",
           ],
           slot: "footer",

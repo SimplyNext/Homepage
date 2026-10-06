@@ -50,7 +50,15 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         </a>
       </p>
     ),
-    form: <AccountDeletionForm slug={slug} supabaseUrl={config.supabaseUrl} anonKey={config.anonKey} />,
+    form: (
+      <AccountDeletionForm
+        slug={slug}
+        supabaseUrl={config.supabaseUrl}
+        anonKey={config.anonKey}
+        confirmText={config.confirm?.[locale === "en" ? "en" : "de"]}
+        successText={config.success?.[locale === "en" ? "en" : "de"]}
+      />
+    ),
     mail: (
       <p className="mt-4">
         <a

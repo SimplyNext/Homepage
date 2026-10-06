@@ -17,10 +17,16 @@ export default function AccountDeletionForm({
   slug,
   supabaseUrl,
   anonKey,
+  confirmText,
+  successText,
 }: {
   slug: string;
   supabaseUrl: string;
   anonKey: string;
+  /** App-eigener Text statt der Standard-Checkbox („Belege gesichert“). */
+  confirmText?: string;
+  /** App-eigener Text nach der Löschung statt des Abo-Hinweises. */
+  successText?: string;
 }) {
   const t = useTranslations("accountDeletion.form");
   const word = t("word");
@@ -85,7 +91,7 @@ export default function AccountDeletionForm({
     return (
       <div role="status" className="mt-6 rounded-lg border border-line bg-base-800 px-5 py-4">
         <p className="font-medium">{t("successTitle")}</p>
-        <p className="mt-2 leading-relaxed text-ink-muted">{t("successText")}</p>
+        <p className="mt-2 leading-relaxed text-ink-muted">{successText ?? t("successText")}</p>
       </div>
     );
   }
@@ -124,7 +130,7 @@ export default function AccountDeletionForm({
           onChange={(e) => setBackedUp(e.target.checked)}
           className="mt-1 h-4 w-4 shrink-0 accent-[rgb(var(--color-accent))]"
         />
-        {t("confirmBackup")}
+        {confirmText ?? t("confirmBackup")}
       </label>
       <label className="block text-sm">
         {t("confirmWord", { word })}
