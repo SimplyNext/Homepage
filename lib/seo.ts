@@ -8,12 +8,14 @@ import { routing } from "@/i18n/routing";
  * (/apps/werkflow) als kanonisch. next-intl leitet von dort per 307
  * ("temporary") auf /de/apps/werkflow um – und ein 307 sagt Google
  * ausdrücklich, die Ausgangs-URL im Index zu behalten. Die eigentliche Seite
- * galt dadurch als Duplikat und wurde nicht indexiert. Der 307 ist korrekt
- * (die Middleware verhandelt dort die Browsersprache), also ist das Canonical
- * der richtige Hebel.
+ * galt dadurch als Duplikat und wurde nicht indexiert. Das Canonical allein
+ * reichte nicht – proxy.ts macht den Redirect für Unterseiten deshalb
+ * zusätzlich dauerhaft (308).
  *
- * x-default zeigt bewusst auf die unpräfixierte URL: genau dort findet die
- * Sprachverhandlung statt – das ist die Bedeutung von x-default.
+ * x-default zeigt auf die deutsche Fassung, nicht auf die unpräfixierte URL:
+ * Die leitet nur weiter, und als Ziel von x-default hat Google sie trotz
+ * Canonical selbst als kanonisch gewählt (Search Console, Okt. 2026:
+ * /apps/werkflow statt /de/apps/werkflow).
  *
  * WICHTIG: Metadata-Felder werden von Next.js pro Route ersetzt, nicht tief
  * gemischt. Jede Seite mit eigenem generateMetadata MUSS daher alternates
@@ -26,7 +28,7 @@ export function alternatesFor(locale: string, path = ""): Metadata["alternates"]
     canonical: `/${locale}${path}`,
     languages: {
       ...Object.fromEntries(routing.locales.map((l) => [l, `/${l}${path}`])),
-      "x-default": path || "/",
+      "x-default": `/${routing.defaultLocale}${path}`,
     },
   };
 }
