@@ -441,4 +441,147 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
       ],
     },
   },
+  furly: {
+    supabaseUrl: "https://lblveytzwbggzprecjbi.supabase.co",
+    anonKey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxibHZleXR6d2JnZ3pwcmVjamJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2NDU3NjgsImV4cCI6MjA5OTIyMTc2OH0.DJj7QdOYPIgqcEJIC9WY1lTcd4IM1jEQsEwBzJEz_JE",
+    mailSubject: "Konto löschen – Furly",
+    // Quelle: furly/supabase/functions/delete-account (was gelöscht wird) und
+    // Abschnitt 16 der Furly-Datenschutzerklärung. Anrede „Sie“ wie auf den
+    // übrigen Konto-löschen-Seiten (das Formular siezt); die App duzt.
+    confirm: {
+      de: "Mir ist klar, dass alle Tierprofile, Einträge, Chats und Beiträge endgültig gelöscht werden.",
+      en: "I understand that all pet profiles, entries, chats and posts will be permanently deleted.",
+    },
+    success: {
+      de: "Alle Tierprofile, Chats, Beiträge und Kontodaten wurden entfernt. Daten, die nur auf Ihrem Gerät liegen (z. B. Gewicht, Fütterung, Tagesroutine), entfernen Sie, indem Sie die App deinstallieren oder ihre Daten löschen. Denken Sie daran, ein laufendes Furly-Pro-Abo bei Google Play zu kündigen.",
+      en: "All pet profiles, chats, posts and account data have been removed. To remove data stored only on your device (e.g. weight, feeding, daily routine), uninstall the app or clear its data. Remember to cancel an active Furly Pro subscription in Google Play.",
+    },
+    sections: {
+      de: [
+        {
+          paragraphs: [
+            "Diese Seite erklärt, wie Sie Ihr Konto in der App Furly von SimplyNext und alle zugehörigen Daten löschen. Sie können die Löschung direkt in der App oder hier auf dieser Seite vornehmen.",
+          ],
+        },
+        {
+          heading: "Wichtig vor der Löschung",
+          list: [
+            "Keine Wiederherstellung: Alle Tierprofile, Krankenakte- und Impfeinträge, Erinnerungen, Chats, Trainingspläne und Beiträge werden gelöscht und lassen sich nicht wiederherstellen.",
+            "Abo kündigen: Das Löschen des Kontos beendet kein laufendes Furly-Pro-Abo. Abos werden über Google Play abgerechnet und müssen dort gekündigt werden: Google Play Store öffnen → Profilbild → Zahlungen und Abos → Abos → Furly → Abo kündigen.",
+          ],
+          slot: "subscriptions",
+        },
+        {
+          heading: "Möglichkeit 1: In der App löschen",
+          ordered: true,
+          list: [
+            "Öffnen Sie Furly und melden Sie sich an.",
+            "Öffnen Sie Ihr Profil und dort die Einstellungen.",
+            "Tippen Sie im Bereich „Konto“ auf „Konto löschen“.",
+            "Bestätigen Sie mit „Ja“.",
+          ],
+          afterList: ["Die Löschung erfolgt sofort. Die App entfernt dabei auch die nur auf Ihrem Gerät gespeicherten Daten."],
+        },
+        {
+          heading: "Möglichkeit 2: Hier auf dieser Seite löschen",
+          paragraphs: [
+            "Melden Sie sich mit der E-Mail-Adresse und dem Passwort Ihres Furly-Kontos an. Ihre Anmeldedaten gehen verschlüsselt direkt an unseren Anmeldedienst und werden auf dieser Website nicht gespeichert. Die Löschung erfolgt sofort.",
+          ],
+          slot: "form",
+        },
+        {
+          paragraphs: [
+            "Kein Zugang mehr zu Ihrem Konto oder mit Google angemeldet und kein Passwort? Schreiben Sie von Ihrer registrierten E-Mail-Adresse an info@simplynext.de (Betreff: „Konto löschen – Furly“). Wir löschen Ihr Konto innerhalb von 30 Tagen und bestätigen es Ihnen per E-Mail.",
+          ],
+          slot: "mail",
+        },
+        {
+          heading: "Welche Daten gelöscht werden",
+          paragraphs: ["Sofort und endgültig gelöscht werden:"],
+          list: [
+            "Ihr Konto einschließlich Anmeldedaten, Ihr Profil und Profilbild",
+            "alle Tierprofile, Krankenakte- und Impfeinträge sowie Erinnerungen",
+            "Ihre Tierarztliste",
+            "alle Chat-Verläufe mit Furly und Ihre Trainingspläne",
+            "alle Community-Beiträge, Likes und Lost&Found-Meldungen",
+            "alle von Ihnen hochgeladenen Fotos",
+            "Ihre gespeicherte Standortangabe und Geräte-Push-Token",
+            "Abo-Status und Zähler des Chat-Kontingents sowie Ihr Kundenkonto bei unserem Abo-Dienstleister RevenueCat",
+          ],
+        },
+        {
+          heading: "Welche Daten nicht von uns gelöscht werden",
+          list: [
+            "Daten auf Ihrem Gerät: Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine und Merkliste speichert Furly nur lokal auf Ihrem Gerät. Bei der Löschung über diese Website erreichen wir sie nicht – entfernen Sie sie, indem Sie die App deinstallieren oder in den Android-Einstellungen ihre Daten löschen.",
+            "Kaufbelege bei Google Play: Furly Pro wird über Google Play verkauft und abgerechnet. Google bewahrt Ihre Bestellungen nach eigenen Bestimmungen und gesetzlichen Aufbewahrungspflichten auf; es gilt die Datenschutzerklärung von Google (policies.google.com/privacy).",
+            "Gesetzliche Aufbewahrungspflichten: Soweit bei uns abrechnungsrelevante Belege vorliegen, werden sie bis zum Ablauf der gesetzlichen Frist gesperrt statt gelöscht und nicht anderweitig verarbeitet.",
+          ],
+          slot: "footer",
+        },
+      ],
+      en: [
+        {
+          paragraphs: [
+            "This page explains how to delete your account in the app Furly by SimplyNext and all associated data. You can delete it directly in the app or here on this page.",
+          ],
+        },
+        {
+          heading: "Important Before Deleting",
+          list: [
+            "No recovery: All pet profiles, health record and vaccination entries, reminders, chats, training plans and posts are deleted and cannot be restored.",
+            "Cancel your subscription: Deleting the account does not end an active Furly Pro subscription. Subscriptions are billed via Google Play and must be cancelled there: open the Google Play Store → profile picture → Payments & subscriptions → Subscriptions → Furly → Cancel subscription.",
+          ],
+          slot: "subscriptions",
+        },
+        {
+          heading: "Option 1: Delete in the App",
+          ordered: true,
+          list: [
+            "Open Furly and sign in.",
+            "Open your profile and then the Settings.",
+            "In the “Account” section, tap “Delete account”.",
+            "Confirm with “Yes”.",
+          ],
+          afterList: ["The deletion takes effect immediately. The app also removes the data stored only on your device."],
+        },
+        {
+          heading: "Option 2: Delete Here on This Page",
+          paragraphs: [
+            "Sign in with the e-mail address and password of your Furly account. Your sign-in details are sent encrypted directly to our authentication service and are not stored on this website. The deletion takes effect immediately.",
+          ],
+          slot: "form",
+        },
+        {
+          paragraphs: [
+            "No longer have access to your account, or signed in with Google and have no password? Write from your registered e-mail address to info@simplynext.de (subject: “Konto löschen – Furly”). We will delete your account within 30 days and confirm it to you by e-mail.",
+          ],
+          slot: "mail",
+        },
+        {
+          heading: "Which Data Is Deleted",
+          paragraphs: ["The following is deleted immediately and permanently:"],
+          list: [
+            "your account including sign-in data, your profile and profile picture",
+            "all pet profiles, health record and vaccination entries as well as reminders",
+            "your list of vets",
+            "all chat histories with Furly and your training plans",
+            "all community posts, likes and Lost & Found reports",
+            "all photos you have uploaded",
+            "your stored location and device push token",
+            "subscription status and chat quota counters as well as your customer account at our subscription service provider RevenueCat",
+          ],
+        },
+        {
+          heading: "Which Data We Do Not Delete",
+          list: [
+            "Data on your device: Furly stores weight, feeding, activity, calendar notes, daily routine and saved articles only locally on your device. Deleting via this website cannot reach them – remove them by uninstalling the app or clearing its data in the Android settings.",
+            "Purchase receipts at Google Play: Furly Pro is sold and billed via Google Play. Google retains your orders in accordance with its own terms and statutory retention obligations; Google’s privacy policy applies (policies.google.com/privacy).",
+            "Statutory retention obligations: Where we hold records relevant for accounting, they are restricted rather than deleted until the statutory period expires and are not processed otherwise.",
+          ],
+          slot: "footer",
+        },
+      ],
+    },
+  },
 };
