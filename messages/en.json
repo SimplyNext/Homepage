@@ -21,7 +21,8 @@
     "legalImpressum": "Legal notice",
     "legalDatenschutz": "Privacy",
     "copyright": "All rights reserved.",
-    "stack": "Flutter · Expo"
+    "stack": "Flutter · Expo",
+    "social": "SimplyNext on {name}"
   },
   "bento": {
     "eyebrow": "Overview",

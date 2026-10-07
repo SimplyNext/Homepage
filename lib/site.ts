@@ -15,6 +15,11 @@ export const site = {
   // ausgegebenen URLs sind direkt die endgültigen www-URLs (keine Redirect-Kette).
   url: "https://www.simplynext.de",
   email: "info@simplynext.de",
+  social: [
+    { name: "TikTok", url: "https://www.tiktok.com/@simplynext.de" },
+    { name: "Instagram", url: "https://www.instagram.com/apps_by_simplynext/" },
+    { name: "YouTube", url: "https://www.youtube.com/@apps_by_simplynext" },
+  ],
   legal: {
     companyName: "SimplyNext",
     responsible: "Nuri Toker",
