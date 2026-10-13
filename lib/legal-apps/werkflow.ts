@@ -36,7 +36,7 @@ export const werkflowDatenschutz: LegalSection[] = [
   {
     heading: "2. Allgemeines zur Datenverarbeitung",
     paragraphs: [
-      "WerkFlow ist eine App für Handwerksbetriebe zur Erstellung von Angeboten und Rechnungen (einschließlich E-Rechnungen), zur Kundenverwaltung und zur Verwaltung von Materiallisten. Bei der Nutzung der App werden personenbezogene Daten verarbeitet. Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, Adresse, E-Mail-Adresse oder Nutzerverhalten.",
+      "WerkFlow ist eine App für Handwerksbetriebe zur Erstellung von Angeboten und Rechnungen (einschließlich E-Rechnungen) sowie von Kostenvoranschlägen, zur Kundenverwaltung und zur Verwaltung von Materiallisten. Bei der Nutzung der App werden personenbezogene Daten verarbeitet. Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, Adresse, E-Mail-Adresse oder Nutzerverhalten.",
       "Wir verarbeiten Ihre Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen App sowie unserer Inhalte und Leistungen erforderlich ist, oder soweit Sie eingewilligt haben.",
     ],
   },
@@ -59,7 +59,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.2 Firmenprofildaten",
     level: 3,
     paragraphs: [
-      "Zur Erstellung von Angeboten, Rechnungen und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
+      "Zur Erstellung von Angeboten, Kostenvoranschlägen, Rechnungen und PDFs erheben und speichern wir die von Ihnen eingegebenen Angaben zu Ihrem Betrieb:",
     ],
     list: [
       "Firmenname, Rechtsform",
@@ -111,18 +111,19 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
   },
   {
-    heading: "3.5 Angebots-, Rechnungs- und Materialdaten",
+    heading: "3.5 Angebots-, Kostenvoranschlags-, Rechnungs- und Materialdaten",
     level: 3,
     paragraphs: [
-      "Rechnungen lassen sich in der App aus einem angenommenen Angebot oder ohne vorheriges Angebot erstellen. Verarbeitet werden dabei:",
+      "Ein Kostenvoranschlag ist eine unverbindliche Kostenschätzung. Er entsteht wie ein Angebot und liegt im selben Archiv. Aus ihm lässt sich ein Angebot erstellen oder, nach der Auftragsbestätigung, direkt eine Rechnung. Rechnungen lassen sich in der App aus einem angenommenen Angebot, aus einem beauftragten Kostenvoranschlag oder ohne vorheriges Angebot erstellen. Verarbeitet werden dabei:",
     ],
     list: [
-      "Angebotsnummer, Datum, Betreff, Gültigkeitsdauer",
+      "Angebotsnummer bzw. Nummer des Kostenvoranschlags (KV-Jahr-Nummer, bei einer neuen Fassung mit angehängter Fassungsnummer, z. B. KV-2026-0001-2), Datum, Betreff, bei Angeboten die Gültigkeitsdauer",
       "Positionen, Mengen, Einzelpreise, Gesamtsummen, MwSt.",
       "Zahlungsbedingungen, Liefer-/Leistungszeit",
-      "Status (Entwurf, versendet, angenommen, abgelehnt, durch neue Version ersetzt)",
-      "Bei versendeten Angeboten: Versandzeitpunkt, das versendete PDF so, wie Ihr Kunde es erhalten hat, und dessen Prüfsumme (SHA-256)",
-      "Bei angenommenen Angeboten die Auftragsbestätigung: fortlaufende Nummer, Tag und Art der Annahme (mündlich, E-Mail, Brief oder Unterschrift), voraussichtlicher Beginn, Ihr Vermerk; bei Privatkunden außerdem, wo der Auftrag zustande kam, ob ein Widerrufsrecht besteht und ob der Kunde den Beginn vor Ablauf der Widerrufsfrist verlangt hat; bei Annahme per Unterschrift Name und Unterschrift des Kunden als Bilddatei; das PDF der Auftragsbestätigung mit Prüfsumme (SHA-256)",
+      "Status (Entwurf, versendet, angenommen, abgelehnt, durch neue Version bzw. Fassung ersetzt)",
+      "Bei einem Angebot, das aus einem Kostenvoranschlag entstand: der Verweis auf diesen Kostenvoranschlag, damit die Belegkette vom Kostenvoranschlag bis zur Rechnung lückenlos bleibt",
+      "Bei versendeten Angeboten und Kostenvoranschlägen: Versandzeitpunkt, das versendete PDF so, wie Ihr Kunde es erhalten hat, und dessen Prüfsumme (SHA-256)",
+      "Bei angenommenen Angeboten und beauftragten Kostenvoranschlägen die Auftragsbestätigung: fortlaufende Nummer, Tag und Art der Annahme (mündlich, E-Mail, Brief oder Unterschrift), voraussichtlicher Beginn, Ihr Vermerk; bei Privatkunden außerdem, wo der Auftrag zustande kam, ob ein Widerrufsrecht besteht und ob der Kunde den Beginn vor Ablauf der Widerrufsfrist verlangt hat; bei Annahme per Unterschrift Name und Unterschrift des Kunden als Bilddatei; das PDF der Auftragsbestätigung mit Prüfsumme (SHA-256)",
       "Materialliste mit Bezeichnungen, Preisen, Einheiten",
       "Bei Rechnungen zusätzlich die Angaben nach § 14 UStG: fortlaufende Rechnungsnummer, Rechnungsart (Rechnung, Abschlags-, Schluss- oder Stornorechnung) und Rechnungsdatum",
       "Leistungsdatum bzw. Leistungszeitraum, Fälligkeit und Zahlungsziel",
@@ -133,7 +134,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
     afterList: [
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung), für die Pflichtangaben zusätzlich Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung nach § 14 UStG).",
-      "Unveränderbarkeit: Eine versendete Rechnung lässt sich in der App weder ändern noch vor Ablauf der Aufbewahrungsfrist löschen (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form, GoBD). Eine Korrektur ist nur über eine Stornorechnung möglich, die auf die ursprüngliche Rechnung verweist. Dasselbe gilt für versendete Angebote: Eine Änderung legt eine neue Version mit neuer Angebotsnummer an, die alte Version bleibt erhalten.",
+      "Unveränderbarkeit: Eine versendete Rechnung lässt sich in der App weder ändern noch vor Ablauf der Aufbewahrungsfrist löschen (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form, GoBD). Eine Korrektur ist nur über eine Stornorechnung möglich, die auf die ursprüngliche Rechnung verweist. Dasselbe gilt für versendete Angebote: Eine Änderung legt eine neue Version mit neuer Angebotsnummer an, die alte Version bleibt erhalten. Bei einem Kostenvoranschlag trägt die geänderte Fassung die Nummer des ursprünglichen mit angehängter Fassungsnummer (KV-2026-0001-2); die ältere Fassung bleibt unverändert erhalten und gilt als ersetzt. Ist sie bereits beauftragt, bleibt sie als angenommen bestehen.",
     ],
   },
   {
@@ -143,8 +144,8 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Die gesetzlichen Aufbewahrungspflichten für Ihre Geschäftsunterlagen treffen Sie als Unternehmer. Es gelten insbesondere:",
     ],
     list: [
-      "Rechnungen, Abschlags-, Schluss- und Stornorechnungen einschließlich der eingebetteten E-Rechnung (XML) sowie Angebote, aus denen ein Auftrag hervorgegangen ist: 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 257 Abs. 1 Nr. 4, Abs. 4 HGB, § 14b UStG)",
-      "Angebote ohne anschließenden Auftrag: 6 Jahre (§ 147 Abs. 1 Nr. 2, 3, Abs. 3 AO, § 257 Abs. 1 Nr. 2, 3, Abs. 4 HGB)",
+      "Rechnungen, Abschlags-, Schluss- und Stornorechnungen einschließlich der eingebetteten E-Rechnung (XML) sowie Angebote und Kostenvoranschläge, aus denen ein Auftrag hervorgegangen ist: 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 257 Abs. 1 Nr. 4, Abs. 4 HGB, § 14b UStG)",
+      "Angebote und Kostenvoranschläge ohne anschließenden Auftrag: 6 Jahre (§ 147 Abs. 1 Nr. 2, 3, Abs. 3 AO, § 257 Abs. 1 Nr. 2, 3, Abs. 4 HGB)",
       "Zur Einordnung, nicht in WerkFlow geführt: Eingangsrechnungen und sonstige Buchungsbelege 8 Jahre (§ 147 Abs. 1 Nr. 4, Abs. 3 AO, § 14b Abs. 1 UStG); Bücher, Inventare und Jahresabschlüsse 10 Jahre (§ 147 Abs. 1 Nr. 1, Abs. 3 AO, § 257 Abs. 1 Nr. 1, Abs. 4 HGB)",
     ],
     afterList: [
@@ -156,7 +157,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "Speicherung und Löschung durch uns",
     level: 3,
     paragraphs: [
-      "Wir speichern Ihre versendeten Angebote und Rechnungen einschließlich PDF und E-Rechnung bis zum Ende der Aufbewahrungsfrist. Vorher lassen sie sich nicht löschen, auch nicht von Ihnen, damit Ihre Aufbewahrungspflicht erfüllt bleibt. Entwürfe können Sie jederzeit löschen.",
+      "Wir speichern Ihre versendeten Angebote, Kostenvoranschläge und Rechnungen einschließlich PDF und E-Rechnung bis zum Ende der Aufbewahrungsfrist. Vorher lassen sie sich nicht löschen, auch nicht von Ihnen, damit Ihre Aufbewahrungspflicht erfüllt bleibt. Entwürfe können Sie jederzeit löschen.",
       "Nach Ablauf der Frist löschen wir die Belege automatisch, weil wir personenbezogene Daten nicht länger speichern dürfen, als es erforderlich ist (Art. 5 Abs. 1 lit. e, Art. 17 Abs. 1 lit. a DSGVO):",
     ],
     list: [
@@ -174,7 +175,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.6 Fotos und Sprachaufnahmen (KI-Analyse)",
     level: 3,
     paragraphs: [
-      "Um Ihnen die automatische Angebotserstellung per KI zu ermöglichen, können Sie:",
+      "Um Ihnen die automatische Erstellung von Angeboten und Kostenvoranschlägen per KI zu ermöglichen, können Sie:",
     ],
     list: [
       "Fotos von Baustellen über die Gerätekamera aufnehmen oder aus der Galerie wählen",
@@ -183,15 +184,15 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
     afterList: [
       "Diese Inhalte werden nur nach Ihrer ausdrücklichen Einwilligung (Zustimmungsdialog in der App) über eine gesicherte Verbindung an unsere Server (Supabase, siehe Ziff. 4.1) übermittelt und von dort zur automatisierten Analyse an einen KI-Dienst weitergeleitet.",
-      "Primärer KI-Dienst: Google Gemini (kostenpflichtiger Tarif mit aktivierter Abrechnung) verarbeitet standardmäßig Fotos, Sprachaufnahmen und Textbeschreibungen für die Angebotserstellung, Fotos von Materiallisten sowie Leistungsbeschreibungen, aus denen für eine Rechnung ohne Angebot Positionen und ein Leistungstext entstehen.",
+      "Primärer KI-Dienst: Google Gemini (kostenpflichtiger Tarif mit aktivierter Abrechnung) verarbeitet standardmäßig Fotos, Sprachaufnahmen und Textbeschreibungen für die Erstellung von Angeboten und Kostenvoranschlägen, Fotos von Materiallisten sowie Leistungsbeschreibungen, aus denen für eine Rechnung ohne Angebot Positionen und ein Leistungstext entstehen.",
       "Damit die KI Ihre eigenen Bezeichnungen und Preise verwenden kann, werden die Einträge Ihrer Materialliste (Bezeichnung, Einheit, Preis) mit übermittelt.",
       "Fallback-Dienst: Ist Google Gemini vorübergehend nicht erreichbar (z. B. bei einer technischen Störung), wird die Anfrage automatisch an OpenAI (GPT-4o, ggf. inkl. Whisper-Transkription bei Sprachaufnahmen) weitergeleitet, damit Ihre Anfrage dennoch bearbeitet werden kann. Der Fallback kommt nur im Ausnahmefall zum Einsatz.",
-      "Die Rohdaten (Fotos, Audiodateien) werden nach Abschluss der KI-Analyse nicht dauerhaft auf unseren Servern gespeichert, sondern nur für die Dauer der Verarbeitung übermittelt. Ausgenommen sind Fotos, die Sie einem Angebot oder einer Rechnung hinzufügen (siehe unten).",
+      "Die Rohdaten (Fotos, Audiodateien) werden nach Abschluss der KI-Analyse nicht dauerhaft auf unseren Servern gespeichert, sondern nur für die Dauer der Verarbeitung übermittelt. Ausgenommen sind Fotos, die Sie einem Angebot, einem Kostenvoranschlag oder einer Rechnung hinzufügen (siehe unten).",
       "Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnung nutzen, gilt gemäß den Nutzungsbedingungen der Gemini-API ausdrücklich, dass Google Ihre Eingaben (Prompts, Bilder, Audiodateien) und die generierten Antworten nicht zur Verbesserung von Google-Produkten verwendet. Eingaben werden dort ausschließlich zeitlich begrenzt zur Missbrauchserkennung und aus Sicherheitsgründen protokolliert (Quelle: Gemini API – Nutzungsbedingungen für kostenpflichtige Dienste).",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung kann jederzeit mit Wirkung für die Zukunft in den App-Einstellungen widerrufen werden (Toggle „KI-Analyse verwenden“).",
       "Wichtiger Hinweis: Achten Sie beim Fotografieren von Baustellen/Kundenwohnungen darauf, dass keine Personen oder sensible private Unterlagen im Bild erkennbar sind, da Sie hierfür als Nutzer selbst verantwortlich sind.",
-      "Diktierfunktion (Sprache zu Text): In Angeboten, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Dazu wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer und nur bei bestehender Internetverbindung – an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Einwilligung oder ohne Internetverbindung steht das Diktat nicht zur Verfügung; eine Spracherkennung auf dem Gerät nutzt die App nicht. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente. Ohne Abonnement steht das Diktat in Angeboten nur zur Verfügung, solange kostenlose KI-Angebote übrig sind, in Rechnungen, solange kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Mit einem Abonnement bleibt es überall verfügbar, auch nach Erreichen des monatlichen Kontingents.",
-      "Fotos zu Angeboten und Rechnungen: Fotos, die Sie in der App einem Angebot oder einer Rechnung hinzufügen – auch das Foto für die KI-Analyse, sobald Sie das Angebot speichern –, speichern wir in einem nur Ihrem Konto zugänglichen Speicher auf unseren Servern (Supabase, siehe Ziff. 4.1), damit Sie sie später beim Beleg wieder ansehen können. Sie stehen nicht auf dem Beleg und werden nicht an Ihre Kunden übermittelt. Sie können sie jederzeit einzeln löschen; außerdem werden sie mit dem gelöschten Entwurf oder Beleg und mit Ihrem Konto gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion).",
+      "Diktierfunktion (Sprache zu Text): In Angeboten, Kostenvoranschlägen, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Dazu wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer und nur bei bestehender Internetverbindung – an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Einwilligung oder ohne Internetverbindung steht das Diktat nicht zur Verfügung; eine Spracherkennung auf dem Gerät nutzt die App nicht. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente. Ohne Abonnement steht das Diktat in Angeboten und Kostenvoranschlägen nur zur Verfügung, solange kostenlose KI-Angebote übrig sind, in Rechnungen, solange kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Mit einem Abonnement bleibt es überall verfügbar, auch nach Erreichen des monatlichen Kontingents.",
+      "Fotos zu Angeboten, Kostenvoranschlägen und Rechnungen: Fotos, die Sie in der App einem Angebot oder einer Rechnung hinzufügen – auch das Foto für die KI-Analyse, sobald Sie das Angebot speichern –, speichern wir in einem nur Ihrem Konto zugänglichen Speicher auf unseren Servern (Supabase, siehe Ziff. 4.1), damit Sie sie später beim Beleg wieder ansehen können. Sie stehen nicht auf dem Beleg und werden nicht an Ihre Kunden übermittelt. Sie können sie jederzeit einzeln löschen; außerdem werden sie mit dem gelöschten Entwurf oder Beleg und mit Ihrem Konto gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion).",
     ],
   },
   {
@@ -212,7 +213,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Ihre Nutzer-ID (zur Zuordnung des Abos zu Ihrem Konto)",
       "Abo-Status, gebuchter Tarif, Ablaufdatum",
       "Kaufhistorie (verwaltet über RevenueCat, siehe Ziff. 4.3)",
-      "Anzahl der im laufenden Monat genutzten KI-Angebote und KI-Rechnungen (zur Berechnung Ihres Kontingents)",
+      "Anzahl der im laufenden Monat genutzten KI-Angebote und KI-Rechnungen (zur Berechnung Ihres Kontingents; ein KI-Kostenvoranschlag zählt wie ein KI-Angebot)",
     ],
     afterList: [
       "Die eigentliche Zahlungsabwicklung erfolgt vollständig über Google Play Billing. Kreditkarten- oder sonstige Zahlungsdaten werden von uns zu keinem Zeitpunkt erhoben, gespeichert oder eingesehen.",
@@ -237,7 +238,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     heading: "3.10 Änderungsprotokoll der Belege",
     level: 3,
     paragraphs: [
-      "Damit nachvollziehbar bleibt, wann ein Angebot oder eine Rechnung entstanden, versendet oder geändert wurde, führt die App zu jedem Beleg ein Protokoll. Gespeichert werden:",
+      "Damit nachvollziehbar bleibt, wann ein Angebot, ein Kostenvoranschlag oder eine Rechnung entstanden, versendet oder geändert wurde, führt die App zu jedem Beleg ein Protokoll. Gespeichert werden:",
     ],
     list: [
       "Zeitpunkt und Art des Vorgangs (angelegt, geändert, ausgestellt, Statusänderung, PDF archiviert, geteilt, exportiert, Aufbewahrung verlängert, gelöscht)",
@@ -283,7 +284,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. Die Daten werden auf Servern in der EU gespeichert (Rechenzentrum in Irland).",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten und Rechnungen, Auftragsbestätigungen mit Unterschriften Ihrer Kunden).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Kostenvoranschlags-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten, Kostenvoranschlägen und Rechnungen, Auftragsbestätigungen mit Unterschriften Ihrer Kunden).",
       "Drittlandtransfer: Da Supabase ein Unternehmen mit Sitz in den USA ist, lässt sich ein Zugriff aus den USA (z. B. im Rahmen von Wartung und Support) nicht ausschließen. Dieser ist über den Auftragsverarbeitungsvertrag mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) abgesichert.",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
@@ -340,8 +341,8 @@ export const werkflowDatenschutz: LegalSection[] = [
     table: {
       head: ["Berechtigung", "Zweck", "Pflicht"],
       rows: [
-        ["Kamera", "Aufnahme von Fotos für die KI-gestützte Angebotserstellung und zu Angeboten und Rechnungen", "Nur bei aktiver Nutzung der Foto-Funktion"],
-        ["Mikrofon", "Aufnahme von Sprachnotizen zur Angebotserstellung sowie Diktieren von Texten", "Nur bei aktiver Nutzung der Sprachfunktion"],
+        ["Kamera", "Aufnahme von Fotos für die KI-gestützte Erstellung von Angeboten und Kostenvoranschlägen sowie zu Angeboten, Kostenvoranschlägen und Rechnungen", "Nur bei aktiver Nutzung der Foto-Funktion"],
+        ["Mikrofon", "Aufnahme von Sprachnotizen zur Erstellung von Angeboten und Kostenvoranschlägen sowie Diktieren von Texten", "Nur bei aktiver Nutzung der Sprachfunktion"],
         ["Internetzugriff", "Kommunikation mit unseren Servern (Supabase, RevenueCat)", "Erforderlich für Grundfunktionen"],
       ],
     },
@@ -357,14 +358,14 @@ export const werkflowDatenschutz: LegalSection[] = [
       rows: [
         ["Kontodaten", "Bis zur Löschung des Nutzerkontos"],
         [
-          "Angebote und Rechnungen einschließlich PDF und E-Rechnung (ZUGFeRD/XRechnung)",
+          "Angebote, Kostenvoranschläge und Rechnungen einschließlich PDF und E-Rechnung (ZUGFeRD/XRechnung)",
           "Entwürfe bis zur Löschung durch Sie. Versendete Belege bis zum Ende der Aufbewahrungsfrist (8 bzw. 6 Jahre ab Ende des Kalenderjahres); automatische Löschung am 31. März danach, Hinweis in der App ab 1. Oktober, Verlängerung möglich (Ziff. 3.5). Bei Kontolöschung sofort.",
         ],
         ["Änderungsprotokoll der Belege", "Wie der zugehörige Beleg; danach nur geschwärzte Einträge ohne Belegbezug bis zur Kontolöschung (Ziff. 3.10)"],
         ["Kundendaten", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung. Die Kopie der Kundendaten in einer versendeten Rechnung bleibt so lange erhalten wie die Rechnung."],
         ["Fotos/Sprachaufnahmen zur KI-Analyse und zum Diktat", "Nur temporär während der Verarbeitung, keine dauerhafte Speicherung"],
         ["Verbrauch der KI-Aufrufe (Ziff. 3.9)", "Bis zur Account-Löschung"],
-        ["Auftragsbestätigungen einschließlich PDF und Unterschrift des Kunden", "Wie das zugehörige Angebot, mindestens 6 Jahre ab Ende des Jahres der Bestätigung (Ziff. 3.5). Bei Kontolöschung sofort."],
+        ["Auftragsbestätigungen einschließlich PDF und Unterschrift des Kunden", "Wie das zugehörige Angebot bzw. der zugehörige Kostenvoranschlag, mindestens 6 Jahre ab Ende des Jahres der Bestätigung (Ziff. 3.5). Bei Kontolöschung sofort."],
         ["Fotos zu Angeboten und Rechnungen", "Bis zur Löschung durch Sie, mit dem gelöschten Entwurf bzw. Beleg oder mit dem Konto"],
         ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
@@ -392,7 +393,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     list: [
       "Datenexport: Unter Einstellungen → „Meine Daten exportieren“ können Sie alle gespeicherten Daten als JSON-Datei herunterladen, einschließlich Ihrer Rechnungen mit den E-Rechnungs-Daten und des Änderungsprotokolls.",
-      "Export für Steuerberater: Unter Einstellungen → „Export für Steuerberater“ erhalten Sie Ihre Angebote und Rechnungen eines Zeitraums als ZIP-Archiv (PDF, E-Rechnung, Tabellen, Änderungsprotokoll) und auf Wunsch einen DATEV-Buchungsstapel. Die Datei entsteht auf Ihrem Gerät; Sie entscheiden, wo Sie sie speichern und an wen Sie sie weitergeben.",
+      "Export für Steuerberater: Unter Einstellungen → „Export für Steuerberater“ erhalten Sie Ihre Angebote, Kostenvoranschläge und Rechnungen eines Zeitraums als ZIP-Archiv (PDF, E-Rechnung, Tabellen, Änderungsprotokoll) und auf Wunsch einen DATEV-Buchungsstapel. Die Datei entsteht auf Ihrem Gerät; Sie entscheiden, wo Sie sie speichern und an wen Sie sie weitergeben.",
       "Account-Löschung: Unter Einstellungen → „Account löschen“ können Sie Ihr Konto und alle zugehörigen Daten unwiderruflich löschen lassen. Dabei werden auch Ihre Angebote und Rechnungen gelöscht; die App bietet Ihnen vorher an, das Archiv aller Jahre herunterzuladen (Ziff. 3.5).",
       "Widerruf KI-Einwilligung: Unter Einstellungen können Sie die KI-gestützte Analyse jederzeit deaktivieren.",
     ],
@@ -415,7 +416,7 @@ export const werkflowDatenschutz: LegalSection[] = [
   {
     heading: "9. Keine automatisierte Entscheidungsfindung",
     paragraphs: [
-      "Es findet keine automatisierte Entscheidungsfindung im Sinne des Art. 22 DSGVO statt, die rechtliche Wirkung gegenüber Ihnen entfaltet. Die KI-gestützte Erkennung von Materialien und Arbeitszeiten dient lediglich als Vorschlag; Sie prüfen alle KI-generierten Angaben, bevor Sie einen Beleg speichern oder versenden (bei Angeboten zusätzlich über die Bestätigung in der App: „Ich habe die KI-generierten Daten geprüft und bestätige deren Richtigkeit“).",
+      "Es findet keine automatisierte Entscheidungsfindung im Sinne des Art. 22 DSGVO statt, die rechtliche Wirkung gegenüber Ihnen entfaltet. Die KI-gestützte Erkennung von Materialien und Arbeitszeiten dient lediglich als Vorschlag; Sie prüfen alle KI-generierten Angaben, bevor Sie einen Beleg speichern oder versenden (bei Angeboten und Kostenvoranschlägen zusätzlich über die Bestätigung in der App: „Ich habe die KI-generierten Daten geprüft und bestätige deren Richtigkeit“).",
     ],
   },
   {
@@ -460,11 +461,11 @@ export const werkflowAgb: LegalSection[] = [
       "(1) Der Anbieter stellt dem Nutzer die App über den Google Play Store zur Verfügung. Die App bietet insbesondere folgende Funktionen:",
     ],
     list: [
-      "Erstellung, Verwaltung und Export (PDF) von Angeboten",
+      "Erstellung, Verwaltung und Export (PDF) von Angeboten und von Kostenvoranschlägen (unverbindliche Kostenschätzungen, bei geänderten Kosten als neue Fassung)",
       "Erstellung von Rechnungen, Abschlags-, Schluss- und Stornorechnungen mit fortlaufender Rechnungsnummer, als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X, Profil EN 16931) bzw. als XRechnung für öffentliche Auftraggeber",
       "Verwaltung von Kundendaten",
       "Verwaltung einer Material-Preisliste",
-      "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebotsvorschlägen sowie von Rechnungspositionen und Leistungstexten für Rechnungen ohne vorheriges Angebot",
+      "KI-gestützte Analyse von Fotos, Sprachaufnahmen und Textbeschreibungen zur automatisierten Erstellung von Angebots- und Kostenvoranschlagsvorschlägen sowie von Rechnungspositionen und Leistungstexten für Rechnungen ohne vorheriges Angebot",
       "Digitale Unterschriftenerfassung, auch für die Annahme eines Angebots durch den Kunden",
       "Auftragsbestätigungen mit Nachweis, wann und wie der Kunde angenommen hat; bei Verträgen mit Verbrauchern außerhalb von Geschäftsräumen oder im Fernabsatz einschließlich der amtlichen Muster-Widerrufsbelehrung und des Muster-Widerrufsformulars (Anlage 1 und 2 zu Art. 246a EGBGB)",
       "Freie Notizen und Diktierfunktion",
@@ -472,8 +473,8 @@ export const werkflowAgb: LegalSection[] = [
       "Unterstützung einer GoBD-konformen Arbeitsweise: unveränderbare Archivierung versendeter Angebote und Rechnungen, Änderungsprotokoll, Export für Steuerberater und Betriebsprüfung (ZIP-Archiv nach dem Beschreibungsstandard für die Datenüberlassung, DATEV-Buchungsstapel) sowie eine Vorlage für die Verfahrensdokumentation",
     ],
     afterList: [
-      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose KI-Angebote und 3 kostenlose KI-Rechnungen, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses. In der Testversion ist die Diktierfunktion (Sprache zu Text) an das jeweilige Kontingent gebunden: In Angeboten steht sie zur Verfügung, solange noch kostenlose KI-Angebote übrig sind, in Rechnungen, solange noch kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Danach ist das Diktat im jeweiligen Bereich ohne Abonnement gesperrt. Mit einem Abonnement bleibt das Diktat überall verfügbar, auch nach Erreichen des monatlichen Kontingents. Eine KI-Analyse wird auf das Kontingent angerechnet, sobald sie ein Ergebnis liefert; das gilt auch dann, wenn der Nutzer das Ergebnis anschließend verwirft oder den Beleg nicht speichert oder versendet. Schlägt die Analyse aus technischen Gründen fehl oder erkennt die App, dass die Beschreibung keine berechenbare Leistung enthält, wird sie nicht angerechnet, es sei denn, der Nutzer lässt die Analyse dennoch ausdrücklich fortsetzen.",
-      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung, Rechnungspositionen, Leistungstexte) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot oder einer Rechnung auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte. In der Beschreibung genannte Preise werden als Nettopreise übernommen; als brutto bezeichnete Preise rechnet die App mit dem im Profil hinterlegten Steuersatz auf netto um.",
+      "(2) Die App wird in einer kostenlosen Testversion (3 kostenlose KI-Angebote und 3 kostenlose KI-Rechnungen, keine Kreditkartenangabe erforderlich) sowie in kostenpflichtigen Abonnement-Tarifen („Solo“, „Kleiner Betrieb“, „Pro“) angeboten. Der jeweilige Funktionsumfang der Tarife ergibt sich aus der Darstellung in der App zum Zeitpunkt des Vertragsschlusses. In der Testversion ist die Diktierfunktion (Sprache zu Text) an das jeweilige Kontingent gebunden: In Angeboten steht sie zur Verfügung, solange noch kostenlose KI-Angebote übrig sind, in Rechnungen, solange noch kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Danach ist das Diktat im jeweiligen Bereich ohne Abonnement gesperrt. Mit einem Abonnement bleibt das Diktat überall verfügbar, auch nach Erreichen des monatlichen Kontingents. Ein KI-Kostenvoranschlag zählt wie ein KI-Angebot. Eine KI-Analyse wird auf das Kontingent angerechnet, sobald sie ein Ergebnis liefert; das gilt auch dann, wenn der Nutzer das Ergebnis anschließend verwirft oder den Beleg nicht speichert oder versendet. Schlägt die Analyse aus technischen Gründen fehl oder erkennt die App, dass die Beschreibung keine berechenbare Leistung enthält, wird sie nicht angerechnet, es sei denn, der Nutzer lässt die Analyse dennoch ausdrücklich fortsetzen.",
+      "(3) Die von der App KI-gestützt erstellten Vorschläge (Materialerkennung, Arbeitszeitschätzung, Rechnungspositionen, Leistungstexte) sind unverbindliche Vorschläge. Der Nutzer ist verpflichtet, alle automatisiert generierten Angaben vor deren Verwendung in einem Angebot, einem Kostenvoranschlag oder einer Rechnung auf Richtigkeit und Vollständigkeit zu prüfen. Der Anbieter übernimmt keine Gewähr für die Richtigkeit KI-generierter Inhalte. In der Beschreibung genannte Preise werden als Nettopreise übernommen; als brutto bezeichnete Preise rechnet die App mit dem im Profil hinterlegten Steuersatz auf netto um.",
       "(4) Der Anbieter ist berechtigt, den Funktionsumfang der App im Rahmen der technischen Weiterentwicklung anzupassen, zu erweitern oder einzuschränken, sofern dies dem Nutzer zumutbar ist und der vertraglich vereinbarte Kernumfang der jeweils gebuchten Leistung erhalten bleibt.",
       "(5) Die App unterstützt eine GoBD-konforme Arbeitsweise; sie ist kein zertifiziertes Buchführungssystem und ersetzt weder die Buchführung noch die steuerliche Beratung. Die Verantwortung für die Ordnungsmäßigkeit der Aufzeichnungen, für eine vollständige Verfahrensdokumentation und für die mit dem Steuerberater abgestimmte Kontenzuordnung im DATEV-Export liegt beim Nutzer.",
     ],
@@ -506,8 +507,8 @@ export const werkflowAgb: LegalSection[] = [
       "(3) Der Nutzer verpflichtet sich, beim Fotografieren im Rahmen der KI-Analyse-Funktion (z. B. auf Baustellen oder in Kundenwohnungen) sicherzustellen, dass keine Personen oder sensiblen privaten Unterlagen erkennbar abgebildet werden, sofern dies nicht zur Leistungserbringung erforderlich und rechtlich zulässig ist.",
       "(4) Der Nutzer verpflichtet sich, seine Zugangsdaten (E-Mail, Passwort) geheim zu halten und vor dem Zugriff Dritter zu schützen. Bei Verdacht auf missbräuchliche Nutzung ist der Anbieter unverzüglich zu informieren.",
       "(5) Es ist untersagt, die App zu nutzen, um rechtswidrige, beleidigende, diskriminierende oder gegen Rechte Dritter verstoßende Inhalte zu erstellen, zu speichern oder zu verbreiten.",
-      "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote und Rechnungen (einschließlich Preisen, Steuerangaben und der Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Inhalte durch den Anbieter findet nicht statt. Die App unterstützt die Einhaltung der Pflichtangaben, ersetzt aber keine steuerliche Beratung.",
-      "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen, Auftragsbestätigungen und Angebote, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote, Auftragsbestätigungen und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
+      "(6) Der Nutzer ist für die inhaltliche Richtigkeit der von ihm erstellten und an seine Kunden versendeten Angebote und Rechnungen (einschließlich Preisen, Steuerangaben und der Pflichtangaben nach § 14 UStG) allein verantwortlich. Eine Prüfung der Inhalte durch den Anbieter findet nicht statt. Das gilt auch für Kostenvoranschläge: Der Nutzer entscheidet über die Kosten, die er seinem Kunden nennt, und ist dafür verantwortlich, dem Kunden eine zu erwartende wesentliche Überschreitung unverzüglich anzuzeigen (§ 649 BGB). Die Hinweise der App dazu, etwa die Warnung bei einer Rechnung, die mehr als 15 % über dem Kostenvoranschlag liegt, sind eine Erinnerung und keine Rechtsberatung. Die App unterstützt die Einhaltung der Pflichtangaben, ersetzt aber keine steuerliche Beratung.",
+      "(7) Die gesetzlichen Aufbewahrungspflichten für Rechnungen, Angebote und sonstige Geschäftsunterlagen (insbesondere § 147 AO, § 257 HGB, § 14b UStG) treffen den Nutzer. Rechnungen, Auftragsbestätigungen sowie Angebote und Kostenvoranschläge, aus denen ein Auftrag hervorgegangen ist, sind 8 Jahre aufzubewahren, Angebote und Kostenvoranschläge ohne anschließenden Auftrag 6 Jahre; die Frist beginnt jeweils mit dem Ende des Kalenderjahres, in dem das Dokument entstanden ist. Bis zum Ende der Aufbewahrungsfrist speichert die App versendete Angebote, Auftragsbestätigungen und Rechnungen unveränderbar: Korrekturen sind nur über eine Stornorechnung bzw. eine neue Angebotsversion mit neuer Nummer (bei einem Kostenvoranschlag: neue Fassung mit angehängter Fassungsnummer) möglich, gelöscht werden kann ein versendeter Beleg erst nach Fristablauf.",
       "(8) Nach Ablauf der Aufbewahrungsfrist löscht der Anbieter die betroffenen Belege einschließlich PDF und E-Rechnung automatisch am 31. März des folgenden Jahres. Ab dem 1. Oktober des letzten Aufbewahrungsjahres weist die App darauf hin und bietet die Belege zum Herunterladen an. Verlängert sich die Aufbewahrungsfrist im Einzelfall, etwa wegen einer Außenprüfung oder eines Einspruchs (§ 147 Abs. 3 Satz 5 AO), hat der Nutzer die Aufbewahrung in der App rechtzeitig zu verlängern oder die Belege vorher selbst zu sichern. Der Anbieter empfiehlt, die Belege zusätzlich mindestens einmal jährlich über den Export für Steuerberater auf einem eigenen Datenträger zu sichern. Vor einer Kündigung oder Kontolöschung hat der Nutzer seine aufbewahrungspflichtigen Unterlagen selbst zu sichern.",
       "(9) Die App ersetzt keine rechtliche Beratung. Der Nutzer ist allein dafür verantwortlich, die gegenüber seinen eigenen Kunden geltenden Informations- und Belehrungspflichten einzuhalten. Das gilt insbesondere für Verträge mit Verbrauchern, die außerhalb von Geschäftsräumen oder im Fernabsatz geschlossen werden (§§ 312b, 312c BGB): Hier besteht ein Widerrufsrecht, über das der Nutzer nach Art. 246a EGBGB zu belehren hat. Die App stellt dafür die amtliche Muster-Widerrufsbelehrung und das Muster-Widerrufsformular unverändert bereit und ergänzt sie um die Angaben aus dem Firmenprofil. Ob im Einzelfall ein Widerrufsrecht besteht, ergibt sich aus den Angaben des Nutzers in der App, insbesondere ob der Kunde Verbraucher ist und wo der Vertrag geschlossen wurde. Der Nutzer ist für die Richtigkeit dieser Angaben, für vollständige und aktuelle Firmendaten sowie dafür verantwortlich, dass seine Kunden Belehrung und Auftragsbestätigung rechtzeitig erhalten. Die Unterschrift, die ein Kunde in der App leistet, ist eine einfache elektronische Signatur; sie ersetzt keine gesetzlich vorgeschriebene Schriftform.",
     ],

@@ -30,7 +30,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
   {
     heading: "2. General Information on Data Processing",
     paragraphs: [
-      "WerkFlow is an app for trade businesses for creating quotes and invoices (including e-invoices), managing customers and managing material lists. Personal data is processed when the app is used. Personal data is any data that can be related to you personally, e.g. name, address, e-mail address or user behaviour.",
+      "WerkFlow is an app for trade businesses for creating quotes and invoices (including e-invoices) as well as cost estimates, managing customers and managing material lists. Personal data is processed when the app is used. Personal data is any data that can be related to you personally, e.g. name, address, e-mail address or user behaviour.",
       "We only process your data insofar as this is necessary to provide a functional app and our content and services, or insofar as you have given your consent.",
     ],
   },
@@ -53,7 +53,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "3.2 Company Profile Data",
     level: 3,
     paragraphs: [
-      "To create quotes, invoices and PDFs, we collect and store the information you enter about your business:",
+      "To create quotes, cost estimates, invoices and PDFs, we collect and store the information you enter about your business:",
     ],
     list: [
       "Company name, legal form",
@@ -105,18 +105,19 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
   },
   {
-    heading: "3.5 Quote, Invoice and Material Data",
+    heading: "3.5 Quote, Cost Estimate, Invoice and Material Data",
     level: 3,
     paragraphs: [
-      "Invoices can be created in the app from an accepted quote or without a prior quote. The following is processed:",
+      "A cost estimate is a non-binding estimate of costs. It is created like a quote and kept in the same archive. It can be turned into a quote or, after the order confirmation, directly into an invoice. Invoices can be created in the app from an accepted quote, from a commissioned cost estimate or without a prior quote. The following is processed:",
     ],
     list: [
-      "Quote number, date, subject, validity period",
+      "Quote number or cost estimate number (KV-year-number, with an appended revision number for a new revision, e.g. KV-2026-0001-2), date, subject, for quotes the validity period",
       "Line items, quantities, unit prices, totals, VAT",
       "Payment terms, delivery/performance period",
-      "Status (draft, sent, accepted, rejected, replaced by a new version)",
-      "For sent quotes: time of sending, the sent PDF as your customer received it, and its checksum (SHA-256)",
-      "For accepted quotes, the order confirmation: sequential number, date and type of acceptance (verbal, e-mail, letter or signature), expected start, your note; for private customers additionally where the order was concluded, whether a right of withdrawal exists and whether the customer requested work to begin before the withdrawal period expires; for acceptance by signature, the customer's name and signature as an image file; the PDF of the order confirmation with its checksum (SHA-256)",
+      "Status (draft, sent, accepted, rejected, replaced by a new version or revision)",
+      "For a quote created from a cost estimate: the reference to that cost estimate, so that the chain of documents from the cost estimate to the invoice remains complete",
+      "For sent quotes and cost estimates: time of sending, the sent PDF as your customer received it, and its checksum (SHA-256)",
+      "For accepted quotes and commissioned cost estimates, the order confirmation: sequential number, date and type of acceptance (verbal, e-mail, letter or signature), expected start, your note; for private customers additionally where the order was concluded, whether a right of withdrawal exists and whether the customer requested work to begin before the withdrawal period expires; for acceptance by signature, the customer's name and signature as an image file; the PDF of the order confirmation with its checksum (SHA-256)",
       "Material list with descriptions, prices, units",
       "For invoices, additionally the information required under § 14 UStG: sequential invoice number, invoice type (invoice, partial, final or cancellation invoice) and invoice date",
       "Date or period of performance, due date and payment term",
@@ -127,7 +128,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
     afterList: [
       "Legal basis: Art. 6(1)(b) GDPR (performance of a contract), for the mandatory information additionally Art. 6(1)(c) GDPR (legal obligation under § 14 UStG).",
-      "Immutability: A sent invoice can neither be changed in the app nor deleted before the end of the retention period (German principles for the proper keeping and storage of books, records and documents in electronic form, GoBD). A correction is only possible via a cancellation invoice that refers to the original invoice. The same applies to sent quotes: a change creates a new version with a new quote number, and the old version is retained.",
+      "Immutability: A sent invoice can neither be changed in the app nor deleted before the end of the retention period (German principles for the proper keeping and storage of books, records and documents in electronic form, GoBD). A correction is only possible via a cancellation invoice that refers to the original invoice. The same applies to sent quotes: a change creates a new version with a new quote number, and the old version is retained. For a cost estimate, the changed revision carries the number of the original with an appended revision number (KV-2026-0001-2); the older revision is retained unchanged and counts as replaced. If it has already been commissioned, it remains accepted.",
     ],
   },
   {
@@ -137,8 +138,8 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "The statutory retention obligations for your business records apply to you as a business owner. In particular:",
     ],
     list: [
-      "Invoices, partial, final and cancellation invoices including the embedded e-invoice (XML), as well as quotes that led to an order: 8 years (§ 147(1) no. 4, (3) of the German Fiscal Code (AO), § 257(1) no. 4, (4) of the German Commercial Code (HGB), § 14b UStG)",
-      "Quotes without a subsequent order: 6 years (§ 147(1) nos. 2, 3, (3) AO, § 257(1) nos. 2, 3, (4) HGB)",
+      "Invoices, partial, final and cancellation invoices including the embedded e-invoice (XML), as well as quotes and cost estimates that led to an order: 8 years (§ 147(1) no. 4, (3) of the German Fiscal Code (AO), § 257(1) no. 4, (4) of the German Commercial Code (HGB), § 14b UStG)",
+      "Quotes and cost estimates without a subsequent order: 6 years (§ 147(1) nos. 2, 3, (3) AO, § 257(1) nos. 2, 3, (4) HGB)",
       "For context, not kept in WerkFlow: incoming invoices and other accounting vouchers 8 years (§ 147(1) no. 4, (3) AO, § 14b(1) UStG); books, inventories and annual financial statements 10 years (§ 147(1) no. 1, (3) AO, § 257(1) no. 1, (4) HGB)",
     ],
     afterList: [
@@ -150,7 +151,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "Storage and Deletion by Us",
     level: 3,
     paragraphs: [
-      "We store your sent quotes and invoices, including PDF and e-invoice, until the end of the retention period. Before then, they cannot be deleted, not even by you, so that your retention obligation remains fulfilled. You can delete drafts at any time.",
+      "We store your sent quotes, cost estimates and invoices, including PDF and e-invoice, until the end of the retention period. Before then, they cannot be deleted, not even by you, so that your retention obligation remains fulfilled. You can delete drafts at any time.",
       "After the period has expired, we delete the documents automatically, because we may not store personal data for longer than necessary (Art. 5(1)(e), Art. 17(1)(a) GDPR):",
     ],
     list: [
@@ -168,7 +169,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "3.6 Photos and Voice Recordings (AI Analysis)",
     level: 3,
     paragraphs: [
-      "To enable automatic quote creation using AI, you can:",
+      "To enable the automatic creation of quotes and cost estimates using AI, you can:",
     ],
     list: [
       "take photos of construction sites using the device camera or choose them from the gallery",
@@ -177,14 +178,14 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
     afterList: [
       "This content is only transmitted to our servers (Supabase, see section 4.1) via a secure connection after your express consent (consent dialog in the app) and forwarded from there to an AI service for automated analysis.",
-      "Primary AI service: Google Gemini (paid plan with billing enabled) processes photos, voice recordings and text descriptions for quote creation, photos of material lists and job descriptions from which items and a service text are generated for an invoice without a quote by default.",
+      "Primary AI service: Google Gemini (paid plan with billing enabled) processes photos, voice recordings and text descriptions for creating quotes and cost estimates, photos of material lists and job descriptions from which items and a service text are generated for an invoice without a quote by default.",
       "So that the AI can use your own descriptions and prices, the entries of your material list (description, unit, price) are also transmitted.",
       "Fallback service: If Google Gemini is temporarily unavailable (e.g. due to a technical fault), the request is automatically forwarded to OpenAI (GPT-4o, including Whisper transcription for voice recordings where applicable) so that your request can still be processed. The fallback is only used in exceptional cases.",
-      "The raw data (photos, audio files) is not stored permanently on our servers after the AI analysis has been completed, but is only transmitted for the duration of processing. This does not apply to photos that you add to a quote or invoice (see below).",
+      "The raw data (photos, audio files) is not stored permanently on our servers after the AI analysis has been completed, but is only transmitted for the duration of processing. This does not apply to photos that you add to a quote, a cost estimate or an invoice (see below).",
       "As we use a paid plan with billing enabled for Google Gemini, the Gemini API terms of use expressly provide that Google does not use your input (prompts, images, audio files) or the generated responses to improve Google products. Input is only logged there for a limited time for abuse detection and for security reasons (source: Gemini API – terms of use for paid services).",
       "Legal basis: Art. 6(1)(a) GDPR (consent). Consent can be withdrawn at any time with effect for the future in the app settings (toggle “Use AI Analysis”).",
       "Important note: When photographing construction sites/customers' homes, make sure that no people or sensitive private documents are recognisable in the picture, as you as the user are responsible for this.",
-      "Dictation (speech to text): In quotes, invoices and notes, you can dictate text instead of typing. Unlike the quote analysis, the spoken content is not analysed but only converted into text. For this purpose, the recording is transmitted to our server – only with your consent under this section and only with an internet connection – and converted into text there by Google Gemini or, as a substitute, OpenAI Whisper; the audio file is not stored permanently after conversion and is deleted from your device immediately. Without consent or without an internet connection, dictation is not available; the app does not use on-device speech recognition. Dictation does not use up any of your analysis quotas. Without a subscription, dictation is available in quotes only as long as free AI quotes remain, in invoices only as long as free AI invoices remain, and in notes until both quotas are used up. With a subscription, it remains available everywhere, even after the monthly quota has been reached.",
+      "Dictation (speech to text): In quotes, cost estimates, invoices and notes, you can dictate text instead of typing. Unlike the quote analysis, the spoken content is not analysed but only converted into text. For this purpose, the recording is transmitted to our server – only with your consent under this section and only with an internet connection – and converted into text there by Google Gemini or, as a substitute, OpenAI Whisper; the audio file is not stored permanently after conversion and is deleted from your device immediately. Without consent or without an internet connection, dictation is not available; the app does not use on-device speech recognition. Dictation does not use up any of your analysis quotas. Without a subscription, dictation is available in quotes and cost estimates only as long as free AI quotes remain, in invoices only as long as free AI invoices remain, and in notes until both quotas are used up. With a subscription, it remains available everywhere, even after the monthly quota has been reached.",
       "Photos for quotes and invoices: Photos that you add to a quote or invoice in the app – including the photo for the AI analysis as soon as you save the quote – are stored in a storage area on our servers that only your account can access (Supabase, see section 4.1), so that you can view them again later with the document. They do not appear on the document and are not transmitted to your customers. You can delete them individually at any time; they are also deleted together with the deleted draft or document and with your account. Legal basis: Art. 6(1)(b) GDPR (provision of the feature you use).",
     ],
   },
@@ -206,7 +207,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "your user ID (to assign the subscription to your account)",
       "subscription status, plan booked, expiry date",
       "purchase history (managed via RevenueCat, see section 4.3)",
-      "number of AI quotes and AI invoices used in the current month (to calculate your quota)",
+      "number of AI quotes and AI invoices used in the current month (to calculate your quota; an AI cost estimate counts like an AI quote)",
     ],
     afterList: [
       "The actual payment processing takes place entirely via Google Play Billing. At no time do we collect, store or view credit card or other payment data.",
@@ -231,7 +232,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     heading: "3.10 Change Log of Documents",
     level: 3,
     paragraphs: [
-      "So that it remains traceable when a quote or invoice was created, sent or changed, the app keeps a log for each document. The following is stored:",
+      "So that it remains traceable when a quote, a cost estimate or an invoice was created, sent or changed, the app keeps a log for each document. The following is stored:",
     ],
     list: [
       "time and type of the operation (created, changed, issued, status change, PDF archived, shared, exported, retention extended, deleted)",
@@ -277,7 +278,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. The data is stored on servers in the EU (data centre in Ireland).",
-      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, invoice and material data, free-form notes, generated PDF and ZUGFeRD files, change log, company logo, signature image file, photos for quotes and invoices, order confirmations with your customers' signatures).",
+      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, cost estimate, invoice and material data, free-form notes, generated PDF and ZUGFeRD files, change log, company logo, signature image file, photos for quotes, cost estimates and invoices, order confirmations with your customers' signatures).",
       "Transfer to third countries: As Supabase is a company based in the USA, access from the USA (e.g. in the context of maintenance and support) cannot be ruled out. This is safeguarded by the data processing agreement with EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).",
       "Privacy policy: supabase.com/privacy",
     ],
@@ -334,8 +335,8 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     table: {
       head: ["Permission", "Purpose", "Mandatory"],
       rows: [
-        ["Camera", "Taking photos for AI-supported quote creation and for quotes and invoices", "Only when actively using the photo feature"],
-        ["Microphone", "Recording voice notes for quote creation and dictating text", "Only when actively using the voice feature"],
+        ["Camera", "Taking photos for the AI-supported creation of quotes and cost estimates and for quotes, cost estimates and invoices", "Only when actively using the photo feature"],
+        ["Microphone", "Recording voice notes for creating quotes and cost estimates and dictating text", "Only when actively using the voice feature"],
         ["Internet access", "Communication with our servers (Supabase, RevenueCat)", "Required for basic functions"],
       ],
     },
@@ -351,15 +352,15 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       rows: [
         ["Account data", "Until the user account is deleted"],
         [
-          "Quotes and invoices including PDF and e-invoice (ZUGFeRD/XRechnung)",
+          "Quotes, cost estimates and invoices including PDF and e-invoice (ZUGFeRD/XRechnung)",
           "Drafts until deleted by you. Sent documents until the end of the retention period (8 or 6 years from the end of the calendar year); automatic deletion on the following 31 March, notice in the app from 1 October, extension possible (section 3.5). Immediately upon account deletion.",
         ],
         ["Change log of documents", "The same as the associated document; afterwards only redacted entries without document reference until the account is deleted (section 3.10)"],
         ["Customer data", "Until deleted by the user or the account is deleted. The copy of the customer data in a sent invoice is retained for as long as the invoice."],
         ["Photos/voice recordings for AI analysis and dictation", "Only temporarily during processing, no permanent storage"],
         ["Usage of AI calls (section 3.9)", "Until account deletion"],
-        ["Order confirmations including PDF and customer signature", "Like the associated quote, at least 6 years from the end of the year of confirmation (section 3.5). Immediately upon account deletion."],
-        ["Photos for quotes and invoices", "Until deleted by you, together with the deleted draft or document, or with the account"],
+        ["Order confirmations including PDF and customer signature", "Like the associated quote or cost estimate, at least 6 years from the end of the year of confirmation (section 3.5). Immediately upon account deletion."],
+        ["Photos for quotes, cost estimates and invoices", "Until deleted by you, together with the deleted draft or document, or with the account"],
         ["Feedback (stars, text, app version)", "Until account deletion or until you object (section 3.11)"],
         ["Free-form notes", "Until deleted by the user or the account is deleted"],
         ["Company logo, signature", "Until deleted by the user or the account is deleted"],
@@ -386,7 +387,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     level: 3,
     list: [
       "Data export: Under Settings → “Export My Data”, you can download all stored data as a JSON file, including your invoices with the e-invoice data and the change log.",
-      "Export for tax advisor: Under Settings → “Export for tax advisor”, you receive your quotes and invoices for a period as a ZIP archive (PDF, e-invoice, tables, change log) and, if desired, a DATEV posting batch. The file is created on your device; you decide where to store it and to whom to pass it on.",
+      "Export for tax advisor: Under Settings → “Export for tax advisor”, you receive your quotes, cost estimates and invoices for a period as a ZIP archive (PDF, e-invoice, tables, change log) and, if desired, a DATEV posting batch. The file is created on your device; you decide where to store it and to whom to pass it on.",
       "Account deletion: Under Settings → “Delete Account”, you can have your account and all associated data irrevocably deleted. This also deletes your quotes and invoices; the app offers you the option of downloading the archive for all years beforehand (section 3.5).",
       "Withdrawal of AI consent: You can deactivate the AI-supported analysis in the settings at any time.",
     ],
@@ -409,7 +410,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
   {
     heading: "9. No Automated Decision-Making",
     paragraphs: [
-      "No automated decision-making within the meaning of Art. 22 GDPR that produces legal effects concerning you takes place. The AI-supported recognition of materials and working hours serves only as a suggestion; you check all AI-generated information before saving or sending a document (for quotes additionally via the confirmation in the app: “I have reviewed the AI-generated data and confirm its accuracy”).",
+      "No automated decision-making within the meaning of Art. 22 GDPR that produces legal effects concerning you takes place. The AI-supported recognition of materials and working hours serves only as a suggestion; you check all AI-generated information before saving or sending a document (for quotes and cost estimates additionally via the confirmation in the app: “I have reviewed the AI-generated data and confirm its accuracy”).",
     ],
   },
   {
@@ -454,11 +455,11 @@ export const werkflowAgbEn: LegalSection[] = [
       "(1) The Provider makes the App available to the user via the Google Play Store. The App offers in particular the following functions:",
     ],
     list: [
-      "Creation, management and export (PDF) of quotes",
+      "Creation, management and export (PDF) of quotes and of cost estimates (non-binding estimates of costs, as a new revision if the costs change)",
       "Creation of invoices, partial, final and cancellation invoices with sequential invoice numbers, as a PDF with an embedded e-invoice (ZUGFeRD / Factur-X, profile EN 16931) or as an XRechnung for public-sector clients",
       "Management of customer data",
       "Management of a material price list",
-      "AI-supported analysis of photos, voice recordings and text descriptions for the automated creation of quote suggestions as well as invoice items and service descriptions for invoices without a prior quote",
+      "AI-supported analysis of photos, voice recordings and text descriptions for the automated creation of quote and cost estimate suggestions as well as invoice items and service descriptions for invoices without a prior quote",
       "Digital signature capture, including for the customer's acceptance of a quote",
       "Order confirmations with proof of when and how the customer accepted; for contracts with consumers concluded off business premises or at a distance, including the official model withdrawal notice and model withdrawal form (Annexes 1 and 2 to Art. 246a EGBGB)",
       "Free-form notes and dictation",
@@ -466,8 +467,8 @@ export const werkflowAgbEn: LegalSection[] = [
       "Support for a GoBD-compliant way of working (German principles for proper electronic bookkeeping): immutable archiving of sent quotes and invoices, change log, export for tax advisors and tax audits (ZIP archive according to the description standard for data provision, DATEV posting batch) and a template for the process documentation",
     ],
     afterList: [
-      "(2) The App is offered as a free trial version (3 free AI quotes and 3 free AI invoices, no credit card required) and in paid subscription plans (“Solo”, “Small Business”, “Pro”). The range of functions of each plan is as shown in the App at the time the contract is concluded. In the trial version, the dictation function (speech to text) is tied to the respective quota: in quotes it is available as long as free AI quotes remain, in invoices as long as free AI invoices remain, and in notes until both quotas are used up. After that, dictation is blocked in the respective area without a subscription. With a subscription, dictation remains available everywhere, even after the monthly quota has been reached. An AI analysis counts against the quota as soon as it delivers a result; this also applies if the user subsequently discards the result or does not save or send the document. If the analysis fails for technical reasons or the App detects that the description does not contain any billable service, it does not count, unless the user expressly chooses to continue the analysis anyway.",
-      "(3) The suggestions created by the App with AI support (material recognition, working time estimates, invoice items, service descriptions) are non-binding suggestions. The user is obliged to check all automatically generated information for accuracy and completeness before using it in a quote or invoice. The Provider gives no guarantee for the accuracy of AI-generated content. Prices mentioned in the description are adopted as net prices; prices described as gross are converted to net by the App using the tax rate stored in the profile.",
+      "(2) The App is offered as a free trial version (3 free AI quotes and 3 free AI invoices, no credit card required) and in paid subscription plans (“Solo”, “Small Business”, “Pro”). The range of functions of each plan is as shown in the App at the time the contract is concluded. In the trial version, the dictation function (speech to text) is tied to the respective quota: in quotes it is available as long as free AI quotes remain, in invoices as long as free AI invoices remain, and in notes until both quotas are used up. After that, dictation is blocked in the respective area without a subscription. With a subscription, dictation remains available everywhere, even after the monthly quota has been reached. An AI cost estimate counts like an AI quote. An AI analysis counts against the quota as soon as it delivers a result; this also applies if the user subsequently discards the result or does not save or send the document. If the analysis fails for technical reasons or the App detects that the description does not contain any billable service, it does not count, unless the user expressly chooses to continue the analysis anyway.",
+      "(3) The suggestions created by the App with AI support (material recognition, working time estimates, invoice items, service descriptions) are non-binding suggestions. The user is obliged to check all automatically generated information for accuracy and completeness before using it in a quote, a cost estimate or an invoice. The Provider gives no guarantee for the accuracy of AI-generated content. Prices mentioned in the description are adopted as net prices; prices described as gross are converted to net by the App using the tax rate stored in the profile.",
       "(4) The Provider is entitled to adapt, extend or restrict the range of functions of the App in the course of technical development, provided this is reasonable for the user and the contractually agreed core scope of the respective service booked is maintained.",
       "(5) The App supports a GoBD-compliant way of working; it is not a certified accounting system and replaces neither bookkeeping nor tax advice. Responsibility for the correctness of the records, for complete process documentation and for the account assignment in the DATEV export agreed with the tax advisor lies with the user.",
     ],
@@ -500,8 +501,8 @@ export const werkflowAgbEn: LegalSection[] = [
       "(3) When taking photos as part of the AI analysis function (e.g. on construction sites or in customers' homes), the user undertakes to ensure that no people or sensitive private documents are recognisably depicted, unless this is necessary for the provision of services and legally permissible.",
       "(4) The user undertakes to keep their access data (e-mail, password) secret and to protect it from access by third parties. The Provider must be informed without delay if misuse is suspected.",
       "(5) It is prohibited to use the App to create, store or distribute unlawful, offensive, discriminatory content or content that infringes the rights of third parties.",
-      "(6) The user is solely responsible for the accuracy of the content of the quotes and invoices they create and send to their customers (including prices, tax information and the mandatory information under § 14 of the German VAT Act (UStG)). The Provider does not check the content. The App supports compliance with the mandatory information but does not replace tax advice.",
-      "(7) The statutory retention obligations for invoices, quotes and other business records (in particular § 147 of the German Fiscal Code (AO), § 257 of the German Commercial Code (HGB), § 14b UStG) apply to the user. Invoices, order confirmations and quotes that led to an order must be retained for 8 years, quotes without a subsequent order for 6 years; in each case, the period begins at the end of the calendar year in which the document was created. Until the end of the retention period, the App stores sent quotes, order confirmations and invoices in an immutable form: corrections are only possible via a cancellation invoice or a new quote version with a new number, and a sent document can only be deleted after the period has expired.",
+      "(6) The user is solely responsible for the accuracy of the content of the quotes and invoices they create and send to their customers (including prices, tax information and the mandatory information under § 14 of the German VAT Act (UStG)). The Provider does not check the content. This also applies to cost estimates: the user decides on the costs they quote to their customer and is responsible for notifying the customer without delay of an expected significant overrun (§ 649 of the German Civil Code (BGB)). The App's notices on this, such as the warning for an invoice that is more than 15% above the cost estimate, are a reminder and not legal advice. The App supports compliance with the mandatory information but does not replace tax advice.",
+      "(7) The statutory retention obligations for invoices, quotes and other business records (in particular § 147 of the German Fiscal Code (AO), § 257 of the German Commercial Code (HGB), § 14b UStG) apply to the user. Invoices, order confirmations as well as quotes and cost estimates that led to an order must be retained for 8 years, quotes and cost estimates without a subsequent order for 6 years; in each case, the period begins at the end of the calendar year in which the document was created. Until the end of the retention period, the App stores sent quotes, order confirmations and invoices in an immutable form: corrections are only possible via a cancellation invoice or a new quote version with a new number (for a cost estimate: a new revision with an appended revision number), and a sent document can only be deleted after the period has expired.",
       "(8) After the retention period has expired, the Provider automatically deletes the affected documents, including PDF and e-invoice, on 31 March of the following year. From 1 October of the last retention year, the App points this out and offers the documents for download. If the retention period is extended in an individual case, for example due to a tax audit or an objection (§ 147(3) sentence 5 AO), the user must extend retention in the App in good time or back up the documents themselves beforehand. The Provider recommends additionally backing up the documents on a separate storage medium at least once a year via the export for tax advisors. Before cancellation or account deletion, the user must back up their records subject to retention themselves.",
       "(9) The App does not replace legal advice. The user is solely responsible for complying with the information and notification obligations that apply towards their own customers. This applies in particular to contracts with consumers concluded off business premises or at a distance (§§ 312b, 312c BGB): such contracts carry a right of withdrawal, about which the user must inform the customer in accordance with Art. 246a EGBGB. For this purpose, the App provides the official model withdrawal notice and the model withdrawal form unchanged and adds the details from the company profile. Whether a right of withdrawal exists in an individual case follows from the information the user enters in the App, in particular whether the customer is a consumer and where the contract was concluded. The user is responsible for the accuracy of this information, for complete and up-to-date company details, and for ensuring that their customers receive the notice and the order confirmation in good time. The signature a customer provides in the App is a simple electronic signature; it does not replace any statutory written form.",
     ],

@@ -220,31 +220,31 @@
       "shots": ["Weltkarte mit Lernwelten", "Lektion mit CoCo", "Bonus-Minispiel"]
     },
     "werkflow": {
-      "tagline": "Angebot und Rechnung – einfach einsprechen.",
-      "summary": "Die Handwerker-App: Auftrag einsprechen oder Baustelle fotografieren – die KI schreibt das Angebot, ein Tipp macht daraus die Rechnung.",
+      "tagline": "Angebot, Kostenvoranschlag und Rechnung – einfach einsprechen.",
+      "summary": "Die Handwerker-App: Auftrag einsprechen oder Baustelle fotografieren – die KI schreibt Angebot oder Kostenvoranschlag, ein Tipp macht daraus die Rechnung.",
       "category": "Business & Handwerk",
       "description": [
         "Schluss mit Büroarbeit am Feierabend: Beschreibe beim Kunden, was zu tun ist – gesprochen, getippt oder per Foto –, und die KI macht daraus Positionen mit Mengen und deinen Preisen. Du prüfst, passt an und schickst das Angebot als PDF ab, solange der Kunde noch an dich denkt.",
-        "Nimmt der Kunde an, wird aus dem Angebot mit einem Tipp die Rechnung – und die geht auch ohne Angebot: Mikrofon antippen, sagen, was du gemacht hast, fertig. Abschlags-, Schluss- und Stornorechnungen rechnet die App für dich durch, und jede Rechnung enthält die E-Rechnung nach ZUGFeRD oder XRechnung.",
+        "Soll es erst einmal nur eine Schätzung sein? Dann erstellst du genauso schnell einen Kostenvoranschlag und machst später ein Angebot oder direkt die Rechnung daraus. Die Belegkette zeigt, wie Kostenvoranschlag, Angebot, Auftragsbestätigung und Rechnung zusammenhängen. Abschlags-, Schluss- und Stornorechnungen rechnet die App für dich durch, und jede Rechnung enthält die E-Rechnung nach ZUGFeRD oder XRechnung.",
         "WerkFlow wurde für Handwerker, Monteure und kleine Betriebe aller Gewerke entwickelt. Versendete Belege archiviert die App unveränderbar und mit Änderungsprotokoll und unterstützt damit eine GoBD-konforme Arbeitsweise. Für deinen Steuerberater gibt es den Export als ZIP-Archiv und DATEV-Buchungsstapel. Deine Daten liegen auf Servern in der EU."
       ],
       "features": [
-        { "title": "Einsprechen statt tippen", "text": "Auftrag kurz einsprechen – die KI macht daraus strukturierte Positionen mit deinen Preisen. Texte in Angeboten, Rechnungen und Notizen diktierst du einfach, auch mit schmutzigen Händen." },
+        { "title": "Einsprechen statt tippen", "text": "Auftrag kurz einsprechen – die KI macht daraus strukturierte Positionen mit deinen Preisen. Texte in Angeboten, Kostenvoranschlägen, Rechnungen und Notizen diktierst du einfach, auch mit schmutzigen Händen." },
         { "title": "Foto-Analyse per KI", "text": "Baustelle oder Schadensbereich fotografieren – die KI erkennt benötigte Materialien und Arbeitsschritte und schlägt passende Positionen vor. Die Fotos bleiben beim Beleg gespeichert." },
-        { "title": "Deine Materialliste, deine Preise", "text": "Vorlagen für dein Gewerk, CSV-Import oder die Preisliste einfach abfotografieren. Die KI nimmt Positionen aus deiner eigenen Liste, mit deinen Preisen und deinem Stundensatz." },
-        { "title": "Vom Angebot zur Rechnung", "text": "Aus dem angenommenen Angebot wird mit einem Tipp die Rechnung: fortlaufende Nummer, die Pflichtangaben nach § 14 UStG, dazu Abschlags-, Schluss- und Stornorechnung. Auch für Kleinunternehmer und Bauleistungen nach § 13b UStG." },
+        { "title": "Kostenvoranschlag", "text": "Erstellt wie ein Angebot, ausdrücklich unverbindlich mit Hinweis auf § 649 BGB. Ändern sich die Kosten, entsteht eine neue Fassung mit derselben Nummer (KV-2026-0001-2), die alte bleibt archiviert. Liegt die Rechnung mehr als 15 % darüber, weist WerkFlow dich darauf hin." },
+        { "title": "Die Belegkette", "text": "Vom Kostenvoranschlag über Angebot und Auftragsbestätigung bis zur Rechnung und zum Storno: Jeder Beleg zeigt, woraus er entstanden ist und was daraus folgte." },
+        { "title": "Auftrag sauber bestätigt", "text": "Der Kunde unterschreibt vor Ort auf deinem Handy. Daraus entsteht die Auftragsbestätigung – bei Verbrauchern, wo nötig, mit amtlicher Widerrufsbelehrung." },
+        { "title": "Vom Angebot zur Rechnung", "text": "Aus dem angenommenen Angebot oder dem beauftragten Kostenvoranschlag wird mit einem Tipp die Rechnung: fortlaufende Nummer, die Pflichtangaben nach § 14 UStG, dazu Abschlags-, Schluss- und Stornorechnung. Auch für Kleinunternehmer und Bauleistungen nach § 13b UStG." },
         { "title": "E-Rechnung inklusive", "text": "Jede Rechnung als PDF mit eingebetteter E-Rechnung (ZUGFeRD / Factur-X), für öffentliche Auftraggeber als XRechnung – bereit für DATEV, Lexware & Co." },
-        { "title": "GoBD-Archiv und Steuerberater-Export", "text": "Versendete Belege bleiben unveränderbar, jede Änderung steht im Protokoll. Der Export liefert ZIP-Archiv und DATEV-Buchungsstapel (SKR03 oder SKR04), dazu eine Vorlage für die Verfahrensdokumentation." },
-        { "title": "Kunden und Notizen", "text": "Kundenverwaltung mit Anschrift, Kontakt und Kundennummer. Notizen diktierst oder tippst du schnell und ordnest sie einem Kunden oder Angebot zu." },
-        { "title": "Alles im Blick", "text": "Die Übersicht zeigt Umsatz im Jahr und offene Beträge, das Archiv findet jeden Beleg mit Suche und Filtern. Hell und dunkel, auf Deutsch und Englisch." },
-        { "title": "Einmal eintragen, überall drin", "text": "Firmendaten, Logo, Steuernummer, Bankverbindung und Unterschrift hinterlegst du einmal – sie stehen auf jedem Beleg." }
+        { "title": "GoBD-Archiv und Steuerberater-Export", "text": "Versendete Belege bleiben unveränderbar, jede Änderung steht im Protokoll. Der Export liefert das ZIP-Archiv samt Kostenvoranschlägen und den DATEV-Buchungsstapel (SKR03 oder SKR04), dazu eine Vorlage für die Verfahrensdokumentation." },
+        { "title": "Einmal eintragen, überall drin", "text": "Firmendaten, Logo, Bankverbindung, Unterschrift und Kunden hinterlegst du einmal. Deine Materialliste mit Preisen – aus Vorlagen, per CSV oder abfotografiert – fließt in jede KI-Kalkulation ein." }
       ],
       "pricing": {
         "free": ["3 KI-Angebote und 3 KI-Rechnungen zum Testen", "Rechnungen ohne KI immer unbegrenzt", "Keine Kreditkarte nötig, nichts zu kündigen"],
-        "premium": ["Solo: 20 KI-Angebote und 20 KI-Rechnungen pro Monat", "Kleiner Betrieb: je 50 pro Monat", "Pro: je 100 pro Monat", "In jedem Tarif: Rechnungen ohne KI unbegrenzt, E-Rechnung, GoBD-Archiv und DATEV-Export"],
+        "premium": ["Solo: 20 KI-Angebote und 20 KI-Rechnungen pro Monat", "Kleiner Betrieb: je 50 pro Monat", "Pro: je 100 pro Monat", "Ein KI-Kostenvoranschlag zählt wie ein KI-Angebot; E-Rechnung, GoBD-Archiv und DATEV-Export in jedem Tarif"],
         "note": "Monatliches Abo über Google Play, monatlich kündbar. Die Tarife unterscheiden sich nur in der Zahl der KI-Angebote und KI-Rechnungen."
       },
-      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen", "Angebot erstellen: Auftrag einsprechen oder tippen", "KI-Vorschlag mit Positionen und Preisen", "Angebot prüfen: Mengen und Preise anpassen", "Fertiges Angebot als PDF", "Abschlagsrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV"]
+      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen", "Plus-Menü: Angebot, Kostenvoranschlag oder Rechnung", "Kostenvoranschlag erstellen: Arbeit einsprechen oder tippen", "Kostenvoranschlag als PDF mit Hinweis auf § 649 BGB", "Kosten geändert: neue Fassung mit derselben Nummer", "Belegkette vom Kostenvoranschlag bis zur Rechnung", "KI-Vorschlag mit Positionen und Preisen", "Angebot prüfen: Mengen und Preise anpassen", "Auftrag bestätigen: wie der Kunde angenommen hat", "Unterschrift des Kunden direkt auf dem Handy", "Abschlagsrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV"]
     },
     "shrinkit": {
       "tagline": "Große Dateien klein – ohne Upload, ohne Abo.",
