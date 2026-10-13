@@ -11,6 +11,8 @@ export type AppContent = {
   pricing: { free: string[]; premium: string[]; note: string };
   /** Alt-Texte für die Screenshots, Reihenfolge entspricht `app.shots` in lib/apps.ts */
   shotAlts: string[];
+  /** Alt-Texte für `app.posters[locale]`, leer, wenn die App keine hat */
+  posterAlts: string[];
 };
 
 /** Liest die übersetzten Marketing-Texte einer App aus messages/*.json (apps.<slug>). */
@@ -28,5 +30,6 @@ export function useAppContent(slug: string): AppContent {
       note: t("pricing.note"),
     },
     shotAlts: t.raw("shots") as string[],
+    posterAlts: t.has("posters") ? (t.raw("posters") as string[]) : [],
   };
 }

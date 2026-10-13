@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Apple, Play, Globe, ArrowLeft } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import SplitText from "@/components/ui/SplitText";
@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/Reveal";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { PhoneFrame, PhoneScreenContent } from "@/components/ui/PhoneFrame";
 import { useApp } from "@/components/providers/AppsProvider";
-import type { AppData } from "@/lib/apps";
+import { coverShot, type AppData } from "@/lib/apps";
 import { hasAccountDeletion } from "@/lib/account-deletion-apps";
 import { useAppContent } from "@/lib/useAppContent";
 import { stageColor } from "@/lib/galerie";
@@ -31,6 +31,8 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
   const app = useApp(staticApp.slug) ?? staticApp;
   const color = stageColor(app);
   const content = useAppContent(app.slug);
+  const locale = useLocale() as "de" | "en";
+  const posters = app.posters?.[locale];
   const t = useTranslations("appShowcase");
   const tStatus = useTranslations("status");
   const tLegal = useTranslations("legal");
@@ -172,7 +174,7 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
             >
               <div className="app-hero-phone absolute inset-x-0 top-0 aspect-[1080/2640] rotate-[4deg] overflow-hidden rounded-[clamp(28px,3vw,44px)] border-[8px] border-paperInk bg-paperInk shadow-[0_50px_90px_rgba(20,22,28,0.35)]">
                 <Image
-                  src={app.shots[0].src}
+                  src={coverShot(app, locale)}
                   alt=""
                   fill
                   priority
@@ -286,20 +288,36 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
             ref={shotsTrack}
             className="app-shots-track flex flex-col items-center gap-6 pb-section md:flex-row md:items-center md:gap-10 md:pb-0 md:pl-[90vw] md:pr-[62vw] md:will-change-transform"
           >
-            {app.shots.map((s, i) => (
-              <PhoneFrame
-                key={i}
-                className="aspect-[1080/2640] w-[248px] shrink-0 md:h-[min(64svh,580px)] md:w-auto"
-                island={!!app.syntheticChrome}
-              >
-                <PhoneScreenContent
-                  src={s.src}
-                  chrome={!!app.syntheticChrome}
-                  alt={content.shotAlts[i] ?? app.name}
-                  sizes="240px"
-                />
-              </PhoneFrame>
-            ))}
+            {posters
+              ? posters.map((src, i) => (
+                  // Store-Grafiken bringen Handy und Überschrift selbst mit.
+                  <div
+                    key={src}
+                    className="relative aspect-[1080/1920] w-[280px] shrink-0 overflow-hidden rounded-[28px] bg-base-800 md:h-[min(70svh,640px)] md:w-auto"
+                  >
+                    <Image
+                      src={src}
+                      alt={content.posterAlts[i] ?? app.name}
+                      fill
+                      sizes="(min-width: 768px) 360px, 280px"
+                      className="object-cover"
+                    />
+                  </div>
+                ))
+              : app.shots.map((s, i) => (
+                  <PhoneFrame
+                    key={i}
+                    className="aspect-[1080/2640] w-[248px] shrink-0 md:h-[min(64svh,580px)] md:w-auto"
+                    island={!!app.syntheticChrome}
+                  >
+                    <PhoneScreenContent
+                      src={s.src}
+                      chrome={!!app.syntheticChrome}
+                      alt={content.shotAlts[i] ?? app.name}
+                      sizes="240px"
+                    />
+                  </PhoneFrame>
+                ))}
           </div>
         </div>
       </section>

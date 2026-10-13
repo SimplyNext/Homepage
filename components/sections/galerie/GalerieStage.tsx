@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TransitionLink from "@/components/ui/TransitionLink";
 import Reveal from "@/components/ui/Reveal";
-import { type AppData } from "@/lib/apps";
+import { coverShot, type AppData } from "@/lib/apps";
 import { useAppContent } from "@/lib/useAppContent";
 import { stageApps, stageColor } from "@/lib/galerie";
 
@@ -25,6 +25,7 @@ export default function GalerieStage() {
   const stageRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const list = stageApps;
+  const locale = useLocale();
 
   useGSAP(
     () => {
@@ -125,7 +126,7 @@ export default function GalerieStage() {
           {list.map((app, i) => (
             <div key={app.slug} className="stage-screen absolute inset-0 will-change-transform">
               <Image
-                src={app.shots[0].src}
+                src={coverShot(app, locale)}
                 alt=""
                 fill
                 sizes="(min-width: 1800px) 420px, 320px"
@@ -235,6 +236,7 @@ function MobileCard({
 }) {
   const content = useAppContent(app.slug);
   const t = useTranslations("galerie");
+  const locale = useLocale();
   const shotAlt = (content.shotAlts?.[0] as string | undefined) ?? app.name;
 
   return (
@@ -262,7 +264,7 @@ function MobileCard({
         </TransitionLink>
         <div className="relative mx-auto mt-8 aspect-[1080/1500] w-[min(240px,70%)] overflow-hidden rounded-t-[30px] border-[7px] border-b-0 border-[#14161C] bg-[#14161C]">
           <Image
-            src={app.shots[0].src}
+            src={coverShot(app, locale)}
             alt={`${app.name} – ${shotAlt}`}
             fill
             sizes="240px"
