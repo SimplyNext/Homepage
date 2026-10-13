@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import SplitText from "@/components/ui/SplitText";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
-import { getApp } from "@/lib/apps";
+import { coverShot, getApp } from "@/lib/apps";
 
 // Fächer im Hero: fünf Apps, die mittlere steht gerade.
 const FAN = ["eatsafety", "wefixit", "werkflow", "shrinkit", "fabula"];
@@ -20,6 +20,7 @@ const DROP = [14, 4, 0, 4, 14]; // äußere Geräte sitzen etwas tiefer (in %)
 export default function GalerieHero() {
   const root = useRef<HTMLElement>(null);
   const t = useTranslations("galerie");
+  const locale = useLocale();
   const { scrollTo } = useSmoothScroll();
 
   useGSAP(
@@ -121,7 +122,7 @@ export default function GalerieHero() {
                 style={{ transform: `translateY(${DROP[i]}%) rotate(${TILT[i]}deg)` }}
               >
                 <Image
-                  src={app.shots[0].src}
+                  src={coverShot(app, locale)}
                   alt=""
                   fill
                   sizes="(min-width: 1800px) 340px, 224px"

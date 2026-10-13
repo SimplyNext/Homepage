@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/Reveal";
 import TransitionLink from "@/components/ui/TransitionLink";
 import { PhoneFrame, PhoneScreenContent } from "@/components/ui/PhoneFrame";
 import { useApp } from "@/components/providers/AppsProvider";
-import type { AppData } from "@/lib/apps";
+import { coverShot, type AppData } from "@/lib/apps";
 import { hasAccountDeletion } from "@/lib/account-deletion-apps";
 import { useAppContent } from "@/lib/useAppContent";
 import { stageColor } from "@/lib/galerie";
@@ -174,7 +174,7 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
             >
               <div className="app-hero-phone absolute inset-x-0 top-0 aspect-[1080/2640] rotate-[4deg] overflow-hidden rounded-[clamp(28px,3vw,44px)] border-[8px] border-paperInk bg-paperInk shadow-[0_50px_90px_rgba(20,22,28,0.35)]">
                 <Image
-                  src={app.shots[0].src}
+                  src={coverShot(app, locale)}
                   alt=""
                   fill
                   priority

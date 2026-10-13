@@ -61,6 +61,11 @@ export type AppData = {
    * apps.<slug>.posters[i].
    */
   posters?: Record<"de" | "en", string[]>;
+  /**
+   * Optional: Startbild je Sprache (rohe App-UI, 1080×2640) für Bühne,
+   * Startseite und den Kopf der App-Seite. Ohne Angabe gilt `shots[0]`.
+   */
+  coverShots?: Record<"de" | "en", string>;
   links: { type: "appstore" | "playstore" | "web"; url: string }[];
   since: string;
 };
@@ -171,6 +176,10 @@ export const apps: AppData[] = [
       { src: "/images/apps/werkflow/werkflow_5.png" },
       { src: "/images/apps/werkflow/werkflow_6.png" },
     ],
+    coverShots: {
+      de: "/images/apps/werkflow/home-de.png",
+      en: "/images/apps/werkflow/home-en.png",
+    },
     posters: {
       de: [
         "/images/apps/werkflow/store/de/screen-1-plus-menue.png",
@@ -268,6 +277,11 @@ export const apps: AppData[] = [
     since: "2026",
   },
 ];
+
+/** Startbild einer App in der jeweiligen Sprache (siehe `coverShots`). */
+export function coverShot(app: AppData, locale: string): string {
+  return app.coverShots?.[locale as "de" | "en"] ?? app.shots[0].src;
+}
 
 export function getApp(slug: string) {
   return apps.find((a) => a.slug === slug);
