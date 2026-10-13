@@ -244,7 +244,7 @@
         "premium": ["Solo: 20 KI-Angebote und 20 KI-Rechnungen pro Monat", "Kleiner Betrieb: je 50 pro Monat", "Pro: je 100 pro Monat", "Ein KI-Kostenvoranschlag zählt wie ein KI-Angebot; E-Rechnung, GoBD-Archiv und DATEV-Export in jedem Tarif"],
         "note": "Monatliches Abo über Google Play, monatlich kündbar. Die Tarife unterscheiden sich nur in der Zahl der KI-Angebote und KI-Rechnungen."
       },
-      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen", "Angebot erstellen: Auftrag einsprechen oder tippen", "KI-Vorschlag mit Positionen und Preisen", "Angebot prüfen: Mengen und Preise anpassen", "Fertiges Angebot als PDF", "Auftrag bestätigen: wie der Kunde angenommen hat", "Unterschrift des Kunden direkt auf dem Handy", "Versendetes Angebot mit Auftragsbestätigung und Änderungsprotokoll", "Abschlagsrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV"]
+      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen", "Plus-Menü: Angebot, Kostenvoranschlag oder Rechnung", "Kostenvoranschlag erstellen: Arbeit einsprechen oder tippen", "Kostenvoranschlag als PDF mit Hinweis auf § 649 BGB", "Kosten geändert: neue Fassung mit derselben Nummer", "Belegkette vom Kostenvoranschlag bis zur Rechnung", "KI-Vorschlag mit Positionen und Preisen", "Angebot prüfen: Mengen und Preise anpassen", "Auftrag bestätigen: wie der Kunde angenommen hat", "Unterschrift des Kunden direkt auf dem Handy", "Abschlagsrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV"]
     },
     "shrinkit": {
       "tagline": "Große Dateien klein – ohne Upload, ohne Abo.",
