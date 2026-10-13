@@ -96,7 +96,8 @@ export const furlyDatenschutzEn: LegalSection[] = [
       "You can create profiles of your pets (name, breed, date of birth, weight, photo, free description), document health entries and set reminders.",
       "Important note on third-party data",
       "In the health record you can optionally enter names of vets and clinics, as well as in your personal list of vets. These are personal data of third parties. Please only enter such data to the extent necessary for your own documentation, and do not publish it in the community.",
-      "This data is stored in our database and is assigned exclusively to your account. Other users have no access to it (technically secured by row-based access rules, “Row Level Security”).",
+      "This data is stored in our database and is assigned to your account. Other users have no access to it (technically secured by row-based access rules, “Row Level Security”) – unless you explicitly share a pet with your household (see below).",
+      "Sharing a pet with your household: You can share a pet with other Furly accounts via an invitation code, e.g. with your partner. The code is valid for 48 hours and can only be used once; you decide whom you give it to. All members of the household can then see and edit this pet’s data (pet profile and photo, health record, reminders, daily routine, weight, feeding, activity, training plans) and see the display names of the other members. The owner can remove members at any time, and members can leave at any time. If you as the owner delete your account, a shared pet passes together with its data to the member who has been part of it the longest; without members, it is deleted.",
       "Vet folder (PDF): At your request, the app creates a PDF from the pet profile, health record, vaccinations and weight history. It is created exclusively on your device; you decide via your device's share dialog to whom you pass it on. We do not receive the PDF.",
       "Legal basis: Art. 6(1)(b) GDPR.",
     ],
@@ -172,6 +173,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
       "Lost & Found – please decide consciously",
       "When you create a missing or found report, you actively publish the contact details you enter (e.g. phone number or email address), a location, the date and optionally a photo and location coordinates. This information is visible to all signed-in users and can be copied or passed on by them. Therefore only provide contact details whose publication you knowingly accept.",
       "You can delete your own posts at any time or mark a missing report as “resolved”. When your account is deleted, all your posts are also removed.",
+      "Poison bait alert: You can report a poison bait find. We store your description, an optional location note and the coordinates of your current location at the time of the report. The report is visible to all signed-in users for seven days (without your name) and no longer afterwards; you can mark it as removed or delete it before then. Each account can submit at most five reports per day. Other users can flag reports and block the reporting account.",
       "Legal basis: Art. 6(1)(a) GDPR — publication takes place when you actively submit the post.",
     ],
   },
@@ -192,7 +194,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
     heading: "b) Radius notifications",
     level: 3,
     paragraphs: [
-      "If you have granted location permission, your last known position is transmitted to our server and stored there on each sign-in and session renewal (overwritten each time; no movement profile is created). We need this information in order to be able to notify you when a missing or found animal is reported in your area. The notification radius is 25 km by default.",
+      "If you have granted location permission, your last known position is transmitted to our server and stored there on each sign-in and session renewal (overwritten each time; no movement profile is created). We need this information in order to be able to notify you when a missing or found animal or poison bait is reported in your area. You only receive these notifications if you have explicitly switched them on for the respective area (Profile → Notifications). The notification radius is 25 km by default.",
     ],
   },
   {
@@ -209,9 +211,9 @@ export const furlyDatenschutzEn: LegalSection[] = [
   {
     heading: "7. Push and local notifications",
     paragraphs: [
-      "For push notifications (e.g. Lost & Found reports near you), a device-specific token is generated via Firebase Cloud Messaging, which we assign to your account and store. This token enables notifications to be delivered to your device; Google receives technical delivery information in the process.",
-      "Reminders of appointments and tasks are additionally scheduled as local notifications directly on your device. No data leaves your device for this. So that scheduled reminders survive a device restart, the app uses the permission RECEIVE_BOOT_COMPLETED.",
-      "You can deactivate notifications at any time in the app or system settings.",
+      "For push notifications (Lost & Found and poison bait reports near you), a device-specific token is generated via Firebase Cloud Messaging, which we assign to your account and store. This token enables notifications to be delivered to your device; Google receives technical delivery information in the process.",
+      "Reminders of appointments, vaccinations, deworming and medication, the daily routine and calendar notes are additionally scheduled as local notifications directly on your device. No data leaves your device for this. So that scheduled reminders survive a device restart, the app uses the permission RECEIVE_BOOT_COMPLETED; so that they arrive on time, optionally the permission “Alarms & reminders” (SCHEDULE_EXACT_ALARM).",
+      "The app asks for your consent separately for each area (daily routine, appointments, health, calendar, missing pets, poison bait). You can switch each area on and off at any time under Profile → Notifications or in the system settings. When you sign out, the app removes the scheduled notifications and unregisters the device from push notifications.",
       "Legal basis: Art. 6(1)(a) GDPR (consent via the notification permission).",
     ],
   },
@@ -225,7 +227,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
       head: ["Area", "Content", "Visibility", "Max. size"],
       rows: [
         ["avatars", "Profile pictures", "only you or display of your profile", "2 MB"],
-        ["pet-images", "Pet photos", "only you", "5 MB"],
+        ["pet-images", "Pet photos", "you and members of your household for shared pets", "5 MB"],
         ["lost-found-images", "Photos in missing reports", "all signed-in users", "5 MB"],
       ],
     },
@@ -237,10 +239,10 @@ export const furlyDatenschutzEn: LegalSection[] = [
   {
     heading: "9. Data stored locally on your device",
     paragraphs: [
-      "Entries on weight, feeding and activity, the daily routine (tasks and ticks), the saved-articles list in the guide, saved places and app settings (e.g. language, design) are stored exclusively locally on your device. This data is not transmitted to our servers.",
+      "Entries on weight, feeding and activity, the daily routine (tasks and ticks), calendar notes and the saved-articles list in the guide are stored in our database and assigned to your account, so that they are kept when you change devices and can be shared with your household. The device only holds a copy as a cache, which is removed when you sign out. Saved places, favourite vets and app settings (e.g. language, design) remain exclusively on your device.",
       "The emergency card, poison hotline numbers and guide articles are built into the app and work without an internet connection; no data is transmitted when reading them. The fonts are also contained in the app; no fonts are loaded from Google Fonts or other servers.",
       "Via the function “Backup & restore” in the settings, you can export this data yourself. The export only takes place on your express action; you alone decide where you save or pass on the exported file.",
-      "When you delete your account, the app removes this local data as well. It is also removed from the device when the app is uninstalled.",
+      "When you sign out or delete your account, the app removes the local copies. They are also removed from the device when the app is uninstalled.",
     ],
   },
   {
@@ -286,6 +288,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Sign in with Apple (optional)", "Sign-in with an Apple account", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
         ["Google Play", "Distribution and updating of the app; payment processing for Furly Pro (Google's own responsibility)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Subscription management for Furly Pro (purchase verification, status, restoring)", "RevenueCat, Inc., USA", "USA"],
+        ["Resend", "Sending account e-mails (confirmation, password reset, e-mail change); processes e-mail address, time of sending and delivery status", "Resend, Inc., USA", "USA"],
         ["OpenStreetMap / Overpass API", "Source of place data in the places finder; queried only by our server using map sections, without personal data", "OpenStreetMap Foundation or operator of the Overpass instance", "EU"],
       ],
     },
@@ -385,6 +388,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
       "We do not sell your data and do not pass it on for advertising purposes.",
       "Furly contains no advertising and no advertising SDKs.",
       "Furly contains no analytics or tracking tools (no analytics, no crash reporting SDK, no usage profiles).",
+      "We do not see any payment data: the Furly Pro subscription is handled entirely via Google Play (see section 4a).",
       "No automated decisions with legal effect or similarly significant impairment within the meaning of Art. 22 GDPR are made.",
       "Fonts are built into the app; no fonts are loaded from external servers (e.g. Google Fonts).",
       "No advertising IDs or cross-device identifiers are collected for marketing purposes.",

@@ -292,21 +292,24 @@
       "shots": ["Meine Geschichten mit allen erstellten Titeln", "Figur anlegen: Name, Alter und Avatar", "Haupt- und Nebenfiguren in der Charakterliste", "Zehn Geschichtenwelten zur Auswahl", "Eigenes Stichwort für die Geschichte", "Player mit Kapiteln und Text zum Mitlesen", "Vorlesestimme mit Hörprobe wählen", "Tempo, Autoplay und Einschlaf-Timer", "Eltern-PIN schützt den Erwachsenenbereich"]
     },
     "furly": {
-      "tagline": "Gesundheit, Erinnerungen, Notfallhilfe und Orte für Hund, Katze & Co.",
-      "summary": "Krankenakte, Impfpass, Erinnerungen, Notfallkarte, Orte in der Nähe und ein KI-Assistent – alles für den Alltag mit Hund, Katze, Kleintier oder Vogel in einer App.",
+      "tagline": "Gesundheit, Alltag, Notfallhilfe und Orte für Hund und Katze.",
+      "summary": "Krankenakte, Impfpass, Erinnerungen, Tagesroutine, Notfallkarte, Giftköder-Alarm, Orte in der Nähe und ein KI-Assistent – der Begleiter für den Alltag mit Hund und Katze in einer App.",
       "category": "Haustiere & Alltag",
       "description": [
-        "Furly bringt alles zusammen, was zum Alltag mit deinem Tier gehört – für Hunde, Katzen, Kleintiere und Vögel: Krankenakte, Impfungen, Erinnerungen, Tagesroutine, Notfallhilfe und Orte in deiner Nähe.",
+        "Furly ist dein Begleiter rund um Hund und Katze und bringt alles zusammen, was zum Alltag mit deinem Tier gehört: Krankenakte, Impfungen, Erinnerungen, Tagesroutine, Notfallhilfe, Hilfe bei vermissten Tieren und Orte in deiner Nähe.",
         "Dazu gehören ein Ratgeber mit Giftcheck, Trainingspläne und Furly Chat, ein KI-Assistent für allgemeine Fragen rund ums Tier. Furly Chat ersetzt keine tierärztliche Beratung, Diagnose oder Behandlung – bei gesundheitlichen Anliegen wende dich immer an eine Tierarztpraxis.",
-        "Deine Daten bleiben bei dir: Gewicht, Fütterung und Tagesroutine speichert Furly nur auf deinem Gerät, das Konto ist jederzeit vollständig löschbar. Keine Werbung, kein Tracking."
+        "Deine Daten liegen auf Servern in der EU (Frankfurt) und sind auf jedem deiner Geräte verfügbar. Dein Konto und alle Daten kannst du jederzeit vollständig löschen. Keine Werbung, kein Tracking."
       ],
       "features": [
         { "title": "Im Notfall", "text": "Notfallkarte mit Erste-Hilfe-Schritten auch ohne Internet, Giftnotruf-Nummern für Deutschland, Österreich und die Schweiz und die nächste geöffnete Tierarztpraxis mit einem Tipp." },
         { "title": "Gesundheit im Blick", "text": "Krankenakte mit Behandlungen und Notizen, digitaler Impfpass mit Hinweis bei fälligen Impfungen und Gewichtsverlauf mit Trend." },
-        { "title": "Jeden Tag", "text": "Tagesroutine zum Abhaken – Füttern, Gassi, Medikament – und Erinnerungen zur gewählten Uhrzeit, auf Wunsch im eigenen Kalender." },
-        { "title": "Furly Chat", "text": "Der KI-Assistent beantwortet allgemeine Fragen rund ums Tier, erkennt Notfallhinweise und verweist dann klar an die Tierarztpraxis." },
+        { "title": "Jeden Tag", "text": "Tagesroutine zum Abhaken – Füttern, Gassi, Medikament – und Erinnerungen zur gewählten Uhrzeit, auch als Serie, z. B. Zeckenschutz jeden Monat. Benachrichtigungen schaltest du je Bereich ein oder aus." },
+        { "title": "Gemeinsam im Haushalt", "text": "Teile ein Tier mit deinem Haushalt: Tagesroutine, Erinnerungen und Training habt ihr gemeinsam im Blick." },
+        { "title": "Giftköder-Alarm", "text": "Melde einen Giftköder-Fund und werde gewarnt, wenn in deiner Nähe einer gemeldet wird – auf Liste, Karte und auf Wunsch per Push." },
+        { "title": "Vermisst & Gefunden", "text": "Meldungen aus deiner Umgebung mit Benachrichtigung und ein Suchplakat zum Teilen mit einem Tipp." },
         { "title": "Orte in der Nähe", "text": "Tierärzte, Hundewiesen, Tierbedarf, Kotbeutel-Spender und Trinkwasser in deiner Umgebung – mit Daten von OpenStreetMap." },
-        { "title": "Vermisst & Gefunden", "text": "Meldungen aus deiner Umgebung mit Benachrichtigung und ein Suchplakat zum Teilen mit einem Tipp." }
+        { "title": "Furly Chat", "text": "Der KI-Assistent beantwortet allgemeine Fragen rund ums Tier, erkennt Notfallhinweise und verweist dann klar an die Tierarztpraxis." },
+        { "title": "Wissen & Training", "text": "Ratgeber mit geprüften Artikeln, offline lesbar, Giftcheck, Übungsbibliothek und eigene Trainingspläne – bei Aggressions- und Angstthemen ein Verweis auf Profis statt eines Plans." }
       ],
       "pricing": {
         "free": ["Ein Tierprofil", "Fünf Chat-Nachrichten pro Tag und ein Trainingsplan", "Alle Notfall-, Gesundheits- und Suchfunktionen", "Keine Werbung"],

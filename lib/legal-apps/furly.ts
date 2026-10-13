@@ -7,9 +7,9 @@ import type { LegalSection } from "../legal";
  *
  * Quelle bleibt das Markdown im App-Repository: Änderungen dort müssen hier
  * nachgezogen werden. Beim Übernehmen entfallen das Inhaltsverzeichnis, die
- * internen Vermerke „[Anwaltlich prüfen: …]“ und in der Datenschutzerklärung
- * der veraltete Satz „keine Zahlungsabwicklung … weder Abonnements noch
- * In-App-Käufe“ (widerspricht Abschnitt 4a zu Furly Pro).
+ * internen Vermerke „[Anwaltlich prüfen: …]“. Zuletzt abgeglichen am
+ * 13.10.2026 mit Commit 07bfc99 (Haushalt, Giftköder-Alarm, Benachrichtigungen
+ * je Bereich, Daten auf dem Server, Resend, Satz zu Zahlungen).
  */
 
 export const furlyDatenschutz: LegalSection[] = [
@@ -101,7 +101,8 @@ export const furlyDatenschutz: LegalSection[] = [
       "Du kannst Profile deiner Haustiere anlegen (Name, Rasse, Geburtsdatum, Gewicht, Foto, freie Beschreibung), Gesundheitseinträge dokumentieren und Erinnerungen setzen.",
       "Wichtiger Hinweis zu Daten Dritter",
       "In der Krankenakte kannst du optional Namen von Tierärztinnen/Tierärzten und Kliniken eintragen, ebenso in deiner persönlichen Tierarztliste. Dabei handelt es sich um personenbezogene Daten Dritter. Trage solche Daten bitte nur ein, soweit dies für deine eigene Dokumentation erforderlich ist, und veröffentliche sie nicht in der Community.",
-      "Diese Daten werden in unserer Datenbank gespeichert und sind ausschließlich deinem Konto zugeordnet. Andere Nutzer haben keinen Zugriff darauf (technisch durch zeilenbasierte Zugriffsregeln, „Row Level Security\", abgesichert).",
+      "Diese Daten werden in unserer Datenbank gespeichert und sind deinem Konto zugeordnet. Andere Nutzer haben keinen Zugriff darauf (technisch durch zeilenbasierte Zugriffsregeln, „Row Level Security\", abgesichert) – außer du teilst ein Tier ausdrücklich mit deinem Haushalt (siehe unten).",
+      "Tier mit dem Haushalt teilen: Du kannst ein Tier über einen Einladungscode mit anderen Furly-Konten teilen, z. B. mit deiner Partnerin oder deinem Partner. Der Code ist 48 Stunden gültig und nur einmal verwendbar; wem du ihn gibst, entscheidest du. Alle Mitglieder des Haushalts sehen und bearbeiten dann die Daten dieses Tieres (Tierprofil und Foto, Krankenakte, Erinnerungen, Tagesroutine, Gewicht, Fütterung, Aktivität, Trainingspläne) und sehen den Anzeigenamen der anderen Mitglieder. Der Besitzer kann Mitglieder jederzeit entfernen, Mitglieder können jederzeit austreten. Löschst du als Besitzer dein Konto, geht ein geteiltes Tier samt seinen Daten an das am längsten beteiligte Mitglied über; ohne Mitglieder wird es gelöscht.",
       "Tierarzt-Mappe (PDF): Auf deinen Wunsch erstellt die App aus Tierprofil, Krankenakte, Impfungen und Gewichtsverlauf ein PDF. Es entsteht ausschließlich auf deinem Gerät; an wen du es weitergibst, entscheidest du über den Teilen-Dialog deines Geräts. Wir erhalten das PDF nicht.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.",
     ],
@@ -177,6 +178,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "Lost & Found – bitte bewusst entscheiden",
       "Wenn du eine Such- oder Fundmeldung erstellst, veröffentlichst du aktiv die von dir eingegebenen Kontaktangaben (z. B. Telefonnummer oder E-Mail-Adresse), eine Ortsangabe, das Datum sowie optional ein Foto und Standortkoordinaten. Diese Angaben sind für alle angemeldeten Nutzerinnen und Nutzer sichtbar und können von diesen kopiert oder weitergegeben werden. Gib daher nur Kontaktdaten an, deren Veröffentlichung du bewusst in Kauf nimmst.",
       "Du kannst deine eigenen Beiträge jederzeit löschen oder eine Suchmeldung als „erledigt\" markieren. Mit der Löschung deines Kontos werden auch alle deine Beiträge entfernt.",
+      "Giftköder-Alarm: Du kannst einen Giftköder-Fund melden. Gespeichert werden deine Beschreibung, eine optionale Ortsangabe und die Koordinaten deines aktuellen Standorts zum Zeitpunkt der Meldung. Die Meldung ist für alle angemeldeten Nutzerinnen und Nutzer sieben Tage lang sichtbar (ohne deinen Namen) und danach nicht mehr; du kannst sie vorher als entfernt markieren oder löschen. Pro Konto sind höchstens fünf Meldungen am Tag möglich. Andere Nutzer können Meldungen melden und das meldende Konto blockieren.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO — die Veröffentlichung erfolgt durch dein aktives Absenden des Beitrags.",
     ],
   },
@@ -197,7 +199,7 @@ export const furlyDatenschutz: LegalSection[] = [
     heading: "b) Umkreis-Benachrichtigungen",
     level: 3,
     paragraphs: [
-      "Sofern du die Standortberechtigung erteilt hast, wird deine zuletzt bekannte Position bei jeder Anmeldung und bei Erneuerung der Sitzung an unseren Server übermittelt und dort gespeichert (jeweils überschrieben, es entsteht kein Bewegungsprofil). Wir benötigen diese Angabe, um dich benachrichtigen zu können, wenn in deinem Umkreis ein vermisstes oder gefundenes Tier gemeldet wird. Der Benachrichtigungsradius beträgt standardmäßig 25 km.",
+      "Sofern du die Standortberechtigung erteilt hast, wird deine zuletzt bekannte Position bei jeder Anmeldung und bei Erneuerung der Sitzung an unseren Server übermittelt und dort gespeichert (jeweils überschrieben, es entsteht kein Bewegungsprofil). Wir benötigen diese Angabe, um dich benachrichtigen zu können, wenn in deinem Umkreis ein vermisstes oder gefundenes Tier oder ein Giftköder gemeldet wird. Diese Benachrichtigungen erhältst du nur, wenn du sie für den jeweiligen Bereich ausdrücklich eingeschaltet hast (Profil → Benachrichtigungen). Der Benachrichtigungsradius beträgt standardmäßig 25 km.",
     ],
   },
   {
@@ -214,9 +216,9 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "7. Push- und lokale Benachrichtigungen",
     paragraphs: [
-      "Für Push-Benachrichtigungen (z. B. Lost&Found-Meldungen in deiner Nähe) wird über Firebase Cloud Messaging ein geräteindividuelles Token erzeugt, das wir deinem Konto zuordnen und speichern. Dieses Token ermöglicht die Zustellung von Benachrichtigungen an dein Gerät; Google erhält dabei technische Zustellinformationen.",
-      "Erinnerungen an Termine und Aufgaben werden zusätzlich als lokale Benachrichtigungen direkt auf deinem Gerät geplant. Hierfür verlassen keine Daten dein Gerät. Damit geplante Erinnerungen einen Neustart des Geräts überdauern, verwendet die App die Berechtigung RECEIVE_BOOT_COMPLETED.",
-      "Du kannst Benachrichtigungen jederzeit in den App- oder Systemeinstellungen deaktivieren.",
+      "Für Push-Benachrichtigungen (Lost&Found- und Giftköder-Meldungen in deiner Nähe) wird über Firebase Cloud Messaging ein geräteindividuelles Token erzeugt, das wir deinem Konto zuordnen und speichern. Dieses Token ermöglicht die Zustellung von Benachrichtigungen an dein Gerät; Google erhält dabei technische Zustellinformationen.",
+      "Erinnerungen an Termine, Impfungen, Wurmkur und Medikamente, die Tagesroutine und Kalender-Notizen werden zusätzlich als lokale Benachrichtigungen direkt auf deinem Gerät geplant. Hierfür verlassen keine Daten dein Gerät. Damit geplante Erinnerungen einen Neustart des Geräts überdauern, verwendet die App die Berechtigung RECEIVE_BOOT_COMPLETED; damit sie pünktlich kommen, auf Wunsch die Berechtigung „Wecker und Erinnerungen\" (SCHEDULE_EXACT_ALARM).",
+      "Für jeden Bereich (Tagesroutine, Termine, Gesundheit, Kalender, Vermisst, Giftköder) fragt die App getrennt nach deiner Zustimmung. Du kannst jeden Bereich jederzeit unter Profil → Benachrichtigungen oder in den Systemeinstellungen ein- und ausschalten. Beim Abmelden entfernt die App die geplanten Benachrichtigungen und meldet das Gerät von Push-Benachrichtigungen ab.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Benachrichtigungsberechtigung).",
     ],
   },
@@ -230,7 +232,7 @@ export const furlyDatenschutz: LegalSection[] = [
       head: ["Bereich", "Inhalt", "Sichtbarkeit", "Max. Größe"],
       rows: [
         ["avatars", "Profilbilder", "nur du bzw. Anzeige deines Profils", "2 MB"],
-        ["pet-images", "Tierfotos", "nur du", "5 MB"],
+        ["pet-images", "Tierfotos", "du und Mitglieder deines Haushalts für geteilte Tiere", "5 MB"],
         ["lost-found-images", "Fotos in Suchmeldungen", "alle angemeldeten Nutzer", "5 MB"],
       ],
     },
@@ -242,10 +244,10 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "9. Lokal auf deinem Gerät gespeicherte Daten",
     paragraphs: [
-      "Einträge zu Gewicht, Fütterung und Aktivität, die Tagesroutine (Aufgaben und Haken), die Merkliste im Ratgeber, gemerkte Orte sowie App-Einstellungen (z. B. Sprache, Design) werden ausschließlich lokal auf deinem Gerät gespeichert. Diese Daten werden nicht an unsere Server übertragen.",
+      "Einträge zu Gewicht, Fütterung und Aktivität, die Tagesroutine (Aufgaben und Haken), Kalender-Notizen und die Merkliste im Ratgeber werden in unserer Datenbank deinem Konto zugeordnet gespeichert, damit sie bei einem Gerätewechsel erhalten bleiben und mit deinem Haushalt geteilt werden können. Auf dem Gerät liegt nur eine Kopie als Zwischenspeicher, die beim Abmelden entfernt wird. Gemerkte Orte, Tierarzt-Favoriten sowie App-Einstellungen (z. B. Sprache, Design) bleiben ausschließlich lokal auf deinem Gerät.",
       "Notfallkarte, Giftnotruf-Nummern und Ratgeber-Artikel sind fest in der App enthalten und funktionieren ohne Internetverbindung; beim Lesen werden keine Daten übertragen. Auch die Schriftarten sind in der App enthalten, es werden keine Schriften von Google Fonts oder anderen Servern nachgeladen.",
       "Über die Funktion „Backup & Wiederherstellung\" in den Einstellungen kannst du diese Daten selbst exportieren. Der Export erfolgt nur auf deine ausdrückliche Aktion hin; wohin du die exportierte Datei speicherst oder weitergibst, entscheidest ausschließlich du.",
-      "Wenn du dein Konto löschst, entfernt die App diese lokalen Daten mit. Beim Deinstallieren der App werden sie ebenfalls vom Gerät entfernt.",
+      "Wenn du dich abmeldest oder dein Konto löschst, entfernt die App die lokalen Kopien. Beim Deinstallieren der App werden sie ebenfalls vom Gerät entfernt.",
     ],
   },
   {
@@ -291,6 +293,7 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Sign in with Apple (optional)", "Anmeldung mit Apple-Konto", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
         ["Google Play", "Vertrieb und Aktualisierung der App; Zahlungsabwicklung für Furly Pro (eigene Verantwortung von Google)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Abo-Verwaltung für Furly Pro (Kaufprüfung, Status, Wiederherstellung)", "RevenueCat, Inc., USA", "USA"],
+        ["Resend", "Versand der Konto-E-Mails (Bestätigung, Passwort zurücksetzen, E-Mail-Wechsel); verarbeitet werden E-Mail-Adresse, Versandzeitpunkt und Zustellstatus", "Resend, Inc., USA", "USA"],
         ["OpenStreetMap / Overpass API", "Quelle der Ortsdaten im Orte-Finder; Abfrage nur durch unseren Server mit Kartenausschnitten, ohne personenbezogene Daten", "OpenStreetMap Foundation bzw. Betreiber der Overpass-Instanz", "EU"],
       ],
     },
@@ -390,6 +393,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "Wir verkaufen deine Daten nicht und geben sie nicht zu Werbezwecken weiter.",
       "Furly enthält keine Werbung und keine Werbe-SDKs.",
       "Furly enthält keine Analyse- oder Tracking-Werkzeuge (kein Analytics, kein Crash-Reporting-SDK, keine Nutzungsprofile).",
+      "Wir sehen keine Zahlungsdaten: Das Abo Furly Pro wird vollständig über Google Play abgewickelt (siehe Abschnitt 4a).",
       "Es werden keine automatisierten Entscheidungen mit rechtlicher Wirkung oder ähnlich erheblicher Beeinträchtigung im Sinne von Art. 22 DSGVO getroffen.",
       "Schriftarten sind fest in der App enthalten; es werden keine Schriftarten von externen Servern (z. B. Google Fonts) nachgeladen.",
       "Es werden keine Werbe-IDs oder geräteübergreifenden Kennungen zu Marketingzwecken erhoben.",

@@ -292,21 +292,24 @@
       "shots": ["My stories with every title created so far", "Creating a character: name, age and avatar", "Lead and supporting characters in the list", "Ten story worlds to choose from", "Your own keyword for the story", "Player with chapters and text to read along", "Picking a narrator voice with a preview", "Speed, autoplay and sleep timer", "A parent PIN protects the adult area"]
     },
     "furly": {
-      "tagline": "Health records, reminders, first aid and pet-friendly places in one app.",
-      "summary": "Health records, vaccination record, reminders, an emergency card, places nearby and an AI assistant – everything for life with a dog, cat, small pet or bird in one app.",
+      "tagline": "Health, daily life, first aid and places for dogs and cats.",
+      "summary": "Health records, vaccination record, reminders, daily routine, an emergency card, poison bait alerts, places nearby and an AI assistant – the companion for life with dogs and cats in one app.",
       "category": "Pets & everyday life",
       "description": [
-        "Furly brings together everything that belongs to life with your pet – for dogs, cats, small animals and birds: health records, vaccinations, reminders, a daily routine, emergency help and places nearby.",
+        "Furly is your companion for life with dogs and cats and brings together everything that belongs to everyday life with your pet: health records, vaccinations, reminders, a daily routine, emergency help, help with missing pets and places nearby.",
         "It also includes a guide with a poison check, training plans and Furly Chat, an AI assistant for general questions about your pet. Furly Chat does not replace veterinary advice, diagnosis or treatment – for health concerns, always contact a vet.",
-        "Your data stays with you: Furly keeps weight, feeding and the daily routine on your device only, and you can delete your account completely at any time. No ads, no tracking."
+        "Your data is stored on servers in the EU (Frankfurt) and is available on all your devices. You can delete your account and all data completely at any time. No ads, no tracking."
       ],
       "features": [
         { "title": "In an emergency", "text": "Emergency card with first aid steps even offline, poison hotline numbers for Germany, Austria and Switzerland, and the nearest open vet practice in one tap." },
         { "title": "Health at a glance", "text": "Health record with treatments and notes, a digital vaccination record that tells you when a shot is due, and weight history with trend." },
-        { "title": "Every day", "text": "A daily routine to tick off – feeding, walks, medication – and reminders at the time you choose, exportable to your calendar." },
-        { "title": "Furly Chat", "text": "The AI assistant answers general questions about your pet, recognises emergencies and then clearly refers you to a vet." },
+        { "title": "Every day", "text": "A daily routine to tick off – feeding, walks, medication – and reminders at the time you choose, also as a series, e.g. tick protection every month. Turn notifications on or off for each area." },
+        { "title": "Together as a household", "text": "Share a pet with your household and keep the daily routine, reminders and training in view together." },
+        { "title": "Poison bait alert", "text": "Report a poison bait find and get warned when one is reported near you – in a list, on a map and, if you like, by push notification." },
+        { "title": "Lost & found", "text": "Reports near you with notifications and a shareable missing poster in one tap." },
         { "title": "Places nearby", "text": "Vets, dog parks, pet shops, poop bag dispensers and drinking water around you – with data from OpenStreetMap." },
-        { "title": "Lost & found", "text": "Reports near you with notifications and a shareable missing poster in one tap." }
+        { "title": "Furly Chat", "text": "The AI assistant answers general questions about your pet, recognises emergencies and then clearly refers you to a vet." },
+        { "title": "Knowledge & training", "text": "A guide with reviewed articles, readable offline, a poison check, an exercise library and personal training plans – for aggression and anxiety, a referral to professionals instead of a plan." }
       ],
       "pricing": {
         "free": ["One pet profile", "Five chat messages a day and one training plan", "All emergency, health and search features", "No ads"],
