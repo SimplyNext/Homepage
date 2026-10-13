@@ -169,10 +169,9 @@ export const apps: AppData[] = [
     hero: "/images/apps/werkflow/hero.png",
     heroFit: "contain",
     shots: [{ src: "/images/apps/werkflow/home-de.png" }],
-    // Englische Startseite folgt (WerkFlow-Sitzung nimmt sie auf).
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
-      en: "/images/apps/werkflow/home-de.png",
+      en: "/images/apps/werkflow/home-en.png",
     },
     // Store-Grafiken vom 06.10.2026, nur was es in Version 10 schon gibt.
     posters: {
