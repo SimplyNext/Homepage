@@ -55,13 +55,6 @@ export type AppData = {
   /** Nur Bildpfade – Alt-Texte kommen aus den Messages (apps.<slug>.shots[i]) */
   shots: { src: string }[];
   /**
-   * Optional: fertige Store-Grafiken (Überschrift + Handy schon im Bild), je
-   * Sprache. Die App-Seite zeigt sie statt `shots` ohne eigenen Handy-Rahmen;
-   * Bühne und Startseite nutzen weiter `shots[0]`. Alt-Texte aus
-   * apps.<slug>.posters[i].
-   */
-  posters?: Record<"de" | "en", string[]>;
-  /**
    * Optional: Startbild je Sprache (rohe App-UI, 1080×2640) für Bühne,
    * Startseite und den Kopf der App-Seite. Ohne Angabe gilt `shots[0]`.
    */
@@ -168,32 +161,22 @@ export const apps: AppData[] = [
     accentLight: "#8F4C12",
     hero: "/images/apps/werkflow/hero.png",
     heroFit: "contain",
-    shots: [{ src: "/images/apps/werkflow/home-de.png" }],
+    shots: [
+      { src: "/images/apps/werkflow/home-de.png" },
+      { src: "/images/apps/werkflow/1-diktieren.png" },
+      { src: "/images/apps/werkflow/2-ki-vorschlag.png" },
+      { src: "/images/apps/werkflow/3-pruefen.png" },
+      { src: "/images/apps/werkflow/4-pdf.png" },
+      { src: "/images/apps/werkflow/5-auftrag.png" },
+      { src: "/images/apps/werkflow/6-unterschrift.png" },
+      { src: "/images/apps/werkflow/7-archiv.png" },
+      { src: "/images/apps/werkflow/8-abschlag-a.png" },
+      { src: "/images/apps/werkflow/9-steuerberater.png" },
+    ],
+    // Startbild je Sprache (Bühne, Startseite, Kopf der App-Seite).
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
       en: "/images/apps/werkflow/plus-menue-en.png",
-    },
-    posters: {
-      de: [
-        "/images/apps/werkflow/store/de/screen-1-plus-menue.png",
-        "/images/apps/werkflow/store/de/screen-2-kostenvoranschlag-sprechen.png",
-        "/images/apps/werkflow/store/de/screen-3-kostenvoranschlag-pdf.png",
-        "/images/apps/werkflow/store/de/screen-4-neue-fassung.png",
-        "/images/apps/werkflow/store/de/screen-5-belegkette.png",
-        "/images/apps/werkflow/store/de/screen-6-auftragsbestaetigung.png",
-        "/images/apps/werkflow/store/de/screen-7-abschlag.png",
-        "/images/apps/werkflow/store/de/screen-8-steuerberater.png",
-      ],
-      en: [
-        "/images/apps/werkflow/store/en/screen-1-create-menu.png",
-        "/images/apps/werkflow/store/en/screen-2-dictate-estimate.png",
-        "/images/apps/werkflow/store/en/screen-3-archive.png",
-        "/images/apps/werkflow/store/en/screen-4-new-revision.png",
-        "/images/apps/werkflow/store/en/screen-5-document-chain.png",
-        "/images/apps/werkflow/store/en/screen-6-order-confirmation.png",
-        "/images/apps/werkflow/store/en/screen-7-progress-invoice.png",
-        "/images/apps/werkflow/store/en/screen-8-tax-advisor.png",
-      ],
     },
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
