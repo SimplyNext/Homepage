@@ -171,7 +171,7 @@ export const apps: AppData[] = [
     shots: [{ src: "/images/apps/werkflow/home-de.png" }],
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
-      en: "/images/apps/werkflow/home-en.png",
+      en: "/images/apps/werkflow/plus-menue-en.png",
     },
     posters: {
       de: [
