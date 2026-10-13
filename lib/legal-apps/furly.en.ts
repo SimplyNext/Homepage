@@ -203,6 +203,8 @@ export const furlyDatenschutzEn: LegalSection[] = [
     paragraphs: [
       "When you search in the places finder, the app sends your current location and the selected categories to our server. From this, the server determines the matching map sections (grid of about 25 km) and returns the places with their distance. Your exact position is not stored; only the public place data per map section is cached.",
       "The place data comes from OpenStreetMap (© OpenStreetMap contributors, ODbL licence). If it is missing from the cache, our server requests it from the Overpass service, using only the boundaries of the map section – neither your position nor your account ID is transmitted to Overpass. Places you save are stored by the app only on your device.",
+      "Supplemented by Google Places: For vets, dog parks and pet supplies, our server additionally queries the Google Places service (Google Ireland Limited). The server transmits the search point (your location at the time of the search), the search radius and the category – not your account ID or other account data. Google results are stored neither on our server nor on your device; the server only retrieves the phone number, website and opening hours of a Google place when you open the details of that place. To keep costs under control, we count the number of these queries per account and day (without the search point); the counter is no longer needed after a short time and is deleted with the account.",
+      "Places added by pet owners: You can add places yourself (e.g. a swimming spot where dogs are allowed). We store the information you provide (type, name, the position you set and, optionally, address, phone, website, opening hours, dog rule, note), your account ID and the time. The entry is immediately visible to all signed-in users, without your name. You can change or delete it at any time; it is deleted with your account. Other users can report entries and block the person who added them (see section 11). Please only add places that are publicly accessible and no information about private individuals. Legal basis: Art. 6(1)(b) GDPR (provision of the function you use).",
       "Before the system prompt, we explain in the app what the location is used for. You can withdraw the permission at any time in your device's settings; Furly then continues to work, only the map and radius functions and radius notifications are no longer available.",
       "No background tracking: Furly does not record your location permanently in the background. The app does not request background location permission.",
       "Legal basis: Art. 6(1)(a) GDPR (consent via the permission prompt).",
@@ -255,7 +257,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
   {
     heading: "11. Reports of content (moderation)",
     paragraphs: [
-      "You can object to community posts, Lost & Found reports and AI answers via the report function. We store the reported content, the reason given, the time and your account ID in order to detect multiple reports and abuse of the report function. Reports are not visible to other users.",
+      "You can object to community posts, Lost & Found reports, poison bait reports, places added by pet owners and AI answers via the report function. We store the reported content, the reason given, the time and your account ID in order to detect multiple reports and abuse of the report function. Reports are not visible to other users.",
       "Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a safe platform).",
     ],
   },
@@ -289,6 +291,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Google Play", "Distribution and updating of the app; payment processing for Furly Pro (Google's own responsibility)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Subscription management for Furly Pro (purchase verification, status, restoring)", "RevenueCat, Inc., USA", "USA"],
         ["Resend", "Sending account e-mails (confirmation, password reset, e-mail change); processes e-mail address, time of sending and delivery status", "Resend, Inc., USA", "USA"],
+        ["Google Places API", "Supplements the place search (vets, dog parks, pet supplies); queried only by our server with search point, radius and category, without account ID", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["OpenStreetMap / Overpass API", "Source of place data in the places finder; queried only by our server using map sections, without personal data", "OpenStreetMap Foundation or operator of the Overpass instance", "EU"],
       ],
     },
@@ -349,13 +352,13 @@ export const furlyDatenschutzEn: LegalSection[] = [
       "all pet profiles, health record and vaccination entries as well as reminders,",
       "your list of vets,",
       "all chat histories and training plans,",
-      "all community posts, likes and Lost & Found reports,",
+      "all community posts, likes, Lost & Found and poison bait reports as well as places you have added,",
       "stored location and device push token,",
       "the subscription status and the counters of the chat quota; we arrange the deletion of your customer account at RevenueCat,",
       "all photos you have uploaded in all storage areas.",
     ],
     afterList: [
-      "The deletion takes place immediately and cannot be undone. The app also deletes the data stored locally on your device (weight, feeding, activity, calendar notes, daily routine, saved articles). Deleting your account does not cancel a running subscription: please cancel Furly Pro in Google Play beforehand, otherwise Google will continue to renew it. Irrespective of this, you can remove the local data at any time by uninstalling the app.",
+      "The deletion takes place immediately and cannot be undone. Weight, feeding, activity, calendar notes, daily routine and saved articles have been stored on the server since October 2026 and are also deleted; the app also removes the copy on your device. Deleting your account does not cancel a running subscription: please cancel Furly Pro in Google Play beforehand, otherwise Google will continue to renew it. Irrespective of this, you can remove the copy on your device at any time by uninstalling the app.",
       "If you no longer have access to the app, you can request deletion informally by email to info@simplynext.de. We will confirm receipt and carry out the deletion without undue delay, at the latest within 30 days.",
     ],
   },
@@ -452,7 +455,7 @@ export const furlyAgbEn: LegalSection[] = [
       "documenting health and vaccination entries (digital health record) and exporting them as a PDF (“vet folder”),",
       "reminders of appointments and recurring tasks as well as a daily routine to tick off,",
       "recording weight, feeding and activity,",
-      "a places finder for vets, dog parks, pet supplies and other places based on OpenStreetMap,",
+      "a places finder for vets, dog parks, pet supplies and other places based on OpenStreetMap, supplemented by results from Google and by places that users add themselves,",
       "an emergency card with first aid information and poison hotline numbers as well as a guide with a poison check (editorial content, also without an internet connection),",
       "an AI-supported assistant (“Furly Chat”) and AI-generated training plans,",
       "training guides (editorial content),",
@@ -541,10 +544,11 @@ export const furlyAgbEn: LegalSection[] = [
   {
     heading: "7. User-generated content and grant of rights",
     paragraphs: [
-      "7.1 Content that you post in the app (posts, photos, comments, missing reports) remains your content. We do not claim ownership of it.",
+      "7.1 Content that you post in the app (posts, photos, comments, missing reports, poison bait reports, added places) remains your content. We do not claim ownership of it.",
       "7.2 For technical provision, you grant us a simple, free-of-charge, territorially unlimited right of use to store and reproduce this content and to display it within the app to the user groups intended for it. This right is limited to the operation of the app and ends with the deletion of the respective content, unless a statutory retention obligation prevents this.",
       "7.3 Your content is not used for advertising purposes, passed on to third parties for their own purposes or used to train AI models.",
       "7.4 You can delete your content yourself at any time. When your account is deleted, all content you have posted is removed.",
+      "7.5 Added places: Only add publicly accessible places and only information you know first-hand (e.g. from the sign on site, from the place's website or from your visit). Copying or adopting data from other maps, directories or databases (such as Google Maps) is not permitted. Added places are immediately visible to all signed-in users, without your name. We may hide or delete obviously incorrect, duplicate or inadmissible entries.",
     ],
   },
   {
@@ -575,7 +579,7 @@ export const furlyAgbEn: LegalSection[] = [
   {
     heading: "10. Reporting and moderation procedure",
     paragraphs: [
-      "10.1 You can object to content in the community, in Lost & Found and to answers of the AI assistant via the integrated report function.",
+      "10.1 You can object to content in the community, in Lost & Found, poison bait reports, added places and answers of the AI assistant via the integrated report function.",
       "10.2 We review incoming reports within a reasonable period. In the event of violations of these Terms or applicable law, we may remove or block content.",
       "10.3 Independently of the report function, you can report violations at any time by email to info@simplynext.de.",
       "10.4 We reserve the right to block the account concerned temporarily or permanently in the event of repeated or serious violations (see section 13).",

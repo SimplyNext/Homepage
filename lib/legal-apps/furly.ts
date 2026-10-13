@@ -8,8 +8,9 @@ import type { LegalSection } from "../legal";
  * Quelle bleibt das Markdown im App-Repository: Änderungen dort müssen hier
  * nachgezogen werden. Beim Übernehmen entfallen das Inhaltsverzeichnis, die
  * internen Vermerke „[Anwaltlich prüfen: …]“. Zuletzt abgeglichen am
- * 13.10.2026 mit Commit 07bfc99 (Haushalt, Giftköder-Alarm, Benachrichtigungen
- * je Bereich, Daten auf dem Server, Resend, Satz zu Zahlungen).
+ * 13.10.2026 mit Commit 26e3bb6 (zuvor 07bfc99: Haushalt, Giftköder-Alarm,
+ * Benachrichtigungen je Bereich, Daten auf dem Server, Resend, Satz zu
+ * Zahlungen; jetzt: Google Places, eingetragene Orte, Melden, Löschliste).
  */
 
 export const furlyDatenschutz: LegalSection[] = [
@@ -208,6 +209,8 @@ export const furlyDatenschutz: LegalSection[] = [
     paragraphs: [
       "Wenn du im Orte-Finder suchst, sendet die App deinen aktuellen Standort und die gewählten Kategorien an unseren Server. Der Server ermittelt daraus die passenden Kartenausschnitte (Raster von etwa 25 km) und liefert die Orte mit Entfernung zurück. Deine genaue Position wird dabei nicht gespeichert; zwischengespeichert werden nur die öffentlichen Ortsdaten je Kartenausschnitt.",
       "Die Ortsdaten stammen aus OpenStreetMap (© OpenStreetMap-Mitwirkende, Lizenz ODbL). Fehlen sie im Zwischenspeicher, fragt unser Server sie beim Dienst Overpass ab, und zwar nur mit den Grenzen des Kartenausschnitts – weder deine Position noch deine Konto-ID werden an Overpass übermittelt. Orte, die du dir merkst, speichert die App nur auf deinem Gerät.",
+      "Ergänzung durch Google Places: Für Tierärzte, Hundewiesen und Tierbedarf fragt unser Server zusätzlich den Dienst Google Places (Google Ireland Limited) ab. Dabei übermittelt der Server den Suchpunkt (deinen Standort bei der Suche), den Suchradius und die Kategorie – nicht deine Konto-ID oder andere Kontodaten. Google-Ergebnisse werden weder auf unserem Server noch auf deinem Gerät gespeichert; Telefonnummer, Website und Öffnungszeiten eines Google-Ortes ruft der Server erst ab, wenn du die Details dieses Ortes öffnest. Damit die Kosten im Rahmen bleiben, zählen wir je Konto und Tag die Anzahl dieser Abfragen (ohne Suchpunkt); der Zähler wird nach kurzer Zeit nicht mehr benötigt und mit dem Konto gelöscht.",
+      "Von Tierhaltern eingetragene Orte: Du kannst selbst Orte eintragen (z. B. eine Badestelle, an der Hunde erlaubt sind). Gespeichert werden die Angaben, die du machst (Art, Name, die von dir gesetzte Position und freiwillig Adresse, Telefon, Website, Öffnungszeiten, Hunde-Regel, Hinweis), deine Konto-ID und der Zeitpunkt. Der Eintrag ist sofort für alle angemeldeten Nutzer sichtbar, ohne deinen Namen. Du kannst ihn jederzeit ändern oder löschen; mit deinem Konto wird er gelöscht. Andere Nutzer können Einträge melden und den Eintragenden blockieren (siehe Abschnitt 11). Bitte trage nur Orte ein, die öffentlich zugänglich sind, und keine Angaben über Privatpersonen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).",
       "Vor der Systemabfrage erklären wir dir in der App, wofür der Standort verwendet wird. Du kannst die Berechtigung jederzeit in den Einstellungen deines Geräts widerrufen; Furly funktioniert dann weiter, lediglich die Karten- und Umkreisfunktionen sowie Umkreis-Benachrichtigungen stehen nicht mehr zur Verfügung.",
       "Kein Hintergrund-Tracking: Furly erfasst den Standort nicht dauerhaft im Hintergrund. Die App fordert keine Berechtigung für Hintergrundstandort an.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Berechtigungsabfrage).",
@@ -260,7 +263,7 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "11. Meldungen von Inhalten (Moderation)",
     paragraphs: [
-      "Community-Beiträge, Lost&Found-Meldungen und KI-Antworten kannst du über die Melden-Funktion beanstanden. Wir speichern dabei den gemeldeten Inhalt, den angegebenen Grund, den Zeitpunkt sowie deine Konto-ID, um Mehrfachmeldungen und Missbrauch der Meldefunktion zu erkennen. Meldungen sind für andere Nutzer nicht einsehbar.",
+      "Community-Beiträge, Lost&Found-Meldungen, Giftköder-Meldungen, von Tierhaltern eingetragene Orte und KI-Antworten kannst du über die Melden-Funktion beanstanden. Wir speichern dabei den gemeldeten Inhalt, den angegebenen Grund, den Zeitpunkt sowie deine Konto-ID, um Mehrfachmeldungen und Missbrauch der Meldefunktion zu erkennen. Meldungen sind für andere Nutzer nicht einsehbar.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren Plattform).",
     ],
   },
@@ -294,6 +297,7 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Google Play", "Vertrieb und Aktualisierung der App; Zahlungsabwicklung für Furly Pro (eigene Verantwortung von Google)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Abo-Verwaltung für Furly Pro (Kaufprüfung, Status, Wiederherstellung)", "RevenueCat, Inc., USA", "USA"],
         ["Resend", "Versand der Konto-E-Mails (Bestätigung, Passwort zurücksetzen, E-Mail-Wechsel); verarbeitet werden E-Mail-Adresse, Versandzeitpunkt und Zustellstatus", "Resend, Inc., USA", "USA"],
+        ["Google Places API", "Ergänzung der Ortssuche (Tierärzte, Hundewiesen, Tierbedarf); Abfrage nur durch unseren Server mit Suchpunkt, Radius und Kategorie, ohne Konto-ID", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["OpenStreetMap / Overpass API", "Quelle der Ortsdaten im Orte-Finder; Abfrage nur durch unseren Server mit Kartenausschnitten, ohne personenbezogene Daten", "OpenStreetMap Foundation bzw. Betreiber der Overpass-Instanz", "EU"],
       ],
     },
@@ -354,13 +358,13 @@ export const furlyDatenschutz: LegalSection[] = [
       "alle Tierprofile, Krankenakte- und Impfeinträge sowie Erinnerungen,",
       "deine Tierarztliste,",
       "alle Chat-Verläufe und Trainingspläne,",
-      "alle Community-Beiträge, Likes und Lost&Found-Meldungen,",
+      "alle Community-Beiträge, Likes, Lost&Found- und Giftköder-Meldungen sowie von dir eingetragene Orte,",
       "gespeicherte Standortangabe und Geräte-Push-Token,",
       "der Abo-Status und die Zähler des Chat-Kontingents; bei RevenueCat veranlassen wir die Löschung deines Kundenkontos,",
       "alle von dir hochgeladenen Fotos in sämtlichen Speicherbereichen.",
     ],
     afterList: [
-      "Die Löschung erfolgt unmittelbar und kann nicht rückgängig gemacht werden. Die lokal auf deinem Gerät gespeicherten Daten (Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine, Merkliste) löscht die App dabei ebenfalls. Ein laufendes Abo kündigt die Kontolöschung nicht: Kündige Furly Pro bitte vorher in Google Play, sonst verlängert Google es weiter. Unabhängig davon kannst du sie jederzeit durch Deinstallation der App entfernen.",
+      "Die Löschung erfolgt unmittelbar und kann nicht rückgängig gemacht werden. Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine und Merkliste liegen seit Oktober 2026 auf dem Server und werden ebenfalls gelöscht; die Kopie auf deinem Gerät entfernt die App dabei auch. Ein laufendes Abo kündigt die Kontolöschung nicht: Kündige Furly Pro bitte vorher in Google Play, sonst verlängert Google es weiter. Unabhängig davon kannst du sie jederzeit durch Deinstallation der App entfernen.",
       "Falls du keinen Zugriff mehr auf die App hast, kannst du die Löschung formlos per E-Mail an info@simplynext.de verlangen. Wir bestätigen den Eingang und führen die Löschung ohne schuldhaftes Zögern, spätestens innerhalb von 30 Tagen, durch.",
     ],
   },
@@ -457,7 +461,7 @@ export const furlyAgb: LegalSection[] = [
       "Dokumentation von Gesundheits- und Impfeinträgen (digitale Krankenakte) und deren Export als PDF („Tierarzt-Mappe\"),",
       "Erinnerungen an Termine und wiederkehrende Aufgaben sowie eine Tagesroutine zum Abhaken,",
       "Erfassung von Gewicht, Fütterung und Aktivität,",
-      "einen Orte-Finder für Tierärzte, Hundewiesen, Tierbedarf und weitere Orte auf Grundlage von OpenStreetMap,",
+      "einen Orte-Finder für Tierärzte, Hundewiesen, Tierbedarf und weitere Orte auf Grundlage von OpenStreetMap, ergänzt um Ergebnisse von Google und um Orte, die Nutzerinnen und Nutzer selbst eintragen,",
       "eine Notfallkarte mit Erste-Hilfe-Hinweisen und Giftnotruf-Nummern sowie einen Ratgeber mit Giftcheck (redaktionelle Inhalte, auch ohne Internetverbindung),",
       "einen KI-gestützten Assistenten („Furly Chat\") sowie KI-generierte Trainingspläne,",
       "Trainings-Ratgeber (redaktionelle Inhalte),",
@@ -546,10 +550,11 @@ export const furlyAgb: LegalSection[] = [
   {
     heading: "7. Nutzergenerierte Inhalte und Rechteeinräumung",
     paragraphs: [
-      "7.1 Inhalte, die du in der App einstellst (Beiträge, Fotos, Kommentare, Suchmeldungen), bleiben deine Inhalte. Wir erheben daran keinen Eigentumsanspruch.",
+      "7.1 Inhalte, die du in der App einstellst (Beiträge, Fotos, Kommentare, Suchmeldungen, Giftköder-Meldungen, eingetragene Orte), bleiben deine Inhalte. Wir erheben daran keinen Eigentumsanspruch.",
       "7.2 Für die technische Bereitstellung räumst du uns ein einfaches, unentgeltliches, räumlich unbeschränktes Nutzungsrecht ein, diese Inhalte zu speichern, zu vervielfältigen und im Rahmen der App den dafür vorgesehenen Nutzergruppen anzuzeigen. Dieses Recht ist auf den Betrieb der App beschränkt und endet mit der Löschung des jeweiligen Inhalts, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.",
       "7.3 Eine Nutzung deiner Inhalte für Werbezwecke, eine Weitergabe an Dritte zu deren eigenen Zwecken oder eine Verwendung zum Training von KI-Modellen findet nicht statt.",
       "7.4 Du kannst deine Inhalte jederzeit selbst löschen. Mit der Löschung deines Kontos werden alle von dir eingestellten Inhalte entfernt.",
+      "7.5 Eingetragene Orte: Trage nur öffentlich zugängliche Orte ein und nur Angaben, die du aus eigener Kenntnis hast (z. B. vom Schild vor Ort, von der Website des Ortes oder von deinem Besuch). Das Abschreiben oder Übernehmen von Daten aus anderen Karten, Verzeichnissen oder Datenbanken (etwa Google Maps) ist nicht erlaubt. Eingetragene Orte sind sofort für alle angemeldeten Nutzer sichtbar, ohne deinen Namen. Wir dürfen offensichtlich falsche, doppelte oder unzulässige Einträge ausblenden oder löschen.",
     ],
   },
   {
@@ -580,7 +585,7 @@ export const furlyAgb: LegalSection[] = [
   {
     heading: "10. Melde- und Moderationsverfahren",
     paragraphs: [
-      "10.1 Inhalte in der Community, in Lost & Found sowie Antworten des KI-Assistenten kannst du über die integrierte Melden-Funktion beanstanden.",
+      "10.1 Inhalte in der Community, in Lost & Found, Giftköder-Meldungen, eingetragene Orte sowie Antworten des KI-Assistenten kannst du über die integrierte Melden-Funktion beanstanden.",
       "10.2 Eingehende Meldungen prüfen wir in angemessener Frist. Bei Verstößen gegen diese AGB oder geltendes Recht können wir Inhalte entfernen oder sperren.",
       "10.3 Unabhängig von der Melden-Funktion kannst du Verstöße jederzeit per E-Mail an info@simplynext.de melden.",
       "10.4 Wir behalten uns vor, bei wiederholtem oder schwerwiegendem Verstoß das betroffene Konto vorübergehend oder dauerhaft zu sperren (siehe Ziffer 13).",

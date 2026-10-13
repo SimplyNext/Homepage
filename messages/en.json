@@ -310,7 +310,7 @@
         { "title": "Together as a household", "text": "Share a pet with your household and keep the daily routine, reminders and training in view together." },
         { "title": "Poison bait alert", "text": "Report a poison bait find and get warned when one is reported near you – in a list, on a map and, if you like, by push notification." },
         { "title": "Lost & found", "text": "Reports near you with notifications and a shareable missing poster in one tap." },
-        { "title": "Places nearby", "text": "Vets, dog parks, pet shops, poop bag dispensers and drinking water around you – with data from OpenStreetMap." },
+        { "title": "Places nearby", "text": "Vets, dog parks, pet shops, poop bag dispensers and drinking water around you – with data from OpenStreetMap, supplemented by Google for vets, dog parks and pet shops. Missing a place? Add it yourself, for example a swimming spot where dogs are allowed." },
         { "title": "Furly Chat", "text": "The AI assistant answers general questions about your pet, recognises emergencies and then clearly refers you to a vet." },
         { "title": "Knowledge & training", "text": "A guide with reviewed articles, readable offline, a poison check, an exercise library and personal training plans – for aggression and anxiety, a referral to professionals instead of a plan." }
       ],

@@ -310,7 +310,7 @@
         { "title": "Gemeinsam im Haushalt", "text": "Teile ein Tier mit deinem Haushalt: Tagesroutine, Erinnerungen und Training habt ihr gemeinsam im Blick." },
         { "title": "Giftköder-Alarm", "text": "Melde einen Giftköder-Fund und werde gewarnt, wenn in deiner Nähe einer gemeldet wird – auf Liste, Karte und auf Wunsch per Push." },
         { "title": "Vermisst & Gefunden", "text": "Meldungen aus deiner Umgebung mit Benachrichtigung und ein Suchplakat zum Teilen mit einem Tipp." },
-        { "title": "Orte in der Nähe", "text": "Tierärzte, Hundewiesen, Tierbedarf, Kotbeutel-Spender und Trinkwasser in deiner Umgebung – mit Daten von OpenStreetMap." },
+        { "title": "Orte in der Nähe", "text": "Tierärzte, Hundewiesen, Tierbedarf, Kotbeutel-Spender und Trinkwasser in deiner Umgebung – mit Daten von OpenStreetMap, für Tierärzte, Hundewiesen und Tierbedarf ergänzt um Google. Fehlt ein Ort? Trag ihn selbst ein, zum Beispiel eine Badestelle, an der Hunde erlaubt sind." },
         { "title": "Furly Chat", "text": "Der KI-Assistent beantwortet allgemeine Fragen rund ums Tier, erkennt Notfallhinweise und verweist dann klar an die Tierarztpraxis." },
         { "title": "Wissen & Training", "text": "Ratgeber mit geprüften Artikeln, offline lesbar, Giftcheck, Übungsbibliothek und eigene Trainingspläne – bei Aggressions- und Angstthemen ein Verweis auf Profis statt eines Plans." }
       ],
