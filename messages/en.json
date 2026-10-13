@@ -244,7 +244,7 @@
         "premium": ["Solo: 20 AI quotes and 20 AI invoices per month", "Small business: 50 each per month", "Pro: 100 each per month", "An AI cost estimate counts like an AI quote; e-invoicing, GoBD archive and DATEV export in every plan"],
         "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes and AI invoices."
       },
-      "shots": ["Create menu with quote, cost estimate and invoice", "Create menu: quote, cost estimate or invoice", "Create a cost estimate: describe the job by voice or text", "Cost estimate as a PDF with a note on § 649 BGB", "Costs changed: a new revision with the same number", "Document chain from cost estimate to invoice", "AI suggestion with line items and prices", "Review the quote: adjust quantities and prices", "Confirm the order: how the customer accepted", "Customer signature right on the phone", "Progress invoice", "Export for your tax advisor: GoBD archive and DATEV"]
+      "shots": ["Home screen with trial mode, revenue and open amounts", "Create menu: quote, cost estimate or invoice", "Create a cost estimate: describe the job by voice or text", "Cost estimate as a PDF with a note on § 649 BGB", "Costs changed: a new revision with the same number", "Document chain from cost estimate to invoice", "AI suggestion with line items and prices", "Review the quote: adjust quantities and prices", "Confirm the order: how the customer accepted", "Customer signature right on the phone", "Progress invoice", "Export for your tax advisor: GoBD archive and DATEV"]
     },
     "shrinkit": {
       "tagline": "Big files, made small – no upload, no subscription.",

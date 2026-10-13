@@ -178,7 +178,7 @@ export const apps: AppData[] = [
     // Startbild je Sprache (Bühne, Startseite, Kopf der App-Seite).
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
-      en: "/images/apps/werkflow/plus-menue-en.png",
+      en: "/images/apps/werkflow/home-en.png",
     },
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
