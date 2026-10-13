@@ -244,8 +244,7 @@
         "premium": ["Solo: 20 AI quotes and 20 AI invoices per month", "Small business: 50 each per month", "Pro: 100 each per month", "Every plan: unlimited invoices without AI, e-invoicing, GoBD archive and DATEV export"],
         "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes and AI invoices."
       },
-      "shots": ["Home screen with trial mode, revenue and open amounts"],
-      "posters": ["Speak your quote, don't type it", "Line items from your own material list", "Review, adjust and send the quote", "Progress and final invoices", "Everything for your tax advisor: GoBD archive and DATEV posting batch", "Sent documents archived and unchangeable"]
+      "shots": ["Home screen with trial mode, revenue and open amounts", "Create a quote: describe the job by voice or text", "AI suggestion with line items and prices", "Review the quote: adjust quantities and prices", "Finished quote as a PDF", "Progress invoice", "Export for your tax advisor: GoBD archive and DATEV"]
     },
     "shrinkit": {
       "tagline": "Big files, made small – no upload, no subscription.",

@@ -244,8 +244,7 @@
         "premium": ["Solo: 20 KI-Angebote und 20 KI-Rechnungen pro Monat", "Kleiner Betrieb: je 50 pro Monat", "Pro: je 100 pro Monat", "In jedem Tarif: Rechnungen ohne KI unbegrenzt, E-Rechnung, GoBD-Archiv und DATEV-Export"],
         "note": "Monatliches Abo über Google Play, monatlich kündbar. Die Tarife unterscheiden sich nur in der Zahl der KI-Angebote und KI-Rechnungen."
       },
-      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen"],
-      "posters": ["Angebot sprechen statt tippen", "Positionen, Mengen und Preise prüfen", "Fertiges Angebot als PDF", "Abschlags- und Schlussrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV-Buchungsstapel", "Versendete Belege unveränderbar archiviert, mit Protokoll"]
+      "shots": ["Startseite mit Testmodus, Umsatz und offenen Beträgen", "Angebot erstellen: Auftrag einsprechen oder tippen", "KI-Vorschlag mit Positionen und Preisen", "Angebot prüfen: Mengen und Preise anpassen", "Fertiges Angebot als PDF", "Abschlagsrechnung", "Export für den Steuerberater: GoBD-Archiv und DATEV"]
     },
     "shrinkit": {
       "tagline": "Große Dateien klein – ohne Upload, ohne Abo.",

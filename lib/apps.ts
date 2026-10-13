@@ -55,13 +55,6 @@ export type AppData = {
   /** Nur Bildpfade – Alt-Texte kommen aus den Messages (apps.<slug>.shots[i]) */
   shots: { src: string }[];
   /**
-   * Optional: fertige Store-Grafiken (Überschrift + Handy schon im Bild), je
-   * Sprache. Die App-Seite zeigt sie statt `shots` ohne eigenen Handy-Rahmen;
-   * Bühne und Startseite nutzen weiter `shots[0]`. Alt-Texte aus
-   * apps.<slug>.posters[i].
-   */
-  posters?: Record<"de" | "en", string[]>;
-  /**
    * Optional: Startbild je Sprache (rohe App-UI, 1080×2640) für Bühne,
    * Startseite und den Kopf der App-Seite. Ohne Angabe gilt `shots[0]`.
    */
@@ -168,29 +161,19 @@ export const apps: AppData[] = [
     accentLight: "#8F4C12",
     hero: "/images/apps/werkflow/hero.png",
     heroFit: "contain",
-    shots: [{ src: "/images/apps/werkflow/home-de.png" }],
+    shots: [
+      { src: "/images/apps/werkflow/home-de.png" },
+      { src: "/images/apps/werkflow/1-diktieren.png" },
+      { src: "/images/apps/werkflow/2-ki-vorschlag.png" },
+      { src: "/images/apps/werkflow/3-pruefen.png" },
+      { src: "/images/apps/werkflow/4-pdf.png" },
+      { src: "/images/apps/werkflow/8-abschlag-a.png" },
+      { src: "/images/apps/werkflow/9-steuerberater.png" },
+    ],
+    // Startbild je Sprache (Bühne, Startseite, Kopf der App-Seite).
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
       en: "/images/apps/werkflow/home-en.png",
-    },
-    // Store-Grafiken vom 06.10.2026, nur was es in Version 10 schon gibt.
-    posters: {
-      de: [
-        "/images/apps/werkflow/store-2026-10-06/de/screen-1-angebot-diktieren.png",
-        "/images/apps/werkflow/store-2026-10-06/de/screen-2-angebot-pruefen.png",
-        "/images/apps/werkflow/store-2026-10-06/de/screen-3-angebot-pdf.png",
-        "/images/apps/werkflow/store-2026-10-06/de/screen-6-abschlag.png",
-        "/images/apps/werkflow/store-2026-10-06/de/screen-7-steuerberater.png",
-        "/images/apps/werkflow/store-2026-10-06/de/screen-8-archiv.png",
-      ],
-      en: [
-        "/images/apps/werkflow/store-2026-10-06/en/screen-1-dictate-quote.png",
-        "/images/apps/werkflow/store-2026-10-06/en/screen-2-material-list.png",
-        "/images/apps/werkflow/store-2026-10-06/en/screen-3-review-quote.png",
-        "/images/apps/werkflow/store-2026-10-06/en/screen-4-progress-invoice.png",
-        "/images/apps/werkflow/store-2026-10-06/en/screen-5-tax-advisor.png",
-        "/images/apps/werkflow/store-2026-10-06/en/screen-6-archive.png",
-      ],
     },
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
