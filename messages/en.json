@@ -245,7 +245,7 @@
         "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes and AI invoices."
       },
       "shots": ["Create menu with quote, cost estimate and invoice"],
-      "posters": ["Quote, cost estimate, invoice: everything starts with a tap on the plus", "Dictate a cost estimate instead of typing", "Cost estimates in the archive, every revision is kept", "Costs changed: a new revision, the old one stays archived", "The document chain from cost estimate to invoice", "Export for your tax advisor: GoBD archive and DATEV booking batch"]
+      "posters": ["Quote, cost estimate, invoice: everything starts with a tap on the plus", "Dictate a cost estimate instead of typing", "Cost estimates in the archive, every revision is kept", "Costs changed: a new revision, the old one stays archived", "The document chain from cost estimate to invoice", "Order confirmation, with the right-of-withdrawal notice where required", "Progress and final invoices", "Export for your tax advisor: GoBD archive and DATEV booking batch"]
     },
     "shrinkit": {
       "tagline": "Big files, made small – no upload, no subscription.",
