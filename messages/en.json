@@ -244,7 +244,7 @@
         "premium": ["Solo: 20 AI quotes and 20 AI invoices per month", "Small business: 50 each per month", "Pro: 100 each per month", "An AI cost estimate counts like an AI quote; e-invoicing, GoBD archive and DATEV export in every plan"],
         "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes and AI invoices."
       },
-      "shots": ["Create menu with quote, cost estimate and invoice", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"],
+      "shots": ["Create menu with quote, cost estimate and invoice"],
       "posters": ["Quote, cost estimate, invoice: everything starts with a tap on the plus", "Dictate a cost estimate instead of typing", "Cost estimates in the archive, every revision is kept", "Costs changed: a new revision, the old one stays archived", "The document chain from cost estimate to invoice", "Export for your tax advisor: GoBD archive and DATEV booking batch"]
     },
     "shrinkit": {

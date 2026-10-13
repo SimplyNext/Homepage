@@ -168,14 +168,7 @@ export const apps: AppData[] = [
     accentLight: "#8F4C12",
     hero: "/images/apps/werkflow/hero.png",
     heroFit: "contain",
-    shots: [
-      { src: "/images/apps/werkflow/werkflow_1.png" },
-      { src: "/images/apps/werkflow/werkflow_2.png" },
-      { src: "/images/apps/werkflow/werkflow_3.png" },
-      { src: "/images/apps/werkflow/werkflow_4.png" },
-      { src: "/images/apps/werkflow/werkflow_5.png" },
-      { src: "/images/apps/werkflow/werkflow_6.png" },
-    ],
+    shots: [{ src: "/images/apps/werkflow/home-de.png" }],
     coverShots: {
       de: "/images/apps/werkflow/home-de.png",
       en: "/images/apps/werkflow/home-en.png",
