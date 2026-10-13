@@ -54,6 +54,13 @@ export type AppData = {
   placeholder?: boolean;
   /** Nur Bildpfade – Alt-Texte kommen aus den Messages (apps.<slug>.shots[i]) */
   shots: { src: string }[];
+  /**
+   * Optional: fertige Store-Grafiken (Überschrift + Handy schon im Bild), je
+   * Sprache. Die App-Seite zeigt sie statt `shots` ohne eigenen Handy-Rahmen;
+   * Bühne und Startseite nutzen weiter `shots[0]`. Alt-Texte aus
+   * apps.<slug>.posters[i].
+   */
+  posters?: Record<"de" | "en", string[]>;
   links: { type: "appstore" | "playstore" | "web"; url: string }[];
   since: string;
 };
@@ -164,6 +171,26 @@ export const apps: AppData[] = [
       { src: "/images/apps/werkflow/werkflow_5.png" },
       { src: "/images/apps/werkflow/werkflow_6.png" },
     ],
+    posters: {
+      de: [
+        "/images/apps/werkflow/store/de/screen-1-plus-menue.png",
+        "/images/apps/werkflow/store/de/screen-2-kostenvoranschlag-sprechen.png",
+        "/images/apps/werkflow/store/de/screen-3-kostenvoranschlag-pdf.png",
+        "/images/apps/werkflow/store/de/screen-4-neue-fassung.png",
+        "/images/apps/werkflow/store/de/screen-5-belegkette.png",
+        "/images/apps/werkflow/store/de/screen-6-auftragsbestaetigung.png",
+        "/images/apps/werkflow/store/de/screen-7-abschlag.png",
+        "/images/apps/werkflow/store/de/screen-8-steuerberater.png",
+      ],
+      en: [
+        "/images/apps/werkflow/store/en/screen-1-create-menu.png",
+        "/images/apps/werkflow/store/en/screen-2-dictate-estimate.png",
+        "/images/apps/werkflow/store/en/screen-3-archive.png",
+        "/images/apps/werkflow/store/en/screen-4-new-revision.png",
+        "/images/apps/werkflow/store/en/screen-5-document-chain.png",
+        "/images/apps/werkflow/store/en/screen-6-tax-advisor.png",
+      ],
+    },
     links: [{ type: "playstore", url: "#" }],
     since: "2026",
   },

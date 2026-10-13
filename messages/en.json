@@ -220,28 +220,32 @@
       "shots": ["World map with learning worlds", "Lesson with CoCo", "Bonus mini-game"]
     },
     "werkflow": {
-      "tagline": "From photo to quote, from quote to e-invoice.",
-      "summary": "The app for tradespeople: photograph the job site, describe the job by voice – the AI writes the quote, one tap turns it into the invoice.",
+      "tagline": "Quote, cost estimate and invoice – just speak.",
+      "summary": "The app for tradespeople: describe the job by voice or photograph the job site – the AI writes the quote or cost estimate, one tap turns it into the invoice.",
       "category": "Business & Trades",
       "description": [
-        "No more paperwork in the evening: photograph the job site, describe the job by voice – and the AI turns it into a complete, professional quote as a PDF. Right on site, in a few minutes. Once the customer accepts, one tap turns the quote into the invoice.",
-        "WerkFlow was built for tradespeople, installers and small businesses across all trades – electricians, painters, plumbers, carpenters or roofers. The app works out advance, final and cancellation invoices for you, and every invoice carries a ZUGFeRD or XRechnung e-invoice that DATEV, Lexware and similar tools read in directly.",
-        "Built for the tax office, too: WerkFlow archives sent quotes and invoices unalterably and with a change log. WerkFlow supports working in line with GoBD. For your tax advisor there is an export as a ZIP archive and a DATEV booking batch. Your data is stored on servers in the EU."
+        "No more paperwork in the evening: describe what needs doing at the customer's – spoken, typed or by photo – and the AI turns it into line items with quantities and your own prices. You check it, adjust it and send the quote as a PDF while the customer still has you in mind.",
+        "Just a first price for now? Create a cost estimate just as quickly and later turn it into a quote or straight into the invoice. The document chain shows how cost estimate, quote, order confirmation and invoice belong together. The app works out advance, final and cancellation invoices for you, and every invoice carries a ZUGFeRD or XRechnung e-invoice.",
+        "WerkFlow was built for tradespeople, installers and small businesses across all trades. The app archives sent documents unalterably and with a change log, supporting work in line with GoBD. For your tax advisor there is an export as a ZIP archive and a DATEV booking batch. Your data is stored on servers in the EU."
       ],
       "features": [
-        { "title": "AI photo analysis", "text": "Photograph the job site or damaged area – the AI recognizes the required materials and work steps and suggests matching quote line items." },
-        { "title": "Speak instead of type", "text": "Briefly describe the job by voice – the AI turns it into structured line items. Dictate text in quotes, invoices and notes, even with dirty hands." },
-        { "title": "From quote to invoice", "text": "One tap turns the accepted quote into the invoice: sequential number, the mandatory details under German VAT law (§ 14 UStG), plus advance, final and cancellation invoices." },
+        { "title": "Speak instead of type", "text": "Briefly describe the job by voice – the AI turns it into structured line items with your prices. Dictate text in quotes, cost estimates, invoices and notes, even with dirty hands." },
+        { "title": "AI photo analysis", "text": "Photograph the job site or damaged area – the AI recognizes the required materials and work steps and suggests matching line items. The photos stay saved with the document." },
+        { "title": "Cost estimate", "text": "Created like a quote, clearly non-binding with a note on § 649 BGB (German Civil Code). If the costs change, a new revision with the same number is created (KV-2026-0001-2) and the old one stays archived. If the invoice is more than 15% above it, WerkFlow lets you know." },
+        { "title": "The document chain", "text": "From cost estimate to quote and order confirmation through to invoice and cancellation: every document shows what it came from and what followed." },
+        { "title": "Orders properly confirmed", "text": "The customer signs on site on your phone. This creates the order confirmation – for consumers, where required, with the official right-of-withdrawal notice." },
+        { "title": "From quote to invoice", "text": "One tap turns the accepted quote or commissioned cost estimate into the invoice: sequential number, the mandatory details under German VAT law (§ 14 UStG), plus advance, final and cancellation invoices. Also for small businesses and construction work under § 13b UStG." },
         { "title": "E-invoicing included", "text": "Every invoice as a PDF with an embedded e-invoice (ZUGFeRD / Factur-X), or as XRechnung for public-sector clients – ready for DATEV, Lexware and more." },
-        { "title": "GoBD archive and tax advisor export", "text": "Sent documents stay unalterable and every change is logged. The export delivers a ZIP archive and a DATEV booking batch, plus a template for the process documentation." },
-        { "title": "Enter once, use everywhere", "text": "Store company details, logo, bank details, signature and customers once. Your materials catalog with prices feeds into every AI calculation automatically." }
+        { "title": "GoBD archive and tax advisor export", "text": "Sent documents stay unalterable and every change is logged. The export delivers the ZIP archive including cost estimates and a DATEV booking batch (SKR03 or SKR04), plus a template for the process documentation." },
+        { "title": "Enter once, use everywhere", "text": "Store company details, logo, bank details, signature and customers once. Your materials list with prices – from templates, via CSV or from a photo – feeds into every AI calculation." }
       ],
       "pricing": {
-        "free": ["3 free AI quotes, full feature set", "Unlimited invoices for those quotes", "No credit card, nothing to cancel"],
-        "premium": ["Solo: 20 AI quotes per month", "Small business: 50 AI quotes per month", "Pro: 100 AI quotes per month", "Every plan: unlimited invoices, advance and cancellation invoices, e-invoicing included"],
-        "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes."
+        "free": ["3 AI quotes and 3 AI invoices to try", "Invoices without AI always unlimited", "No credit card, nothing to cancel"],
+        "premium": ["Solo: 20 AI quotes and 20 AI invoices per month", "Small business: 50 each per month", "Pro: 100 each per month", "An AI cost estimate counts like an AI quote; e-invoicing, GoBD archive and DATEV export in every plan"],
+        "note": "Monthly subscription via Google Play, cancel any month. Plans differ only in the number of AI quotes and AI invoices."
       },
-      "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"]
+      "shots": ["Order dashboard", "Photo analysis", "Quote editor", "Customer management", "Materials catalog", "Finished PDF quote"],
+      "posters": ["Quote, cost estimate, invoice: everything starts with a tap on the plus", "Dictate a cost estimate instead of typing", "Cost estimates in the archive, every revision is kept", "Costs changed: a new revision, the old one stays archived", "The document chain from cost estimate to invoice", "Export for your tax advisor: GoBD archive and DATEV booking batch"]
     },
     "shrinkit": {
       "tagline": "Big files, made small – no upload, no subscription.",

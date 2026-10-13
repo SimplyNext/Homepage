@@ -183,7 +183,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
         {
           heading: "Wichtig vor der Löschung",
           list: [
-            "Belege sichern: Mit dem Konto werden auch alle Angebote und Rechnungen sofort und endgültig gelöscht – auch solche, die Sie gesetzlich noch aufbewahren müssen (Rechnungen 8 Jahre, Angebote ohne Auftrag 6 Jahre, jeweils ab Ende des Kalenderjahres). Die Aufbewahrungspflicht liegt bei Ihnen. Sichern Sie Ihre Belege vorher in der App unter Einstellungen → „Export für Steuerberater“ und alle übrigen Daten unter Einstellungen → „Meine Daten exportieren“.",
+            "Belege sichern: Mit dem Konto werden auch alle Angebote, Kostenvoranschläge und Rechnungen sofort und endgültig gelöscht – auch solche, die Sie gesetzlich noch aufbewahren müssen (Rechnungen 8 Jahre, Angebote und Kostenvoranschläge ohne Auftrag 6 Jahre, jeweils ab Ende des Kalenderjahres). Die Aufbewahrungspflicht liegt bei Ihnen. Sichern Sie Ihre Belege vorher in der App unter Einstellungen → „Export für Steuerberater“ und alle übrigen Daten unter Einstellungen → „Meine Daten exportieren“.",
             "Abo kündigen: Das Löschen des Kontos beendet kein laufendes Abo. Abos werden über Google Play abgerechnet und müssen dort gekündigt werden: Google Play Store öffnen → Profilbild → Zahlungen und Abos → Abos → WerkFlow → Abo kündigen.",
           ],
           slot: "subscriptions",
@@ -220,7 +220,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
             "Firmenprofil, Firmenlogo und Unterschrift",
             "Kunden, Materialliste und freie Notizen",
             "Feedback, das Sie uns über die App geschickt haben",
-            "Angebote und Rechnungen einschließlich PDF und E-Rechnung (ZUGFeRD/XRechnung) sowie das Änderungsprotokoll der Belege",
+            "Angebote, Kostenvoranschläge und Rechnungen einschließlich PDF und E-Rechnung (ZUGFeRD/XRechnung) sowie das Änderungsprotokoll der Belege",
             "Sprachaufnahmen und Fotos",
             "Abo-Status und Protokoll der Abo-Ereignisse in WerkFlow",
             "Ihr Kundeneintrag bei unserem Abrechnungsdienstleister RevenueCat",
@@ -244,7 +244,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
         {
           heading: "Important Before Deleting",
           list: [
-            "Back up your documents: Deleting the account also deletes all quotes and invoices immediately and permanently – including those you are still legally required to retain (invoices 8 years, quotes without an order 6 years, each from the end of the calendar year). The retention obligation lies with you. Back up your documents beforehand in the app under Settings → “Export for tax advisor” and all other data under Settings → “Export My Data”.",
+            "Back up your documents: Deleting the account also deletes all quotes, cost estimates and invoices immediately and permanently – including those you are still legally required to retain (invoices 8 years, quotes and cost estimates without an order 6 years, each from the end of the calendar year). The retention obligation lies with you. Back up your documents beforehand in the app under Settings → “Export for tax advisor” and all other data under Settings → “Export My Data”.",
             "Cancel your subscription: Deleting the account does not end an active subscription. Subscriptions are billed via Google Play and must be cancelled there: open the Google Play Store → profile picture → Payments & subscriptions → Subscriptions → WerkFlow → Cancel subscription.",
           ],
           slot: "subscriptions",
@@ -281,7 +281,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
             "Company profile, company logo and signature",
             "Customers, material list and free-form notes",
             "Feedback you sent us via the app",
-            "Quotes and invoices including PDF and e-invoice (ZUGFeRD/XRechnung) as well as the change log of the documents",
+            "Quotes, cost estimates and invoices including PDF and e-invoice (ZUGFeRD/XRechnung) as well as the change log of the documents",
             "Voice recordings and photos",
             "Subscription status and subscription event log in WerkFlow",
             "Your customer record at our billing service provider RevenueCat",
