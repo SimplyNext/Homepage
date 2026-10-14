@@ -190,7 +190,7 @@
       ],
       "pricing": {
         "free": ["AI itineraries & map with live crowd indicator", "Plan together, vote & split expenses", "Save everything offline – no roaming needed"],
-        "premium": ["Single guides from €1.99", "City passes (e.g. “Venice complete”) from €9.99", "Worldwide subscription from €4.99/month or €39.99/year"],
+        "premium": ["Single guides", "City passes (e.g. “Venice complete”)", "Worldwide subscription, monthly or yearly"],
         "note": "Start for free. Go premium when you want to dive deeper."
       },
       "shots": ["AI trip planner", "Map with crowd indicator", "Audio guide"]

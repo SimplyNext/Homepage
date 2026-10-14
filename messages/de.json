@@ -190,7 +190,7 @@
       ],
       "pricing": {
         "free": ["KI-Reiserouten & Karte mit Live-Besucherampel", "Gemeinsam planen, abstimmen & Ausgaben teilen", "Offline speichern – kein Roaming nötig"],
-        "premium": ["Einzel-Guides ab 1,99 €", "Stadtpässe (z. B. „Venedig komplett“) ab 9,99 €", "Weltweites Abo ab 4,99 €/Monat oder 39,99 €/Jahr"],
+        "premium": ["Einzel-Guides", "Stadtpässe (z. B. „Venedig komplett“)", "Weltweites Abo als Monats- oder Jahresabo"],
         "note": "Kostenlos starten. Premium, wenn du tiefer eintauchen willst."
       },
       "shots": ["KI-Reiseplaner", "Karte mit Besucherampel", "Audio-Guide"]
