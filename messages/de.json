@@ -315,9 +315,22 @@
         { "title": "Wissen & Training", "text": "Ratgeber mit geprüften Artikeln, offline lesbar, Giftcheck, Übungsbibliothek und eigene Trainingspläne – bei Aggressions- und Angstthemen ein Verweis auf Profis statt eines Plans." }
       ],
       "pricing": {
-        "free": ["Ein Tierprofil", "Fünf Chat-Nachrichten pro Tag und ein Trainingsplan", "Alle Notfall-, Gesundheits- und Suchfunktionen", "Keine Werbung"],
-        "premium": ["Beliebig viele Tiere", "Furly Chat ohne Tageslimit", "Unbegrenzte Trainingspläne", "Tierarzt-Mappe als PDF", "Gesamter Verlauf und Merkliste"],
-        "note": "Furly Pro gibt es als Monats- oder Jahresabo über Google Play, jederzeit kündbar. Notfall-Funktionen sind nie eingeschränkt."
+        "free": [
+          "Ein Tierprofil",
+          "Furly Chat mit 5 Nachrichten pro Tag",
+          "Ein KI-Trainingsplan",
+          "Statistiken der letzten 30 Tage",
+          "Alle Notfall-, Gesundheits- und Suchfunktionen",
+          "Keine Werbung"
+        ],
+        "premium": [
+          "Beliebig viele Tierprofile",
+          "Furly Chat mit 20 Nachrichten pro Tag",
+          "Beliebig viele KI-Trainingspläne",
+          "Tierarzt-Mappe als PDF",
+          "Gesamter Verlauf und Merkliste im Ratgeber"
+        ],
+        "note": "Furly Pro kostet 4,99 € im Monat oder 39,99 € im Jahr (Jahresabo mit 7 Tagen kostenlosem Test), jeweils inklusive USt., und läuft über Google Play, jederzeit kündbar. Notfall-Funktionen sind nie eingeschränkt."
       },
       "shots": [
         "Startseite mit Tagesroutine und nächstem Termin",

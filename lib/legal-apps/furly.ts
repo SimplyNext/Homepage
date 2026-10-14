@@ -496,7 +496,7 @@ export const furlyAgb: LegalSection[] = [
     ],
     list: [
       "beliebig viele Tierprofile (kostenlos: eines),",
-      "Furly Chat ohne Tageskontingent (kostenlos: fünf Nachrichten pro Tag),",
+      "Furly Chat mit bis zu 20 Nachrichten pro Tag (kostenlos: fünf Nachrichten pro Tag),",
       "beliebig viele KI-Trainingspläne (kostenlos: einer zum Ausprobieren),",
       "die Tierarzt-Mappe als PDF,",
       "Statistiken und Gewichtsverlauf über den gesamten Zeitraum (kostenlos: die letzten 30 Tage),",
@@ -504,7 +504,7 @@ export const furlyAgb: LegalSection[] = [
     ],
     afterList: [
       "Notfall-Funktionen (Notfallkarte, Giftnotruf, Notfallhinweise im Chat) sind nie eingeschränkt.",
-      "3.3 Laufzeit und Preis. Furly Pro ist als Monatsabo und als Jahresabo erhältlich. Der jeweils gültige Preis einschließlich Umsatzsteuer wird dir vor dem Kauf in der App und im Kaufdialog von Google Play angezeigt. Für das Jahresabo kann ein kostenloser Testzeitraum angeboten werden; dessen Dauer wird vor dem Kauf angezeigt.",
+      "3.3 Laufzeit und Preis. Furly Pro ist als Monatsabo und als Jahresabo erhältlich (in Deutschland derzeit 4,99 € im Monat bzw. 39,99 € im Jahr, jeweils einschließlich Umsatzsteuer). Der jeweils gültige Preis einschließlich Umsatzsteuer wird dir vor dem Kauf in der App und im Kaufdialog von Google Play angezeigt. Für das Jahresabo kann ein kostenloser Testzeitraum angeboten werden; dessen Dauer wird vor dem Kauf angezeigt.",
       "3.4 Vertragsschluss und Zahlung. Der Kauf erfolgt ausschließlich über das Abrechnungssystem von Google Play. Die Zahlung wickelt Google ab; es gelten ergänzend die Bedingungen von Google Play. Den Vertrag über die Pro-Leistungen schließt du mit uns, sobald du den Kauf im Kaufdialog von Google Play bestätigst.",
       "3.5 Automatische Verlängerung. Das Abo verlängert sich automatisch um die gewählte Laufzeit (einen Monat bzw. ein Jahr), wenn du es nicht spätestens 24 Stunden vor Ablauf der laufenden Periode kündigst. Ein kostenloser Testzeitraum geht automatisch in das bezahlte Abo über, wenn du nicht vor seinem Ende kündigst; abgebucht wird erst danach.",
       "3.6 Kündigung. Du kannst das Abo jederzeit in Google Play kündigen (Google Play → Profil → Zahlungen und Abos → Abos → Furly), auch über den Link „Abo in Google Play verwalten\" in der App. Die Kündigung wirkt zum Ende der laufenden Periode; bis dahin bleibt Furly Pro aktiv. Eine anteilige Erstattung für angebrochene Perioden erfolgt nicht, soweit gesetzlich nichts anderes vorgeschrieben ist.",

@@ -315,9 +315,22 @@
         { "title": "Knowledge & training", "text": "A guide with reviewed articles, readable offline, a poison check, an exercise library and personal training plans – for aggression and anxiety, a referral to professionals instead of a plan." }
       ],
       "pricing": {
-        "free": ["One pet profile", "Five chat messages a day and one training plan", "All emergency, health and search features", "No ads"],
-        "premium": ["Unlimited pets", "Furly Chat without a daily limit", "Unlimited training plans", "Vet folder as a PDF", "Full history and saved articles"],
-        "note": "Furly Pro is available as a monthly or yearly subscription via Google Play and can be cancelled anytime. Emergency features are never restricted."
+        "free": [
+          "One pet profile",
+          "Furly Chat with 5 messages a day",
+          "One AI training plan",
+          "Statistics for the last 30 days",
+          "All emergency, health and search features",
+          "No ads"
+        ],
+        "premium": [
+          "Any number of pet profiles",
+          "Furly Chat with 20 messages a day",
+          "Any number of AI training plans",
+          "Vet folder as a PDF",
+          "Full history and saved articles in the guide"
+        ],
+        "note": "Furly Pro costs €4.99 a month or €39.99 a year (yearly plan with a 7-day free trial), including VAT, via Google Play and can be cancelled anytime. Emergency features are never restricted."
       },
       "shots": [
         "Home with daily routine and next appointment",

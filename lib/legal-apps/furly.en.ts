@@ -490,7 +490,7 @@ export const furlyAgbEn: LegalSection[] = [
     ],
     list: [
       "any number of pet profiles (free: one),",
-      "Furly Chat without a daily quota (free: five messages per day),",
+      "Furly Chat with up to 20 messages per day (free: five messages per day),",
       "any number of AI training plans (free: one to try out),",
       "the vet folder as a PDF,",
       "statistics and weight history over the entire period (free: the last 30 days),",
@@ -498,7 +498,7 @@ export const furlyAgbEn: LegalSection[] = [
     ],
     afterList: [
       "Emergency functions (emergency card, poison hotline, emergency notices in the chat) are never restricted.",
-      "3.3 Term and price. Furly Pro is available as a monthly subscription and as a yearly subscription. The applicable price including VAT is shown to you before purchase in the app and in the Google Play purchase dialog. A free trial period may be offered for the yearly subscription; its duration is shown before purchase.",
+      "3.3 Term and price. Furly Pro is available as a monthly subscription and as a yearly subscription (currently €4.99 per month or €39.99 per year in Germany, in each case including VAT). The applicable price including VAT is shown to you before purchase in the app and in the Google Play purchase dialog. A free trial period may be offered for the yearly subscription; its duration is shown before purchase.",
       "3.4 Conclusion of contract and payment. The purchase is made exclusively via the Google Play billing system. Payment is handled by Google; the Google Play terms apply in addition. You conclude the contract for the Pro services with us as soon as you confirm the purchase in the Google Play purchase dialog.",
       "3.5 Automatic renewal. The subscription renews automatically for the selected term (one month or one year) unless you cancel it at least 24 hours before the end of the current period. A free trial period automatically converts into the paid subscription unless you cancel before it ends; payment is only charged afterwards.",
       "3.6 Cancellation. You can cancel the subscription at any time in Google Play (Google Play → Profile → Payments & subscriptions → Subscriptions → Furly), also via the link “Manage subscription in Google Play” in the app. The cancellation takes effect at the end of the current period; Furly Pro remains active until then. There is no pro rata refund for partial periods unless otherwise required by law.",
