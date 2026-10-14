@@ -8,7 +8,7 @@ import type { LegalSection } from "../legal";
  * Quelle bleibt das Markdown im App-Repository: Änderungen dort müssen hier
  * nachgezogen werden. Beim Übernehmen entfallen das Inhaltsverzeichnis, die
  * internen Vermerke „[Anwaltlich prüfen: …]“. Zuletzt abgeglichen am
- * 13.10.2026 mit Commit 69d06f4 (zuvor 07bfc99: Haushalt, Giftköder-Alarm,
+ * 14.10.2026 mit Commit 48eb463 (zuvor 07bfc99: Haushalt, Giftköder-Alarm,
  * Benachrichtigungen je Bereich, Daten auf dem Server, Resend, Satz zu
  * Zahlungen; jetzt: Google Places, eingetragene Orte, Melden, Löschliste).
  */
@@ -104,6 +104,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "In der Krankenakte kannst du optional Namen von Tierärztinnen/Tierärzten und Kliniken eintragen, ebenso in deiner persönlichen Tierarztliste. Dabei handelt es sich um personenbezogene Daten Dritter. Trage solche Daten bitte nur ein, soweit dies für deine eigene Dokumentation erforderlich ist, und veröffentliche sie nicht in der Community.",
       "Diese Daten werden in unserer Datenbank gespeichert und sind deinem Konto zugeordnet. Andere Nutzer haben keinen Zugriff darauf (technisch durch zeilenbasierte Zugriffsregeln, „Row Level Security\", abgesichert) – außer du teilst ein Tier ausdrücklich mit deinem Haushalt (siehe unten).",
       "Tier mit dem Haushalt teilen: Du kannst ein Tier über einen Einladungscode mit anderen Furly-Konten teilen, z. B. mit deiner Partnerin oder deinem Partner. Der Code ist 48 Stunden gültig und nur einmal verwendbar; wem du ihn gibst, entscheidest du. Alle Mitglieder des Haushalts sehen und bearbeiten dann die Daten dieses Tieres (Tierprofil und Foto, Krankenakte, Erinnerungen, Tagesroutine, Gewicht, Fütterung, Aktivität, Trainingspläne) und sehen den Anzeigenamen der anderen Mitglieder. Der Besitzer kann Mitglieder jederzeit entfernen, Mitglieder können jederzeit austreten. Löschst du als Besitzer dein Konto, geht ein geteiltes Tier samt seinen Daten an das am längsten beteiligte Mitglied über; ohne Mitglieder wird es gelöscht.",
+      "Fotos zu Einträgen: Zu Krankenakte-Einträgen, Impfungen und Erinnerungen (z. B. Zecken- oder Wurmmittel, Futter, Medikament) kannst du bis zu sechs Fotos anhängen, etwa einen Zettel vom Tierarzt, einen Impfaufkleber oder eine Medikamentenpackung. Die Fotos liegen in deinem privaten Speicherbereich für Tierfotos (siehe Abschnitt 8) und sind nur für dich und die Mitglieder des Haushalts sichtbar, mit dem du das Tier teilst. Bitte achte darauf, dass auf Zetteln und Rechnungen keine Daten Dritter zu sehen sind, die du nicht speichern möchtest (z. B. Namen oder Adressen anderer Personen). Entfernst du ein Foto aus dem Eintrag oder löschst du den Eintrag, wird das Foto gelöscht.",
       "Tierarzt-Mappe (PDF): Auf deinen Wunsch erstellt die App aus Tierprofil, Krankenakte, Impfungen und Gewichtsverlauf ein PDF. Es entsteht ausschließlich auf deinem Gerät; an wen du es weitergibst, entscheidest du über den Teilen-Dialog deines Geräts. Wir erhalten das PDF nicht.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.",
     ],
@@ -179,7 +180,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "Lost & Found – bitte bewusst entscheiden",
       "Wenn du eine Such- oder Fundmeldung erstellst, veröffentlichst du aktiv die von dir eingegebenen Kontaktangaben (z. B. Telefonnummer oder E-Mail-Adresse), eine Ortsangabe, das Datum sowie optional ein Foto und Standortkoordinaten. Diese Angaben sind für alle angemeldeten Nutzerinnen und Nutzer sichtbar und können von diesen kopiert oder weitergegeben werden. Gib daher nur Kontaktdaten an, deren Veröffentlichung du bewusst in Kauf nimmst.",
       "Du kannst deine eigenen Beiträge jederzeit löschen oder eine Suchmeldung als „erledigt\" markieren. Mit der Löschung deines Kontos werden auch alle deine Beiträge entfernt.",
-      "Giftköder-Alarm: Du kannst einen Giftköder-Fund melden. Gespeichert werden deine Beschreibung, eine optionale Ortsangabe und die Koordinaten deines aktuellen Standorts zum Zeitpunkt der Meldung. Die Meldung ist für alle angemeldeten Nutzerinnen und Nutzer sieben Tage lang sichtbar (ohne deinen Namen) und danach nicht mehr; du kannst sie vorher als entfernt markieren oder löschen. Pro Konto sind höchstens fünf Meldungen am Tag möglich. Andere Nutzer können Meldungen melden und das meldende Konto blockieren.",
+      "Giftköder-Alarm: Du kannst einen Giftköder-Fund melden. Gespeichert werden deine Beschreibung, eine optionale Ortsangabe und die Koordinaten deines aktuellen Standorts zum Zeitpunkt der Meldung. Die Meldung ist für alle angemeldeten Nutzerinnen und Nutzer sieben Tage lang sichtbar (ohne deinen Namen) und danach nicht mehr; du kannst sie vorher als entfernt markieren oder löschen. Du kannst optional ein Foto anhängen; es liegt in einem eigenen, nicht öffentlichen Speicherbereich und ist wie die Meldung für alle angemeldeten Nutzer sieben Tage lang abrufbar. Nach dem Absenden fragt dich die App, ob du ein Warnplakat teilen möchtest. Das Plakat entsteht auf deinem Gerät aus deiner Meldung (Beschreibung, Fundort, Ort/Stadt, ggf. Foto). Ob und wo du es teilst (z. B. Instagram, Facebook, Messenger), entscheidest du über den Teilen-Dialog deines Geräts; das Plakat enthält weder deinen Namen noch deine Konto-ID, ist aber nach dem Teilen außerhalb von Furly nicht mehr unserer Kontrolle unterworfen. Die Stadt zum Fundort ermittelt die App über den Geocoding-Dienst von OpenStreetMap (siehe Abschnitt 6 c). Pro Konto sind höchstens fünf Meldungen am Tag möglich. Andere Nutzer können Meldungen melden und das meldende Konto blockieren.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO — die Veröffentlichung erfolgt durch dein aktives Absenden des Beitrags.",
     ],
   },
@@ -209,8 +210,11 @@ export const furlyDatenschutz: LegalSection[] = [
     paragraphs: [
       "Wenn du im Orte-Finder suchst, sendet die App deinen aktuellen Standort und die gewählten Kategorien an unseren Server. Der Server ermittelt daraus die passenden Kartenausschnitte (Raster von etwa 25 km) und liefert die Orte mit Entfernung zurück. Deine genaue Position wird dabei nicht gespeichert; zwischengespeichert werden nur die öffentlichen Ortsdaten je Kartenausschnitt.",
       "Die Ortsdaten stammen aus OpenStreetMap (© OpenStreetMap-Mitwirkende, Lizenz ODbL). Fehlen sie im Zwischenspeicher, fragt unser Server sie beim Dienst Overpass ab, und zwar nur mit den Grenzen des Kartenausschnitts – weder deine Position noch deine Konto-ID werden an Overpass übermittelt. Orte, die du dir merkst, speichert die App nur auf deinem Gerät.",
+      "Direktabfrage vom Gerät: Kann unser Server die Ortsdaten nicht von Overpass holen (z. B. weil der Dienst überlastet ist oder Anfragen aus Rechenzentren abweist), fragt die App die Ortsdaten selbst bei öffentlichen Overpass-Servern ab. Übermittelt werden dabei die Grenzen des Kartenausschnitts rund um deinen Suchpunkt (nicht dein Konto), und der Betreiber des jeweiligen Servers sieht technisch bedingt deine IP-Adresse. Das Ergebnis speichert die App bis zu 24 Stunden auf deinem Gerät, damit sie nicht erneut fragen muss.",
+      "Suche nach einer Stadt: Im Orte-Finder kannst du nach einer Stadt oder Adresse suchen und die Orte rund um diesen Ort anzeigen. Der eingegebene Suchtext geht dafür von deinem Gerät an den Geocoding-Dienst Nominatim der OpenStreetMap Foundation, der ihn in Koordinaten umwandelt; auch hier sieht der Betreiber deine IP-Adresse. Die Suche wird nicht mit deinem Konto verknüpft und von uns nicht gespeichert. Für die Stadtangabe auf dem Giftköder-Warnplakat fragt die App Nominatim mit den Koordinaten des Fundorts nach dem Ortsnamen.",
+      "Bewertungen von Orten: Du kannst Orte mit 1 bis 5 Sternen und einem kurzen Kommentar (bis 500 Zeichen) bewerten. Gespeichert werden Ort-Kennung, Sterne, Kommentar, Zeitpunkt und deine Konto-ID. Die Bewertung ist für andere angemeldete Nutzer sichtbar, ohne deinen Namen; du kannst sie jederzeit ändern oder löschen, andere Nutzer können sie melden (Abschnitt 11). Mit dem Konto wird sie gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.",
       "Ergänzung durch Google Places: Für Tierärzte, Hundewiesen und Tierbedarf fragt unser Server zusätzlich den Dienst Google Places (Google Ireland Limited) ab. Dabei übermittelt der Server den Suchpunkt (deinen Standort bei der Suche), den Suchradius und die Kategorie – nicht deine Konto-ID oder andere Kontodaten. Google-Ergebnisse werden weder auf unserem Server noch auf deinem Gerät gespeichert; Telefonnummer, Website und Öffnungszeiten eines Google-Ortes ruft der Server erst ab, wenn du die Details dieses Ortes öffnest. Damit die Kosten im Rahmen bleiben, zählen wir je Konto und Tag die Anzahl dieser Abfragen (ohne Suchpunkt); der Zähler wird nach kurzer Zeit nicht mehr benötigt und mit dem Konto gelöscht.",
-      "Von Tierhaltern eingetragene Orte: Du kannst selbst Orte eintragen (z. B. eine Badestelle, an der Hunde erlaubt sind). Gespeichert werden die Angaben, die du machst (Art, Name, die von dir gesetzte Position und freiwillig Adresse, Telefon, Website, Öffnungszeiten, Hunde-Regel, Hinweis), deine Konto-ID und der Zeitpunkt. Der Eintrag ist sofort für alle angemeldeten Nutzer sichtbar, ohne deinen Namen. Du kannst ihn jederzeit ändern oder löschen; mit deinem Konto wird er gelöscht. Andere Nutzer können Einträge melden und den Eintragenden blockieren (siehe Abschnitt 11). Bitte trage nur Orte ein, die öffentlich zugänglich sind, und keine Angaben über Privatpersonen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).",
+      "Von Tierhaltern eingetragene Orte: Du kannst selbst Orte eintragen (z. B. eine Badestelle, an der Hunde erlaubt sind). Gespeichert werden die Angaben, die du machst (Art, die von dir gesetzte Position und je nach Art des Ortes Name, Adresse, Telefon, Website, Öffnungszeiten, Hunde-Regel, Hinweis sowie bis zu drei Fotos), deine Konto-ID und der Zeitpunkt. Bei Orten wie Hundewiese, Kotbeutel-Spender, Trinkwasser oder Wanderweg ist die Angabe eines Namens nicht nötig. Die Fotos liegen in einem eigenen, nicht öffentlichen Speicherbereich (Abschnitt 8) und sind wie der Eintrag für alle angemeldeten Nutzer sichtbar; bitte fotografiere keine Personen und keine Fahrzeugkennzeichen. Eintragen ohne Empfang: Hast du beim Eintragen kein Netz (z. B. unterwegs auf einem Wanderweg), speichert die App den Eintrag samt Fotos vorübergehend nur auf deinem Gerät und sendet ihn automatisch, sobald wieder eine Verbindung besteht; danach wird die lokale Kopie gelöscht. Bis dahin verlässt der Eintrag dein Gerät nicht. Der Eintrag ist sofort für alle angemeldeten Nutzer sichtbar, ohne deinen Namen. Du kannst ihn jederzeit ändern oder löschen; mit deinem Konto wird er gelöscht. Andere Nutzer können Einträge melden und den Eintragenden blockieren (siehe Abschnitt 11). Bitte trage nur Orte ein, die öffentlich zugänglich sind, und keine Angaben über Privatpersonen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).",
       "Vor der Systemabfrage erklären wir dir in der App, wofür der Standort verwendet wird. Du kannst die Berechtigung jederzeit in den Einstellungen deines Geräts widerrufen; Furly funktioniert dann weiter, lediglich die Karten- und Umkreisfunktionen sowie Umkreis-Benachrichtigungen stehen nicht mehr zur Verfügung.",
       "Kein Hintergrund-Tracking: Furly erfasst den Standort nicht dauerhaft im Hintergrund. Die App fordert keine Berechtigung für Hintergrundstandort an.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über die Berechtigungsabfrage).",
@@ -228,7 +232,8 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "8. Fotos, Kamera und Fotomediathek",
     paragraphs: [
-      "Du kannst ein Profilbild, Fotos deiner Tiere sowie Fotos zu Lost&Found-Meldungen hochladen. Die Auswahl erfolgt entweder aus deiner Fotomediathek oder über die Kamera deines Geräts. Die App greift dabei nicht eigenständig auf die Kamera zu, sondern startet die System-Kamera-App; ausgewählte Bilder werden ausschließlich nach deiner Auswahl verarbeitet.",
+      "Du kannst ein Profilbild, Fotos deiner Tiere sowie Fotos zu Lost&Found-Meldungen, Giftköder-Meldungen und Einträgen deiner Tierakte hochladen. Die Auswahl erfolgt entweder aus deiner Fotomediathek oder über die Kamera deines Geräts. Für Fotos startet die App die System-Kamera-App bzw. die Fotoauswahl deines Geräts; ausgewählte Bilder werden ausschließlich nach deiner Auswahl verarbeitet. Dasselbe gilt für Fotos zu Krankenakte-Einträgen, Impfungen, Erinnerungen und Giftköder-Meldungen.",
+      "QR-Code-Scanner: Um ein geteiltes Tier per QR-Code beizutreten, greift die App mit deiner Erlaubnis direkt auf die Kamera zu. Das Kamerabild wird nur auf deinem Gerät ausgewertet, um den Code zu lesen; es wird weder gespeichert noch übertragen. Der QR-Code enthält nur den Einladungscode (siehe Abschnitt 3).",
       "Die Bilder werden in getrennten, nicht öffentlich zugänglichen Speicherbereichen abgelegt:",
     ],
     table: {
@@ -237,9 +242,12 @@ export const furlyDatenschutz: LegalSection[] = [
         ["avatars", "Profilbilder", "nur du bzw. Anzeige deines Profils", "2 MB"],
         ["pet-images", "Tierfotos", "du und Mitglieder deines Haushalts für geteilte Tiere", "5 MB"],
         ["lost-found-images", "Fotos in Suchmeldungen", "alle angemeldeten Nutzer", "5 MB"],
+        ["poison-bait-images", "Fotos in Giftköder-Meldungen", "alle angemeldeten Nutzer, solange die Meldung sichtbar ist", "5 MB"],
+        ["place-images", "Fotos zu von Nutzern eingetragenen Orten", "alle angemeldeten Nutzer, solange der Eintrag besteht", "5 MB"],
       ],
     },
     afterList: [
+      "Fotos zu Krankenakte, Impfungen und Erinnerungen liegen im Bereich pet-images (Unterordner „attachments“) und sind damit wie die Tierfotos nur für dich und deinen Haushalt sichtbar.",
       "Bitte beachte, dass Fotos technische Zusatzinformationen (z. B. Aufnahmeort in den EXIF-Daten) enthalten können. Prüfe dies, bevor du Fotos in Lost&Found veröffentlichst.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO; bei Veröffentlichung in Lost&Found Art. 6 Abs. 1 lit. a DSGVO.",
     ],
@@ -274,7 +282,7 @@ export const furlyDatenschutz: LegalSection[] = [
       rows: [
         ["Standort (genau/ungefähr)", "Tierarzt-Karte, Lost&Found-Umkreis, Umkreis-Benachrichtigungen", "optional"],
         ["Benachrichtigungen", "Erinnerungen, Lost&Found-Meldungen", "optional"],
-        ["Kamera (über System-App)", "Aufnahme von Tier- und Profilfotos", "optional"],
+        ["Kamera", "Aufnahme von Tier-, Profil- und Eintragsfotos (über die System-Kamera-App) sowie Scannen eines Einladungs-QR-Codes (nur Anzeige auf dem Gerät, keine Speicherung)", "optional"],
         ["Fotomediathek (über System-Auswahl)", "Hochladen vorhandener Fotos", "optional"],
         ["Start nach Geräteneustart", "geplante Erinnerungen überdauern einen Neustart", "technisch notwendig"],
       ],
@@ -298,7 +306,8 @@ export const furlyDatenschutz: LegalSection[] = [
         ["RevenueCat", "Abo-Verwaltung für Furly Pro (Kaufprüfung, Status, Wiederherstellung)", "RevenueCat, Inc., USA", "USA"],
         ["Resend", "Versand der Konto-E-Mails (Bestätigung, Passwort zurücksetzen, E-Mail-Wechsel); verarbeitet werden E-Mail-Adresse, Versandzeitpunkt und Zustellstatus", "Resend, Inc., USA", "USA"],
         ["Google Places API", "Ergänzung der Ortssuche (Tierärzte, Hundewiesen, Tierbedarf); Abfrage nur durch unseren Server mit Suchpunkt, Radius und Kategorie, ohne Konto-ID", "Google Ireland Ltd. / Google LLC", "EU / USA"],
-        ["OpenStreetMap / Overpass API", "Quelle der Ortsdaten im Orte-Finder; Abfrage nur durch unseren Server mit Kartenausschnitten, ohne personenbezogene Daten", "OpenStreetMap Foundation bzw. Betreiber der Overpass-Instanz", "EU"],
+        ["OpenStreetMap / Overpass API", "Quelle der Ortsdaten im Orte-Finder; Abfrage durch unseren Server mit Kartenausschnitten ohne personenbezogene Daten, ersatzweise direkt durch die App (dann sieht der Betreiber die IP-Adresse des Geräts)", "OpenStreetMap Foundation bzw. Betreiber der Overpass-Instanz", "EU / weitere"],
+        ["OpenStreetMap Nominatim", "Umwandlung von Stadtnamen in Koordinaten (Ortssuche) und von Koordinaten in Ortsnamen (Warnplakat); Abfrage direkt durch die App, der Betreiber sieht die IP-Adresse des Geräts", "OpenStreetMap Foundation, Vereinigtes Königreich", "UK (Angemessenheitsbeschluss)"],
       ],
     },
     afterList: [
@@ -331,6 +340,12 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Abo-Status (Furly Pro)", "bis zur Kontolöschung; bei RevenueCat bis zur Löschung des Kundenkontos, die wir bei deiner Kontolöschung veranlassen"],
         ["Zähler der Chat-Nachrichten pro Tag", "bis zur Kontolöschung; nur Anzahl je Tag, keine Inhalte"],
         ["Community- und Lost&Found-Beiträge inkl. Fotos", "bis zu deiner Löschung bzw. bis zur Kontolöschung"],
+        ["Fotos zu Krankenakte, Impfungen und Erinnerungen", "bis zur Löschung des Fotos oder Eintrags bzw. bis zur Kontolöschung"],
+        ["Giftköder-Meldungen inkl. Foto", "sieben Tage sichtbar; Löschung durch dich jederzeit, spätestens mit dem Konto"],
+        ["Bewertungen von Orten", "bis zu deiner Löschung bzw. bis zur Kontolöschung"],
+        ["Zwischenspeicher der Ortsdaten auf dem Gerät", "bis zu 24 Stunden"],
+        ["Ohne Empfang eingetragene Orte (nur auf dem Gerät, bis zum Senden)", "bis zum erfolgreichen Senden, dann Löschung der lokalen Kopie"],
+        ["Fotos zu eingetragenen Orten", "bis zur Löschung des Fotos oder Eintrags bzw. bis zur Kontolöschung"],
         ["Standortangabe", "es wird nur die jeweils letzte Position gespeichert (Überschreibung); Löschung mit dem Konto"],
         ["Geräte-Push-Token", "bis zum Widerruf der Benachrichtigungen, zur Deinstallation oder zur Kontolöschung"],
         ["Meldungen von Inhalten", "bis zum Abschluss der Prüfung, längstens 12 Monate"],
@@ -358,7 +373,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "alle Tierprofile, Krankenakte- und Impfeinträge sowie Erinnerungen,",
       "deine Tierarztliste,",
       "alle Chat-Verläufe und Trainingspläne,",
-      "alle Community-Beiträge, Likes, Lost&Found- und Giftköder-Meldungen sowie von dir eingetragene Orte,",
+      "alle Community-Beiträge, Likes, Lost&Found- und Giftköder-Meldungen (samt Fotos), Bewertungen von Orten sowie von dir eingetragene Orte (samt Fotos),",
       "gespeicherte Standortangabe und Geräte-Push-Token,",
       "der Abo-Status und die Zähler des Chat-Kontingents; bei RevenueCat veranlassen wir die Löschung deines Kundenkontos,",
       "alle von dir hochgeladenen Fotos in sämtlichen Speicherbereichen.",
@@ -550,7 +565,7 @@ export const furlyAgb: LegalSection[] = [
   {
     heading: "7. Nutzergenerierte Inhalte und Rechteeinräumung",
     paragraphs: [
-      "7.1 Inhalte, die du in der App einstellst (Beiträge, Fotos, Kommentare, Suchmeldungen, Giftköder-Meldungen, eingetragene Orte), bleiben deine Inhalte. Wir erheben daran keinen Eigentumsanspruch.",
+      "7.1 Inhalte, die du in der App einstellst (Beiträge, Fotos, Kommentare, Suchmeldungen, Giftköder-Meldungen, eingetragene Orte samt Fotos, Bewertungen von Orten, Fotos zu Einträgen), bleiben deine Inhalte. Wir erheben daran keinen Eigentumsanspruch.",
       "7.2 Für die technische Bereitstellung räumst du uns ein einfaches, unentgeltliches, räumlich unbeschränktes Nutzungsrecht ein, diese Inhalte zu speichern, zu vervielfältigen und im Rahmen der App den dafür vorgesehenen Nutzergruppen anzuzeigen. Dieses Recht ist auf den Betrieb der App beschränkt und endet mit der Löschung des jeweiligen Inhalts, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.",
       "7.3 Eine Nutzung deiner Inhalte für Werbezwecke, eine Weitergabe an Dritte zu deren eigenen Zwecken oder eine Verwendung zum Training von KI-Modellen findet nicht statt.",
       "7.4 Du kannst deine Inhalte jederzeit selbst löschen. Mit der Löschung deines Kontos werden alle von dir eingestellten Inhalte entfernt.",
