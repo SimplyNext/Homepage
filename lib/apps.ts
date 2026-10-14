@@ -247,6 +247,8 @@ export const apps: AppData[] = [
       { src: "/images/apps/furly/orte-karte.png" },
       { src: "/images/apps/furly/tier-teilen.png" },
       { src: "/images/apps/furly/giftkoeder.png" },
+      { src: "/images/apps/furly/giftkoeder-plakat.png" },
+      { src: "/images/apps/furly/giftkoeder-liste.png" },
       { src: "/images/apps/furly/krankenakte-eintrag.png" },
       { src: "/images/apps/furly/krankenakte-liste.png" },
     ],
