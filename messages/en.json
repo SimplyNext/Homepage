@@ -320,18 +320,15 @@
         "note": "Furly Pro is available as a monthly or yearly subscription via Google Play and can be cancelled anytime. Emergency features are never restricted."
       },
       "shots": [
-        "Home screen with a due reminder and the daily routine",
-        "Today's reminders",
-        "Pet profile with vaccination status and weight",
-        "Pet overview: health record, vaccination record, reminders, weight",
-        "Upcoming reminders for one pet",
-        "Furly Chat answering questions about a pet",
-        "Discover: places, lost & found, guide, poison check and emergency",
-        "Places finder with vet practices nearby",
-        "Lost & found reports nearby",
-        "Guide with articles on poisons and emergencies",
-        "Poison check: can my pet eat this?",
-        "Training with a training plan and exercises"
+        "Home with daily routine and next appointment",
+        "My pets with health record, vaccination certificate and reminders",
+        "Emergency: nearest open vet and first aid",
+        "Places finder with vets nearby",
+        "Places on the map, plus “Add a place”",
+        "Share a pet with your household via QR code",
+        "Report poison bait and share it as a warning",
+        "New health record entry with photo",
+        "Health record with photo preview"
       ]
     }
   }

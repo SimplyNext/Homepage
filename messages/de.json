@@ -320,18 +320,15 @@
         "note": "Furly Pro gibt es als Monats- oder Jahresabo über Google Play, jederzeit kündbar. Notfall-Funktionen sind nie eingeschränkt."
       },
       "shots": [
-        "Startseite mit fälliger Erinnerung und Tagesroutine",
-        "Erinnerungen für heute",
-        "Tierprofil mit Impfstatus und Gewicht",
-        "Übersicht eines Tieres: Krankenakte, Impfpass, Erinnerungen, Gewicht",
-        "Anstehende Erinnerungen eines Tieres",
-        "Furly Chat beantwortet Fragen zum Tier",
-        "Entdecken: Orte, Vermisst & Gefunden, Ratgeber, Giftcheck und Notfall",
+        "Startseite mit Tagesroutine und nächstem Termin",
+        "Meine Haustiere mit Krankenakte, Impfausweis und Erinnerungen",
+        "Notfall: nächste geöffnete Tierarztpraxis und Erste Hilfe",
         "Orte-Finder mit Tierarztpraxen in der Nähe",
-        "Vermisst & Gefunden in der Umgebung",
-        "Ratgeber mit Artikeln zu Giften und Notfällen",
-        "Giftcheck: Darf mein Tier das fressen?",
-        "Training mit Trainingsplan und Übungen"
+        "Orte auf der Karte, dazu „Ort eintragen“",
+        "Tier mit dem Haushalt teilen per QR-Code",
+        "Giftköder melden und als Warnung teilen",
+        "Neuer Krankenakte-Eintrag mit Foto",
+        "Krankenakte mit Foto-Vorschau"
       ]
     }
   }
