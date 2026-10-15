@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import PasswordInput from "@/components/layout/PasswordInput";
 
 type Status = "idle" | "working" | "done" | "error";
 
@@ -114,8 +115,7 @@ export default function AccountDeletionForm({
       </label>
       <label className="block text-sm">
         {t("password")}
-        <input
-          type="password"
+        <PasswordInput
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

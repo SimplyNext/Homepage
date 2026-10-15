@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import type { AppAuthTexts } from "@/lib/app-auth";
+import PasswordInput from "@/components/layout/PasswordInput";
 
 type Mode = "confirm" | "recovery";
 type Step = "start" | "working" | "form" | "saving" | "done" | "error";
@@ -160,12 +161,8 @@ export default function AppAuthFlow({
         <p className="leading-relaxed text-ink-muted">{r.formIntro}</p>
         <label className="block text-sm">
           {r.password}
-          <input
-            type="password"
+          <PasswordInput
             autoComplete="new-password"
-            autoCapitalize="none"
-            autoCorrect="off"
-            spellCheck={false}
             minLength={8}
             value={pw}
             onChange={(e) => setPw(e.target.value)}
@@ -174,12 +171,8 @@ export default function AppAuthFlow({
         </label>
         <label className="block text-sm">
           {r.repeat}
-          <input
-            type="password"
+          <PasswordInput
             autoComplete="new-password"
-            autoCapitalize="none"
-            autoCorrect="off"
-            spellCheck={false}
             minLength={8}
             value={pw2}
             onChange={(e) => setPw2(e.target.value)}
