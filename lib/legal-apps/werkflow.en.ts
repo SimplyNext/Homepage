@@ -330,6 +330,19 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     ],
   },
   {
+    heading: "4.6 Google Analytics for Firebase (Usage Statistics, Only with Consent)",
+    level: 3,
+    paragraphs: [
+      "Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland / Google LLC, USA",
+      "Purpose: We measure anonymously which features of the app are used and whether it runs stably, in order to improve it.",
+      "On first launch the app asks whether you agree. Without your consent nothing is collected and nothing is sent to Google. You can withdraw your consent at any time under Settings → “Usage statistics”; collection then stops immediately.",
+      "Data transmitted (only after consent): events such as app start, registration, login, opening the plans page, purchase or cancellation of a subscription (with plan name and price), sending a quote, cost estimate or invoice, and deletion of the account – in each case only the fact, never the content. In addition your current plan (e.g. trial or subscription) as a user property, device and app information (device model, Android version, app version, language), a random app instance ID and approximate region. No customer data, amounts, document texts or photos are transmitted; the advertising ID is not collected, and advertising features and personalized advertising are switched off.",
+      "Storage period: Event and user data are deleted in Google Analytics after 2 months. Google Analytics itself detects that the app has been uninstalled; this too is only evaluated with your consent.",
+      "Transfer to third countries: USA, safeguarded by EU Standard Contractual Clauses and the EU-U.S. Data Privacy Framework; the basis is Google's data processing terms.",
+      "Legal basis: Art. 6(1)(a) GDPR and Section 25(1) TDDDG (consent).",
+    ],
+  },
+  {
     heading: "5. App Permissions",
     paragraphs: ["The app requests the following system permissions:"],
     table: {

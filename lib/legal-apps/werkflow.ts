@@ -336,6 +336,19 @@ export const werkflowDatenschutz: LegalSection[] = [
     ],
   },
   {
+    heading: "4.6 Google Analytics for Firebase (Nutzungsstatistik, nur mit Einwilligung)",
+    level: 3,
+    paragraphs: [
+      "Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland / Google LLC, USA",
+      "Zweck: Wir messen anonym, welche Funktionen der App genutzt werden und ob sie stabil läuft, um sie zu verbessern.",
+      "Beim ersten Start fragt die App, ob Sie zustimmen. Ohne Ihre Zustimmung wird nichts erhoben und nichts an Google gesendet. Sie können die Zustimmung jederzeit unter Einstellungen → „Nutzungsstatistik“ widerrufen; die Erhebung endet dann sofort.",
+      "Übermittelte Daten (nur nach Zustimmung): Ereignisse wie App-Start, Registrierung, Anmeldung, Aufruf der Tarifseite, Kauf oder Abbruch eines Abonnements (mit Tarifname und Preis), Versand eines Angebots, Kostenvoranschlags oder einer Rechnung sowie die Löschung des Kontos – jeweils nur die Tatsache, nie der Inhalt. Dazu Ihr aktueller Tarif (z. B. Testphase oder Abonnement) als Nutzereigenschaft, Geräte- und App-Informationen (Gerätemodell, Android-Version, App-Version, Sprache), eine zufällige App-Instanz-ID und ungefähre Region. Es werden keine Kundendaten, Beträge, Belegtexte oder Fotos übertragen; die Werbe-ID wird nicht erhoben, Werbefunktionen und personalisierte Werbung sind abgeschaltet.",
+      "Speicherdauer: Ereignis- und Nutzerdaten werden in Google Analytics nach 2 Monaten gelöscht. Dass die App deinstalliert wurde, erkennt Google Analytics selbst; auch das wird nur mit Ihrer Zustimmung ausgewertet.",
+      "Drittlandtransfer: USA, abgesichert über EU-Standardvertragsklauseln und das EU-U.S. Data Privacy Framework; Grundlage ist die Datenverarbeitungsvereinbarung von Google.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG (Einwilligung).",
+    ],
+  },
+  {
     heading: "5. Berechtigungen der App",
     paragraphs: ["Die App fordert folgende Systemberechtigungen an:"],
     table: {
