@@ -508,8 +508,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
             "Ihre Mitgliedschaften in Tieren anderer Haushalte",
             "Ihre Tierarztliste",
             "alle Chat-Verläufe mit Furly und Ihre Trainingspläne",
-            "alle Community-Beiträge, Likes, Lost&Found-Meldungen und Giftköder-Meldungen (samt Fotos), Bewertungen von Orten sowie von Ihnen eingetragene Orte (samt Fotos)",
-            "alle von Ihnen hochgeladenen Fotos",
+            "alle Community-Beiträge, Likes, Lost&Found-Meldungen und Giftköder-Meldungen (samt Fotos), Bewertungen und Bestätigungen von Orten",
+            "alle von Ihnen hochgeladenen Fotos (außer den Fotos zu Orten, die Sie eingetragen haben)",
             "Ihre gespeicherte Standortangabe und Geräte-Push-Token",
             "Abo-Status und Zähler des Chat-Kontingents sowie Ihr Kundenkonto bei unserem Abo-Dienstleister RevenueCat",
           ],
@@ -517,6 +517,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
         {
           heading: "Welche Daten nicht von uns gelöscht werden",
           list: [
+            "Von Ihnen eingetragene Orte: Sie bleiben samt Fotos für alle sichtbar erhalten, aber anonym; die Verknüpfung zu Ihrem Konto wird entfernt.",
             "Geteilte Tiere: Tiere, die Sie mit Ihrem Haushalt geteilt haben, gehen an ein Mitglied über und bleiben dort erhalten, ebenso ihre Fotos. Was Sie zu Tieren anderer Haushalte eingetragen haben (z. B. Gewicht, Tagesroutine, Trainingspläne), bleibt beim Besitzer des Tieres.",
             "Kaufbelege bei Google Play: Furly Pro wird über Google Play verkauft und abgerechnet. Google bewahrt Ihre Bestellungen nach eigenen Bestimmungen und gesetzlichen Aufbewahrungspflichten auf; es gilt die Datenschutzerklärung von Google (policies.google.com/privacy).",
             "Gesetzliche Aufbewahrungspflichten: Soweit bei uns abrechnungsrelevante Belege vorliegen, werden sie bis zum Ablauf der gesetzlichen Frist gesperrt statt gelöscht und nicht anderweitig verarbeitet.",
@@ -573,8 +574,8 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
             "your memberships in pets of other households",
             "your list of vets",
             "all chat histories with Furly and your training plans",
-            "all community posts, likes, Lost & Found reports and poison bait reports (including photos), ratings of places as well as places you have added (including photos)",
-            "all photos you have uploaded",
+            "all community posts, likes, Lost & Found reports and poison bait reports (including photos), ratings and confirmations of places",
+            "all photos you have uploaded (except the photos of places you have added)",
             "your stored location and device push token",
             "subscription status and chat quota counters as well as your customer account at our subscription service provider RevenueCat",
           ],
@@ -582,6 +583,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
         {
           heading: "Which Data We Do Not Delete",
           list: [
+            "Places you have added: They remain visible to everyone, including their photos, but anonymous; the link to your account is removed.",
             "Shared pets: Pets you have shared with your household pass to a member and remain there, as do their photos. What you entered for pets of other households (e.g. weight, daily routine, training plans) stays with the pet’s owner.",
             "Purchase receipts at Google Play: Furly Pro is sold and billed via Google Play. Google retains your orders in accordance with its own terms and statutory retention obligations; Google’s privacy policy applies (policies.google.com/privacy).",
             "Statutory retention obligations: Where we hold records relevant for accounting, they are restricted rather than deleted until the statutory period expires and are not processed otherwise.",
