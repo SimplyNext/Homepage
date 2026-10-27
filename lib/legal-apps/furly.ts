@@ -491,16 +491,17 @@ export const furlyAgb: LegalSection[] = [
   {
     heading: "3. Kostenlose Nutzung und Furly Pro",
     paragraphs: [
-      "3.1 Kostenlose Nutzung. Die Grundfunktionen der App sind unentgeltlich. Dauerhaft kostenlos sind insbesondere: Krankenakte und Impfausweis, Vermisst & Gefunden einschließlich Suchplakat, Notfallkarte, Giftcheck, das Lesen des Ratgebers, der Orte-Finder mit allen Kategorien (Orte von Tierhaltern und aus OpenStreetMap; kennen diese in der Nähe weniger als zwei Tierärzte, ergänzen wir Tierärzte aus Google Maps), ein Tierprofil, Erinnerungen, die Tagesroutine und die Trainingsübungen.",
+      "3.1 Kostenlose Nutzung. Die Grundfunktionen der App sind unentgeltlich. Dauerhaft kostenlos sind insbesondere: Krankenakte und Impfausweis, Vermisst & Gefunden einschließlich Suchplakat, Notfallkarte, Giftcheck, das Lesen des Ratgebers, der Orte-Finder mit allen Kategorien (Orte von Tierhaltern und aus OpenStreetMap; kennen diese in der Nähe weniger als zwei Tierärzte, ergänzen wir Tierärzte aus Google Maps), ein Tierprofil, Erinnerungen, die Tagesroutine, die Merkliste im Ratgeber sowie ausgewählte Grundlagen-, Welpen- und Sicherheitsübungen im Training mit vollständiger Anleitung (derzeit zwölf, darunter „Sitz“, „Zuverlässiger Rückruf“ und „Lass es“; in der App ohne Schloss-Symbol). Bei allen übrigen Trainingsübungen sind Titel, Ziel und Einführung kostenlos lesbar.",
       "3.2 Furly Pro. Gegen Entgelt kannst du das Abonnement „Furly Pro\" abschließen. Es erweitert die App um:",
     ],
     list: [
       "beliebig viele Tierprofile (kostenlos: eines),",
       "Furly Chat mit bis zu 20 Nachrichten pro Tag (kostenlos: fünf Nachrichten pro Tag),",
+      "die vollständigen Schritt-für-Schritt-Anleitungen aller Trainingsübungen einschließlich neu hinzukommender Übungen (kostenlos: die in 3.1 genannte Auswahl),",
+      "den Furly Coach mit vollständigem Wochenplan und täglichem Trainingsimpuls (kostenlos: eine Übung pro Woche),",
       "beliebig viele KI-Trainingspläne (kostenlos: einer zum Ausprobieren),",
       "die Tierarzt-Mappe als PDF,",
       "Statistiken und Gewichtsverlauf über den gesamten Zeitraum (kostenlos: die letzten 30 Tage),",
-      "eine Merkliste im Ratgeber,",
       "zusätzliche Orte aus Google Maps für alle Ortsarten, die Google kennt (z. B. Tierärzte, Hundewiesen, Tierbedarf, Hundeschulen, Tierpensionen, Tierheime, Hundebadestellen, Wandergebiete sowie Cafés, Restaurants und Unterkünfte, bei denen Google Hunde ausdrücklich als erlaubt angibt), wo Tierhalter und OpenStreetMap Lücken haben (bis zu 30 Google-Abfragen am Tag, eine Abfrage je Ortsart). Für Kotbeutel-Spender und Trinkwasserstellen hat Google keine Daten.",
     ],
     afterList: [

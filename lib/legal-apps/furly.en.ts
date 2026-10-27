@@ -485,16 +485,17 @@ export const furlyAgbEn: LegalSection[] = [
   {
     heading: "3. Free use and Furly Pro",
     paragraphs: [
-      "3.1 Free use. The basic functions of the app are free of charge. Permanently free are in particular: health record and vaccination record, Lost & Found including missing poster, emergency card, poison check, reading the guide, the places finder with all categories (places from pet owners and from OpenStreetMap; if these know fewer than two vets nearby, we add vets from Google Maps), one pet profile, reminders, the daily routine and the training exercises.",
+      "3.1 Free use. The basic functions of the app are free of charge. Permanently free are in particular: health record and vaccination record, Lost & Found including missing poster, emergency card, poison check, reading the guide, the places finder with all categories (places from pet owners and from OpenStreetMap; if these know fewer than two vets nearby, we add vets from Google Maps), one pet profile, reminders, the daily routine, the saved-articles list in the guide and selected basic, puppy and safety exercises in the training with complete instructions (currently twelve, including “Sit”, “Reliable recall” and “Leave it”; shown in the app without a lock symbol). For all other training exercises, the title, goal and introduction can be read free of charge.",
       "3.2 Furly Pro. For a fee, you can take out the subscription “Furly Pro”. It extends the app with:",
     ],
     list: [
       "any number of pet profiles (free: one),",
       "Furly Chat with up to 20 messages per day (free: five messages per day),",
+      "the complete step-by-step instructions for all training exercises, including newly added exercises (free: the selection named in 3.1),",
+      "the Furly Coach with a complete weekly plan and a daily training prompt (free: one exercise per week),",
       "any number of AI training plans (free: one to try out),",
       "the vet folder as a PDF,",
       "statistics and weight history over the entire period (free: the last 30 days),",
-      "a saved-articles list in the guide,",
       "additional places from Google Maps for all place types Google knows (e.g. vets, dog parks, pet supplies, dog schools, pet boarding, animal shelters, dog swimming spots, hiking areas as well as cafés, restaurants and accommodation where Google expressly states that dogs are allowed), where pet owners and OpenStreetMap have gaps (up to 30 Google queries per day, one query per place type). Google has no data for waste bag dispensers and drinking water points.",
     ],
     afterList: [
