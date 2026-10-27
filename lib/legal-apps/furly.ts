@@ -255,7 +255,7 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "9. Lokal auf deinem Gerät gespeicherte Daten",
     paragraphs: [
-      "Einträge zu Gewicht, Fütterung und Aktivität, die Tagesroutine (Aufgaben und Haken), Kalender-Notizen und die Merkliste im Ratgeber werden in unserer Datenbank deinem Konto zugeordnet gespeichert, damit sie bei einem Gerätewechsel erhalten bleiben und mit deinem Haushalt geteilt werden können. Auf dem Gerät liegt nur eine Kopie als Zwischenspeicher, die beim Abmelden entfernt wird. Gemerkte Orte, Tierarzt-Favoriten sowie App-Einstellungen (z. B. Sprache, Design) bleiben ausschließlich lokal auf deinem Gerät.",
+      "Einträge zu Gewicht, Fütterung und Aktivität, die Tagesroutine (Aufgaben und Haken), Kalender-Notizen, Trainingseinträge („Übung absolviert“ mit deiner Bewertung, daraus erstellt die App Statistik, Wochenrückblick und den Wochenplan des Furly Coach) und die Merkliste im Ratgeber werden in unserer Datenbank deinem Konto zugeordnet gespeichert, damit sie bei einem Gerätewechsel erhalten bleiben und mit deinem Haushalt geteilt werden können. Auf dem Gerät liegt nur eine Kopie als Zwischenspeicher, die beim Abmelden entfernt wird. Gemerkte Orte, Tierarzt-Favoriten sowie App-Einstellungen (z. B. Sprache, Design) bleiben ausschließlich lokal auf deinem Gerät.",
       "Notfallkarte, Giftnotruf-Nummern und Ratgeber-Artikel sind fest in der App enthalten und funktionieren ohne Internetverbindung; beim Lesen werden keine Daten übertragen. Auch die Schriftarten sind in der App enthalten, es werden keine Schriften von Google Fonts oder anderen Servern nachgeladen.",
       "Über die Funktion „Backup & Wiederherstellung\" in den Einstellungen kannst du diese Daten selbst exportieren. Der Export erfolgt nur auf deine ausdrückliche Aktion hin; wohin du die exportierte Datei speicherst oder weitergibst, entscheidest ausschließlich du.",
       "Wenn du dich abmeldest oder dein Konto löschst, entfernt die App die lokalen Kopien. Beim Deinstallieren der App werden sie ebenfalls vom Gerät entfernt.",
@@ -379,7 +379,7 @@ export const furlyDatenschutz: LegalSection[] = [
       "alle von dir hochgeladenen Fotos in sämtlichen Speicherbereichen.",
     ],
     afterList: [
-      "Die Löschung erfolgt unmittelbar und kann nicht rückgängig gemacht werden. Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine und Merkliste liegen seit Oktober 2026 auf dem Server und werden ebenfalls gelöscht; die Kopie auf deinem Gerät entfernt die App dabei auch. Ein laufendes Abo kündigt die Kontolöschung nicht: Kündige Furly Pro bitte vorher in Google Play, sonst verlängert Google es weiter. Unabhängig davon kannst du die Kopie auf deinem Gerät jederzeit durch Deinstallation der App entfernen.",
+      "Die Löschung erfolgt unmittelbar und kann nicht rückgängig gemacht werden. Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine, Trainingseinträge und Merkliste liegen seit Oktober 2026 auf dem Server und werden ebenfalls gelöscht; die Kopie auf deinem Gerät entfernt die App dabei auch. Ein laufendes Abo kündigt die Kontolöschung nicht: Kündige Furly Pro bitte vorher in Google Play, sonst verlängert Google es weiter. Unabhängig davon kannst du die Kopie auf deinem Gerät jederzeit durch Deinstallation der App entfernen.",
       "Falls du keinen Zugriff mehr auf die App hast, kannst du die Löschung formlos per E-Mail an info@simplynext.de verlangen. Wir bestätigen den Eingang und führen die Löschung ohne schuldhaftes Zögern, spätestens innerhalb von 30 Tagen, durch.",
     ],
   },

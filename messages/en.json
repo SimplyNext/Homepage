@@ -312,23 +312,23 @@
         { "title": "Lost & found", "text": "Reports near you with notifications and a shareable missing poster in one tap." },
         { "title": "Places nearby", "text": "Vets, dog parks, pet shops, poop bag dispensers and drinking water around you – with data from OpenStreetMap, supplemented by Google for vets, dog parks and pet shops. Missing a place? Add it yourself, for example a swimming spot where dogs are allowed." },
         { "title": "Furly Chat", "text": "The AI assistant answers general questions about your pet, recognises emergencies and then clearly refers you to a vet." },
-        { "title": "Knowledge & training", "text": "A guide with reviewed articles, readable offline, a poison check, an exercise library and personal training plans – for aggression and anxiety, a referral to professionals instead of a plan." }
+        { "title": "Knowledge & training", "text": "A guide with reviewed articles, readable offline, a poison check, an exercise library and personal training plans – for aggression and anxiety, a referral to professionals instead of a plan. 12 basic exercises are free, all others come with Furly Pro." }
       ],
       "pricing": {
         "free": [
-          "One pet profile",
-          "Furly Chat with 5 messages a day",
-          "One AI training plan",
-          "Statistics for the last 30 days",
-          "All emergency, health and search features",
-          "No ads"
+          "Health record, vaccination record and reminders",
+          "Lost & Found with missing poster and poison bait warnings",
+          "Emergency card and poison check",
+          "Places finder and guide with saved articles",
+          "12 basic exercises with full instructions, Furly Coach with one exercise per week",
+          "One pet profile, daily routine and Furly Chat with 5 messages a day"
         ],
         "premium": [
           "Any number of pet profiles",
-          "Furly Chat with 20 messages a day",
-          "Any number of AI training plans",
-          "Vet folder as a PDF",
-          "Full history and saved articles in the guide"
+          "All exercises with step-by-step instructions – including all new ones",
+          "Furly Coach with the full weekly plan and a daily prompt",
+          "AI training plans and Furly Chat with 20 messages a day",
+          "Vet folder as a PDF, full history and more places via Google"
         ],
         "note": "Furly Pro is available as a monthly or yearly subscription (the yearly plan with a 7-day free trial) via Google Play and can be cancelled anytime. Emergency features are never restricted."
       },

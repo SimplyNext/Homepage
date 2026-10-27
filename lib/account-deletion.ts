@@ -504,7 +504,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           list: [
             "Ihr Konto einschließlich Anmeldedaten, Ihr Profil und Profilbild",
             "alle Tierprofile, Krankenakte- und Impfeinträge sowie Erinnerungen",
-            "Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine und Ihre Ratgeber-Merkliste",
+            "Gewicht, Fütterung, Aktivität, Kalendernotizen, Tagesroutine, Trainingseinträge und Ihre Ratgeber-Merkliste",
             "Ihre Mitgliedschaften in Tieren anderer Haushalte",
             "Ihre Tierarztliste",
             "alle Chat-Verläufe mit Furly und Ihre Trainingspläne",
@@ -569,7 +569,7 @@ export const accountDeletion: Record<AccountDeletionSlug, AccountDeletionConfig>
           list: [
             "your account including sign-in data, your profile and profile picture",
             "all pet profiles, health record and vaccination entries as well as reminders",
-            "weight, feeding, activity, calendar notes, daily routine and your saved guide articles",
+            "weight, feeding, activity, calendar notes, daily routine, training entries and your saved guide articles",
             "your memberships in pets of other households",
             "your list of vets",
             "all chat histories with Furly and your training plans",

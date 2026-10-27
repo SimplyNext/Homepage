@@ -249,7 +249,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
   {
     heading: "9. Data stored locally on your device",
     paragraphs: [
-      "Entries on weight, feeding and activity, the daily routine (tasks and ticks), calendar notes and the saved-articles list in the guide are stored in our database and assigned to your account, so that they are kept when you change devices and can be shared with your household. The device only holds a copy as a cache, which is removed when you sign out. Saved places, favourite vets and app settings (e.g. language, design) remain exclusively on your device.",
+      "Entries on weight, feeding and activity, the daily routine (tasks and ticks), calendar notes, training entries (“exercise completed” with your rating, from which the app creates statistics, the weekly review and the weekly plan of the Furly Coach) and the saved-articles list in the guide are stored in our database and assigned to your account, so that they are kept when you change devices and can be shared with your household. The device only holds a copy as a cache, which is removed when you sign out. Saved places, favourite vets and app settings (e.g. language, design) remain exclusively on your device.",
       "The emergency card, poison hotline numbers and guide articles are built into the app and work without an internet connection; no data is transmitted when reading them. The fonts are also contained in the app; no fonts are loaded from Google Fonts or other servers.",
       "Via the function “Backup & restore” in the settings, you can export this data yourself. The export only takes place on your express action; you alone decide where you save or pass on the exported file.",
       "When you sign out or delete your account, the app removes the local copies. They are also removed from the device when the app is uninstalled.",
@@ -373,7 +373,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
       "all photos you have uploaded in all storage areas.",
     ],
     afterList: [
-      "The deletion takes place immediately and cannot be undone. Weight, feeding, activity, calendar notes, daily routine and saved articles have been stored on the server since October 2026 and are also deleted; the app also removes the copy on your device. Deleting your account does not cancel a running subscription: please cancel Furly Pro in Google Play beforehand, otherwise Google will continue to renew it. Irrespective of this, you can remove the copy on your device at any time by uninstalling the app.",
+      "The deletion takes place immediately and cannot be undone. Weight, feeding, activity, calendar notes, daily routine, training entries and saved articles have been stored on the server since October 2026 and are also deleted; the app also removes the copy on your device. Deleting your account does not cancel a running subscription: please cancel Furly Pro in Google Play beforehand, otherwise Google will continue to renew it. Irrespective of this, you can remove the copy on your device at any time by uninstalling the app.",
       "If you no longer have access to the app, you can request deletion informally by email to info@simplynext.de. We will confirm receipt and carry out the deletion without undue delay, at the latest within 30 days.",
     ],
   },

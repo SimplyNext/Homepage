@@ -312,23 +312,23 @@
         { "title": "Vermisst & Gefunden", "text": "Meldungen aus deiner Umgebung mit Benachrichtigung und ein Suchplakat zum Teilen mit einem Tipp." },
         { "title": "Orte in der Nähe", "text": "Tierärzte, Hundewiesen, Tierbedarf, Kotbeutel-Spender und Trinkwasser in deiner Umgebung – mit Daten von OpenStreetMap, für Tierärzte, Hundewiesen und Tierbedarf ergänzt um Google. Fehlt ein Ort? Trag ihn selbst ein, zum Beispiel eine Badestelle, an der Hunde erlaubt sind." },
         { "title": "Furly Chat", "text": "Der KI-Assistent beantwortet allgemeine Fragen rund ums Tier, erkennt Notfallhinweise und verweist dann klar an die Tierarztpraxis." },
-        { "title": "Wissen & Training", "text": "Ratgeber mit geprüften Artikeln, offline lesbar, Giftcheck, Übungsbibliothek und eigene Trainingspläne – bei Aggressions- und Angstthemen ein Verweis auf Profis statt eines Plans." }
+        { "title": "Wissen & Training", "text": "Ratgeber mit geprüften Artikeln, offline lesbar, Giftcheck, Übungsbibliothek und eigene Trainingspläne – bei Aggressions- und Angstthemen ein Verweis auf Profis statt eines Plans. 12 Grundübungen sind gratis, alle weiteren mit Furly Pro." }
       ],
       "pricing": {
         "free": [
-          "Ein Tierprofil",
-          "Furly Chat mit 5 Nachrichten pro Tag",
-          "Ein KI-Trainingsplan",
-          "Statistiken der letzten 30 Tage",
-          "Alle Notfall-, Gesundheits- und Suchfunktionen",
-          "Keine Werbung"
+          "Krankenakte, Impfausweis und Erinnerungen",
+          "Vermisst & Gefunden mit Suchplakat und Giftköder-Warnungen",
+          "Notfallkarte und Giftcheck",
+          "Orte-Finder und Ratgeber mit Merkliste",
+          "12 Grundübungen mit voller Anleitung, Furly Coach mit einer Übung pro Woche",
+          "Ein Tierprofil, Tagesroutine und Furly Chat mit 5 Nachrichten am Tag"
         ],
         "premium": [
           "Beliebig viele Tierprofile",
-          "Furly Chat mit 20 Nachrichten pro Tag",
-          "Beliebig viele KI-Trainingspläne",
-          "Tierarzt-Mappe als PDF",
-          "Gesamter Verlauf und Merkliste im Ratgeber"
+          "Alle Übungen mit Schritt-für-Schritt-Anleitung – auch alle neuen",
+          "Furly Coach mit ganzem Wochenplan und täglichem Impuls",
+          "KI-Trainingspläne und Furly Chat mit 20 Nachrichten am Tag",
+          "Tierarzt-Mappe als PDF, gesamter Verlauf und mehr Orte über Google"
         ],
         "note": "Furly Pro gibt es als Monats- oder Jahresabo (das Jahresabo mit 7 Tagen kostenlosem Test) über Google Play, jederzeit kündbar. Notfall-Funktionen sind nie eingeschränkt."
       },
