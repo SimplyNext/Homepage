@@ -174,6 +174,18 @@ export const furlyDatenschutz: LegalSection[] = [
     ],
   },
   {
+    heading: "4b. Nutzungsstatistik (Google Analytics for Firebase, nur mit Einwilligung)",
+    paragraphs: [
+      "Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland / Google LLC, USA",
+      "Zweck: Wir zählen anonym, wie Furly genutzt wird – vor allem, wie oft die Seite von Furly Pro geöffnet und ein Abo gekauft oder abgebrochen wird –, um die App und das Angebot zu verbessern.",
+      "Beim ersten Start fragt die App, ob du zustimmst. Ohne deine Zustimmung wird nichts erhoben und nichts an Google gesendet. Du kannst die Zustimmung jederzeit unter Profil → Einstellungen → „Nutzungsstatistik“ widerrufen; die Erhebung endet dann sofort, und die bis dahin auf dem Gerät gesammelten Analysedaten werden zurückgesetzt.",
+      "Übermittelte Daten (nur nach Zustimmung): Ereignisse wie App-Start, Aufruf der Pro-Seite, Beginn, Abschluss, Abbruch oder Fehlschlag eines Kaufs (mit Abo-Art monatlich/jährlich, bei Abschluss auch Preis und Währung) und das Wiederherstellen eines Kaufs – jeweils nur die Tatsache, nie Inhalte. Dazu Geräte- und App-Informationen (Gerätemodell, Android-Version, App-Version, Sprache), eine zufällige App-Instanz-ID und die ungefähre Region. Es werden keine Daten zu deinen Tieren, Orten, Fotos, Chats oder Nachrichten und nicht deine Konto-ID oder E-Mail-Adresse übertragen; die Werbe-ID wird nicht erhoben, Werbefunktionen und personalisierte Werbung sind abgeschaltet.",
+      "Speicherdauer: Ereignis- und Nutzerdaten werden in Google Analytics nach 2 Monaten gelöscht.",
+      "Drittlandtransfer: USA, abgesichert über das EU-U.S. Data Privacy Framework und die EU-Standardvertragsklauseln; Grundlage ist die Datenverarbeitungsvereinbarung von Google.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG (Einwilligung).",
+    ],
+  },
+  {
     heading: "5. Community und Lost & Found",
     paragraphs: [
       "In der Community kannst du Beiträge veröffentlichen und Beiträge anderer mit „Gefällt mir\" markieren. Angezeigt werden dabei dein Anzeigename und der Inhalt deines Beitrags.",
@@ -299,6 +311,7 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Supabase (Datenbank, Authentifizierung, Datei-Speicher, Serverfunktionen)", "Betrieb sämtlicher Kontodaten und App-Inhalte", "Supabase Inc., USA", "Rechenzentrum in der EU (Frankfurt am Main)"],
         ["Google Gemini API", "Erzeugung der KI-Antworten in Furly Chat und bei Trainingsplänen — nur nach Einwilligung", "Google Ireland Limited, Irland / Google LLC, USA", "USA"],
         ["Firebase Cloud Messaging", "Zustellung von Push-Benachrichtigungen", "Google Ireland Ltd. / Google LLC", "EU / USA"],
+        ["Google Analytics for Firebase", "Anonyme Nutzungsstatistik (Abschnitt 4b) — nur nach Einwilligung", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Kartendarstellung für Tierarzt-Suche und Lost&Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Sign-In (optional)", "Anmeldung mit Google-Konto", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Sign in with Apple (optional)", "Anmeldung mit Apple-Konto", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
@@ -321,7 +334,7 @@ export const furlyDatenschutz: LegalSection[] = [
     ],
     list: [
       "Google Ireland Limited (Irland/USA): Übermittlung der Chat-Inhalte und Tierprofildaten auf Grundlage deiner ausdrücklichen Einwilligung (Art. 49 Abs. 1 lit. a DSGVO) sowie ergänzend auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).",
-      "Google LLC (USA): Übermittlung auf Grundlage des EU-US Data Privacy Framework, unter dem Google zertifiziert ist, sowie ergänzend der Standardvertragsklauseln.",
+      "Google LLC (USA): Übermittlung auf Grundlage des EU-US Data Privacy Framework, unter dem Google zertifiziert ist, sowie ergänzend der Standardvertragsklauseln. Das gilt auch für die Nutzungsstatistik (Abschnitt 4b), die nur nach deiner Einwilligung stattfindet.",
       "RevenueCat, Inc. (USA): Übermittlung der Abo-Daten (Abschnitt 4a) auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).",
       "Supabase Inc. (USA): Die Speicherung deiner Daten erfolgt in einem Rechenzentrum innerhalb der EU. Ein Zugriff aus den USA (z. B. im Rahmen von Support und Wartung) ist nicht ausgeschlossen und erfolgt auf Grundlage der Standardvertragsklauseln.",
     ],
@@ -337,6 +350,7 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Konto- und Profildaten", "bis zur Löschung deines Kontos"],
         ["Tierprofile, Krankenakte, Erinnerungen, Tierarztliste", "bis zu deiner Löschung des jeweiligen Eintrags bzw. bis zur Kontolöschung"],
         ["Chat-Verläufe und Trainingspläne", "bis zu deiner Löschung bzw. bis zur Kontolöschung"],
+        ["Nutzungsstatistik (Google Analytics, nur mit Einwilligung)", "2 Monate bei Google; deine Entscheidung zur Einwilligung bis zur Deinstallation auf dem Gerät"],
         ["Abo-Status (Furly Pro)", "bis zur Kontolöschung; bei RevenueCat bis zur Löschung des Kundenkontos, die wir bei deiner Kontolöschung veranlassen"],
         ["Zähler der Chat-Nachrichten pro Tag", "bis zur Kontolöschung; nur Anzahl je Tag, keine Inhalte"],
         ["Community- und Lost&Found-Beiträge inkl. Fotos", "bis zu deiner Löschung bzw. bis zur Kontolöschung"],
@@ -411,7 +425,7 @@ export const furlyDatenschutz: LegalSection[] = [
     list: [
       "Wir verkaufen deine Daten nicht und geben sie nicht zu Werbezwecken weiter.",
       "Furly enthält keine Werbung und keine Werbe-SDKs.",
-      "Furly enthält keine Analyse- oder Tracking-Werkzeuge (kein Analytics, kein Crash-Reporting-SDK, keine Nutzungsprofile).",
+      "Furly erstellt keine Nutzungsprofile und enthält kein Crash-Reporting-SDK. Die einzige Nutzungsstatistik (Google Analytics for Firebase, Abschnitt 4b) läuft nur mit deiner Einwilligung und ohne Werbe-ID.",
       "Wir sehen keine Zahlungsdaten: Das Abo Furly Pro wird vollständig über Google Play abgewickelt (siehe Abschnitt 4a).",
       "Es werden keine automatisierten Entscheidungen mit rechtlicher Wirkung oder ähnlich erheblicher Beeinträchtigung im Sinne von Art. 22 DSGVO getroffen.",
       "Schriftarten sind fest in der App enthalten; es werden keine Schriftarten von externen Servern (z. B. Google Fonts) nachgeladen.",

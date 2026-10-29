@@ -168,6 +168,18 @@ export const furlyDatenschutzEn: LegalSection[] = [
     ],
   },
   {
+    heading: "4b. Usage statistics (Google Analytics for Firebase, only with consent)",
+    paragraphs: [
+      "Provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland / Google LLC, USA",
+      "Purpose: We count anonymously how Furly is used – above all how often the Furly Pro page is opened and a subscription is bought or cancelled – in order to improve the app and our offer.",
+      "On first launch the app asks whether you agree. Without your consent nothing is collected and nothing is sent to Google. You can withdraw your consent at any time under Profile → Settings → “Usage statistics”; collection then stops immediately, and the analytics data collected on the device until then is reset.",
+      "Data transmitted (only after consent): events such as app start, opening the Pro page, start, completion, cancellation or failure of a purchase (with subscription type monthly/yearly, on completion also price and currency) and restoring a purchase – in each case only the fact, never content. In addition device and app information (device model, Android version, app version, language), a random app instance ID and the approximate region. No data on your pets, places, photos, chats or messages and not your account ID or e-mail address is transmitted; the advertising ID is not collected, and advertising features and personalized advertising are switched off.",
+      "Storage period: Event and user data are deleted in Google Analytics after 2 months.",
+      "Transfer to third countries: USA, safeguarded by the EU-U.S. Data Privacy Framework and the EU Standard Contractual Clauses; the basis is Google's data processing terms.",
+      "Legal basis: Art. 6(1)(a) GDPR and Section 25(1) TDDDG (consent).",
+    ],
+  },
+  {
     heading: "5. Community and Lost & Found",
     paragraphs: [
       "In the community you can publish posts and mark posts by others with “Like”. Your display name and the content of your post are shown.",
@@ -293,6 +305,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Supabase (database, authentication, file storage, server functions)", "Operation of all account data and app content", "Supabase Inc., USA", "Data centre in the EU (Frankfurt am Main)"],
         ["Google Gemini API", "Generation of AI answers in Furly Chat and for training plans — only after consent", "Google Ireland Limited, Ireland / Google LLC, USA", "USA"],
         ["Firebase Cloud Messaging", "Delivery of push notifications", "Google Ireland Ltd. / Google LLC", "EU / USA"],
+        ["Google Analytics for Firebase", "Anonymous usage statistics (section 4b) — only with consent", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Map display for vet search and Lost & Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Sign-In (optional)", "Sign-in with a Google account", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Sign in with Apple (optional)", "Sign-in with an Apple account", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
@@ -315,7 +328,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
     ],
     list: [
       "Google Ireland Limited (Ireland/USA): Transfer of chat content and pet profile data on the basis of your express consent (Art. 49(1)(a) GDPR) and additionally on the basis of the EU Commission's Standard Contractual Clauses (Art. 46(2)(c) GDPR).",
-      "Google LLC (USA): Transfer on the basis of the EU-US Data Privacy Framework, under which Google is certified, and additionally the Standard Contractual Clauses.",
+      "Google LLC (USA): Transfer on the basis of the EU-US Data Privacy Framework, under which Google is certified, and additionally the Standard Contractual Clauses. This also applies to the usage statistics (section 4b), which only take place with your consent.",
       "RevenueCat, Inc. (USA): Transfer of subscription data (section 4a) on the basis of the EU Commission's Standard Contractual Clauses (Art. 46(2)(c) GDPR).",
       "Supabase Inc. (USA): Your data is stored in a data centre within the EU. Access from the USA (e.g. in the context of support and maintenance) cannot be ruled out and takes place on the basis of the Standard Contractual Clauses.",
     ],
@@ -331,6 +344,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Account and profile data", "until your account is deleted"],
         ["Pet profiles, health record, reminders, list of vets", "until you delete the respective entry or until the account is deleted"],
         ["Chat histories and training plans", "until you delete them or until the account is deleted"],
+        ["Usage statistics (Google Analytics, only with consent)", "2 months at Google; your consent decision until the app is uninstalled from the device"],
         ["Subscription status (Furly Pro)", "until the account is deleted; at RevenueCat until the customer account is deleted, which we arrange when you delete your account"],
         ["Counter of chat messages per day", "until the account is deleted; only the number per day, no content"],
         ["Community and Lost & Found posts incl. photos", "until you delete them or until the account is deleted"],
@@ -405,7 +419,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
     list: [
       "We do not sell your data and do not pass it on for advertising purposes.",
       "Furly contains no advertising and no advertising SDKs.",
-      "Furly contains no analytics or tracking tools (no analytics, no crash reporting SDK, no usage profiles).",
+      "Furly creates no usage profiles and contains no crash reporting SDK. The only usage statistics (Google Analytics for Firebase, section 4b) run only with your consent and without an advertising ID.",
       "We do not see any payment data: the Furly Pro subscription is handled entirely via Google Play (see section 4a).",
       "No automated decisions with legal effect or similarly significant impairment within the meaning of Art. 22 GDPR are made.",
       "Fonts are built into the app; no fonts are loaded from external servers (e.g. Google Fonts).",
