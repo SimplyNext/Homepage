@@ -404,6 +404,13 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
         ],
       },
       {
+        heading: "Origin of Visitors (Campaign Parameters)",
+        paragraphs: [
+          "If you arrive via a link with campaign parameters (e.g. from Instagram or YouTube), this website remembers the parameters (source, medium, campaign) only in your browser for the duration of your visit (session storage) and appends them to the link to the Google Play Store so that we can see which post led to a download. No cookies are set and we do not store any personal data. The Play Store processes the information in accordance with Google's terms.",
+          "The legal basis is Art. 6 para. 1 lit. f GDPR. Our legitimate interest lies in evaluating which of our posts lead users to our apps.",
+        ],
+      },
+      {
         heading: "5. Social Media Profiles",
         paragraphs: [
           "We maintain publicly accessible profiles on Instagram (@apps_by_simplynext) and TikTok (@simplynext.de) to present our apps. The providers are Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, D04 X2K5, Ireland (Instagram) and TikTok Technology Limited, 10 Earlsfort Terrace, Dublin 2, D02 T380, Ireland (TikTok).",
@@ -580,6 +587,13 @@ export function datenschutzWebsiteSections(locale: string): LegalSection[] {
         "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
         "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.",
         "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.",
+      ],
+    },
+    {
+      heading: "Herkunft von Besuchern (Kampagnenangaben)",
+      paragraphs: [
+        "Kommen Sie über einen Link mit Kampagnenangaben (z. B. aus Instagram oder YouTube), merkt sich diese Website die Angaben (Quelle, Medium, Kampagne) nur im Browser für die Dauer Ihres Besuchs (Session Storage) und hängt sie an den Link zum Google Play Store an, damit wir sehen, welcher Beitrag zu einem Download geführt hat. Es werden keine Cookies gesetzt und keine personenbezogenen Daten von uns gespeichert. Der Play Store verarbeitet die Angabe nach den Bedingungen von Google.",
+        "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der Auswertung, welche unserer Beiträge Nutzer zu unseren Apps führen.",
       ],
     },
     {
