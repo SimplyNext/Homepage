@@ -13,6 +13,7 @@ import ThemeProvider from "@/components/theme/ThemeProvider";
 import CustomCursor from "@/components/cursor/CustomCursor";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CampaignCapture from "@/components/layout/CampaignCapture";
 import AppsProvider from "@/components/providers/AppsProvider";
 import { getAppStatuses } from "@/lib/app-status";
 import { site } from "@/lib/site";
@@ -110,6 +111,7 @@ export default async function LocaleLayout({
                 >
                   {t("skipLink")}
                 </a>
+                <CampaignCapture />
                 <Header />
                 {/* overflow-x-clip fängt dekorative Bleed-Overlays (text-scrim
                     mit negativen Insets) ab, ohne vertikales Scrollen oder

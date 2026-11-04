@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Apple, Play, Globe, ArrowLeft } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -14,12 +14,29 @@ import { coverShot, type AppData } from "@/lib/apps";
 import { hasAccountDeletion } from "@/lib/account-deletion-apps";
 import { useAppContent } from "@/lib/useAppContent";
 import { stageColor } from "@/lib/galerie";
+import { withReferrer } from "@/lib/campaign";
 
 const linkMeta = {
   appstore: { icon: Apple, label: "App Store" },
   playstore: { icon: Play, label: "Google Play" },
   web: { icon: Globe, label: "Web-App" },
 } as const;
+
+/**
+ * Store-Knopf. Der Play-Link bekommt im Browser die gemerkte Herkunft des
+ * Besuchers (utm_* → referrer) angehängt; serverseitig bleibt er unverändert.
+ */
+function StoreLink({ url, className, children }: { url: string; className: string; children: React.ReactNode }) {
+  const [href, setHref] = useState(url);
+  useEffect(() => {
+    setHref(withReferrer(url));
+  }, [url]);
+  return (
+    <a href={href} className={className} data-cursor>
+      {children}
+    </a>
+  );
+}
 
 const DISPLAY = "font-display font-extrabold tracking-[-0.045em]";
 
@@ -144,14 +161,13 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
                   // Store-Knopf nur, wenn die App live ist und einen echten Link hat.
                   const available = app.status === "live" && l.url !== "#";
                   return available ? (
-                    <a
+                    <StoreLink
                       key={l.type}
-                      href={l.url}
+                      url={l.url}
                       className="inline-flex min-h-[56px] items-center gap-2.5 rounded-full bg-paperInk px-7 text-[1rem] font-semibold text-paper transition-transform duration-300 ease-premium hover:scale-[1.04]"
-                      data-cursor
                     >
                       <m.icon size={18} aria-hidden /> {m.label}
-                    </a>
+                    </StoreLink>
                   ) : (
                     <span
                       key={l.type}
