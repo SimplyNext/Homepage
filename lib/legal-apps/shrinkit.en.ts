@@ -192,7 +192,7 @@ export const shrinkitDatenschutzEn: LegalSection[] = [
     heading: "6.6 What We Do Not Do",
     level: 3,
     list: [
-      "No analytics or tracking tools (no Firebase Analytics, no Crashlytics, no Sentry, no Facebook SDK).",
+      "No analytics or tracking tools of our own (no Firebase Analytics, no Crashlytics, no Sentry, no Facebook SDK). The only third-party data processing for advertising is Google AdMob in the free version (section 4); it does not run in the Pro version.",
       "No user account, no registration, no sign-in.",
       "No own servers and no own database for ShrinkIt.",
       "No analysis, disclosure or storage of your photos, videos and audio files by us.",
