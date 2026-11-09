@@ -226,7 +226,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     paragraphs: ["Bei Nutzung der App werden aus technischen Gründen automatisch verarbeitet:"],
     list: [
       "Geräteinformationen (Betriebssystem, App-Version)",
-      "Fehlerprotokolle (zur Fehlerbehebung)",
+      "Serverseitige Protokolle unserer Serverfunktionen (zur Fehlerbehebung; ohne Inhalte Ihrer Belege, Kunden oder Aufnahmen). Die App selbst sendet keine Fehlerprotokolle von Ihrem Gerät.",
       "Verbrauch der KI-Aufrufe: Zeitpunkt, Funktion, KI-Modell und Anzahl der verarbeiteten Tokens, keine Inhalte (zur Kostenkontrolle)",
       "Lokale Einstellungen (Theme, Spracheinstellung – nur lokal auf dem Gerät gespeichert)",
     ],
@@ -309,7 +309,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "RevenueCat, Inc., San Francisco, USA",
-      "Übermittelte Daten: Nutzer-ID, Kauf- und Abo-Status, geräteseitige Kaufbestätigungen.",
+      "Übermittelte Daten: Nutzer-ID, Kauf- und Abo-Status, geräteseitige Kaufbestätigungen sowie technische Angaben zum Gerät und zur App (Gerätemodell, Betriebssystem, App-Version, Sprache, Land des Stores) und die IP-Adresse. Das Abo-Modul wird beim Start der App für alle Nutzer eingerichtet, auch ohne Abo und vor einem Kauf.",
       "Datenschutzerklärung: www.revenuecat.com/privacy",
       "Drittlandtransfer: USA, abgesichert über EU-Standardvertragsklauseln.",
     ],

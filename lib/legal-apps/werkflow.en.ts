@@ -220,7 +220,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     paragraphs: ["When the app is used, the following is processed automatically for technical reasons:"],
     list: [
       "Device information (operating system, app version)",
-      "Error logs (for troubleshooting)",
+      "Server-side logs of our server functions (for troubleshooting; without the content of your documents, customers or recordings). The app itself does not send error logs from your device.",
       "Usage of AI calls: time, function, AI model and number of tokens processed, no content (for cost control)",
       "Local settings (theme, language setting – stored only locally on the device)",
     ],
@@ -303,7 +303,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     level: 3,
     paragraphs: [
       "RevenueCat, Inc., San Francisco, USA",
-      "Data transmitted: user ID, purchase and subscription status, device-side purchase confirmations.",
+      "Data transmitted: user ID, purchase and subscription status, device-side purchase confirmations as well as technical information about the device and the app (device model, operating system, app version, language, store country) and the IP address. The subscription module is set up when the app starts for all users, even without a subscription and before a purchase.",
       "Privacy policy: www.revenuecat.com/privacy",
       "Transfer to third countries: USA, safeguarded by EU Standard Contractual Clauses.",
     ],
