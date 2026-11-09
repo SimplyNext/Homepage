@@ -85,15 +85,14 @@ export const furlyDatenschutz: LegalSection[] = [
   {
     heading: "2. Konto und Anmeldung",
     paragraphs: [
-      "Für die Nutzung von Furly ist ein Konto erforderlich. Du kannst dich auf drei Wegen registrieren bzw. anmelden:",
+      "Für die Nutzung von Furly ist ein Konto erforderlich. Du kannst dich auf zwei Wegen registrieren bzw. anmelden:",
     ],
     list: [
       "E-Mail und Passwort: Wir speichern deine E-Mail-Adresse und einen kryptografischen Hash deines Passworts (das Passwort selbst wird nie im Klartext gespeichert). Zur Bestätigung deiner E-Mail-Adresse und für „Passwort vergessen\" versenden wir E-Mails über unseren Backend-Anbieter Supabase.",
       "Anmeldung mit Google: Wenn du diese Option wählst, wirst du zu Google weitergeleitet. Google übermittelt uns anschließend deine E-Mail-Adresse, deinen Namen und ggf. dein Profilbild. Google erfährt dabei, dass du dich bei Furly anmeldest.",
-      "Anmeldung mit Apple: Analog zu Google. Apple bietet dir die Möglichkeit, deine echte E-Mail-Adresse zu verbergen und stattdessen eine anonyme Weiterleitungsadresse zu verwenden.",
     ],
     afterList: [
-      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrags). Für die Datenverarbeitung durch Google bzw. Apple im Rahmen des Logins sind diese Anbieter jeweils eigenständig verantwortlich; es gelten deren Datenschutzbestimmungen.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrags). Für die Datenverarbeitung durch Google im Rahmen des Logins ist Google eigenständig verantwortlich; es gelten dessen Datenschutzbestimmungen.",
     ],
   },
   {
@@ -314,7 +313,6 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Google Analytics for Firebase", "Anonyme Nutzungsstatistik (Abschnitt 4b) — nur nach Einwilligung", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Kartendarstellung für Tierarzt-Suche und Lost&Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Sign-In (optional)", "Anmeldung mit Google-Konto", "Google Ireland Ltd. / Google LLC", "EU / USA"],
-        ["Sign in with Apple (optional)", "Anmeldung mit Apple-Konto", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
         ["Google Play", "Vertrieb und Aktualisierung der App; Zahlungsabwicklung für Furly Pro (eigene Verantwortung von Google)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Abo-Verwaltung für Furly Pro (Kaufprüfung, Status, Wiederherstellung)", "RevenueCat, Inc., USA", "USA"],
         ["Resend", "Versand der Konto-E-Mails (Bestätigung, Passwort zurücksetzen, E-Mail-Wechsel); verarbeitet werden E-Mail-Adresse, Versandzeitpunkt und Zustellstatus", "Resend, Inc., USA", "USA"],
@@ -532,7 +530,7 @@ export const furlyAgb: LegalSection[] = [
   {
     heading: "4. Registrierung, Nutzerkonto und Mindestalter",
     paragraphs: [
-      "4.1 Die Nutzung setzt die Anlage eines Nutzerkontos voraus. Die Registrierung ist per E-Mail-Adresse und Passwort oder über die Anmeldedienste von Google bzw. Apple möglich.",
+      "4.1 Die Nutzung setzt die Anlage eines Nutzerkontos voraus. Die Registrierung ist per E-Mail-Adresse und Passwort oder über den Anmeldedienst von Google möglich.",
       "4.2 Bei der Registrierung sind wahrheitsgemäße Angaben zu machen. Änderungen sind im Profil zu aktualisieren.",
       "4.3 Mindestalter: Die App richtet sich an Personen ab 16 Jahren. Personen unter 16 Jahren dürfen die App nur mit Einwilligung der Sorgeberechtigten nutzen.",
       "4.4 Du bist verpflichtet, deine Zugangsdaten geheim zu halten und vor dem Zugriff Dritter zu schützen. Besteht der Verdacht eines Missbrauchs, informiere uns bitte unverzüglich unter info@simplynext.de.",

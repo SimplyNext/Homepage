@@ -115,13 +115,13 @@ export const wefixitDatenschutzEn: LegalSection[] = [
   {
     heading: "10. Advertising (Google AdMob)",
     paragraphs: [
-      "The app offers optional, voluntary rewarded video ads via Google AdMob (Google Ireland Limited), through which you can earn additional credits. Ads are only loaded when you actively choose to watch an ad video. Where legally required (e.g., in the European Economic Area), we first obtain your consent via Google's consent platform (User Messaging Platform based on the IAB Transparency & Consent Framework), where you also decide whether ads may be personalised. AdMob may process a device-level advertising identifier (Android Advertising ID or Apple IDFA) and ad interaction data to serve, measure and bill for advertising. The legal basis is your consent (Art. 6(1)(a) GDPR, Section 25(1) TDDDG). You can change or withdraw your choice at any time under Settings → Privacy & Consents → Privacy options for ads. Use of the advertising feature is voluntary.",
+      "The app offers optional, voluntary rewarded video ads via Google AdMob (Google Ireland Limited), through which you can earn additional credits. Ads are only loaded when you actively choose to watch an ad video. Where legally required (e.g., in the European Economic Area), we first obtain your consent via Google's consent platform (User Messaging Platform based on the IAB Transparency & Consent Framework), where you also decide whether ads may be personalised. AdMob may process a device-level advertising identifier (Android Advertising ID) and ad interaction data to serve, measure and bill for advertising. The legal basis is your consent (Art. 6(1)(a) GDPR, Section 25(1) TDDDG). You can change or withdraw your choice at any time under Settings → Privacy & Consents → Privacy options for ads. Use of the advertising feature is voluntary.",
     ],
   },
   {
     heading: "11. Push Notifications and Reminders",
     paragraphs: [
-      "Maintenance reminders are scheduled and displayed solely locally on your device (via the Android/iOS system notification scheduling features). No external push service such as Firebase Cloud Messaging is used; your reminder data never leaves your device for this purpose. We only ask for notification permission when you create a reminder or turn on notifications in the settings; you can revoke it at any time in your device's system settings.",
+      "Maintenance reminders are scheduled and displayed solely locally on your device (via the Android system notification scheduling features). No external push service such as Firebase Cloud Messaging is used; your reminder data never leaves your device for this purpose. We only ask for notification permission when you create a reminder or turn on notifications in the settings; you can revoke it at any time in your device's system settings.",
     ],
   },
   {

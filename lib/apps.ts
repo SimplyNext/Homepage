@@ -22,8 +22,6 @@ export type AppData = {
   name: string;
   /** Verfügbare Plattformen, z. B. ["Android"] */
   os: string[];
-  /** Hinweis „iOS-Version in Kürze“ anzeigen */
-  iosSoon: boolean;
   status: AppStatus;
   /** Zurückhaltende Akzentfarbe der App (nur punktuell eingesetzt) */
   accent: string;
@@ -59,7 +57,7 @@ export type AppData = {
    * Startseite und den Kopf der App-Seite. Ohne Angabe gilt `shots[0]`.
    */
   coverShots?: Record<"de" | "en", string>;
-  links: { type: "appstore" | "playstore" | "web"; url: string }[];
+  links: { type: "playstore" | "web"; url: string }[];
   since: string;
 };
 
@@ -68,7 +66,6 @@ export const apps: AppData[] = [
     slug: "eatsafety",
     name: "EatSafety",
     os: ["Android"],
-    iosSoon: true,
     status: "coming-soon",
     accent: "#78967A",
     accentLight: "#4F6B52",
@@ -92,7 +89,6 @@ export const apps: AppData[] = [
     slug: "wefixit",
     name: "WeFixIt",
     os: ["Android"],
-    iosSoon: true,
     status: "coming-soon",
     accent: "#F4846A",
     accentLight: "#A3361F",
@@ -117,7 +113,6 @@ export const apps: AppData[] = [
     slug: "nook",
     name: "NOOK",
     os: ["Android"],
-    iosSoon: true,
     status: "coming-soon",
     accent: "#6FA8DC",
     accentLight: "#2E5D8A",
@@ -136,7 +131,6 @@ export const apps: AppData[] = [
     slug: "cocos-world",
     name: "CoCo's World",
     os: ["Android"],
-    iosSoon: true,
     status: "coming-soon",
     accent: "#7BB662",
     accentLight: "#3E6B2E",
@@ -155,7 +149,6 @@ export const apps: AppData[] = [
     slug: "werkflow",
     name: "WerkFlow",
     os: ["Android"],
-    iosSoon: true,
     status: "live",
     accent: "#F28C28",
     accentLight: "#8F4C12",
@@ -187,7 +180,6 @@ export const apps: AppData[] = [
     slug: "shrinkit",
     name: "ShrinkIt",
     os: ["Android"],
-    iosSoon: true,
     status: "live",
     accent: "#5FB0B7",
     accentLight: "#2C6B70",
@@ -209,7 +201,6 @@ export const apps: AppData[] = [
     slug: "fabula",
     name: "Fabula",
     os: ["Android"],
-    iosSoon: true,
     status: "live",
     accent: "#EAA216",
     accentLight: "#7A5A0C",
@@ -233,7 +224,6 @@ export const apps: AppData[] = [
     slug: "furly",
     name: "Furly",
     os: ["Android"],
-    iosSoon: true,
     status: "coming-soon",
     accent: "#E3B23C",
     accentLight: "#7A5A12",

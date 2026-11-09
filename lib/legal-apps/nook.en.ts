@@ -57,7 +57,7 @@ export const nookDatenschutzEn: LegalSection[] = [
       "Subscription status – activation, expiry date and unlocked content",
     ],
     afterList: [
-      "Alternatively, you can sign in via Google Sign-In or Apple Sign-In (Sign in with Apple). In this case, the respective provider transmits your name and e-mail address. We do not receive access to your Google or Apple password.",
+      "Alternatively, you can sign in via Google Sign-In. In this case, Google transmits your name and e-mail address. We do not receive access to your Google password.",
     ],
   },
   {
@@ -142,10 +142,10 @@ export const nookDatenschutzEn: LegalSection[] = [
     },
   },
   {
-    heading: "6.4 In-App Purchases (Google Play & Apple App Store)",
+    heading: "6.4 In-App Purchases (Google Play)",
     level: 3,
     paragraphs: [
-      "Purchases and subscriptions are processed entirely via Google Play Billing or the Apple App Store. NOOK does not process any payment data directly. Purchase receipts are submitted to Google or Apple for verification exclusively server-side (Supabase Edge Function). The privacy policies of the respective stores apply.",
+      "Purchases and subscriptions are processed entirely via Google Play Billing. NOOK does not process any payment data directly. Purchase receipts are submitted to Google for verification exclusively server-side (Supabase Edge Function). Google's privacy policy applies.",
     ],
   },
   {
@@ -235,7 +235,7 @@ export const nookAgbEn: LegalSection[] = [
     heading: "§ 3 Registration & User Account",
     ordered: true,
     list: [
-      "Use of the App requires registration with a valid e-mail address and password. Alternatively, you can sign in via Google Sign-In or Sign in with Apple.",
+      "Use of the App requires registration with a valid e-mail address and password. Alternatively, you can sign in via Google Sign-In.",
       "The user is obliged to provide truthful information when registering and to keep their access data confidential.",
       "Only one user account is permitted per person.",
       "The user is responsible for all activities that take place under their account.",
@@ -263,7 +263,7 @@ export const nookAgbEn: LegalSection[] = [
     ordered: true,
     list: [
       "Certain functions of the App are only accessible with a paid subscription (NOOK Premium).",
-      "Subscriptions are concluded and billed via Google Play Billing (Android) or the Apple App Store (iOS). The payment terms of the respective store operator apply.",
+      "Subscriptions are concluded and billed via Google Play Billing. The payment terms of Google Play apply.",
       "Subscriptions renew automatically for the agreed period unless they are cancelled in the respective store account at least 24 hours before the end of the term.",
       "Right of withdrawal: For digital content that is provided immediately after purchase and whose provision the user has expressly confirmed before the end of the withdrawal period, the right of withdrawal expires pursuant to § 356(5) of the German Civil Code (BGB).",
       "Price changes will be communicated to the user at least 30 days before they take effect via app notification or e-mail. Continued use after they take effect is deemed consent.",

@@ -116,7 +116,6 @@ export function GalerieFacts() {
                 </span>
                 {t("android")}
               </p>
-              <p className="mt-2 text-[15px] text-ink-muted">{t("iosSoon")}</p>
             </div>
           </div>
         </Reveal>

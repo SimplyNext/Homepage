@@ -79,15 +79,14 @@ export const furlyDatenschutzEn: LegalSection[] = [
   {
     heading: "2. Account and sign-in",
     paragraphs: [
-      "An account is required to use Furly. You can register or sign in in three ways:",
+      "An account is required to use Furly. You can register or sign in in two ways:",
     ],
     list: [
       "Email and password: We store your email address and a cryptographic hash of your password (the password itself is never stored in plain text). To confirm your email address and for “Forgot password”, we send emails via our backend provider Supabase.",
       "Sign in with Google: If you choose this option, you are redirected to Google. Google then transmits your email address, your name and, if applicable, your profile picture to us. Google learns that you are signing in to Furly.",
-      "Sign in with Apple: As with Google. Apple offers you the option of hiding your real email address and using an anonymous forwarding address instead.",
     ],
     afterList: [
-      "Legal basis: Art. 6(1)(b) GDPR (performance of the user contract). Google and Apple are each independently responsible for the data processing they carry out in the context of sign-in; their privacy policies apply.",
+      "Legal basis: Art. 6(1)(b) GDPR (performance of the user contract). Google is independently responsible for the data processing it carries out in the context of sign-in; its privacy policy applies.",
     ],
   },
   {
@@ -308,7 +307,6 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Google Analytics for Firebase", "Anonymous usage statistics (section 4b) — only with consent", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Map display for vet search and Lost & Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Sign-In (optional)", "Sign-in with a Google account", "Google Ireland Ltd. / Google LLC", "EU / USA"],
-        ["Sign in with Apple (optional)", "Sign-in with an Apple account", "Apple Inc. / Apple Distribution International Ltd.", "EU / USA"],
         ["Google Play", "Distribution and updating of the app; payment processing for Furly Pro (Google's own responsibility)", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["RevenueCat", "Subscription management for Furly Pro (purchase verification, status, restoring)", "RevenueCat, Inc., USA", "USA"],
         ["Resend", "Sending account e-mails (confirmation, password reset, e-mail change); processes e-mail address, time of sending and delivery status", "Resend, Inc., USA", "USA"],
@@ -526,7 +524,7 @@ export const furlyAgbEn: LegalSection[] = [
   {
     heading: "4. Registration, user account and minimum age",
     paragraphs: [
-      "4.1 Use requires the creation of a user account. Registration is possible with an email address and password or via the sign-in services of Google or Apple.",
+      "4.1 Use requires the creation of a user account. Registration is possible with an email address and password or via the sign-in service of Google.",
       "4.2 Truthful information must be provided when registering. Changes must be updated in the profile.",
       "4.3 Minimum age: The app is aimed at persons aged 16 and over. Persons under 16 may only use the app with the consent of their legal guardians.",
       "4.4 You are obliged to keep your access data secret and to protect it from access by third parties. If misuse is suspected, please inform us without delay at info@simplynext.de.",

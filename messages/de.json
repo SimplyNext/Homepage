@@ -29,7 +29,6 @@
     "heading": "Was wir bauen",
     "platformsTitle": "Plattformen",
     "android": "Android — verfügbar",
-    "iosSoon": "iOS in Kürze",
     "statsApps": "{count, plural, one {# App verfügbar} other {# Apps verfügbar}}",
     "statsLocales": "Deutsch · Englisch",
     "techTitle": "Stack",
@@ -42,12 +41,12 @@
   },
   "finale": {
     "claim": "Premium-Apps für jede Plattform.",
-    "sub": "Android heute, iOS in Kürze — entwickelt in Deutschland."
+    "sub": "Entwickelt in Deutschland."
   },
   "galerie": {
     "heroLine1": "Apps, die man",
     "heroLine2": "gern benutzt.",
-    "heroLead": "SimplyNext entwickelt eigene Apps für Android und iOS.",
+    "heroLead": "SimplyNext entwickelt eigene Apps für Android.",
     "statsNone": "{count, plural, one {# App in Entwicklung} other {# Apps in Entwicklung}}",
     "heroCta": "Apps ansehen",
     "navApps": "Apps",
@@ -60,8 +59,6 @@
   "status": { "live": "Verfügbar", "beta": "Beta", "coming-soon": "Bald" },
   "appShowcase": {
     "backToApps": "Alle Apps",
-    "iosSoon": "iOS bald",
-    "iosSoonNote": "iOS-Version in Kürze verfügbar.",
     "storeSoon": "Bald bei {store}",
     "featuresHeading": "Funktionen",
     "pricingHeading": "Preise",

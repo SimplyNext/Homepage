@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Apple, Play, Globe, ArrowLeft } from "lucide-react";
+import { Play, Globe, ArrowLeft } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import SplitText from "@/components/ui/SplitText";
 import Reveal from "@/components/ui/Reveal";
@@ -17,7 +17,6 @@ import { stageColor } from "@/lib/galerie";
 import { withReferrer } from "@/lib/campaign";
 
 const linkMeta = {
-  appstore: { icon: Apple, label: "App Store" },
   playstore: { icon: Play, label: "Google Play" },
   web: { icon: Globe, label: "Web-App" },
 } as const;
@@ -150,7 +149,6 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
                     {os}
                   </span>
                 ))}
-                {app.iosSoon && <span className={chip}>{t("iosSoon")}</span>}
                 <span className={chip}>{tStatus(app.status)}</span>
                 <span className={chip}>{content.category}</span>
               </div>
@@ -178,8 +176,6 @@ export default function AppShowcase({ app: staticApp }: { app: AppData }) {
                   );
                 })}
               </div>
-
-              {app.iosSoon && <p className="app-hero-fade mt-4 text-sm">{t("iosSoonNote")}</p>}
             </div>
 
             {/* Gerät, unten von der Fläche angeschnitten */}

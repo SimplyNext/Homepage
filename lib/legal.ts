@@ -157,7 +157,7 @@ export function datenschutzSections(app?: AppData, locale = "de"): LegalSection[
       ? {
           heading: "4. Drittanbieter & App-Stores",
           paragraphs: [
-            "Der Bezug erfolgt über Apple App Store bzw. Google Play; diese verarbeiten eigenverantwortlich Daten nach ihren Bestimmungen.",
+            "Der Bezug erfolgt über Google Play; Google verarbeitet eigenverantwortlich Daten nach seinen Bestimmungen.",
             "[PLATZHALTER: eingesetzte SDKs/Dienste nennen, z. B. Firebase, Sentry, RevenueCat – mit Zweck und Rechtsgrundlage.]",
           ],
         }
@@ -215,7 +215,7 @@ function datenschutzSectionsEn(app?: AppData): LegalSection[] {
       ? {
           heading: "4. Third-Party Providers & App Stores",
           paragraphs: [
-            "The app is obtained via the Apple App Store or Google Play; these process data under their own responsibility and in accordance with their own terms.",
+            "The app is obtained via Google Play; Google processes data under its own responsibility and in accordance with its own terms.",
             "[PLACEHOLDER: name the SDKs/services used, e.g. Firebase, Sentry, RevenueCat – with purpose and legal basis.]",
           ],
         }
