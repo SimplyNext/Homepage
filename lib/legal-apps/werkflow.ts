@@ -191,7 +191,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Da wir bei Google Gemini einen kostenpflichtigen Tarif mit aktivierter Abrechnung nutzen, gilt gemäß den Nutzungsbedingungen der Gemini-API ausdrücklich, dass Google Ihre Eingaben (Prompts, Bilder, Audiodateien) und die generierten Antworten nicht zur Verbesserung von Google-Produkten verwendet. Eingaben werden dort ausschließlich zeitlich begrenzt zur Missbrauchserkennung und aus Sicherheitsgründen protokolliert (Quelle: Gemini API – Nutzungsbedingungen für kostenpflichtige Dienste).",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung kann jederzeit mit Wirkung für die Zukunft in den App-Einstellungen widerrufen werden (Toggle „KI-Analyse verwenden“).",
       "Wichtiger Hinweis: Achten Sie beim Fotografieren von Baustellen/Kundenwohnungen darauf, dass keine Personen oder sensible private Unterlagen im Bild erkennbar sind, da Sie hierfür als Nutzer selbst verantwortlich sind.",
-      "Diktierfunktion (Sprache zu Text): In Angeboten, Kostenvoranschlägen, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Dazu wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer und nur bei bestehender Internetverbindung – an unseren Server übermittelt und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Einwilligung oder ohne Internetverbindung steht das Diktat nicht zur Verfügung; eine Spracherkennung auf dem Gerät nutzt die App nicht. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente. Ohne Abonnement steht das Diktat in Angeboten und Kostenvoranschlägen nur zur Verfügung, solange kostenlose KI-Angebote übrig sind, in Rechnungen, solange kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Mit einem Abonnement bleibt es überall verfügbar, auch nach Erreichen des monatlichen Kontingents.",
+      "Diktierfunktion (Sprache zu Text): In Angeboten, Kostenvoranschlägen, Rechnungen und Notizen können Sie Texte einsprechen statt zu tippen. Anders als bei der Angebotsanalyse wird der gesprochene Inhalt dabei nicht ausgewertet, sondern ausschließlich in Text umgewandelt. Dazu wird die Aufnahme – nur nach Ihrer Einwilligung nach dieser Ziffer – an unseren Server übermittelt (sofort oder, wenn Sie gerade keinen Empfang haben, sobald die Verbindung wieder besteht; bis dahin liegt die Aufnahme nur im privaten App-Speicher Ihres Geräts, siehe Ziff. 3.12) und dort von Google Gemini bzw. ersatzweise OpenAI Whisper in Text umgewandelt; die Audiodatei wird nach der Umwandlung nicht dauerhaft gespeichert und auf Ihrem Gerät sofort gelöscht. Ohne Einwilligung steht das Diktat nicht zur Verfügung; eine Spracherkennung auf dem Gerät nutzt die App nicht. Ein Diktat verbraucht keines Ihrer Analyse-Kontingente. Ohne Abonnement steht das Diktat in Angeboten und Kostenvoranschlägen nur zur Verfügung, solange kostenlose KI-Angebote übrig sind, in Rechnungen, solange kostenlose KI-Rechnungen übrig sind, und in Notizen, bis beide Kontingente aufgebraucht sind. Mit einem Abonnement bleibt es überall verfügbar, auch nach Erreichen des monatlichen Kontingents.",
       "Fotos zu Angeboten, Kostenvoranschlägen und Rechnungen: Fotos, die Sie in der App einem Angebot oder einer Rechnung hinzufügen – auch das Foto für die KI-Analyse, sobald Sie das Angebot speichern –, speichern wir in einem nur Ihrem Konto zugänglichen Speicher auf unseren Servern (Supabase, siehe Ziff. 4.1), damit Sie sie später beim Beleg wieder ansehen können. Sie stehen nicht auf dem Beleg und werden nicht an Ihre Kunden übermittelt. Sie können sie jederzeit einzeln löschen; außerdem werden sie mit dem gelöschten Entwurf oder Beleg und mit Ihrem Konto gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion).",
     ],
   },
@@ -271,6 +271,24 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung der App). Das Absenden ist freiwillig. Sie können der Verarbeitung jederzeit widersprechen (Art. 21 DSGVO), z. B. per E-Mail an info@simplynext.de; wir löschen Ihr Feedback dann.",
       "Speicherdauer: Bis zur Löschung Ihres Kontos; mit dem Konto wird auch Ihr Feedback gelöscht.",
       "Bewertung bei Google Play: Nach dem zweiten versendeten Angebot blendet die App einmalig das Bewertungsfenster von Google Play ein (Google Play In-App Review API); ob es tatsächlich erscheint, entscheidet Google. Über Einstellungen → „App bewerten“ öffnen Sie außerdem den Eintrag der App im Google Play Store. Eine dort abgegebene Bewertung geht direkt an Google und wird nach den Bestimmungen von Google veröffentlicht. Wir erhalten davon weder Sterne noch Text; ob Sie bewertet haben, erfährt die App nicht. Verantwortlich für diese Verarbeitung ist Google (siehe Ziff. 4.4).",
+    ],
+  },
+  {
+    heading: "3.12 Lokale Speicherung auf dem Gerät (Offline-Modus)",
+    level: 3,
+    paragraphs: [
+      "Damit WerkFlow auch ohne Empfang nutzbar ist (z. B. auf der Baustelle), legt die App auf Ihrem Gerät eine Kopie Ihrer Daten an. Lokal gespeichert werden:",
+    ],
+    list: [
+      "Kopien Ihrer Kunden, Angebote, Kostenvoranschläge und Rechnungen, Ihrer Notizen, der Materialliste und des Firmenprofils,",
+      "Änderungen, die noch nicht auf unseren Server hochgeladen sind,",
+      "Sprachaufnahmen für das Diktat ohne Empfang, bis sie in Text umgewandelt sind,",
+      "gemerkte Angebotsanfragen samt Fotos, bis die KI-Analyse nach Rückkehr des Empfangs möglich ist.",
+    ],
+    afterList: [
+      "Diese Daten liegen ausschließlich im privaten App-Speicher Ihres Geräts. Wir und Dritte erhalten daraus nichts, solange sie nicht übertragen werden. Sobald wieder Empfang besteht, läuft der Abgleich mit unserem Server (Supabase, Ziff. 4.1) sowie die Umwandlung bzw. Analyse über die KI-Dienste wie in Ziff. 3.6 und 4.2 beschrieben, auch hier nur nach Ihrer Einwilligung. Die App gibt die lokal gespeicherten Daten nicht an Dritte weiter.",
+      "Beim Abmelden löscht die App die lokale Kopie; bei der Deinstallation wird sie mit der App vom Gerät entfernt. Sichern Sie Ihr Gerät deshalb mit einer Bildschirmsperre, da die Kopie auf dem Gerät liegt.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion); für Sprachaufnahmen und Fotos zur KI-Analyse bleibt es bei Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, Ziff. 3.6).",
     ],
   },
   {
@@ -382,6 +400,7 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Fotos zu Angeboten und Rechnungen", "Bis zur Löschung durch Sie, mit dem gelöschten Entwurf bzw. Beleg oder mit dem Konto"],
         ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
+        ["Lokale Kopie auf dem Gerät (Offline-Modus, Ziff. 3.12)", "Bis zur Abmeldung (dann wird sie gelöscht) bzw. Deinstallation; noch nicht übertragene Änderungen und Aufnahmen bis zur Übertragung bzw. Umwandlung in Text"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Abo-/Kaufdaten", "Abo-Status bis zur Account-Löschung. Protokoll der Abo-Ereignisse höchstens 90 Tage, bei Account-Löschung sofort. Kundeneintrag bei RevenueCat bis zur Account-Löschung. Kaufbelege bei Google Play gemäß den Bestimmungen von Google."],
       ],

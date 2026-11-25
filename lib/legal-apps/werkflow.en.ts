@@ -185,7 +185,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "As we use a paid plan with billing enabled for Google Gemini, the Gemini API terms of use expressly provide that Google does not use your input (prompts, images, audio files) or the generated responses to improve Google products. Input is only logged there for a limited time for abuse detection and for security reasons (source: Gemini API – terms of use for paid services).",
       "Legal basis: Art. 6(1)(a) GDPR (consent). Consent can be withdrawn at any time with effect for the future in the app settings (toggle “Use AI Analysis”).",
       "Important note: When photographing construction sites/customers' homes, make sure that no people or sensitive private documents are recognisable in the picture, as you as the user are responsible for this.",
-      "Dictation (speech to text): In quotes, cost estimates, invoices and notes, you can dictate text instead of typing. Unlike the quote analysis, the spoken content is not analysed but only converted into text. For this purpose, the recording is transmitted to our server – only with your consent under this section and only with an internet connection – and converted into text there by Google Gemini or, as a substitute, OpenAI Whisper; the audio file is not stored permanently after conversion and is deleted from your device immediately. Without consent or without an internet connection, dictation is not available; the app does not use on-device speech recognition. Dictation does not use up any of your analysis quotas. Without a subscription, dictation is available in quotes and cost estimates only as long as free AI quotes remain, in invoices only as long as free AI invoices remain, and in notes until both quotas are used up. With a subscription, it remains available everywhere, even after the monthly quota has been reached.",
+      "Dictation (speech to text): In quotes, cost estimates, invoices and notes, you can dictate text instead of typing. Unlike the quote analysis, the spoken content is not analysed but only converted into text. For this purpose, the recording – only with your consent under this section – is transmitted to our server (immediately or, if you currently have no reception, as soon as the connection is restored; until then the recording is kept only in the private app storage of your device, see section 3.12) and converted into text there by Google Gemini or, as a substitute, OpenAI Whisper; the audio file is not stored permanently after conversion and is deleted from your device immediately. Without consent, dictation is not available; the app does not use on-device speech recognition. Dictation does not use up any of your analysis quotas. Without a subscription, dictation is available in quotes and cost estimates only as long as free AI quotes remain, in invoices only as long as free AI invoices remain, and in notes until both quotas are used up. With a subscription, it remains available everywhere, even after the monthly quota has been reached.",
       "Photos for quotes and invoices: Photos that you add to a quote or invoice in the app – including the photo for the AI analysis as soon as you save the quote – are stored in a storage area on our servers that only your account can access (Supabase, see section 4.1), so that you can view them again later with the document. They do not appear on the document and are not transmitted to your customers. You can delete them individually at any time; they are also deleted together with the deleted draft or document and with your account. Legal basis: Art. 6(1)(b) GDPR (provision of the feature you use).",
     ],
   },
@@ -265,6 +265,24 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "Legal basis: Art. 6(1)(f) GDPR (legitimate interest in improving the app). Submitting feedback is voluntary. You can object to the processing at any time (Art. 21 GDPR), e.g. by e-mail to info@simplynext.de; we will then delete your feedback.",
       "Storage period: until your account is deleted; your feedback is deleted together with the account.",
       "Rating on Google Play: After the second quote sent, the app shows the Google Play rating dialog once (Google Play In-App Review API); whether it actually appears is decided by Google. Under Settings → “Rate the app” you can also open the app's listing in the Google Play Store. A rating you submit there goes directly to Google and is published in accordance with Google's terms. We receive neither stars nor text; the app does not learn whether you have rated it. Google is responsible for this processing (see section 4.4).",
+    ],
+  },
+  {
+    heading: "3.12 Local Storage on the Device (Offline Mode)",
+    level: 3,
+    paragraphs: [
+      "So that WerkFlow can also be used without reception (e.g. on a building site), the app keeps a copy of your data on your device. The following is stored locally:",
+    ],
+    list: [
+      "copies of your customers, quotes, cost estimates and invoices, your notes, the materials list and the company profile,",
+      "changes that have not yet been uploaded to our server,",
+      "voice recordings for dictation without reception, until they have been converted into text,",
+      "saved quote requests including photos, until the AI analysis is possible once reception returns.",
+    ],
+    afterList: [
+      "This data is stored exclusively in the private app storage of your device. We and third parties receive nothing from it as long as it is not transmitted. As soon as reception is available again, synchronisation with our server (Supabase, section 4.1) and the conversion or analysis via the AI services run as described in sections 3.6 and 4.2, here too only with your consent. The app does not pass the locally stored data on to third parties.",
+      "When you sign out, the app deletes the local copy; when you uninstall the app, it is removed from the device together with it. Please therefore protect your device with a screen lock, since the copy is stored on the device.",
+      "Legal basis: Art. 6(1)(b) GDPR (provision of the function you use); for voice recordings and photos for AI analysis it remains Art. 6(1)(a) GDPR (consent, section 3.6).",
     ],
   },
   {
@@ -376,6 +394,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
         ["Photos for quotes, cost estimates and invoices", "Until deleted by you, together with the deleted draft or document, or with the account"],
         ["Feedback (stars, text, app version)", "Until account deletion or until you object (section 3.11)"],
         ["Free-form notes", "Until deleted by the user or the account is deleted"],
+        ["Local copy on the device (offline mode, section 3.12)", "Until you sign out (it is then deleted) or uninstall the app; changes not yet transmitted and recordings until they are transmitted or converted into text"],
         ["Company logo, signature", "Until deleted by the user or the account is deleted"],
         ["Subscription/purchase data", "Subscription status until account deletion. Subscription event log for at most 90 days, immediately upon account deletion. Customer record at RevenueCat until account deletion. Purchase receipts at Google Play in accordance with Google's terms."],
       ],
