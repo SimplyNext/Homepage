@@ -274,7 +274,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "So that WerkFlow can also be used without reception (e.g. on a building site), the app keeps a copy of your data on your device. The following is stored locally:",
     ],
     list: [
-      "copies of your customers, quotes, cost estimates and invoices, your notes, the materials list and the company profile,",
+      "copies of your customers, quotes, cost estimates and invoices, your notes, appointments, the materials list and the company profile,",
       "changes that have not yet been uploaded to our server,",
       "voice recordings for dictation without reception, until they have been converted into text,",
       "saved quote requests including photos, until the AI analysis is possible once reception returns.",
@@ -283,6 +283,24 @@ export const werkflowDatenschutzEn: LegalSection[] = [
       "This data is stored exclusively in the private app storage of your device. We and third parties receive nothing from it as long as it is not transmitted. As soon as reception is available again, synchronisation with our server (Supabase, section 4.1) and the conversion or analysis via the AI services run as described in sections 3.6 and 4.2, here too only with your consent. The app does not pass the locally stored data on to third parties.",
       "When you sign out, the app deletes the local copy; when you uninstall the app, it is removed from the device together with it. Please therefore protect your device with a screen lock, since the copy is stored on the device.",
       "Legal basis: Art. 6(1)(b) GDPR (provision of the function you use); for voice recordings and photos for AI analysis it remains Art. 6(1)(a) GDPR (consent, section 3.6).",
+    ],
+  },
+  {
+    heading: "3.13 Appointments (Calendar)",
+    level: 3,
+    paragraphs: [
+      "In the app you can create appointments (e.g. measuring, site visit, acceptance). The information you enter is stored:",
+    ],
+    list: [
+      "title, date and time, duration,",
+      "location (freely entered text, not a device location),",
+      "note,",
+      "optionally the assignment to one of your customers.",
+    ],
+    afterList: [
+      "Like your notes and customers, appointments are stored on our servers (Supabase, see section 4.1) and, through row-level access rules, are assigned exclusively to your account. They are not passed on to third parties and are not processed by AI services; there is no synchronisation with your device's calendar. In offline mode a local copy of the appointments is also kept on the device (section 3.12). You can change or delete appointments in the app at any time; they are deleted when your account is deleted.",
+      "Please enter in the title, location and note only the information you need for your planning, and preferably no unnecessary personal data of your customers.",
+      "Legal basis: Art. 6(1)(b) GDPR (provision of the function you use)",
     ],
   },
   {
@@ -296,7 +314,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. The data is stored on servers in the EU (data centre in Ireland).",
-      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, cost estimate, invoice and material data, free-form notes, generated PDF and ZUGFeRD files, change log, company logo, signature image file, photos for quotes, cost estimates and invoices, order confirmations with your customers' signatures).",
+      "Data transmitted: all data listed in sections 3.1–3.10 (account, profile, customer, quote, cost estimate, invoice and material data, free-form notes, appointments, generated PDF and ZUGFeRD files, change log, company logo, signature image file, photos for quotes, cost estimates and invoices, order confirmations with your customers' signatures).",
       "Transfer to third countries: As Supabase is a company based in the USA, access from the USA (e.g. in the context of maintenance and support) cannot be ruled out. This is safeguarded by the data processing agreement with EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).",
       "Privacy policy: supabase.com/privacy",
     ],
@@ -394,6 +412,7 @@ export const werkflowDatenschutzEn: LegalSection[] = [
         ["Photos for quotes, cost estimates and invoices", "Until deleted by you, together with the deleted draft or document, or with the account"],
         ["Feedback (stars, text, app version)", "Until account deletion or until you object (section 3.11)"],
         ["Free-form notes", "Until deleted by the user or the account is deleted"],
+        ["Appointments (section 3.13)", "Until deleted by the user or the account is deleted"],
         ["Local copy on the device (offline mode, section 3.12)", "Until you sign out (it is then deleted) or uninstall the app; changes not yet transmitted and recordings until they are transmitted or converted into text"],
         ["Company logo, signature", "Until deleted by the user or the account is deleted"],
         ["Subscription/purchase data", "Subscription status until account deletion. Subscription event log for at most 90 days, immediately upon account deletion. Customer record at RevenueCat until account deletion. Purchase receipts at Google Play in accordance with Google's terms."],

@@ -280,7 +280,7 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Damit WerkFlow auch ohne Empfang nutzbar ist (z. B. auf der Baustelle), legt die App auf Ihrem Gerät eine Kopie Ihrer Daten an. Lokal gespeichert werden:",
     ],
     list: [
-      "Kopien Ihrer Kunden, Angebote, Kostenvoranschläge und Rechnungen, Ihrer Notizen, der Materialliste und des Firmenprofils,",
+      "Kopien Ihrer Kunden, Angebote, Kostenvoranschläge und Rechnungen, Ihrer Notizen, Termine, der Materialliste und des Firmenprofils,",
       "Änderungen, die noch nicht auf unseren Server hochgeladen sind,",
       "Sprachaufnahmen für das Diktat ohne Empfang, bis sie in Text umgewandelt sind,",
       "gemerkte Angebotsanfragen samt Fotos, bis die KI-Analyse nach Rückkehr des Empfangs möglich ist.",
@@ -289,6 +289,24 @@ export const werkflowDatenschutz: LegalSection[] = [
       "Diese Daten liegen ausschließlich im privaten App-Speicher Ihres Geräts. Wir und Dritte erhalten daraus nichts, solange sie nicht übertragen werden. Sobald wieder Empfang besteht, läuft der Abgleich mit unserem Server (Supabase, Ziff. 4.1) sowie die Umwandlung bzw. Analyse über die KI-Dienste wie in Ziff. 3.6 und 4.2 beschrieben, auch hier nur nach Ihrer Einwilligung. Die App gibt die lokal gespeicherten Daten nicht an Dritte weiter.",
       "Beim Abmelden löscht die App die lokale Kopie; bei der Deinstallation wird sie mit der App vom Gerät entfernt. Sichern Sie Ihr Gerät deshalb mit einer Bildschirmsperre, da die Kopie auf dem Gerät liegt.",
       "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion); für Sprachaufnahmen und Fotos zur KI-Analyse bleibt es bei Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, Ziff. 3.6).",
+    ],
+  },
+  {
+    heading: "3.13 Termine (Kalender)",
+    level: 3,
+    paragraphs: [
+      "In der App können Sie Termine anlegen (z. B. Aufmaß, Baustellenbesichtigung, Abnahme). Gespeichert werden die von Ihnen eingegebenen Angaben:",
+    ],
+    list: [
+      "Titel, Datum und Uhrzeit, Dauer,",
+      "Ort (frei eingegebener Text, kein Gerätestandort),",
+      "Notiz,",
+      "optional die Zuordnung zu einem Ihrer Kunden.",
+    ],
+    afterList: [
+      "Die Termine werden wie Ihre Notizen und Kunden auf unseren Servern (Supabase, siehe Ziff. 4.1) gespeichert und sind durch zeilenbasierte Zugriffsregeln ausschließlich Ihrem Konto zugeordnet. Es erfolgt keine Weitergabe an Dritte und keine Verarbeitung durch KI-Dienste; ein Abgleich mit dem Kalender Ihres Geräts findet nicht statt. Im Offline-Modus liegt auch von den Terminen eine lokale Kopie auf dem Gerät (Ziff. 3.12). Sie können Termine jederzeit in der App ändern oder löschen; mit der Löschung Ihres Kontos werden sie gelöscht.",
+      "Bitte tragen Sie in Titel, Ort und Notiz nur die Angaben ein, die Sie für Ihre Planung benötigen, und möglichst keine unnötigen personenbezogenen Daten Ihrer Kunden.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen genutzten Funktion)",
     ],
   },
   {
@@ -302,7 +320,7 @@ export const werkflowDatenschutz: LegalSection[] = [
     level: 3,
     paragraphs: [
       "Supabase Inc., USA. Die Daten werden auf Servern in der EU gespeichert (Rechenzentrum in Irland).",
-      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Kostenvoranschlags-, Rechnungs- und Materialdaten, freie Notizen, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten, Kostenvoranschlägen und Rechnungen, Auftragsbestätigungen mit Unterschriften Ihrer Kunden).",
+      "Übermittelte Daten: sämtliche unter Ziff. 3.1–3.10 genannten Daten (Konto-, Profil-, Kunden-, Angebots-, Kostenvoranschlags-, Rechnungs- und Materialdaten, freie Notizen, Termine, erzeugte PDF- und ZUGFeRD-Dateien, Änderungsprotokoll, Firmenlogo, Unterschrift-Bilddatei, Fotos zu Angeboten, Kostenvoranschlägen und Rechnungen, Auftragsbestätigungen mit Unterschriften Ihrer Kunden).",
       "Drittlandtransfer: Da Supabase ein Unternehmen mit Sitz in den USA ist, lässt sich ein Zugriff aus den USA (z. B. im Rahmen von Wartung und Support) nicht ausschließen. Dieser ist über den Auftragsverarbeitungsvertrag mit EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) abgesichert.",
       "Datenschutzerklärung: supabase.com/privacy",
     ],
@@ -400,6 +418,7 @@ export const werkflowDatenschutz: LegalSection[] = [
         ["Fotos zu Angeboten und Rechnungen", "Bis zur Löschung durch Sie, mit dem gelöschten Entwurf bzw. Beleg oder mit dem Konto"],
         ["Feedback (Sterne, Text, App-Version)", "Bis zur Account-Löschung oder bis zu Ihrem Widerspruch (Ziff. 3.11)"],
         ["Freie Notizen", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
+        ["Termine (Ziff. 3.13)", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Lokale Kopie auf dem Gerät (Offline-Modus, Ziff. 3.12)", "Bis zur Abmeldung (dann wird sie gelöscht) bzw. Deinstallation; noch nicht übertragene Änderungen und Aufnahmen bis zur Übertragung bzw. Umwandlung in Text"],
         ["Firmenlogo, Unterschrift", "Bis zur Löschung durch den Nutzer bzw. Account-Löschung"],
         ["Abo-/Kaufdaten", "Abo-Status bis zur Account-Löschung. Protokoll der Abo-Ereignisse höchstens 90 Tage, bei Account-Löschung sofort. Kundeneintrag bei RevenueCat bis zur Account-Löschung. Kaufbelege bei Google Play gemäß den Bestimmungen von Google."],
