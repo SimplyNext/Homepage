@@ -67,7 +67,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
         ["Lost & Found posts incl. contact details, location found, photo", "Reports for missing/found animals", "Art. 6(1)(a) GDPR (consent by actively publishing)", "Supabase, other users"],
         ["Furly Chat messages, chat history", "AI assistant, history across devices", "Art. 6(1)(a) GDPR (consent)", "Supabase, Google (Gemini API, USA)"],
         ["AI training plans (goal, pet profile, generated plan)", "Individual training plans", "Art. 6(1)(a) GDPR (consent)", "Supabase, Google (Gemini API, USA)"],
-        ["Photo of a vaccination record page (Furly Pro only; not stored)", "Reading vaccinations from the photo", "Art. 6(1)(a) GDPR (consent), (b) (Pro function)", "Supabase (pass-through only), Google (Gemini API, USA)"],
+        ["Photo of a vaccination record, a vet invoice, a vaccine label or an appointment slip (Furly Pro only; not stored)", "Reading vaccinations or appointments from the photo", "Art. 6(1)(a) GDPR (consent), (b) (Pro function)", "Supabase (pass-through only), Google (Gemini API, USA)"],
         ["Location data (last known position, notification radius)", "Places finder, Lost & Found radius, radius notifications", "Art. 6(1)(a) GDPR (consent via system dialog)", "Supabase, Google Maps"],
         ["Subscription data (account ID, product, term, expiry date, receipt of the store transaction)", "Furly Pro: purchase, activation, restoring", "Art. 6(1)(b) GDPR", "RevenueCat, Google Play, Supabase"],
         ["Counter of chat messages per day", "Daily quota of the free version", "Art. 6(1)(b) GDPR", "Supabase"],
@@ -104,7 +104,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
     ],
   },
   {
-    heading: "4. Furly Chat (AI assistant), AI training plans and vaccination record scan",
+    heading: "4. Furly Chat (AI assistant), AI training plans and photo scan",
     paragraphs: [
       "Furly Chat answers questions about keeping, feeding, caring for and the health of your pet. The function is optional.",
     ],
@@ -154,16 +154,16 @@ export const furlyDatenschutzEn: LegalSection[] = [
     ],
   },
   {
-    heading: "Reading a vaccination record from a photo (Furly Pro only)",
+    heading: "Reading photos: vaccinations and appointment slips (Furly Pro only)",
     level: 3,
     paragraphs: [
-      "With Furly Pro you can photograph a page of your pet's vaccination record or choose a photo from the gallery. The app reads the vaccinations from it, and you decide what is adopted. The function is optional.",
-      "What data is transmitted: The photo is reduced in size on your device and sent to our server (Supabase Edge Function). From there it is sent for analysis to Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (Gemini API; processing also in the USA by Google LLC). The photo may show everything that is in the vaccination record (e.g. the name of the pet, vaccines, dates, stamps and names of veterinary practices).",
-      "Consent: Before the first scan the app shows a notice with these details. A photo is only transmitted after you confirm it. Without your confirmation nothing is transmitted; you can then continue to enter vaccinations by hand.",
-      "No storage: We store neither the photo nor the result of the analysis. Only when you review and adopt the vaccinations that were read do normal entries arise in your pet's health record (as with manual entry; see section 3).",
-      "Logging: We record only technical values, namely how many scans your account has made within 24 hours (for the daily limit) and the number of tokens used, never the image content.",
+      "With Furly Pro you can use two functions: “Read vaccination” (photo of a vaccination record, a vet invoice or a vaccine label) and “Read appointment slip” (photo of an appointment slip, e.g. from the vet). You take a photo or choose one from the gallery; the app turns it into a suggestion (vaccine, date, practice or title, date, time), and you decide what is adopted. The functions are optional.",
+      "What data is transmitted: For each scan, one photo is reduced in size on your device and sent to our server (Supabase Edge Function). From there it is sent for analysis to Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (Gemini API; processing also in the USA by Google LLC). The photo may show everything that is on the document. With vet invoices this can be personal data (e.g. name, address, bank details). The AI is instructed to read only the vaccination items, and the app asks you to photograph only the vaccination entries or the appointment slip. Please leave details about people out of the picture where possible.",
+      "Consent: Before the first use of each of the two functions, the app shows a notice with these details. A photo is only transmitted after your explicit confirmation. Without your confirmation nothing is transmitted; you can then continue to enter vaccinations and appointments by hand.",
+      "No storage: We store neither the photo nor the result of the analysis. Only when you review and adopt the suggestion do normal entries arise (vaccinations in the health record, appointments under reminders), as with manual entry (see section 3).",
+      "Logging and limit: We record only technical values, namely how many scans your account has made per function within 24 hours (at most 10 per function) and the number of tokens used, never the image content.",
       "No AI training with your data: To our knowledge, Google does not use inputs transmitted via the paid Gemini API to train its AI models.",
-      "Legal basis: Art. 6(1)(a) GDPR (consent by confirming before the first scan) and Art. 6(1)(b) GDPR (provision of the Pro function). The recipient is Google (Gemini API); the transfer to the USA takes place as described in section 14.",
+      "Legal basis: Art. 6(1)(a) GDPR (consent by confirming before the first use) and Art. 6(1)(b) GDPR (provision of the Pro function). The recipient is Google (Gemini API); the transfer to the USA takes place as described in section 14.",
     ],
   },
   {
@@ -316,7 +316,7 @@ export const furlyDatenschutzEn: LegalSection[] = [
       head: ["Service", "Purpose", "Provider", "Place of processing"],
       rows: [
         ["Supabase (database, authentication, file storage, server functions)", "Operation of all account data and app content", "Supabase Inc., USA", "Data centre in the EU (Frankfurt am Main)"],
-        ["Google Gemini API", "Generation of AI answers in Furly Chat and for training plans, and analysis of vaccination record photos — only after consent", "Google Ireland Limited, Ireland / Google LLC, USA", "USA"],
+        ["Google Gemini API", "Generation of AI answers in Furly Chat and for training plans, and analysis of photos (vaccinations, appointment slips) — only after consent", "Google Ireland Limited, Ireland / Google LLC, USA", "USA"],
         ["Firebase Cloud Messaging", "Delivery of push notifications", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Analytics for Firebase", "Anonymous usage statistics (section 4b) — only with consent", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Map display for vet search and Lost & Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
@@ -520,7 +520,7 @@ export const furlyAgbEn: LegalSection[] = [
       "the complete step-by-step instructions for all training exercises, including newly added exercises (free: the selection named in 3.1),",
       "the Furly Coach with a complete weekly plan and a daily training prompt (free: one exercise per week),",
       "any number of AI training plans (free: one to try out),",
-      "reading the vaccination record from a photo (free: enter vaccinations by hand),",
+      "reading vaccinations (vaccination record, vet invoice, vaccine label) and appointment slips from a photo (free: enter by hand),",
       "the vet folder as a PDF,",
       "statistics and weight history over the entire period (free: the last 30 days),",
       "additional places from Google Maps for all place types Google knows (e.g. vets, dog parks, pet supplies, dog schools, pet boarding, animal shelters, dog swimming spots, hiking areas as well as cafés, restaurants and accommodation where Google expressly states that dogs are allowed), where pet owners and OpenStreetMap have gaps (up to 30 Google queries per day, one query per place type). Google has no data for waste bag dispensers and drinking water points.",
@@ -596,7 +596,7 @@ export const furlyAgbEn: LegalSection[] = [
     ],
   },
   {
-    heading: "8. Furly Chat, AI training plans and vaccination record scan",
+    heading: "8. Furly Chat, AI training plans and photo scan",
     paragraphs: [
       "8.1 Furly Chat is an AI-supported assistant. The answers are generated automatically and may be incomplete, out of date or incorrect in content.",
       "Important",
@@ -604,7 +604,7 @@ export const furlyAgbEn: LegalSection[] = [
       "8.2 Use is optional and requires separate consent to the transmission of your inputs to our AI service provider (details in the privacy policy, section 4).",
       "8.3 If indications of an emergency are detected in a request, no AI answer on the substance is generated; instead, you are referred to veterinary help. This detection is automated and may be wrong; it does not replace your own assessment of the situation.",
       "8.4 AI-generated training plans are non-binding suggestions. You implement them at your own responsibility, taking into account the individual health and temperament of your pet.",
-      "8.5 When a vaccination record is read from a photo (Furly Pro only), the photo is analysed automatically. The analysis may contain errors (e.g. wrong dates or vaccines). Please therefore check the vaccinations that were read before adopting them; you are responsible for the correctness of the entries you adopt. The function does not replace the vaccination record itself or veterinary advice. It is optional and requires your confirmation of the notice before the first scan (details in the privacy policy, section 4).",
+      "8.5 When vaccinations (vaccination record, vet invoice, vaccine label) or appointment slips are read from a photo (Furly Pro only), the photo is analysed automatically. The analysis may contain errors (e.g. wrong dates, vaccines or times). Please therefore check the suggestion before adopting it; you are responsible for the correctness of the entries you adopt. The functions replace neither the vaccination record nor veterinary advice. Photograph only the vaccination entries or the appointment slip and leave details about people out of the picture where possible. The functions are optional and require your confirmation of the notice before the first use of each function (details in the privacy policy, section 4).",
       "8.6 It is prohibited to use the assistant for unlawful purposes, to circumvent security mechanisms or to load the interface in an automated or abusive manner.",
       "8.7 You can object to AI-generated answers via the report function.",
     ],

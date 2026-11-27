@@ -73,7 +73,7 @@ export const furlyDatenschutz: LegalSection[] = [
         ["Lost&Found-Beiträge inkl. Kontaktangaben, Fundort, Foto", "Suchmeldungen für vermisste/gefundene Tiere", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktives Veröffentlichen)", "Supabase, andere Nutzer"],
         ["Furly-Chat-Nachrichten, Chat-Verlauf", "KI-Assistent, Verlauf über Geräte hinweg", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)", "Supabase, Google (Gemini API, USA)"],
         ["KI-Trainingspläne (Ziel, Tierprofil, generierter Plan)", "Individuelle Trainingspläne", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)", "Supabase, Google (Gemini API, USA)"],
-        ["Foto einer Impfpass-Seite (nur Furly Pro; wird nicht gespeichert)", "Impfungen aus dem Foto einlesen", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), lit. b (Pro-Funktion)", "Supabase (nur Durchleitung), Google (Gemini API, USA)"],
+        ["Foto eines Impfpasses, einer Tierarzt-Rechnung, eines Impfstoff-Etiketts oder eines Terminzettels (nur Furly Pro; wird nicht gespeichert)", "Impfungen bzw. Termine aus dem Foto einlesen", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), lit. b (Pro-Funktion)", "Supabase (nur Durchleitung), Google (Gemini API, USA)"],
         ["Standortdaten (letzte bekannte Position, Benachrichtigungsradius)", "Orte-Finder, Lost&Found-Umkreis, Umkreis-Benachrichtigungen", "Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über Systemdialog)", "Supabase, Google Maps"],
         ["Abo-Daten (Konto-ID, Produkt, Laufzeit, Ablaufdatum, Kaufbeleg der Store-Transaktion)", "Furly Pro: Kauf, Freischaltung, Wiederherstellung", "Art. 6 Abs. 1 lit. b DSGVO", "RevenueCat, Google Play, Supabase"],
         ["Zähler der Chat-Nachrichten pro Tag", "Tageskontingent der kostenlosen Version", "Art. 6 Abs. 1 lit. b DSGVO", "Supabase"],
@@ -110,7 +110,7 @@ export const furlyDatenschutz: LegalSection[] = [
     ],
   },
   {
-    heading: "4. Furly Chat (KI-Assistent), KI-Trainingspläne und Impfpass-Scan",
+    heading: "4. Furly Chat (KI-Assistent), KI-Trainingspläne und Foto-Scan",
     paragraphs: [
       "Furly Chat beantwortet Fragen rund um Haltung, Ernährung, Pflege und Gesundheit deines Tieres. Die Funktion ist optional.",
     ],
@@ -160,16 +160,16 @@ export const furlyDatenschutz: LegalSection[] = [
     ],
   },
   {
-    heading: "Impfpass per Foto einlesen (nur Furly Pro)",
+    heading: "Fotos einlesen: Impfungen und Terminzettel (nur Furly Pro)",
     level: 3,
     paragraphs: [
-      "Mit Furly Pro kannst du eine Seite des Impfpasses deines Tieres fotografieren oder ein Foto aus der Galerie wählen. Die App liest daraus die Impfungen aus, und du entscheidest, was übernommen wird. Die Funktion ist optional.",
-      "Welche Daten übermittelt werden: Das Foto wird auf deinem Gerät verkleinert und an unseren Server (Supabase Edge Function) gesendet. Von dort geht es zur Auswertung an Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (Gemini API; Verarbeitung auch in den USA durch Google LLC). Auf dem Foto kann alles zu sehen sein, was im Impfpass steht (z. B. Name des Tieres, Impfstoffe, Daten, Stempel und Namen von Tierarztpraxen).",
-      "Einwilligung: Vor dem ersten Scan zeigt die App einen Hinweis mit diesen Angaben. Erst nach deiner Bestätigung wird ein Foto übermittelt. Ohne Bestätigung findet keine Übermittlung statt; du kannst die Impfungen dann weiter von Hand eintragen.",
-      "Keine Speicherung: Wir speichern weder das Foto noch das Ergebnis der Auswertung. Erst wenn du die gelesenen Impfungen prüfst und übernimmst, entstehen normale Einträge in der Krankenakte deines Tieres (wie bei Handeingabe; siehe Abschnitt 3).",
-      "Protokollierung: Wir halten nur technische Werte fest, nämlich wie viele Scans dein Konto innerhalb von 24 Stunden gemacht hat (für das Tageslimit) und die Anzahl verbrauchter Tokens, nie den Bildinhalt.",
+      "Mit Furly Pro kannst du zwei Funktionen nutzen: „Impfung einlesen“ (Foto eines Impfpasses, einer Tierarzt-Rechnung oder eines Impfstoff-Etiketts) und „Terminzettel einlesen“ (Foto eines Terminzettels, z. B. vom Tierarzt). Du fotografierst oder wählst ein Foto aus der Galerie; die App macht daraus einen Vorschlag (Impfstoff, Datum, Praxis bzw. Titel, Datum, Uhrzeit), und du entscheidest, was übernommen wird. Die Funktionen sind optional.",
+      "Welche Daten übermittelt werden: Je Scan wird ein Foto auf deinem Gerät verkleinert und an unseren Server (Supabase Edge Function) gesendet. Von dort geht es zur Auswertung an Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (Gemini API; Verarbeitung auch in den USA durch Google LLC). Auf dem Foto kann alles zu sehen sein, was auf dem Dokument steht. Bei Tierarzt-Rechnungen können das Personendaten sein (z. B. Name, Anschrift, Bankdaten). Die KI wird angewiesen, nur die Impfpositionen zu lesen, und die App bittet dich, nur die Impfeinträge bzw. den Terminzettel zu fotografieren. Bitte lass Angaben zu Personen nach Möglichkeit aus dem Bild heraus.",
+      "Einwilligung: Vor der ersten Nutzung jeder der beiden Funktionen zeigt die App einen Hinweis mit diesen Angaben. Erst nach deiner ausdrücklichen Bestätigung wird ein Foto übermittelt. Ohne Bestätigung findet keine Übermittlung statt; du kannst Impfungen und Termine dann weiter von Hand eintragen.",
+      "Keine Speicherung: Wir speichern weder das Foto noch das Ergebnis der Auswertung. Erst wenn du den Vorschlag prüfst und übernimmst, entstehen normale Einträge (Impfungen in der Krankenakte, Termine bei den Erinnerungen), wie bei Handeingabe (siehe Abschnitt 3).",
+      "Protokollierung und Begrenzung: Wir halten nur technische Werte fest, nämlich wie viele Scans dein Konto je Funktion innerhalb von 24 Stunden gemacht hat (höchstens 10 je Funktion) und die Anzahl verbrauchter Tokens, nie den Bildinhalt.",
       "Kein KI-Training mit deinen Daten: Nach unserer Kenntnis verwendet Google über die kostenpflichtige Gemini API übermittelte Eingaben nicht zum Training seiner KI-Modelle.",
-      "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch die Bestätigung vor dem ersten Scan) sowie Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der Pro-Funktion). Empfänger ist Google (Gemini API); die Übermittlung in die USA erfolgt wie in Abschnitt 14 beschrieben.",
+      "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch die Bestätigung vor der ersten Nutzung) sowie Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der Pro-Funktion). Empfänger ist Google (Gemini API); die Übermittlung in die USA erfolgt wie in Abschnitt 14 beschrieben.",
     ],
   },
   {
@@ -322,7 +322,7 @@ export const furlyDatenschutz: LegalSection[] = [
       head: ["Dienst", "Zweck", "Anbieter", "Ort der Verarbeitung"],
       rows: [
         ["Supabase (Datenbank, Authentifizierung, Datei-Speicher, Serverfunktionen)", "Betrieb sämtlicher Kontodaten und App-Inhalte", "Supabase Inc., USA", "Rechenzentrum in der EU (Frankfurt am Main)"],
-        ["Google Gemini API", "Erzeugung der KI-Antworten in Furly Chat und bei Trainingsplänen sowie Auswertung von Impfpass-Fotos — nur nach Einwilligung", "Google Ireland Limited, Irland / Google LLC, USA", "USA"],
+        ["Google Gemini API", "Erzeugung der KI-Antworten in Furly Chat und bei Trainingsplänen sowie Auswertung von Fotos (Impfungen, Terminzettel) — nur nach Einwilligung", "Google Ireland Limited, Irland / Google LLC, USA", "USA"],
         ["Firebase Cloud Messaging", "Zustellung von Push-Benachrichtigungen", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Analytics for Firebase", "Anonyme Nutzungsstatistik (Abschnitt 4b) — nur nach Einwilligung", "Google Ireland Ltd. / Google LLC", "EU / USA"],
         ["Google Maps Platform", "Kartendarstellung für Tierarzt-Suche und Lost&Found", "Google Ireland Ltd. / Google LLC", "EU / USA"],
@@ -526,7 +526,7 @@ export const furlyAgb: LegalSection[] = [
       "die vollständigen Schritt-für-Schritt-Anleitungen aller Trainingsübungen einschließlich neu hinzukommender Übungen (kostenlos: die in 3.1 genannte Auswahl),",
       "den Furly Coach mit vollständigem Wochenplan und täglichem Trainingsimpuls (kostenlos: eine Übung pro Woche),",
       "beliebig viele KI-Trainingspläne (kostenlos: einer zum Ausprobieren),",
-      "das Einlesen des Impfpasses per Foto (kostenlos: Impfungen von Hand eintragen),",
+      "das Einlesen von Impfungen (Impfpass, Tierarzt-Rechnung, Impfstoff-Etikett) und Terminzetteln per Foto (kostenlos: von Hand eintragen),",
       "die Tierarzt-Mappe als PDF,",
       "Statistiken und Gewichtsverlauf über den gesamten Zeitraum (kostenlos: die letzten 30 Tage),",
       "zusätzliche Orte aus Google Maps für alle Ortsarten, die Google kennt (z. B. Tierärzte, Hundewiesen, Tierbedarf, Hundeschulen, Tierpensionen, Tierheime, Hundebadestellen, Wandergebiete sowie Cafés, Restaurants und Unterkünfte, bei denen Google Hunde ausdrücklich als erlaubt angibt), wo Tierhalter und OpenStreetMap Lücken haben (bis zu 30 Google-Abfragen am Tag, eine Abfrage je Ortsart). Für Kotbeutel-Spender und Trinkwasserstellen hat Google keine Daten.",
@@ -602,7 +602,7 @@ export const furlyAgb: LegalSection[] = [
     ],
   },
   {
-    heading: "8. Furly Chat, KI-Trainingspläne und Impfpass-Scan",
+    heading: "8. Furly Chat, KI-Trainingspläne und Foto-Scan",
     paragraphs: [
       "8.1 Furly Chat ist ein KI-gestützter Assistent. Die Antworten werden automatisiert erzeugt und können unvollständig, veraltet oder inhaltlich unzutreffend sein.",
       "Wichtig",
@@ -610,7 +610,7 @@ export const furlyAgb: LegalSection[] = [
       "8.2 Die Nutzung ist optional und setzt eine gesonderte Einwilligung in die Übermittlung deiner Eingaben an unseren KI-Dienstleister voraus (Einzelheiten in der Datenschutzerklärung, Abschnitt 4).",
       "8.3 Werden in einer Anfrage Hinweise auf einen Notfall erkannt, wird keine inhaltliche KI-Antwort erzeugt, sondern auf tierärztliche Hilfe verwiesen. Diese Erkennung erfolgt automatisiert und kann fehlerhaft sein; sie ersetzt keine eigene Einschätzung der Situation.",
       "8.4 KI-generierte Trainingspläne sind unverbindliche Vorschläge. Ihre Umsetzung erfolgt in eigener Verantwortung und unter Berücksichtigung des individuellen Gesundheitszustands und Temperaments deines Tieres.",
-      "8.5 Beim Einlesen des Impfpasses per Foto (nur Furly Pro) wird das Foto automatisiert ausgewertet. Die Auswertung kann Fehler enthalten (z. B. falsche Daten oder Impfstoffe). Prüfe die gelesenen Impfungen deshalb vor dem Übernehmen; für die Richtigkeit der übernommenen Einträge bist du verantwortlich. Die Funktion ersetzt nicht den Impfpass selbst und keine tierärztliche Beratung. Sie ist optional und setzt deine Bestätigung des Hinweises vor dem ersten Scan voraus (Einzelheiten in der Datenschutzerklärung, Abschnitt 4).",
+      "8.5 Beim Einlesen von Impfungen (Impfpass, Tierarzt-Rechnung, Impfstoff-Etikett) und Terminzetteln per Foto (nur Furly Pro) wird das Foto automatisiert ausgewertet. Die Auswertung kann Fehler enthalten (z. B. falsche Daten, Impfstoffe oder Uhrzeiten). Prüfe den Vorschlag deshalb vor dem Übernehmen; für die Richtigkeit der übernommenen Einträge bist du verantwortlich. Die Funktionen ersetzen weder den Impfpass noch tierärztliche Beratung. Fotografiere nur die Impfeinträge bzw. den Terminzettel und lass Angaben zu Personen nach Möglichkeit aus dem Bild heraus. Die Funktionen sind optional und setzen deine Bestätigung des Hinweises vor der ersten Nutzung jeder Funktion voraus (Einzelheiten in der Datenschutzerklärung, Abschnitt 4).",
       "8.6 Es ist untersagt, den Assistenten für rechtswidrige Zwecke zu nutzen, Sicherheitsmechanismen zu umgehen oder die Schnittstelle automatisiert bzw. missbräuchlich zu belasten.",
       "8.7 KI-generierte Antworten kannst du über die Melden-Funktion beanstanden.",
     ],
